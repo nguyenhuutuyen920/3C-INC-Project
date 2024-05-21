@@ -68,7 +68,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
-              <li class="active p-2"><a href="" data-toggle="tab">Tin tức</a></li>
+              <li class="active p-2"><a href="" data-toggle="news">Tin tức</a></li>
               <li class="p-2"><a href="" data-toggle="tab">Sự kiện</a></li>         
             </ul>
 
