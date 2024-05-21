@@ -1,11 +1,11 @@
 @extends('layouts.index')
 @section('content')
 
-    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 p-0" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -68,8 +68,8 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
-              <li class="active"><a href="#news" data-toggle="tab">Tin tức</a></li>
-              <li><a href="#events" data-toggle="tab">Sự kiện</a></li>         
+              <li class="active p-2"><a href="" data-toggle="tab">Tin tức</a></li>
+              <li class="p-2"><a href="" data-toggle="tab">Sự kiện</a></li>         
             </ul>
 
             <!-- Tab panes -->
@@ -379,7 +379,7 @@
                     <!-- <div class="stsTestimonial_msgbox">
                       <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                     </div> -->
-                    <img class="stsTesti_img" src="img/a1.jpg" alt="img">
+                    <img class="stsTesti_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtLx5acvWjmOJLjt0mPE1BOOcSVdewFNawn6MT6oHF3j-OHjEB1Q64k_21j50H9FYNZwk&usqp=CAU" alt="img">
                     <div class="stsTestimonial_content">
                       <h3>Nguyễn Xuân Nghĩa</h3>                      
                       <span>Kỹ sư phần mềm</span>
@@ -394,7 +394,7 @@
                     <!-- <div class="stsTestimonial_msgbox">
                       <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.scrambled it to make a type specimen book</p>
                     </div> -->
-                    <img class="stsTesti_img" src="img/a2.jpg" alt="img">
+                    <img class="stsTesti_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjcpXFeuggn6eL0tvY6WB1jYwoIvawnjHH0o2uhLk78DPPe26-mS6zAKpKo2v6iAN71A&usqp=CAU" alt="img">
                     <div class="stsTestimonial_content">
                       <h3>Lê Nam Trà</h3>                      
                       <span>Quản lý</span>
@@ -409,7 +409,7 @@
                     <!-- <div class="stsTestimonial_msgbox">
                       <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                     </div> -->
-                    <img class="stsTesti_img" src="img/a3.jpg" alt="img">
+                    <img class="stsTesti_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfUXt4ZNTGAZLMtaZZC54vO6LzyxJ53fglNKX5duJ500b3WZ9GnHdT_Rd21Guf0FVWMM&usqp=CAU" alt="img">
                     <div class="stsTestimonial_content">
                       <h3>Phạm Nhật Vũ</h3>                      
                       <span>Quản lý</span>
