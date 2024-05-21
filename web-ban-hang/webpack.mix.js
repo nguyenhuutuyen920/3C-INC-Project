@@ -10,15 +10,18 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
- const mix = require('laravel-mix');
 
  mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps()
+    .sourceMaps().version()
     .autoload({
         jquery: ['$', 'window.jQuery', 'jQuery'],
     });
- 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
+const mix = require('laravel-mix');
+
+// Cấu hình Laravel Mix
+// Tự động tải jQuery và Popper.js để sử dụng với Bootstrap
+mix.autoload({
+    jquery: ['$', 'window.jQuery', 'jQuery'],
+    popper: ['Popper']
+});

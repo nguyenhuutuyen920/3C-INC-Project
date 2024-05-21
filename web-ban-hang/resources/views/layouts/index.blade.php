@@ -105,7 +105,6 @@
     <script src='js/jquery.circliful.min.js'></script>
     <!-- Gallery slider -->
     <script type="text/javascript" language="javascript" src="js/jquery.tosrus.min.all.js"></script>   
-    <script src="{{ mix('js/app.js') }}"></script>
     <!-- Custom js-->
     <script src="js/custom.js"></script>
     <!--=============================================== 

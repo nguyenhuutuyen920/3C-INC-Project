@@ -68,8 +68,8 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
-              <li class="active"><a href="#news" data-toggle="tab">Tin tức</a></li>
-              <li><a href="#events" data-toggle="tab">Sự kiện</a></li>         
+              <li class="active"><a href="#" data-toggle="tab">Tin tức</a></li>
+              <li><a href="#" data-toggle="tab">Sự kiện</a></li>         
             </ul>
 
             <!-- Tab panes -->
