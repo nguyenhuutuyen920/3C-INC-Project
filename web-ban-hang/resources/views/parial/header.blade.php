@@ -58,29 +58,68 @@
 
             <div class="col-12">
               <nav class="site-navigation text-right ml-auto" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="#home-section" class="nav-link">Home</a></li>
-                  <li><a href="#services-section" class="nav-link">Services</a></li>
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" style="margin-right:4.5rem">
+                  <li><a href="#home-section" class="nav-link mr-4">Trang Chủ</a></li>
+                  <li><a href="#services-section" class="nav-link mr-4">Dịch Vụ</a></li>
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link">About Us</a>
+                    <a href="#about-section" class="nav-link mr-4">Lĩnh Vực</a>
                     <ul class="dropdown arrow-top">
-                      <li><a href="#team-section" class="nav-link">Team</a></li>
-                      <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
-                      <li><a href="#faq-section" class="nav-link">FAQ</a></li>
                       <li class="has-children">
-                        <a href="#">More Links</a>
+                        <a href="#">Thiết Bị Tự Động Hóa</a>
                         <ul class="dropdown">
-                          <li><a href="#">Menu One</a></li>
-                          <li><a href="#">Menu Two</a></li>
-                          <li><a href="#">Menu Three</a></li>
+                          <li><a href="#">Hệ thống giám sát trực tuyến</a></li>
+                          <li><a href="#">Thiết bị cao thế</a></li>
+                          <li><a href="#">Thiết bị thủy điện</a></li>
+                          <li><a href="#">Thiết bị trung thế</a></li>
+                          <li><a href="#">Thiết bị hạ thế</a></li>
+                          <li><a href="#">Thiết bị cho Trạm biến áp</a></li>
+                          <li><a href="#">Tủ và bảng điện</a></li>
+                          <li><a href="#">Thiết bị chống sét</a></li>
+                          <li><a href="#">Thiết bị đo và hiển thị</a></li>
+                        </ul>
+                      </li>
+                      <li class="has-children">
+                        <a href="#">Thiết Bị Công Nghệ Thông Tin</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Máy tính xách tay</a></li>
+                          <li><a href="#">Máy tính để bàn</a></li>
+                          <li><a href="#">Phần mềm</a></li>
+                          <li><a href="#">Máy chủ</a></li>
+                          <li><a href="#">Thiết bị văn phòng</a></li>
+                          <li><a href="#">Linh kiện máy tính</a></li>
+                          <li><a href="#">Thiết bị ngoại vi</a></li>
+                        </ul>
+                      </li>
+                      <li class="has-children">
+                        <a href="#">Thiết Bị Viễn THông Xây Lắp</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Cáp quang</a></li>
+                          <li><a href="#">Camera giám sát</a></li>
+                          <li><a href="#">Trạm BTS</a></li>
+                          <li><a href="#">MSAG - DSLAM</a></li>
+                          <li><a href="#">Tổng đài điện thoại</a></li>
+                          <li><a href="#">Máy Fax</a></li>
+                          <li><a href="#">STM1 - STM4 - SDH</a></li>
+                        </ul>
+                      </li>
+                      <li class="has-children">
+                        <a href="#">Thiết Bị Thí Nghiệm Đo Lường</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Cân điện tử</a></li>
+                          <li><a href="#">Thiết bị đo lường khí thải động cơ</a></li>
+                          <li><a href="#">Thiết bị thí nghiệm hạt nhân</a></li>
+                          <li><a href="#">Thiết bị thí nghiệm hóa dầu</a></li>
+                          <li><a href="#">Thiết bị thí nghiệm cao thế</a></li>
+                          <li><a href="#">Thiết bị thí nghiệm điện</a></li>
+                          <li><a href="#">Thiết bị đo lường điện</a></li>
+                          <li><a href="#">Thiết bị đo lường cơ khí</a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
-                  <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
-                  <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                  <li><a href="#why-us-section" class="nav-link mr-4">Giải Pháp</a></li>
+                  <li><a href="#testimonials-section" class="nav-link mr-4">Dự Án</a></li>
+                  <li><a href="#contact-section" class="nav-link mr-4">Liên Hệ</a></li>
                 </ul>
               </nav>
             </div>
