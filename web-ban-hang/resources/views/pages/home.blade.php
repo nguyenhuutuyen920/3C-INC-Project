@@ -68,98 +68,41 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
-              <li class="active p-2"><a href="" data-toggle="news">Tin tức</a></li>
-              <li class="p-2"><a href="" data-toggle="tab">Sự kiện</a></li>         
+              <li class="p-2"><a href="#news">Tin tức</a></li>        
             </ul>
-
             <!-- Tab panes -->
             <div class="tab-content">
               <!-- Start news tab content -->
-              <div class="tab-pane fade in active" id="news">                
+              <div class="tab-pane active " style="background:#fff" id="news">                
                 <ul class="news_tab">
                   @foreach($news as $n)
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="">
-                            <img class="media-object" src="{{$n->NewsImage}}" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                        <a href="">{{$n->NewsTitle}}</a>
-                        <span class="feed_date">{{$n->updated_at}}</span>
-                        </div>
-                      </div>                    
-                    </li>
-                  @endforeach
+                  <li class="p-0">
+                    <div class="media">
+                      <div class="media-left">
+                        <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                          <img class="media-object" src="upload/news/{{$n->NewsImage}}" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                       <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                       <span>{{$n->Abstract}}</span></br>
+                       <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                      </div>
+                    </div>                    
+                  </li>
+                @endforeach
                 </ul>                
-                <a class="see_all" href="">Xem tất cả</a>
               </div>
             </div>
           </div>
+          <a class="see_all" href="news">Xem tất cả</a>
         </div>
       </div>
       </div>
     </section>
     <!--=========== END ABOUT US SECTION ================--> 
-
-    <!--=========== BEGIN WHY US SECTION ================-->
-    <section id="whyUs">
-      <!-- Start why us top -->
-      <div class="row">        
-        <div class="col-lg-12 col-sm-12">
-          <div class="whyus_top">
-            <div class="container-fluid">
-              <!-- Why us top titile -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12"> 
-                  <div class="title_area">
-                    <h2 class="title_two">Về CHÚNG TÔI</h2>
-                    <span></span> 
-                  </div>
-                </div>
-              </div>
-              <!-- End Why us top titile -->
-              <!-- Start Why us top content  -->
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-desktop"></span>
-                    </div>
-                    <h3>Công nghệ</h3>
-                    <p>Mobifone luôn dẫn đầu trong triển khai công nghệ tại Việt Nam</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-flask"></span>
-                    </div>
-                    <h3>Phân tích dữ liệu</h3>
-                    <p>Trung tâm nghiên cứu không ngừng phân tích nhu cầu của người dùng</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-support"></span>
-                    </div>
-                    <h3>Hỗ trợ</h3>
-                    <p>Mobifone luôn cố gắng phục vụ hỗ trợ khách hàng chuyên nghiệp nhất</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End Why us top content  -->
-            </div>
-          </div>
-        </div>        
-      </div>
-      <!-- End why us top -->
-
-    </section>
-    <!--=========== END WHY US SECTION ================-->
-
+    
+    
     <!--=========== BEGIN OUR COURSES SECTION ================-->
     <section id="ourCourses">
       <div class="container-fluid">

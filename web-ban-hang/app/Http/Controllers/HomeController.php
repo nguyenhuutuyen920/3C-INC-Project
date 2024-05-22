@@ -19,10 +19,8 @@ class HomeController extends Controller
     // }
     public function index()
     {
-        $introds = Introduce::all();
-        $cats = Category::all();
-        $news = News::all();
-        return view("pages.home",compact("cats","news","introds"));
+        $news = News::orderBy('NewsID','DESC')->paginate(10);
+        return view("pages.home",compact("news"));
     }
 
     /**

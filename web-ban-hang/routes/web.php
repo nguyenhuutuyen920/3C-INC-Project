@@ -36,7 +36,7 @@ Route::post('admin/introduce/store', 'IntroduceController@store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/news', [NewsController::class, 'news'])->name('news');
+Route::get('/news', [HomeController::class, 'news'])->name('news');
 
 
 
