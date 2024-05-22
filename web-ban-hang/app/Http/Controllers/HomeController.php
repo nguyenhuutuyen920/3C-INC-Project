@@ -31,6 +31,10 @@ class HomeController extends Controller
     public function contact(){
         return view("pages.contact",);
     }
+    public function new(){
+        $news = News::all();
+        return view("pages.new",compact("news"));
+    }
     public function create()
     {
         //

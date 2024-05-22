@@ -81,19 +81,19 @@
                     <li>
                       <div class="media">
                         <div class="media-left">
-                          <a class="news_img" href="news/{{$n->id}}">
-                            <img class="media-object" src="upload/news/{{$n->img}}" alt="img">
+                          <a class="news_img" href="">
+                            <img class="media-object" src="{{$n->NewsImage}}" alt="img">
                           </a>
                         </div>
                         <div class="media-body">
-                        <a href="news/{{$n->id}}">{{$n->title}}</a>
+                        <a href="">{{$n->NewsTitle}}</a>
                         <span class="feed_date">{{$n->updated_at}}</span>
                         </div>
                       </div>                    
                     </li>
                   @endforeach
                 </ul>                
-                <a class="see_all" href="news">Xem tất cả</a>
+                <a class="see_all" href="">Xem tất cả</a>
               </div>
             </div>
           </div>

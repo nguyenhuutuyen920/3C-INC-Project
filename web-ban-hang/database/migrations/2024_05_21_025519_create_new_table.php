@@ -13,7 +13,7 @@ class CreateNewTable extends Migration
      */
     public function up()
     {
-        Schema::create('new', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->increments('NewsID');
             $table->integer('NewsCategoryID');
             $table->string('NewsImage',250);
@@ -28,9 +28,9 @@ class CreateNewTable extends Migration
             $table->string('RelatedNews',250);
             $table->string('RelatedProduct',250);
             $table->decimal('ViewOrder',18,0);
-            $table->binary('IsHotNews');
-            $table->binary('IsTypical');
-            $table->binary('IsApproved');
+            $table->boolean('IsHotNews')->default(false);
+            $table->boolean('IsTypical')->default(false);
+            $table->boolean('IsApproved')->default(false);
             $table->string('ApprovedBy',250);
             $table->timestamps();
         });
@@ -43,6 +43,6 @@ class CreateNewTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new');
+        Schema::dropIfExists('news');
     }
 }
