@@ -17,6 +17,8 @@
               <div class="single_footer_widget">
                 <h3>Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
+                <p>Địa chỉ trụ sở chính : Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
+                <p>Giao dịch khách hàng:Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699   - Fax: 024 38433316</p>
               </div>
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">

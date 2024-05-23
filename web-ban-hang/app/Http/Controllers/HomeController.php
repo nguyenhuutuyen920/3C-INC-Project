@@ -7,6 +7,8 @@ use App\Models\Contact;
 use App\Models\Home;
 use App\Models\Introduce;
 use App\Models\News;
+use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,8 +22,9 @@ class HomeController extends Controller
     // }
     public function index()
     {
+        $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
         $news = News::orderBy('NewsID','DESC')->paginate(10);
-        return view("pages.home",compact("news"));
+        return view("pages.home",compact("news","projects"));
     }
 
     /**
@@ -33,6 +36,14 @@ class HomeController extends Controller
     public function new(){
         $news = News::all();
         return view("pages.new",compact("news"));
+    }
+    public function new_content(){
+        $news = News::all();
+        return view("pages.new_content",compact("news"));
+    }
+    public function service(){
+        $services = Service::all();
+        return view("pages.service",compact("services"));
     }
     public function create()
     {

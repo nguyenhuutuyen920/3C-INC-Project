@@ -10,16 +10,15 @@
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="courseArchive">
       <div class="container">
-        <div class="row col-lg-2 col-md-2 col-sm-2">
-
-        </div>
         <div class="row">
           <!-- start course content -->
           <div class="col-lg-8 col-md-8 col-sm-8">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
+              <div class="row">
                 @foreach($news as $n)
                   <!-- start single blog archive -->
+                  <div class="col-lg-12 col-12 col-sm-12">
                     <div class="single_blog_archive wow fadeInUp">
                       <div class="blogimg_container">
                         <a href="{{ route('news',$n->NewsID)}}" class="blog_img spe">
@@ -29,8 +28,10 @@
                       <h2 class="blog_title"><a href="{{ route('news',$n->NewsID)}}"> {{$n->NewsTitle}}</a></h2>
                       <p class="blog_summary">{{$n->Abstract}}</p>
                     </div>
+                  </div>
                   <!-- end single blog archive -->
                 @endforeach
+              </div>
             </div>
           </div>
           <!-- End course content -->
@@ -42,15 +43,21 @@
               <div class="single_sidebar">
                 <h2>Tin tức nổi bật <span class="fa fa-angle-double-right"></span></h2>
                 <ul class="news_tab">
-                    @foreach($news as $n)
-                        <li>
-                            <div class="media">
-                                <div class="media-body">
-                                    <a href="news/{{$n->id}}">{{$n->title}}</a>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach               
+                @foreach($news as $n)
+                  <li>
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="news/{{$n->id}}" class="news_img">
+                          <img alt="img" src="upload/news/{{$n->img}}" class="media-object">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                       <a href="news/{{$n->id}}">{{$n->title}}</a>
+                       <span class="feed_date">{{$n->created_at}}</span>
+                      </div>
+                    </div>
+                  </li>
+                @endforeach               
                 </ul>
               </div>
               <!-- End single sidebar -->

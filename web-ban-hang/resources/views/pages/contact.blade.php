@@ -28,6 +28,11 @@
                 <textarea name="ContactContent" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Nội dung cần gửi"></textarea>
                 <input type="submit"  class="wpcf7-submit .bg-success">
               </form>
+              @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+              @endif
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">

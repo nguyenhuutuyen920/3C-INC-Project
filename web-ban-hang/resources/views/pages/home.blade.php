@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
 
-    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 p-0" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-12 p-0" data-ride="carousel">
       <ol class="carousel-indicators">
         <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -71,19 +71,19 @@
               <li class="p-2"><a href="#news">Tin tức</a></li>        
             </ul>
             <!-- Tab panes -->
-            <div class="tab-content">
+            <div class="container d-flex">
               <!-- Start news tab content -->
               <div class="tab-pane active " style="background:#fff" id="news">                
-                <ul class="news_tab">
+                <ul class="news_tab d-flex flex-column" style="height:300px; overflow: auto">
                   @foreach($news as $n)
                   <li class="p-0">
                     <div class="media">
                       <div class="media-left">
                         <a class="news_img" href="{{route('news',$n->NewsID)}}">
-                          <img class="media-object" src="upload/news/{{$n->NewsImage}}" alt="img">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
                         </a>
                       </div>
-                      <div class="media-body">
+                      <div class="media-body pl-2">
                        <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
                        <span>{{$n->Abstract}}</span></br>
                        <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
@@ -91,11 +91,167 @@
                     </div>                    
                   </li>
                 @endforeach
-                </ul>                
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                <li class="p-0">
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('news',$n->NewsID)}}">
+                        <img class="media-object" src="img/anhdep.jfif" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-2">
+                     <a href="{{route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span>{{$n->Abstract}}</span></br>
+                     <span class="feed_date">ngày 22-05-2024{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+                </ul>   
               </div>
+            <a class="see_all "style="display: flex; align-items:flex-end"  href="news">Xem tất cả</a>
+
             </div>
+
           </div>
-          <a class="see_all" href="news">Xem tất cả</a>
         </div>
       </div>
       </div>
@@ -108,201 +264,130 @@
       <div class="container-fluid">
        <!-- Our courses titile -->
         <div class="row">
-          <div class="col-lg-12 col-md-12"> 
+          <div class="col-lg-12 col-md-12 col-sm-12"> 
             <div class="title_area">
               <h2 class="title_two">DỰ ÁN TIÊU BIỂU</h2>
-              <span></span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="ourCourses_content">
-              <div class="row">
-                <div class="tab-pane fade in active col-lg-3 col-md-3 col-sm-3" id="news">                
-                  <ul class="news_tab">
-                    @foreach($news as $n)
-                      <li>
-                        <div class="media">
-                          <div class="media-left">
-                            <a class="news_img" href="{{ route('news',$n->NewsID)}}">
-                              <img class="media-object" src="upload/news/{{$n->NewsImage}}" alt="img">
-                            </a>
-                          </div>
-                          <div class="media-body">
-                          <a href="{{ route('news',$n->NewsID)}}">{{$n->NewsTitle}}</a>
-                          <span class="feed_date">{{$n->updated_at}}</span>
-                          </div>
-                        </div>                    
-                      </li>
-                    @endforeach
-                  </ul>                
-                  <a class="see_all" href="{{ route('news')}}">Xem tất cả</a>
+              <div class="container d-flex overflow-auto">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  @foreach ($projects as $proj)
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
                 </div>
               </div>
             </div>
           </div>
-        </div> 
+        </div>
+         
       </div>
     </section>
     <!--=========== END OUR COURSES SECTION ================-->  
 
-    <!--=========== BEGIN OUR TUTORS SECTION ================-->
-    <!-- <section id="ourTutors">
-      <div class="container">
-       Our courses titile
-        <div class="row">
-          <div class="col-lg-12 col-md-12"> 
-            <div class="title_area">
-              <h2 class="title_two">Our Tutors</h2>
-              <span></span> 
-            </div>
-          </div>
-        </div>
-        End Our courses titile
-    
-        Start Our courses content
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="ourTutors_content">
-              Start Tutors nav
-              <ul class="tutors_nav">
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/author.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/course-1.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/author.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/course-1.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/author.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="img/course-1.jpg" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="singTutors_social">
-                      <ul class="tutors_socnav">
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-instagram" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>                                             
-              </ul>
-            </div>
-          </div>
-        </div>
-        End Our courses content
-      </div>
-    </section> -->
-    <!--=========== END OUR TUTORS SECTION ================-->
 
     <!--=========== BEGIN STUDENTS TESTIMONIAL SECTION ================-->
     <section id="studentsTestimonial">
       <div class="container-fluid">
        <!-- Our courses titile -->
         <div class="row">
-          <div class="col-lg-12 col-md-12"> 
+          <div class="col-lg-12 col-md-12 col-sm-12"> 
             <div class="title_area">
               <h2 class="title_two">QUẢN LÝ CẤP CAO</h2>
               <span></span> 

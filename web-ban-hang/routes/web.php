@@ -10,6 +10,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubcateController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/login',[AdminController::class, 'login'])->name('admin.login');
@@ -38,6 +39,8 @@ Route::post('contact/store', [HomeController::class, 'store'])->name('contact.st
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
+Route::get('/new', [HomeController::class, 'new_content'])->name('new');
+Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 
 

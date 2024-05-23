@@ -13,11 +13,12 @@ class CreateProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('project', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('ProjectID');
             $table->string('ProjectTitle',250);
             $table->string('BiddingPackage',250);
             $table->string('ConstructionName',250);
+            $table->string('Abstract',250);
             $table->string('ProjectContent',250);
             $table->string('ProjectImage',250);
             $table->string('Investors',250);
@@ -33,6 +34,6 @@ class CreateProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project');
+        Schema::dropIfExists('projects');
     }
 }
