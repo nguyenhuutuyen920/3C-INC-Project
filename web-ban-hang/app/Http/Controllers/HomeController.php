@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Home;
 use App\Models\Introduce;
 use App\Models\News;
@@ -27,7 +28,7 @@ class HomeController extends Controller
      * Show the form for creating a new resource.
      */
     public function contact(){
-        return view("pages.contact",);
+        return view("pages.contact");
     }
     public function new(){
         $news = News::all();
@@ -43,7 +44,17 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "SenderName"=> "required",
+            "SenderEmail"=> "required",
+            "ContactTitle"=> "required",
+            "ContactContent"=> "required"
+        ]);
+
+        $data = $request->all();
+        Contact::create($data);
+
+        return redirect()->route("contact")->with("success","Liên hệ thành công");
     }
 
     /**

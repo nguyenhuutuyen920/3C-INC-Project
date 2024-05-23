@@ -34,10 +34,10 @@
             <div class="col-12">
               <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">info@yourdomain.com</span></a>
               <span class="mx-md-2 d-inline-block"></span>
-              <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">1+ (234) 5678 9101</span></a>
+              <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">84+ 243 843 3316</span></a>
 
               <div class="float-right">
-                <a href="#" class=""><span class="mr-2  icon-twitter"></span> <span class="d-none d-md-inline-block">Twitter</span></a>
+                <a href="#" class=""><span class="mr-2  icon-youtube"></span> <span class="d-none d-md-inline-block">Youtube</span></a>
                 <span class="mx-md-2 d-inline-block"></span>
                 <a href="#" class=""><span class="mr-2  icon-facebook"></span> <span class="d-none d-md-inline-block">Facebook</span></a>
               </div>
@@ -50,19 +50,19 @@
       </div>
 
       <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
-        <div class="container">
-          <div class="row align-items-center position-relative">
-            <div class="site-logo">
-              <a href="{{ route('home') }}" class="text-black"><span class="text-primary">Brand</span></a>
-            </div>
-
-            <div class="col-12">
+        <div class="container-fluid">
+          <div class="row align-items-center position-relative col-lg-12 col-md-12 col-sm-12" style="justify-content: space-between; flex-wrap:nowrap;">
+            <a class="navbar-brand" style="display: contents" href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>
+            <button class="navbar-toggler d-inline-block d-lg-none" style="float: right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu h3"></span>
+            </button>
+            <div class="col-12" id="navbarSupportedContent">
               <nav class="site-navigation text-right ml-auto" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" style="margin-right:4.5rem">
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" style="margin-right:8.5rem">
                   <li><a href="#home-section" class="nav-link mr-4">Trang Chủ</a></li>
                   <li><a href="#services-section" class="nav-link mr-4">Dịch Vụ</a></li>
                   <li class="has-children">
-                    <a href="#about-section" class="nav-link mr-4">Lĩnh Vực</a>
+                    <a href="" class="nav-link mr-4">Lĩnh Vực</a>
                     <ul class="dropdown arrow-top">
                       <li class="has-children">
                         <a href="#">Thiết Bị Tự Động Hóa</a>
@@ -117,15 +117,16 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#why-us-section" class="nav-link mr-4">Giải Pháp</a></li>
-                  <li><a href="#testimonials-section" class="nav-link mr-4">Dự Án</a></li>
-                  <li><a href="#contact-section" class="nav-link mr-4">Liên Hệ</a></li>
+                  <li><a href="" class="nav-link mr-4">Giải Pháp</a></li>
+                  <li><a href="" class="nav-link mr-4">Dự Án</a></li>
+                  <li><a href="{{ route('contact')}}" class="nav-link mr-4">Liên Hệ</a></li>
                 </ul>
               </nav>
             </div>
+            {{-- <div class="toggle-button d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div> --}}
 
-            <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
+            
           </div>
         </div>
       </header>

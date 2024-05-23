@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntroduceController;
 use App\Http\Controllers\NewController;
@@ -28,11 +29,11 @@ Route::prefix('admin')->group(function () {
         'user'=> UserController::class,
     ]);
 });
-Route::post('admin/category/store', 'CategoryController@store');
-Route::post('admin/product/store', 'ProductController@store');
-Route::post('admin/new/store', 'NewsController@store');
-Route::post('admin/introduce/store', 'IntroduceController@store');
-
+Route::post('admin/category/store', [CategoryController::class, 'store'])->name('category.store');
+Route::post('admin/product/store', [ProductController::class, 'store'])->name('product.store');
+Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.store');
+Route::post('admin/introduce/store', [IntroduceController::class, 'store'])->name('introduce.store');
+Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');

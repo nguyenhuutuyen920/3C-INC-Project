@@ -1,3 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css/owl.carousel.min.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/css/bootstrap.min.css') }}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ asset('css/css/style.css') }}">
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <footer id="footer">
       <!-- Start footer top area -->
@@ -36,11 +45,11 @@
               <div class="single_footer_widget">
                 <h3>Social Links</h3>
                 <ul class="footer_social list-unstyled">
-                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" target="_blank"  href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" target="_blank"  href="#"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/user/VMSMobiFone"><i class="fa fa-youtube"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" target="_blank" href="#"><i class="icon-facebook"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" target="_blank"  href="#"><i class="icon-google-plus"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" target="_blank"  href="#"><i class="icon-linkedin"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/user/VMSMobiFone"><i class="icon-youtube"></i></a></li>
                 </ul>
               </div>
             </div>
