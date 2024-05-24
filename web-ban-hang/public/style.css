@@ -2092,8 +2092,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
     padding-left: 10px;
   }
   .card{
-    margin-left: 5px;
-    width: 175px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 170px;
     height: 100%;
     float: left;
   }
