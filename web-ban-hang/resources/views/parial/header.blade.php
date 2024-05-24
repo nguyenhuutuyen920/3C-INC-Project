@@ -63,7 +63,7 @@
                     <li><a href="{{ route('home')}}" class="nav-link mr-4">Trang Chủ</a></li>
                     <li><a href="{{ route('service')}}" class="nav-link mr-4">Dịch Vụ</a></li>
                     <li class="has-children">
-                      <a href="" class="nav-link mr-4">Lĩnh Vực</a>
+                      <a href="{{ route('field')}}" class="nav-link mr-4">Lĩnh Vực</a>
                       <ul class="dropdown arrow-top">
                         <li class="has-children">
                           <a href="#">Thiết Bị Tự Động Hóa</a>

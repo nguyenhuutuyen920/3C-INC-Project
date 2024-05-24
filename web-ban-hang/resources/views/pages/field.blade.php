@@ -3,7 +3,7 @@
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section class="new">
-      <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f6f6">
+      <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f2f2">
         <div class="container-fluid menu-new  d-flex p-0" >
           <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content; border: 1px solid blue">
             <div class="field">
@@ -30,71 +30,70 @@
               </ul>
             </div>
           </div>
-          <div class="">
-            <ul class="content_menu-new col-lg-9 col-md-12 col-sm-12 m-0 p-2 d-flex">
+          <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0" style="border: 1px solid red">
+            <ul class="content_menu-new  m-0 p-2 " >
               {{-- @foreach($news as $n) --}}
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                <div class="card-body p-2">
+                  <h5 class="card-title mb-1">Card title</h5>
+                  <p class="card-text mb-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
               </div>
               
+              
                   {{-- @endforeach --}}
             </ul>
-            <nav aria-label="Page navigation example " style="float: right">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="">1</a></li>
-                <li class="page-item"><a class="page-link" href="">2</a></li>
-                <li class="page-item"><a class="page-link" href="">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            
           </div>
           
         </div>

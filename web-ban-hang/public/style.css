@@ -2091,3 +2091,22 @@ License URI: http://www.gnu.org/licenses/gpl.html
   .khachhang li>a{
     padding-left: 10px;
   }
+  .card{
+    margin-left: 5px;
+    width: 175px;
+    height: 100%;
+    float: left;
+  }
+  .card-body{
+    width: 100%;
+    height: 100%;
+  }
+  .card-text{
+    font-size: 10px;
+  }
+  .card-btn{
+    font-size: 10px;
+  }
+  .card-img-top{
+    width: 100%;
+  }
