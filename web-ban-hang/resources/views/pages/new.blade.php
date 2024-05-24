@@ -2,77 +2,158 @@
 @section('content')
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
-    <div class="banner">
-      <img src="upload/news/newsbanner2.jpg" alt="">
-    </div>
-    <!--=========== END COURSE BANNER SECTION ================-->
-    
-    <!--=========== BEGIN COURSE BANNER SECTION ================-->
-    <section id="courseArchive">
-      <div class="container">
-        <div class="row">
-          <!-- start course content -->
-          <div class="col-lg-8 col-md-8 col-sm-8">
-            <div class="courseArchive_content">
-              <!-- start blog archive  -->
-              <div class="row">
-                @foreach($news as $n)
-                  <!-- start single blog archive -->
-                  <div class="col-lg-12 col-12 col-sm-12">
-                    <div class="single_blog_archive wow fadeInUp">
-                      <div class="blogimg_container">
-                        <a href="{{ route('news',$n->NewsID)}}" class="blog_img spe">
-                          <img alt="img" src="{{ $news->NewsImage}}">
+    <section class="new">
+      <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f6f6">
+        <div class="container menu-new  d-flex p-0" >
+          <ul class="content_menu-new col-lg-8 col-md-12 col-sm-12 m-0 p-2">
+            {{-- @foreach($news as $n) --}}
+                  <li class="new-menu p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="new">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
                         </a>
                       </div>
-                      <h2 class="blog_title"><a href="{{ route('news',$n->NewsID)}}"> {{$n->NewsTitle}}</a></h2>
-                      <p class="blog_summary">{{$n->Abstract}}</p>
-                    </div>
-                  </div>
-                  <!-- end single blog archive -->
-                @endforeach
-              </div>
-            </div>
-          </div>
-          <!-- End course content -->
-
-          <!-- start course archive sidebar -->
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="courseArchive_sidebar">
-              <!-- start single sidebar -->
-              <div class="single_sidebar">
-                <h2>Tin tức nổi bật <span class="fa fa-angle-double-right"></span></h2>
-                <ul class="news_tab">
-                @foreach($news as $n)
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news/{{$n->id}}" class="news_img">
-                          <img alt="img" src="upload/news/{{$n->img}}" class="media-object">
-                        </a>
+                      <div class="new-body pl-4">
+                       <a class="new_title" href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="new_date text-dark">ngày 22-05-2024</p>
+                       <p class="new_content text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
                       </div>
-                      <div class="media-body">
-                       <a href="news/{{$n->id}}">{{$n->title}}</a>
-                       <span class="feed_date">{{$n->created_at}}</span>
-                      </div>
-                    </div>
+                    </div>                    
                   </li>
-                @endforeach               
-                </ul>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <li class="p-0 list-unstyled">
+                    <div class="media media-new" style="margin-bottom: 10px">
+                      <div class="media-left">
+                        <a class="new_img" href="">
+                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-4">
+                       <a href=""><h4>Tiêu đề của nội dung</h4></a>
+                       <p class="feed_date text-dark">ngày 22-05-2024</p>
+                       <p class="text-dark">Nội dung của tin tức này có những gì hay chỉ là những lời ngon ngọt trong đây, trong buổi party tối qua.</p></br>
+                      </div>
+                    </div>                    
+                  </li>
+                  <nav aria-label="Page navigation example " style="float: right">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="">1</a></li>
+                      <li class="page-item"><a class="page-link" href="">2</a></li>
+                      <li class="page-item"><a class="page-link" href="">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                {{-- @endforeach --}}
+          </ul>
+          <div class="sidebar_menu-new col-lg-4 col-md-12 col-sm-12 p-0" style="height:max-content; border: 1px solid blue">
+            <div class="field">
+              <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
+                <h5 class="text-light">LĨNH VỰC</h5>
               </div>
-              <!-- End single sidebar -->
-              <!-- start single sidebar -->
-              <!-- <div class="single_sidebar">
-                <h2>Sponsor Add <span class="fa fa-angle-double-right"></span></h2>
-                <a class="side_add" href="#"><img src="img/side-add.jpg" alt="img"></a>
-              </div> -->
-              <!-- End single sidebar -->
+              <ul class="field-menu p-4 m-0">
+                <li class="p-1">
+                  <a href=""><h5 class="text-secondary">Thiết Bị Tự Động Hóa</h5></a>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li class="p-1">
+                  <a href=""><h5 class="text-secondary">Thiết Bị Công Nghệ Thông Tin</h5></a>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li class="p-1">
+                  <a href=""><h5 class="text-secondary">Thiết Bị Viễn THông Xây Lắp</h5></a>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li class="p-1">
+                  <a href=""><h5 class="text-secondary">Thiết Bị Thí Nghiệm Đo Lường</h5></a>
+                  <div class="dropdown-divider"></div>
+                </li>
+              </ul>
             </div>
+
           </div>
-          <!-- start course archive sidebar -->
         </div>
-      </div>
+      </div> 
     </section>
     <!--=========== END COURSE BANNER SECTION ================-->
-
 @endsection

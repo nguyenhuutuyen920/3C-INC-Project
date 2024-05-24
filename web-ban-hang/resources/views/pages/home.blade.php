@@ -10,7 +10,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="numbertext">1 / 3</div>
-          <img src="img/slider/cover-web3c.jpg" class="d-block w-100" alt="...">
+          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
             <h2>TẦM NHÌN</h2>
             <p>Với những thay đổi mang tính chiến lược, tầm nhìn 2020-2030 của 3C INC được thể hiện rõ nét trong thông điệp “Kết nối giá trị, khơi dậy tiềm năng”.</p>
@@ -19,7 +19,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">2 / 3</div>
-          <img src="img/slider/cover-web3c.jpg" class="d-block w-100" alt="...">
+          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
             <h2>SỨ MỆNH</h2>
             <p>Với 3C INC, sứ mệnh của chúng tôi là đem lại những sản phẩm và dịch vụ kết nối mỗi người dân, gia đình, doanh nghiệp trong một hệ sinh thái, nơi những nhu cầu trong cuộc sống, công việc, học tập và giải trí được phát hiện, đánh thức và thỏa mãn nhằm đạt được sự  hài lòng, phát triển và hạnh phúc.</p>
@@ -28,7 +28,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">3 / 3</div>
-          <img src="img/slider/cover-web3c.jpg" class="d-block w-100" alt="...">
+          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;;" id="slider_caption-3">
             <h2>Cam kết khách hàng</h2>
             <p>Mỗi khi gặp khách hàng, chúng ta sẽ:
@@ -71,11 +71,11 @@
               <li class="p-2"><a href="#news">Tin tức</a></li>        
             </ul>
             <!-- Tab panes -->
-            <div class="container d-flex">
+            <div class="container d-flex flex-column">
               <!-- Start news tab content -->
               <div class="tab-pane active " style="background:#fff" id="news">                
                 <ul class="news_tab d-flex flex-column" style="height:300px; overflow: auto">
-                  @foreach($news as $n)
+                @foreach($news as $n)
                   <li class="p-0">
                     <div class="media">
                       <div class="media-left">
@@ -247,10 +247,10 @@
                 </li>
                 </ul>   
               </div>
-            <a class="see_all "style="display: flex; align-items:flex-end"  href="news">Xem tất cả</a>
-
+              <div>
+                <a class="see_all "style="display: flex; align-items:flex-end"  href="{{ route('news')}}">Xem tất cả</a>
+              </div>
             </div>
-
           </div>
         </div>
       </div>

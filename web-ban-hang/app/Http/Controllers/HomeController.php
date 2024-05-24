@@ -33,7 +33,10 @@ class HomeController extends Controller
     public function contact(){
         return view("pages.contact");
     }
-    public function new(){
+    public function field(){
+        return view("pages.field");
+    }
+    public function news(){
         $news = News::all();
         return view("pages.new",compact("news"));
     }

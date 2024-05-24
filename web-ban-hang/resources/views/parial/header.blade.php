@@ -59,7 +59,7 @@
               </button>
               <div class="col-12" id="navbarSupportedContent">
                 <nav class="site-navigation text-right ml-auto" role="navigation">
-                  <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" style="margin-right:8.5rem">
+                  <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" >
                     <li><a href="{{ route('home')}}" class="nav-link mr-4">Trang Chủ</a></li>
                     <li><a href="{{ route('service')}}" class="nav-link mr-4">Dịch Vụ</a></li>
                     <li class="has-children">

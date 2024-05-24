@@ -489,6 +489,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 .news_tab li:last-child{
   border-bottom: none;
 }
+.menu-new{
+  
+}
 .news_img {
   display: block;
   height: 70px;
@@ -1986,7 +1989,27 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
     
   @media(max-width:991px ){
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+    .new-menu{
+      height: auto;
+    }
+    .media{
+      display: flex;
+      flex-direction: column;
 
+    }
+    h4{
+      padding-top: 10px;
+    }
+    .new {
+      width: 100%;
+    }
+      .media-object {
+        width: 100%;
+    }
     .slider_caption {width: 70%;}
     .slider_caption h2 {font-size: 25px;line-height: 40px;}
     .slider_caption p { font-size: 15px;margin: 0; margin-left: 20px;}
@@ -1995,6 +2018,23 @@ License URI: http://www.gnu.org/licenses/gpl.html
   
   
   @media(max-width:767px ){
+    .new-menu{
+      height: auto;
+    }
+    .media{
+      display: flex;
+      flex-direction: column;
+
+    }
+    h4{
+      padding-top: 10px;
+    }
+    .new {
+      width: 100%;
+    }
+      .media-object {
+        width: 100%;
+    }
     .slider_caption {width: 80%;font-size: 16px;}
     .slider_caption h2 {font-size: 25px;line-height: 25px;}
     .slider_caption p { font-size: 12px;}

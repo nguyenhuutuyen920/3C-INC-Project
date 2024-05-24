@@ -13,7 +13,7 @@
       <div class="footer_top pt-3" style="background-color: #c4c4c4">
         <div class="container-fluid col-ld-12  col-md-12 col-sm-12" >
           <div class="row">
-            <div class="col-ld-3  col-md-3 col-sm-3">
+            <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
                 <h3>Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
@@ -21,29 +21,19 @@
                 <p>Giao dịch khách hàng:Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699   - Fax: 024 38433316</p>
               </div>
             </div>
-            <div class="col-ld-3  col-md-3 col-sm-3">
+            <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
                 <h3>Sản phẩm & Dịch vụ</h3>
                 <ul class="footer_widget_nav list-unstyled">
-                  <li><a class="text-dark " href="">Dịch vụ</a></li>
+                  <li><a class="text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
                   <li><a class="text-dark " href="">Sản phẩm</a></li>
                   <li><a class="text-dark " href="">Dự án</a></li>
                   <li><a class="text-dark " href="">Giải pháp</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-ld-3  col-md-3 col-sm-3">
-              <div class="single_footer_widget">
-                <h3>Hỗ trợ khách hàng</h3>
-                <ul class="footer_widget_nav list-unstyled">
-                  <li><a class="text-dark " href="">FAQ</a></li>
                   <li><a class="text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
-                  <li><a class="text-dark " href="">Đường dây nóng: 024 38433316 </a></li>
-                  <li><a class="text-dark " href="#">Tra cứu thông tin TBTT</a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-ld-3  col-md-3 col-sm-3">
+            <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
                 <h3>Social Links</h3>
                 <ul class="footer_social list-unstyled">

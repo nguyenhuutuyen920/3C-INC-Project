@@ -15,15 +15,15 @@
     <meta name="author" content="">
     <title>3C iNC</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <base href="{{asset('')}}">
-    <link rel="stylesheet" href="/bootstrap-4.6.2-dist/css/bootstrap.css">
+    {{-- <base href="{{asset('')}}"> --}}
+    {{-- <link rel="stylesheet" href="/bootstrap-4.6.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="/bootstrap-4.6.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bootstrap-4.6.2-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.2-dist/css/bootstrap-grid.css"> --}}
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
+    {{-- <link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
     <!-- CSS
     ================================================== -->       
     <!-- Bootstrap css file-->
@@ -47,11 +47,11 @@
     <!-- Main structure css file -->
     <link href="style.css" rel="stylesheet">
     
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     
-    <!-- Google fonts -->
+    {{-- <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>   
-    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>    
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>     --}}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,7 +85,7 @@
     ================================================== -->
 
     <!-- initialize jQuery Library -->
-    <script src="js/js/jquery.min.js"></script>
+    {{-- <script src="js/js/jquery.min.js"></script>
     <!-- Preloader js file -->
     <!-- <script src="js/queryloader2.min.js" type="text/javascript"></script> -->
     <!-- For smooth animatin  -->
@@ -102,11 +102,11 @@
     <script src="js/jquery.animate-enhanced.min.js"></script>
     <script src="js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>   
     <!-- for circle counter -->
-    <script src='js/jquery.circliful.min.js'></script>
+    <script src='js/jquery.circliful.min.js'></script> --}}
     <!-- Gallery slider -->
-    <script type="text/javascript" language="javascript" src="js/jquery.tosrus.min.all.js"></script>   
+    {{-- <script type="text/javascript" language="javascript" src="js/jquery.tosrus.min.all.js"></script>    --}}
     <!-- Custom js-->
-    <script src="js/custom.js"></script>
+    {{-- <script src="js/custom.js"></script> --}}
     <!--=============================================== 
     Template Design By WpFreeware Team.
     Author URI : http://www.wpfreeware.com/
