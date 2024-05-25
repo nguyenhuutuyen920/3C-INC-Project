@@ -5,7 +5,7 @@
     <section class="new">
       <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f2f2">
         <div class="container-fluid menu-new  d-flex p-0" >
-          <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content; border: 1px solid blue">
+          <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
             <div class="field">
               <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                 <h5 class="text-light">LĨNH VỰC</h5>
@@ -30,7 +30,7 @@
               </ul>
             </div>
           </div>
-          <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0" style="border: 1px solid red">
+          <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0" >
             <ul class="content_menu-new  m-0 p-2 " >
               {{-- @foreach($news as $n) --}}
               <div class="card">
