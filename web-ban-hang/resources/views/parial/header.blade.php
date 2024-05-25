@@ -28,18 +28,18 @@
         <div class="site-mobile-menu-body"></div>
       </div>
 
-      <div class="top-bar">
+      <div class="top-bar" style="background-color: #1E73BE">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">sale@3c.com.vn</span></a>
-              <span class="mx-md-2 d-inline-block"></span>
-              <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">84+ 243 843 3316</span></a>
+              <a href="#" class=""><span class="text-light mr-2   icon-envelope-open-o"></span> <span class="text-light d-none d-md-inline-block">sale@3c.com.vn</span></a>
+              <span class="text-light mx-md-2 d-inline-block"></span>
+              <a href="#" class=""><span class="text-light mr-2   icon-phone"></span> <span class="text-light d-none d-md-inline-block">84+ 243 843 3316</span></a>
 
               <div class="float-right">
-                <a href="#" class=""><span class="mr-2  icon-youtube"></span> <span class="d-none d-md-inline-block">Youtube</span></a>
-                <span class="mx-md-2 d-inline-block"></span>
-                <a href="#" class=""><span class="mr-2  icon-facebook"></span> <span class="d-none d-md-inline-block">Facebook</span></a>
+                <a href="#" class=""><span class="text-light mr-2   icon-youtube"></span> <span class="text-light d-none d-md-inline-block">Youtube</span></a>
+                <span class="text-light mx-md-2 d-inline-block"></span>
+                <a href="#" class=""><span class="text-light mr-2   icon-facebook"></span> <span class="text-light d-none d-md-inline-block">Facebook</span></a>
               </div>
 
             </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+      <header class="site-navbar shadow p-3 bg-white rounded js-sticky-header site-navbar-target" role="banner">
         <div class="container-fluid">
           <div class="row align-items-center position-relative col-lg-12 col-md-12 col-sm-12" style="display:flex; flex-wrap:nowrap;justify-content: space-between;">
             <a class="navbar-brand" style="display: contents" href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>

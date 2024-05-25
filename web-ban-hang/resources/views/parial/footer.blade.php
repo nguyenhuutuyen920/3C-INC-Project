@@ -10,12 +10,12 @@
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <footer id="footer">
       <!-- Start footer top area -->
-      <div class="footer_top pt-3" style="background-color: #c4c4c4">
+      <div class="footer_top pt-3" style="background-color: #f1f1f1">
         <div class="container-fluid col-ld-12  col-md-12 col-sm-12" >
           <div class="row">
             <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
-                <h3>Giới thiệu</h3>
+                <h3 class="text-primary" style="font-family: segoeuib;">Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
                 <p>Địa chỉ trụ sở chính : Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
                 <p>Giao dịch khách hàng:Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699   - Fax: 024 38433316</p>
@@ -23,19 +23,19 @@
             </div>
             <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
-                <h3>Sản phẩm & Dịch vụ</h3>
+                <h3 class="text-primary" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
                 <ul class="footer_widget_nav list-unstyled">
-                  <li><a class="text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
-                  <li><a class="text-dark " href="">Sản phẩm</a></li>
-                  <li><a class="text-dark " href="">Dự án</a></li>
-                  <li><a class="text-dark " href="">Giải pháp</a></li>
-                  <li><a class="text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
+                  <li><a class=" text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
+                  <li><a class=" text-dark " href="">Sản phẩm</a></li>
+                  <li><a class=" text-dark " href="">Dự án</a></li>
+                  <li><a class=" text-dark " href="">Giải pháp</a></li>
+                  <li><a class=" text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
-                <h3>Social Links</h3>
+                <h3 class="text-primary" style="font-family: segoeuib;">Social Links</h3>
                 <ul class="footer_social list-unstyled">
                   <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" target="_blank" href="#"><i class="icon-facebook"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
@@ -51,7 +51,7 @@
       <!-- End footer top area -->
 
       <!-- Start footer bottom area -->
-      <div class="footer_bottom " style="background-color: #c4c4c4">
+      <div class="footer_bottom " style="background-color: #f1f1f1">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-7">

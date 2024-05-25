@@ -270,20 +270,31 @@
               <div class="container d-flex overflow-auto">
                 <div class="col-lg-4 col-md-4 col-sm-4">
                   @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
-                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
-                      <div class="d-flex justify-content-between align-items-center">
-                      </div>
+                  {{-- <div class="card-project mb-4 box-shadow">
+                    <div class="new " style="width: 100%; height: 165px;">
+                      <a class="new_img w-100 h-100" href="">
+                        <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                      </a>
+                    </div>
+                    <div class="card-body pl-1 pt-3">
+                      <a class="card_title" href=""><h5>{{$proj->ProjectTitle}}</h5></a>
+                      <p class="card_date text-dark">22-5-2024{{$proj->create_at}}</p>
+                      <p class="card_abstract text-dark">{{$proj->Abstract}}</p></br>
+                     </div>
+                  </div> --}}
+                  <div class="card bg-dark text-white w-100 h-100">
+                    <img class="card-img w-100 h-100" data-toggle="tooltip" data-placement="right" data-target="#card-project" src="img/anhdep.jfif" alt="Card image">
+                    <div id="card-project" class="card-img-overlay w-100 h-100 " style="margin-top: 130px">
+                      <a href=""><h5 class="card-title text-light">{{$proj->ProjectTitle}}</h5></a>
+                      <p class="card-text text-light" style="font-size:13px">{{$proj->Abstract}}</p>
+                      <p class="card-date text-light">22-5-2024{{$proj->create_at}}</p>
                     </div>
                   </div>
                   @endforeach
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -292,11 +303,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -305,11 +316,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -318,11 +329,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -331,11 +342,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -344,11 +355,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -357,11 +368,11 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  @foreach ($projects as $proj)
-                  <div class="card mb-4 box-shadow">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
                     <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
@@ -370,7 +381,20 @@
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  {{-- @endforeach --}}
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  {{-- @foreach ($projects as $proj) --}}
+                  <div class="card-project mb-4 box-shadow">
+                    <img class="card-img-top" src="img/anhdep.jfif" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><strong>{{$proj->ProjectTitle}}</strong></h5>
+                      <h6 class="card-text text-center">{{$proj->Abstract}}</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                  {{-- @endforeach --}}
                 </div>
               </div>
             </div>

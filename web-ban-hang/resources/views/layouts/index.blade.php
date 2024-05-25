@@ -63,7 +63,7 @@
 	@yield('css')
 
 </head>
-<body>    
+<body class="h-auto">    
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>

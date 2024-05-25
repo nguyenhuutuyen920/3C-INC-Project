@@ -10,11 +10,11 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $users  = User::orderBy('UserID','DESC')->paginate(10);
-        return view('admin.user.index',compact('users'));
-    }
+    public function index(Request $request)
+{
+    $users = User::paginate(5);
+    return view('admin.user.index', compact('users'));
+}
 
     /**
      * Show the form for creating a new resource.

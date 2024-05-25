@@ -37,7 +37,7 @@ class HomeController extends Controller
         return view("pages.field");
     }
     public function news(){
-        $news = News::all();
+        $news = News::paginate(7);
         return view("pages.new",compact("news"));
     }
     public function new_content(){
