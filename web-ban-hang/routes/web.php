@@ -40,7 +40,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/field', [HomeController::class, 'field'])->name('field');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
-Route::get('/new', [HomeController::class, 'new_content'])->name('new');
+Route::get('/new', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 

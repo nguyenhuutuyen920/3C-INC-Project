@@ -40,8 +40,8 @@ class HomeController extends Controller
         $news = News::paginate(7);
         return view("pages.new",compact("news"));
     }
-    public function new_content(){
-        $news = News::all();
+    public function new_content(News $news){
+        $news = News::findOrFail($news);
         return view("pages.new_content",compact("news"));
     }
     public function service(){

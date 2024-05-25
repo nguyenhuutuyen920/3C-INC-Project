@@ -2,12 +2,6 @@
 @section('content')
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
-    <div class="banner">
-      <img src="upload/news/newsbanner2.jpg" alt="">
-    </div>
-    <!--=========== END COURSE BANNER SECTION ================-->
-    
-    <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="courseArchive">
       <div class="container">
         <div class="row">
@@ -16,21 +10,18 @@
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
-                @foreach($news as $n)
                   <!-- start single blog archive -->
                   <div class="col-lg-12 col-12 col-sm-12">
                     <div class="single_blog_archive wow fadeInUp">
                       <div class="blogimg_container">
-                        <a href="{{ route('news',$n->NewsID)}}" class="blog_img spe">
+                        <a href="{{ route('news',$news->NewsID)}}" class="blog_img spe">
                           <img alt="img" src="{{ $news->NewsImage}}">
                         </a>
                       </div>
-                      <h2 class="blog_title"><a href="{{ route('news',$n->NewsID)}}"> {{$n->NewsTitle}}</a></h2>
-                      <p class="blog_summary">{{$n->Abstract}}</p>
+                      <h2 class="blog_title"><a href="{{ route('news', $news->NewsID)}}"> {{$news->NewsTitle}}</a></h2>
+                      <p class="blog_summary">{{$news->Abstract}}</p>
                     </div>
                   </div>
-                  <!-- end single blog archive -->
-                @endforeach
               </div>
             </div>
           </div>
