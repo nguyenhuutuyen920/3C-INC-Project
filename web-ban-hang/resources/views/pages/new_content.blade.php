@@ -2,62 +2,68 @@
 @section('content')
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
-    <section id="courseArchive">
-      <div class="container">
+    <section id="courseArchive"  style="background: #fff">
+      <div class="container pt-4">
         <div class="row">
           <!-- start course content -->
-          <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="col-lg-9 col-md-9 col-sm-9">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
-                  <!-- start single blog archive -->
-                  <div class="col-lg-12 col-12 col-sm-12">
-                    <div class="single_blog_archive wow fadeInUp">
-                      <div class="blogimg_container">
-                        <a href="{{ route('news',$news->NewsID)}}" class="blog_img spe">
-                          <img alt="img" src="{{ $news->NewsImage}}">
-                        </a>
-                      </div>
-                      <h2 class="blog_title"><a href="{{ route('news', $news->NewsID)}}"> {{$news->NewsTitle}}</a></h2>
-                      <p class="blog_summary">{{$news->Abstract}}</p>
+                <!-- start single blog -->
+                <div class="col-lg-12 col-12 col-sm-12">
+                  <div class="single_blog">
+                    <div class="blogimg_container">
+                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->created_at}}</i></p>
+                      <h2 class="blog_title"> {{$new->NewsTitle}}</h2><a href="" class="blog_img">
+                        <img alt="img" src="images/news1.jpg">
+                      <p><i class="fa fa-user"></i>{{$new->NewsMetaDescription}}</p>
+                      </a>
                     </div>
-                  </div>
+                    <div class="blog_commentbox">
+                    </div>
+                    {{$new->NewsContent}}
+                    
+                  	</div>
+                  <!-- single blog nex & prev button -->
+                  <!-- <div class="single_blog_prevnext">
+                    <a class="prev_post wow fadeInLeft" href="#"><i class="fa fa-angle-left"></i>Previous Post</a>
+                    <a class="next_post wow fadeInRight" href="#">Next Post<i class="fa fa-angle-right"></i></a>
+                  </div> -->
+                </div>
+                <!-- End single blog -->                
               </div>
+              <!-- end blog archive  -->
+              <!-- start related post -->
+              
+              <!-- start related post -->           
             </div>
           </div>
           <!-- End course content -->
 
           <!-- start course archive sidebar -->
-          <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="col-lg-3 col-md-3 col-sm-3">
             <div class="courseArchive_sidebar">
               <!-- start single sidebar -->
               <div class="single_sidebar">
-                <h2>Tin tức nổi bật <span class="fa fa-angle-double-right"></span></h2>
-                <ul class="news_tab">
+                <h2>Tin tức <span class="fa fa-angle-double-right"></span></h2>
+                <ul class="news_tab pl-2">
                 @foreach($news as $n)
-                  <li>
+                  <li class="list-unstyled">
                     <div class="media">
                       <div class="media-left">
-                        <a href="news/{{$n->id}}" class="news_img">
-                          <img alt="img" src="upload/news/{{$n->img}}" class="media-object">
+                        <a href="{{$n->NewsID}}" class="news_img">
+                          <img alt="img" src="{{$n->NewsImage}}" class="media-object">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="news/{{$n->id}}">{{$n->title}}</a>
-                       <span class="feed_date">{{$n->created_at}}</span>
+                       <a href="{{$n->NewsID}}">{{$n->NewsTitle}}</a>
                       </div>
                     </div>
                   </li>
-                @endforeach               
+				        @endforeach                 
                 </ul>
               </div>
-              <!-- End single sidebar -->
-              <!-- start single sidebar -->
-              <!-- <div class="single_sidebar">
-                <h2>Sponsor Add <span class="fa fa-angle-double-right"></span></h2>
-                <a class="side_add" href="#"><img src="img/side-add.jpg" alt="img"></a>
-              </div> -->
-              <!-- End single sidebar -->
             </div>
           </div>
           <!-- start course archive sidebar -->
@@ -65,5 +71,4 @@
       </div>
     </section>
     <!--=========== END COURSE BANNER SECTION ================-->
-
 @endsection

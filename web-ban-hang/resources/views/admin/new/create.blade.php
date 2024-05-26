@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label>News Image</label>
-                        <input class="form-control" type="file" name="NewsImage" placeholder="Please Enter New Image" />
+                        <textarea class="form-control" type="file" name="NewsImage" placeholder="Please Enter New Image" ></textarea>
                     </div>
                     <div class="form-group">
                         <label>News Alias</label>

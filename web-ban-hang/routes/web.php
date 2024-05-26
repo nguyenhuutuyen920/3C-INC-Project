@@ -36,11 +36,11 @@ Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.stor
 Route::post('admin/introduce/store', [IntroduceController::class, 'store'])->name('introduce.store');
 Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
-Route::get('/home', [HomeController::class, 'index'])->name('index');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/field', [HomeController::class, 'field'])->name('field');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
-Route::get('/new', [HomeController::class, 'new_content'])->name('new_content');
+Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 
@@ -62,4 +62,3 @@ Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
