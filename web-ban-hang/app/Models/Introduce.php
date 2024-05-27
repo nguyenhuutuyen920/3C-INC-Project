@@ -9,7 +9,6 @@ class Introduce extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'TabID',
         'IntroducePageTitle',
         'IntroduceAlias',
         'IntroduceMetaKeyword',

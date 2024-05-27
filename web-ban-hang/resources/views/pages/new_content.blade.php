@@ -16,13 +16,13 @@
                     <div class="blogimg_container">
                       <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->created_at}}</i></p>
                       <h2 class="blog_title"> {{$new->NewsTitle}}</h2><a href="" class="blog_img">
-                        <img alt="img" src="images/news1.jpg">
+                        {{!!$new->NewsContent !!}}
                       <p><i class="fa fa-user"></i>{{$new->NewsMetaDescription}}</p>
                       </a>
                     </div>
                     <div class="blog_commentbox">
                     </div>
-                    {{$new->NewsContent}}
+                    
                     
                   	</div>
                   <!-- single blog nex & prev button -->

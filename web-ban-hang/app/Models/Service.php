@@ -9,7 +9,6 @@ class Service extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "TabID",
         "ServiceAlias",
         "ServiceTitle",
         "ServicePageTitle",

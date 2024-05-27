@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <style type="text/css">
+        .ck-editor__editable_inline {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
 @extends('admin.index')
 @section('content')
 <div id="page-wrapper">
@@ -26,18 +38,6 @@
             <form action="{{ route('new.update',$new->NewsID)}}" method="POST" enctype="multipart/form-data">
                 @csrf @method('PUT')
                 <div class="form-group">
-                    <label>News CategoryID</label>
-                    <select class="form-control" name="NewsCategoryID">
-                        @foreach($cats as $cat)
-                            <option value="{{$cat->CategoryID}}">{{$cat->CategoryID}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>News Image</label>
-                    <input class="form-control" type="file" value="{{ $new->NewsImage}}" name="NewsImage" placeholder="Please Enter New Image" />
-                </div>
-                <div class="form-group">
                     <label>News Alias</label>
                     <input class="form-control" type="text" value="{{ $new->NewsAlias}}" name="NewsAlias" placeholder="Please Enter New ALias"/>
                 </div>                   
@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-group">
                     <label>News Content</label>
-                    <input class="form-control" type="text" value="{{ $new->NewsContent}}" name="NewsContent" placeholder="Please Enter New Content"/>
+                    <textarea class="form-control" type="text" id="editor" value="{{ $new->NewsContent}}" name="NewsContent" placeholder="Please Enter New Content"></textarea>
                 </div>
                 <div class="form-group">
                     <label>News Source</label>
@@ -72,14 +72,6 @@
                 <div class="form-group">
                     <label>Related News</label>
                     <input class="form-control" type="text" value="{{ $new->RelatedNews}}" name="RelatedNews" placeholder="Please Related News "/>
-                </div>
-                <div class="form-group">
-                    <label>Related Product</label>
-                    <select class="form-control" name="RelatedProduct">
-                        @foreach($prods as $prod)
-                            <option value="{{$prod->RelatedProduct}}">{{$prod->RelatedProduct}}</option>
-                        @endforeach
-                    </select>
                 </div>
                 <div class="form-group">
                     <label>View Order</label>
@@ -112,3 +104,19 @@
     <!-- /.container-fluid -->
 </div>
 @endsection
+{{-- @endsection
+@section('scripts')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+@endsection --}}
+</body>
+</html>

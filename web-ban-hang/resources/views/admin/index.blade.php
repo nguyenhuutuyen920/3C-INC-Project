@@ -25,7 +25,7 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -51,6 +51,8 @@
     <!-- DataTables JavaScript -->
     <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
     <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="admin_asset/ckeditor5-build-classic/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script> --}}
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <!-- <script src="admin_asset/ckeditor/ckeditor.js" ></script> -->
@@ -58,31 +60,8 @@
     <script src="admin_asset/tinymce/jquery.tinymce.min.js"></script>
     <script src="admin_asset/summernote-master/dist/summernote.js"></script>
     <link href="admin_asset/summernote-master/dist/summernote.css" rel="stylesheet">
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-    // ----------multiplefile-upload---------
-    $(document).ready(function() {
-    var url1 = 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/631px-FullMoon2010.jpg',
-        url2 = 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg';
-    $("#input-24").fileinput({
-        initialPreview: [url1, url2],
-        initialPreviewAsData: true,
-        initialPreviewConfig: [
-            {caption: "Moon.jpg", downloadUrl: url1, description: "<h5>The Moon</h5>The Moon is Earth's only natural satellite and the fifth largest moon in the solar system. The Moon's distance from Earth is about 240,000 miles (385,000 km).", size: 930321, width: "120px", key: 1},
-            {caption: "Earth.jpg", downloadUrl: url2, description: "<h5>The Earth</h5> The Earth is the 3<sup>rd</sup> planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth's surface is land and remaining 70.8% is covered with water.", size: 1218822, width: "120px", key: 2}
-        ],
-        deleteUrl: "/site/file-delete",
-        overwriteInitial: false,
-        maxFileSize: 100,
-        initialCaption: "The Moon and the Earth"
-    });
-});
-    </script>
     @yield('script')
+    @yield('scripts')
 </body>
 
 </html>

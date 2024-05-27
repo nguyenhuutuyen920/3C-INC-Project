@@ -22,7 +22,6 @@ class IntroduceController extends Controller
      */
     public function create()
     {
-        $tabs = Tab::all();
         return view('admin.introduce.create',compact('tabs'));
     }
 
@@ -32,7 +31,6 @@ class IntroduceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'TabID'=> 'required|',
             'IntroducePageTitle'=> 'required|',
             'IntroduceAlias'=> 'required|',
             'IntroduceMetaKeyword'=> 'required|',

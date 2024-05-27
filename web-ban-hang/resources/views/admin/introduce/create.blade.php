@@ -27,14 +27,6 @@
                     @csrf
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                        <label>TabID</label>
-                        <select class="form-control" name="TabID">
-                            @foreach($tabs as $tab)
-                                <option value="{{$tab->TabID}}">{{$tab->TabID}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>Introduce Page Title</label>
                         <input class="form-control" type="text" name="IntroducePageTitle" placeholder="Please Enter Introduce Page Title"/>
                     </div>                   

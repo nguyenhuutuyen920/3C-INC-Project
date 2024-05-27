@@ -15,8 +15,6 @@ class CreateNewTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('NewsID');
-            $table->integer('NewsCategoryID');
-            $table->string('NewsImage',250);
             $table->string('NewsAlias',250);
             $table->string('NewsMetaKeyword',250);
             $table->string('NewsMetaDescription',250);
@@ -26,7 +24,6 @@ class CreateNewTable extends Migration
             $table->string('NewsSource',250);
             $table->integer('ViewTime');
             $table->string('RelatedNews',250);
-            $table->string('RelatedProduct',250);
             $table->decimal('ViewOrder',18,0);
             $table->boolean('IsHotNews')->default(false);
             $table->boolean('IsTypical')->default(false);

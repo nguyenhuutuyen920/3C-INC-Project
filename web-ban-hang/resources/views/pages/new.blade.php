@@ -23,7 +23,7 @@
                       </div>                    
                     </li>
                   @endforeach
-                  <li class="new-menu float-left col-5 p-0 ml-4 list-unstyled">
+                  {{-- <li class="new-menu float-left col-5 p-0 ml-4 list-unstyled">
                     <div class="media media-new d-inline" style="margin-bottom: 10px">
                       <div class="new " style="width: 100%; height: 230px;">
                         <a class="new_img w-100 h-100" href="">
@@ -106,7 +106,7 @@
                        <p class="new_abstract text-dark">{{$n->Abstract}}</p></br>
                       </div>
                     </div>                    
-                  </li>
+                  </li> --}}
             </ul>
             <div class="paginate-new" style="display: flex; justify-content: center; flex-direction: row-reverse;">
               {{ $news->links('pagination::bootstrap-4') }}

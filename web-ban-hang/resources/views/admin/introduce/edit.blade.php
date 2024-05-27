@@ -26,14 +26,7 @@
                 <form action="{{ route('introduce.update', $introduce->IntroduceID)}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <div class="form-group">
-                        <label>TabID</label>
-                        <select class="form-control" name="TabID">
-                            @foreach($tabs as $tab)
-                                <option value="{{$tab->TabID}}">{{$tab->TabID}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label>IntroducePageTitle</label>
                         <input class="form-control" name="IntroducePageTitle" value="{{ $introduce->IntroducePageTitle}}" />

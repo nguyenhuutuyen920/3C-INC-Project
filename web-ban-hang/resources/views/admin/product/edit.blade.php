@@ -29,14 +29,6 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label>TabID</label>
-                        <select class="form-control" name="TabID">
-                            @foreach($tabs as $tab)
-                                <option value="{{$tab->TabID}}">{{$tab->TabID}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>SupplierID</label>
                         <input class="form-control" type="text" value="{{ $product->SupplierID }}" name="SupplierID" placeholder="Please Enter Product SupplierID" />
                     </div>

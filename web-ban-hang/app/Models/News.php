@@ -9,7 +9,6 @@ class News extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'NewsCategoryID',
         'NewsImage',
         'NewsAlias',
         'NewsMetaKeyword',
@@ -20,7 +19,6 @@ class News extends Model
         'NewsSource',
         'ViewTime',
         'RelatedNews',
-        'RelatedProduct',
         'ViewOrder',
         'IsTypical',
         'IsHotNews',

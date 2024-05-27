@@ -31,12 +31,10 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(Request $request)
     {
-
         $request->validate([
-            'NewsCategoryID' => 'required|',
-            'NewsImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'NewsAlias' => 'required|',
             'NewsMetaKeyword' => 'required|',
             'NewsMetaDescription' => 'required|',
@@ -46,20 +44,13 @@ class NewsController extends Controller
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
             'RelatedNews' => 'required|',
-            'RelatedProduct' => 'required|',
             'ViewOrder' => 'required|',
             'IsTypical' => 'required|',
             'IsHotNews' => 'required|',
             'IsApproved' => 'required|',
             'ApprovedBy' => 'required|',
         ]);
-        if ($request->hasFile('NewsImage')) {
-            $uploadedFile = $request->file('NewsImage');
-            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            // Lưu tệp ảnh vào thư mục storage/app/public/images với tên gốc
-            $uploadedFile->storeAs('public/images', $imageName);
-        }
 
         // Create a new product instance
         $data = $request->all();
@@ -68,6 +59,20 @@ class NewsController extends Controller
 
         // Redirect to a specific route after successful creation
         return redirect()->route('new.index')->with('success', 'Thêm sản phẩm thành công!');
+    }
+    public function upload(Request $request)
+    {
+       if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('media'), $fileName);
+
+            $url = asset('media/' . $fileName);
+            return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
+        }
     }
 
     /**
@@ -94,8 +99,6 @@ class NewsController extends Controller
     public function update(Request $request, News $new)
     {
         $request->validate([
-            'NewsCategoryID' => 'required|',
-            'NewsImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'NewsAlias' => 'required|',
             'NewsMetaKeyword' => 'required|',
             'NewsMetaDescription' => 'required|',
@@ -105,14 +108,13 @@ class NewsController extends Controller
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
             'RelatedNews' => 'required|',
-            'RelatedProduct' => 'required|',
             'ViewOrder' => 'required|',
             'IsTypical' => 'required|',
             'IsHotNews' => 'required|',
             'IsApproved' => 'required|',
             'ApprovedBy' => 'required|',
         ]);
-        $data = $request->all('NewsCategoryID','NewsImage','NewsAlias','NewsMetaKeyword','NewsMetaDescription','NewsTitle',
+        $data = $request->all('NewsAlias','NewsMetaKeyword','NewsMetaDescription','NewsTitle',
         'Abstract','NewsContent','NewsSource','ViewTime','RelatedNews','RelatedProduct',
         'ViewOrder','IsTypical','IsHotNews','IsApproved','ApprovedBy');
 

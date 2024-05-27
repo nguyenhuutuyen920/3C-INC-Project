@@ -37,11 +37,11 @@
               <div class="single_footer_widget">
                 <h3 class="text-primary" style="font-family: segoeuib;">Social Links</h3>
                 <ul class="footer_social list-unstyled d-flex">
-                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip ml-3" target="_blank" href="#"><i class="icon-facebook"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip ml-3" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip ml-3" target="_blank"  href="#"><i class="icon-google-plus"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip ml-3" target="_blank"  href="#"><i class="icon-linkedin"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip ml-3" target="_blank"  href="https://www.youtube.com/user/VMSMobiFone"><i class="icon-youtube"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" target="_blank" href="#"><i class="icon-facebook"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" target="_blank"  href="#"><i class="icon-google-plus"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" target="_blank"  href="#"><i class="icon-linkedin"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/user/VMSMobiFone"><i class="icon-youtube"></i></a></li>
                 </ul>
               </div>
             </div>
