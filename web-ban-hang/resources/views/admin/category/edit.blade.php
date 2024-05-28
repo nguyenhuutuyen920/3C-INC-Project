@@ -27,6 +27,19 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
+                        <label>FieldParentID</label>
+                        <select class="form-control" name="FieldParentID" id="subcate_id">
+                        @foreach($fields as $field)
+                            <option 
+                            @if($category->FieldParentID == $field->FieldParentID)
+                                {{"selected"}}
+                            @endif
+                             value="{{$category->FieldParentID}}">{{$category->FieldName}}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        
                         <label>Category Parent ID</label>
                         <input class="form-control" name="CategoryParentID"  value="{{ $category->CategoryParentID}}" />
                     </div>

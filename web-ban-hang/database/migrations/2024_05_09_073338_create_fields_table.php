@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->increments('ID');
-            $table->integer('ProductID');
+            $table->integer('FieldParentID');
             $table->string('FieldName',250);
             $table->smallInteger('SortOrder');
             $table->timestamps();

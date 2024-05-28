@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Field;
 use App\Models\Home;
 use App\Models\Introduce;
 use App\Models\News;
@@ -20,11 +21,13 @@ class HomeController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-    public function index()
+    public function index(Field $field)
     {
+    
+        $cats = Category::all("FieldParentID");
         $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
         $news = News::orderBy('NewsID','DESC')->paginate(10);
-        return view("pages.home",compact("news","projects"));
+        return view("pages.home",compact("news","projects","cats","field"));
     }
 
     /**
@@ -40,7 +43,7 @@ class HomeController extends Controller
         $news = News::paginate(7);
         return view("pages.new",compact("news"));
     }
-    public function new_content(News $new,){
+    public function new_content(News $new){
         $news = News::orderBy('NewsID','DESC')->paginate(4);
         // dd($new);
         return view("pages.new_content",compact("new","news"));

@@ -27,6 +27,15 @@
                     @csrf
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
+                        <div class="form-group">
+                            <label>FieldParentID</label>
+                            <select class="form-control" name="FieldParentID" id="subcate_id">
+                            @foreach($fields as $field)
+                                <option 
+                                 value="{{$field->FieldParentID}}">{{$field->FieldName}}</option>
+                            @endforeach
+                            </select>
+                        </div>
                         <label>Category Parent ID</label>
                         <input class="form-control" name="CategoryParentID" placeholder="Please Enter Category Parent ID" />
                     </div>
@@ -52,19 +61,19 @@
                     </div>
                     <div class="form-group">
                         <label>ViewOrder</label>
-                        <input class="form-control" type="number" name="ViewOrder" placeholder="Please Enter Category Vieworder"/>
+                        <input class="form-control" type="number" min="0" max="1" name="ViewOrder" placeholder="Please Enter Category Vieworder"/>
                     </div>
                     <div class="form-group">
                         <label>IsVisible</label>
-                        <input class="form-control" type="file" name="IsVisible" placeholder="Please Enter Category IsVisible"/>
+                        <input class="form-control" type="number" min="0" max="1" name="IsVisible" placeholder="Please Enter Category IsVisible"/>
                     </div>
                     <div class="form-group">
                         <label>Istypical</label>
-                        <input class="form-control" type="file" name="IsTypical" placeholder="Please Enter Category IsTypical"/>
+                        <input class="form-control" type="number" min="0" max="1" name="IsTypical" placeholder="Please Enter Category IsTypical"/>
                     </div>
                     <div class="form-group">
                         <label>Typical Image</label>
-                        <input class="form-control" type="file" name="TypicalImage" placeholder="Please Enter Category Typical Image"/>
+                        <input class="form-control" type="number" min="0" max="1" name="TypicalImage" placeholder="Please Enter Category Typical Image"/>
                     </div>
                     
                     <button type="submit" class="btn btn-default">Category Add</button>

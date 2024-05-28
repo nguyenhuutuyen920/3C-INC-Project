@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->Increments('ProductID');
-            $table->unsignedBigInteger('TabID');
+            $table->unsignedBigInteger('CategoryParentID');
             $table->string('SupplierID', 250);
             $table->string('MaterialID', 250);
             $table->string('ProductCode', 250);

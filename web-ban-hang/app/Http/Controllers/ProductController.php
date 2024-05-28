@@ -26,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create', compact('tabs'));
+        $cats = Category::all();
+        return view('admin.product.create', compact('cats'));
     }
 
     /**
@@ -77,10 +78,40 @@ class ProductController extends Controller
             $uploadedFile->storeAs('public/images', $imageName);
         }
 
-        // Create a new product instance
-        $data = $request->all();
+        $product = new Product();
+        $product->SupplierID = $request->input('SupplierID');
+        $product->MaterialID = $request->input('MaterialID');
+        $product->ProductCode = $request->input('ProductCode');
+        $product->ProductName = $request->input('ProductName');
+        $product->ProductAlias = $request->input('ProductAlias');
+        $product->ProductPageTitle = $request->input('ProductPageTitle');
+        $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
+        $product->ProductMetaDescription = $request->input('ProductMetaDescription');
+        $product->ProductImage = 'ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $product->CurentPrice = $request->input('CurentPrice');
+        $product->OldPrice = $request->input('OldPrice');
+        $product->IsShowprice = $request->input('IsShowprice');
+        $product->Discount = $request->input('Discount');
+        $product->StoreStatus = $request->input('StoreStatus');
+        $product->Abstract = $request->input('Abstract');
+        $product->ProductContent = $request->input('ProductContent');
+        $product->OtherContent = $request->input('OtherContent');
+        $product->Promotion = $request->input('Promotion');
+        $product->TransportInformation = $request->input('TransportInformation');
+        $product->RelatedNews = $request->input('RelatedNews');
+        $product->RelatedProduct = $request->input('RelatedProduct');
+        $product->ViewOder = $request->input('ViewOder');
+        $product->IsTypical = $request->input('IsTypical');
+        $product->IsHotProduct = $request->input('IsHotProduct');
+        $product->IsPromotion = $request->input('IsPromotion');
+        $product->IsEnjoyProduct = $request->input('IsEnjoyProduct');
+        $product->IsBestSeller = $request->input('IsBestSeller');
+        $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
+        $product->IsApproved = $request->input('IsApproved');
+        $product->ApprovedBy = $request->input('ApprovedBy');
+        $product->ViewTime = $request->input('ViewTime');
 
-        Product::create($data);
+        $product->save();
 
         // Redirect to a specific route after successful creation
         return redirect()->route('product.index')->with('success', 'Thêm sản phẩm thành công!');
@@ -100,8 +131,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $tabs = Tab::all();
-        return view('admin.product.edit',compact('product'),compact('tabs'));
+        $cats = Category::all();
+        return view('admin.product.edit',compact('product'),"cats");
     }
 
     /**

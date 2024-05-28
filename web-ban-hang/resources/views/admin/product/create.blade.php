@@ -27,6 +27,15 @@
                 @csrf
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-group">
+                    <label>Category ParentID</label>
+                    <select class="form-control" name="CategoryParentID" id="subcate_id">
+                    @foreach($cats as $cat)
+                        <option 
+                         value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                    @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>SupplierID</label>
                     <input class="form-control" name="SupplierID" placeholder="Please Enter Product SupplierID" />
                 </div>

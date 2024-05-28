@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
 
@@ -23,7 +24,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $fields = Field::all();
+        return view('admin.category.create',compact('fields'));
     }
 
     /**
@@ -33,6 +35,7 @@ class CategoryController extends Controller
     {
 
         $request->validate([
+            'FieldParentID'=> 'required',
             'CategoryParentID'=> 'required',
             'CategoryName' => 'required|unique:categories',
             'CategoryAlias' => 'required',
@@ -67,7 +70,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit',compact('category'));
+        $fields = Field::all();
+        return view('admin.category.edit',compact('category','fields'));
     }
 
     /**
@@ -77,6 +81,7 @@ class CategoryController extends Controller
     {
 
         $request->validate([
+            'FieldParentID'=> 'required',
             'CategoryParentID'=> 'required',
             'CategoryName' => 'required|',
             'CategoryAlias' => 'required',

@@ -29,6 +29,18 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
+                        <div class="form-group">
+                            <label>ProductParentID</label>
+                            <select class="form-control" name="ProductParentID" id="subcate_id">
+
+                                <option 
+                                @if($product->ProductParentID == $category->ProductParentID)
+                                    {{"selected"}}
+                                @endif
+                                 value="{{$product->ProductParentID}}">{{$product->ProductName}}</option>
+
+                            </select>
+                        </div>
                         <label>SupplierID</label>
                         <input class="form-control" type="text" value="{{ $product->SupplierID }}" name="SupplierID" placeholder="Please Enter Product SupplierID" />
                     </div>

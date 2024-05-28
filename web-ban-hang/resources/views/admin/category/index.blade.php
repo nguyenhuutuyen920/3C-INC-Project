@@ -26,6 +26,7 @@ function kiemtra () {
             <thead>
                 <tr>
                     <th>Category_ID</th>
+                    <th>FieldParentID</th>
                     <th>Customer_ParentID</th>
                     <th>Category_Name</th>
                     <th>Category_Alias</th>
@@ -44,6 +45,7 @@ function kiemtra () {
                 @foreach ($cats as $cat)
                     <tr class="">
                         <td>{{ $cat->CategoryID}}</td>
+                        <td>{{ $cat->FieldParentID}}</td>
                         <td>{{ $cat->CategoryParentID}}</td>
                         <td>{{ $cat->CategoryName}}</td>
                         <td>{{ $cat->CategoryAlias}}</td>

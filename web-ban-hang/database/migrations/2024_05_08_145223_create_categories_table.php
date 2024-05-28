@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('CategoryID');
+            $table->integer('FieldParentID');
             $table->unsignedInteger('CategoryParentID')->default(0); 
             $table->string('CategoryName', 250)->unique();
             $table->string('CategoryAlias', 250);

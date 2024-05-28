@@ -66,7 +66,7 @@ function kiemtra () {
                 @foreach($products as $prod)
                     <tr class="odd gradeX" align="center">
                         <td>{{$prod->ProductID}}</td>
-                        <td>{{$prod->TabID}}</td>
+                        <td>{{$prod->CategoryParentID}}</td>
                         <td>{{$prod->SupplierID}}</td>
                         <td>{{$prod->MaterialID}}</td>
                         <td>{{$prod->ProductCode}}</td>
