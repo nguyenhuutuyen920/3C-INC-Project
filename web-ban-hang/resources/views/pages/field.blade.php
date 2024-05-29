@@ -12,22 +12,17 @@
                   <h6 class="text-light">LĨNH VỰC</h6>
                 </div>
                 <ul class="field-menu p-4 m-0">
-                  <li class="">
-                    <a href="{{ route('field')}}"><p class="text-secondary">Thiết Bị Tự Động Hóa</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Công Nghệ Thông Tin</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Viễn THông Xây Lắp</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Thí Nghiệm Đo Lường</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
+                  @foreach ($fields as $f)
+                      <li>
+                          <a href="{{$f->FieldID }}">
+                              <p class="text-secondary">{{ $f->FieldName }}</p>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                      </li>
+                  @endforeach
+
+                  
+                  
                 </ul>
               </div>
               <div class="product_menu-field">
@@ -35,22 +30,12 @@
                   <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                 </div>
                 <ul class="field-menu p-4 m-0">
+                  @foreach ($cats as $cat)
                   <li class="">
-                    <a href="{{ route('field')}}"><p class="text-secondary">Thiết Bị Tự Động Hóa</p></a>
+                    <a href="{{ $cat->CategoryID}}"><p class="text-secondary">{{$cat->CategoryName}}</p></a>
                     <div class="dropdown-divider"></div>
                   </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Công Nghệ Thông Tin</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Viễn THông Xây Lắp</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li class="">
-                    <a href=""><p class="text-secondary">Thiết Bị Thí Nghiệm Đo Lường</p></a>
-                    <div class="dropdown-divider"></div>
-                  </li>
+                  @endforeach
                 </ul>
               </div>
               

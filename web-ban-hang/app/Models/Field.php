@@ -15,4 +15,8 @@ class Field extends Model
         'SortOrder',
     ];
     protected $primaryKey = 'FieldID';
+    public function categories()
+    {
+        return $this->hasMany(Category::class, 'FieldID');
+    }
 }

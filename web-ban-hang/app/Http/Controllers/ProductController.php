@@ -74,8 +74,7 @@ class ProductController extends Controller
             $uploadedFile = $request->file('ProductImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            // Lưu tệp ảnh vào thư mục storage/app/public/images với tên gốc
-            $uploadedFile->storeAs('public/images', $imageName);
+            $uploadedFile->move("ProductImage/",$imageName);
         }
 
         $product = new Product();
@@ -132,7 +131,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $cats = Category::all();
-        return view('admin.product.edit',compact('product'),"cats");
+        return view('admin.product.edit',compact('product',"cats"));
     }
 
     /**
@@ -142,7 +141,7 @@ class ProductController extends Controller
     {
 
         $request->validate([
-            'TabID' => 'required|',
+            'CategoryParentID' => 'required|',
             'SupplierID' => 'required|',
             'MaterialID' => 'required|',
             'ProductCode' => 'required|',

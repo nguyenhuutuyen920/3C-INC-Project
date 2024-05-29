@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntroduceController;
 use App\Http\Controllers\NewController;
@@ -39,26 +40,13 @@ Route::post('contact/store', [HomeController::class, 'store'])->name('contact.st
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/field', [HomeController::class, 'field'])->name('field');
+// Route::get('/field', [HomeController::class, 'field'])->name('field');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 
-
-// Routes cho login và register
-// Route::prefix('admin')->group(function () {
-//     Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
-//     Route::post('/login', [AdminController::class, 'check_login'])->name('admin.check_login');
-
-//     Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
-//     Route::post('/register', [AdminController::class, 'check_register'])->name('admin.check_register');
-// });
-
-// // Group các routes admin
-
-// // Routes khác
-// Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-// Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::get('/field/{field}', [FieldController::class, 'show'])->name('field');
+Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category');
 
 Auth::routes();
 

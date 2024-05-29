@@ -29,15 +29,16 @@
                     <div class="form-group">
                         <label>FieldParentID</label>
                         <select class="form-control" name="FieldParentID" id="subcate_id">
-                        @foreach($fields as $field)
-                            <option 
-                            @if($category->FieldParentID == $field->FieldParentID)
-                                {{"selected"}}
-                            @endif
-                             value="{{$category->FieldParentID}}">{{$category->FieldName}}</option>
-                        @endforeach
+                            @foreach($fields as $field)
+                                <option 
+                                @if($category->FieldParentID == $field->FieldParentID)
+                                    {{"selected"}}
+                                @endif
+                                value="{{$field->FieldParentID}}">{{$field->FieldName}}</option>
+                            @endforeach
                         </select>
                     </div>
+                    
                     <div class="form-group">
                         
                         <label>Category Parent ID</label>
@@ -65,19 +66,19 @@
                     </div>
                     <div class="form-group">
                         <label>ViewOrder</label>
-                        <input class="form-control" type="number" name="ViewOrder" value="{{ $category->ViewOrder}}" />
+                        <input class="form-control" type="number" min="0" max="1" name="ViewOrder" value="{{ $category->ViewOrder}}" />
                     </div>
                     <div class="form-group">
                         <label>IsVisible</label>
-                        <input class="form-control" type="file" name="IsVisible" value="{{ $category->IsVisible}}" />
+                        <input class="form-control" type="number" min="0" max="1" name="IsVisible" value="{{ $category->IsVisible}}" />
                     </div>
                     <div class="form-group">
                         <label>IsVisible</label>
-                        <input class="form-control" type="file" name="IsTypical" value="{{ $category->IsVisible}}" />
+                        <input class="form-control" type="number" min="0" max="1" name="IsTypical" value="{{ $category->IsVisible}}" />
                     </div>
                     <div class="form-group">
                         <label>Typical Image</label>
-                        <input class="form-control" type="file" name="TypicalImage" value="{{ $category->TypicalImage}}" />
+                        <input class="form-control" type="number" min="0" max="1" name="TypicalImage" value="{{ $category->TypicalImage}}" />
                     </div>
 
                     <button type="submit" class="btn btn-default">Category Edit</button>

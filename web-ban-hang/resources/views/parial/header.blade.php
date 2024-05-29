@@ -67,61 +67,23 @@
                     <li><a href="{{ route('home')}}" class="nav-link mr-4">Trang Chủ</a></li>
                     <li><a href="{{ route('service')}}" class="nav-link mr-4">Dịch Vụ</a></li>
                     <li class="has-children">
-                      <a href="{{ route('field')}}" class="nav-link mr-4">Lĩnh Vực</a>
+                      <a href="" class="nav-link mr-4">Lĩnh Vực</a>
                       <ul class="dropdown arrow-top">
-                        <li class="has-children">
-                          <a href="{{ route('field')}}">Thiết Bị Tự Động Hóa</a>
-                          <ul class="dropdown">
-                            <li><a class="dropdown-item" href="#">Hệ thống giám sát trực tuyến</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị cao thế</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị thủy điện</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị trung thế</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị hạ thế</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị cho Trạm biến áp</a></li>
-                            <li><a class="dropdown-item" href="#">Tủ và bảng điện</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị chống sét</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị đo và hiển thị</a></li>
-                          </ul>
-                        </li>
-                        <li class="has-children">
-                          <a href="">Thiết Bị Công Nghệ Thông Tin</a>
-                          <ul class="dropdown">
-                            <li><a class="dropdown-item" href="#">Máy tính xách tay</a></li>
-                            <li><a class="dropdown-item" href="#">Máy tính để bàn</a></li>
-                            <li><a class="dropdown-item" href="#">Phần mềm</a></li>
-                            <li><a class="dropdown-item" href="#">Máy chủ</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị văn phòng</a></li>
-                            <li><a class="dropdown-item" href="#">Linh kiện máy tính</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị ngoại vi</a></li>
-                          </ul>
-                        </li>
-                        <li class="has-children">
-                          <a href="">Thiết Bị Viễn THông Xây Lắp</a>
-                          <ul class="dropdown">
-                            <li><a class="dropdown-item" href="#">Cáp quang</a></li>
-                            <li><a class="dropdown-item" href="#">Camera giám sát</a></li>
-                            <li><a class="dropdown-item" href="#">Trạm BTS</a></li>
-                            <li><a class="dropdown-item" href="#">MSAG - DSLAM</a></li>
-                            <li><a class="dropdown-item" href="#">Tổng đài điện thoại</a></li>
-                            <li><a class="dropdown-item" href="#">Máy Fax</a></li>
-                            <li><a class="dropdown-item" href="#">STM1 - STM4 - SDH</a></li>
-                          </ul>
-                        </li>
-                        <li class="has-children">
-                          <a href="">Thiết Bị Thí Nghiệm Đo Lường</a>
-                          <ul class="dropdown">
-                            <li><a class="dropdown-item" href="#">Cân điện tử</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị đo lường khí thải động cơ</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị thí nghiệm hạt nhân</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị thí nghiệm hóa dầu</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị thí nghiệm cao thế</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị thí nghiệm điện</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị đo lường điện</a></li>
-                            <li><a class="dropdown-item" href="#">Thiết bị đo lường cơ khí</a></li>
-                          </ul>
-                        </li>
+                          @foreach ($fields as $field)
+                          <li class="has-children">
+                              <a href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
+                              <ul class="dropdown">
+                                @if (isset($cats[$field->FieldID]))
+                                    @foreach ($cats[$field->FieldID] as $cat)
+                                        <li><a class="dropdown-item" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                          </li>
+                          @endforeach
                       </ul>
-                    </li>
+                  </li>
+
                     <li><a href="" class="nav-link mr-4">Giải Pháp</a></li>
                     <li><a href="" class="nav-link mr-4">Dự Án</a></li>
                     <li><a href="{{ route('contact')}}" class="nav-link mr-4">Liên Hệ</a></li>

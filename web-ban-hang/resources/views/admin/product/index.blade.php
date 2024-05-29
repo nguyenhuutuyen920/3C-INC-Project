@@ -26,7 +26,7 @@ function kiemtra () {
                 <thead>
                     <tr align="center">
                         <th>ProductID</th>
-                        <th>TabID</th>
+                        <th>CategoryParentID</th>
                         <th>SupplierID</th>
                         <th>MaterialID</th>
                         <th>ProductCode</th>
@@ -75,7 +75,9 @@ function kiemtra () {
                         <td>{{$prod->ProductPageTitle}}</td>
                         <td>{{$prod->ProductMetaKeyword}}</td>
                         <td>{{$prod->ProductMetaDescription}}</td>
-                        <td>{{$prod->ProductImage}}</td>
+                        <td>
+                            <img src="{{ asset($prod->ProductImage) }}" width="150">
+                        </td>
                         <td>{{$prod->CurentPrice}}</td>
                         <td>{{$prod->OldPrice}}</td>
                         <td>{{$prod->IsShowprice}}</td>

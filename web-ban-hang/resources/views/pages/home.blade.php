@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
 
-    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-12 p-0" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-12 p-0"  data-ride="carousel">
       <ol class="carousel-indicators">
         <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -10,7 +10,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="numbertext">1 / 3</div>
-          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
+          <img src="https://giupban.com.vn/wp-content/uploads/31.jpg" class="d-block w-100" style="height: 900px" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
             <h2>TẦM NHÌN</h2>
             <p>Với những thay đổi mang tính chiến lược, tầm nhìn 2020-2030 của 3C INC được thể hiện rõ nét trong thông điệp “Kết nối giá trị, khơi dậy tiềm năng”.</p>
@@ -19,7 +19,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">2 / 3</div>
-          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
+          <img src="https://hanoispiritofplace.com/wp-content/uploads/2018/04/hinh-nen-may-tinh-69.jpg" class="d-block w-100" style="height: 900px" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
             <h2>SỨ MỆNH</h2>
             <p>Với 3C INC, sứ mệnh của chúng tôi là đem lại những sản phẩm và dịch vụ kết nối mỗi người dân, gia đình, doanh nghiệp trong một hệ sinh thái, nơi những nhu cầu trong cuộc sống, công việc, học tập và giải trí được phát hiện, đánh thức và thỏa mãn nhằm đạt được sự  hài lòng, phát triển và hạnh phúc.</p>
@@ -28,7 +28,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">3 / 3</div>
-          <img src="img/slider/anh1.jpg" class="d-block w-100" alt="...">
+          <img src="https://msmobile.com.vn/upload_images/images/2019/07/30/Tai-Hinh-Nen-Dep-Cho-Laptop-Win-10-3.jpg" class="d-block w-100" style="height: 900px" alt="...">
           <div class="slider_caption" style="position: absolute;;" id="slider_caption-3">
             <h2>Cam kết khách hàng</h2>
             <p>Mỗi khi gặp khách hàng, chúng ta sẽ:
@@ -101,6 +101,31 @@
           </div>
         </div>
       </div>
+      </div>
+    </section>
+    <section id="ourCourses">
+      <div class="container">
+       <!-- Our courses titile -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12"> 
+            <div class="title_area">
+              <h2 class="title_two">DỰ ÁN TIÊU BIỂU</h2>
+              <span></span> 
+            </div>
+          </div>
+        </div>
+        <!-- End Our courses titile -->
+        <!-- Start Our courses content -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="ourCourse_content">
+              <ul class="course_nav">
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End Our courses content -->
       </div>
     </section>
     <!--=========== END ABOUT US SECTION ================--> 

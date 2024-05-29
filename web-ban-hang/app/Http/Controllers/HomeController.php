@@ -23,11 +23,11 @@ class HomeController extends Controller
     // }
     public function index(Field $field)
     {
-    
-        $cats = Category::all("FieldParentID");
+        $fields = Field::all();
+        $cats = Category::all()->groupBy('FieldParentID');
         $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
         $news = News::orderBy('NewsID','DESC')->paginate(10);
-        return view("pages.home",compact("news","projects","cats","field"));
+        return view("pages.home",compact("news","projects","cats","fields"));
     }
 
     /**
@@ -36,9 +36,7 @@ class HomeController extends Controller
     public function contact(){
         return view("pages.contact");
     }
-    public function field(){
-        return view("pages.field");
-    }
+
     public function news(){
         $news = News::paginate(7);
         return view("pages.new",compact("news"));

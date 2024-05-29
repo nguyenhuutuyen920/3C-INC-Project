@@ -26,4 +26,8 @@ class Category extends Model
     {
         return $this->belongsTo(Category::class, 'CategoryParentID');
     }
+    public function field()
+    {
+        return $this->belongsTo(Field::class, 'FieldID');
+    }
 }

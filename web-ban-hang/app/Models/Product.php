@@ -43,8 +43,5 @@ class Product extends Model
         'ViewTime',
 ];
 protected $primaryKey = 'ProductID';
-public function parentCategory()
-{
-    return $this->belongsTo(Tab::class, 'TabID');
-}
+
 }

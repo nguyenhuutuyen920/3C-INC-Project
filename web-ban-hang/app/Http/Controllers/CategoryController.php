@@ -94,7 +94,7 @@ class CategoryController extends Controller
             'TypicalImage' => 'required'
         ]);
 
-        $data = $request->all('CategoryParentID','CategoryName','CategoryAlias','CategoryPageTitle',
+        $data = $request->all('FieldParentID','CategoryParentID','CategoryName','CategoryAlias','CategoryPageTitle',
         'CategoryMetaKeyword','CategoryMetaDescription','ViewOrder','IsVisible','IsTypical','TypicalImage');
         $category->update($data);
 
