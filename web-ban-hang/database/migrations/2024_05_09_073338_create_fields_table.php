@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fields', function (Blueprint $table) {
-            $table->increments('ID');
+            $table->increments('FieldID');
             $table->integer('FieldParentID');
             $table->string('FieldName',250);
             $table->smallInteger('SortOrder');

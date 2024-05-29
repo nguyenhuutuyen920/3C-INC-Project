@@ -73,11 +73,9 @@
                           <li class="has-children">
                               <a href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
                               <ul class="dropdown">
-                                @if (isset($cats[$field->FieldID]))
-                                    @foreach ($cats[$field->FieldID] as $cat)
+                                    @foreach ($field->categories as $cat)
                                         <li><a class="dropdown-item" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
                                     @endforeach
-                                @endif
                             </ul>
                           </li>
                           @endforeach

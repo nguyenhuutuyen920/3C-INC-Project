@@ -17,6 +17,6 @@ class Field extends Model
     protected $primaryKey = 'FieldID';
     public function categories()
     {
-        return $this->hasMany(Category::class, 'FieldID');
+        return $this->hasMany(Category::class, 'FieldParentID', 'FieldParentID');
     }
 }

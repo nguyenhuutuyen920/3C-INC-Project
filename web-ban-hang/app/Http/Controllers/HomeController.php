@@ -21,9 +21,9 @@ class HomeController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-    public function index(Field $field)
+    public function index(Request $request)
     {
-        $fields = Field::all();
+        $fields = Field::with(['categories'])->get();
         $cats = Category::all()->groupBy('FieldParentID');
         $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
         $news = News::orderBy('NewsID','DESC')->paginate(10);

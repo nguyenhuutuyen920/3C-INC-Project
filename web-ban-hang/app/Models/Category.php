@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "FieldParentID",
+        'FieldParentID',
         'CategoryParentID',
         'CategoryName',
         'CategoryAlias',
