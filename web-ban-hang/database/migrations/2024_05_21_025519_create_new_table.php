@@ -19,6 +19,7 @@ class CreateNewTable extends Migration
             $table->string('NewsMetaKeyword',250);
             $table->string('NewsMetaDescription',250);
             $table->string('NewsTitle',250);
+            $table->string('NewsImage',250);
             $table->longText('Abstract');
             $table->longText('NewsContent');
             $table->string('NewsSource',250);

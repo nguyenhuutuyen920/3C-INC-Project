@@ -73,10 +73,10 @@
                           <li class="has-children">
                               <a href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
                               <ul class="dropdown">
-                                    @foreach ($field->categories as $cat)
-                                        <li><a class="dropdown-item" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
-                                    @endforeach
-                            </ul>
+                                  @foreach ($field->categories as $cat)
+                                      <li><a class="dropdown-item" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
+                                  @endforeach
+                              </ul>
                           </li>
                           @endforeach
                       </ul>

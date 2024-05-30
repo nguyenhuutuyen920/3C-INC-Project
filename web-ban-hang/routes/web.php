@@ -47,6 +47,7 @@ Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 Route::get('/field/{field}', [FieldController::class, 'show'])->name('field');
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
 
 Auth::routes();
 

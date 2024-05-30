@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cats  = Category::orderBy('CategoryID','DESC')->paginate(10);
+        $cats  = Category::orderBy('CategoryID','ASC')->paginate(10);
         return view('admin.category.index',compact('cats'));
     }
 

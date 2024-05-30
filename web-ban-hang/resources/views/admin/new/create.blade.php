@@ -54,6 +54,10 @@
                         <input class="form-control" type="text" name="NewsTitle" placeholder="Please Enter New Title"/>
                     </div>
                     <div class="form-group">
+                        <label>News Image</label>
+                        <input class="form-control" type="file" name="NewsImage" placeholder="Please Enter New Title"/>
+                    </div>
+                    <div class="form-group">
                         <label>Abstract</label>
                         <input class="form-control" type="text" name="Abstract" placeholder="Please Enter New Abstract"/>
                     </div>

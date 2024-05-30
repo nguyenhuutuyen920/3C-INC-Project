@@ -113,6 +113,9 @@ function kiemtra () {
                 @endforeach
                 </tbody>
             </table>
+            <div class="pagination-user" style="display: flex; flex-direction: row-reverse;">
+                {{ $products->links('pagination::bootstrap-4') }}
+            </div>
         </div>
         <!-- /.row -->
     </div>

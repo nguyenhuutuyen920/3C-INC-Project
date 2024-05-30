@@ -38,13 +38,14 @@ class HomeController extends Controller
     }
 
     public function news(){
+        $fields = Field::all();
         $news = News::paginate(7);
-        return view("pages.new",compact("news"));
+        return view("pages.new",compact("news","fields"));
     }
     public function new_content(News $new){
+        $fields = Field::all();
         $news = News::orderBy('NewsID','DESC')->paginate(4);
-        // dd($new);
-        return view("pages.new_content",compact("new","news"));
+        return view("pages.new_content",compact("new","news","fields"));
     }
     public function service(){
         $services = Service::all();

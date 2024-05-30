@@ -5,14 +5,14 @@
     <section class="new">
       <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f6f6">
         <div class="container menu-new  d-flex p-0" >
-          <div class="d-flex flex-column">
-            <ul class="content_menu-new col-lg-9 col-md-12 col-sm-12 m-0 p-2" style="width: 100%">
+          <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
+            <ul class="content_menu-new  m-0 p-2" style="width: 100%">
               @foreach($news as $n)
-                    <li class="new-menu float-left col-5 p-0 ml-4 list-unstyled">
-                      <div class="media media-new d-inline" style="margin-bottom: 10px">
-                        <div class="new " style="width: 100%; height: 230px;">
+                    <li class="new-menu float-left p-0 ml-4 list-unstyled">
+                      <div class="media media-new d-flex" style="margin-bottom: 10px">
+                        <div class="new " style="width: 200px; height: 230px;">
                           <a class="new_img w-100 h-100" href="{{ route('new_content',$n->NewsID)}}">
-                            <img class="media-object w-100 h-100" src="img/anhdep.jfif" alt="img">
+                            <img class="media-object w-100 h-100" src="{{ asset($n->NewsImage) }}" width="150">
                           </a>
                         </div>
                         <div class="new-body pl-1 pt-3">
@@ -35,22 +35,12 @@
                 <h5 class="text-light">LĨNH VỰC</h5>
               </div>
               <ul class="field-menu m-0">
-                <li class="p-1 pt-3">
-                  <a href=""><span class="text-dark">Thiết Bị Tự Động Hóa</span></a>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li class="p-1">
-                  <a href=""><span class="text-dark">Thiết Bị Công Nghệ Thông Tin</span></a>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li class="p-1">
-                  <a href=""><span class="text-dark">Thiết Bị Viễn THông Xây Lắp</span></a>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li class="p-1">
-                  <a href=""><span class="text-dark">Thiết Bị Thí Nghiệm Đo Lường</span></a>
-                  <div class="dropdown-divider"></div>
-                </li>
+                @foreach ($fields as $field)
+                  <li class="pt-2">
+                    <a href="{{ $field->FieldID}}"><span class="text-dark">{{$field->FieldName}}</span></a>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                @endforeach
               </ul>
             </div>
 

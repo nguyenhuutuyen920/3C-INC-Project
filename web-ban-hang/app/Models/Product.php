@@ -42,6 +42,9 @@ class Product extends Model
         'ApprovedBy',
         'ViewTime',
 ];
-protected $primaryKey = 'ProductID';
-
+    protected $primaryKey = 'ProductID';
+    public function categories()
+    {
+        return $this->belongsTo(Category::class, 'CategoryID');
+    }
 }

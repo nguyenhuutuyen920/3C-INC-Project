@@ -37,6 +37,7 @@ class ProductController extends Controller
     {
         // Validate form data
         $request->validate([
+            'CategoryParentID'=> 'required',
             'SupplierID' => 'required|',
             'MaterialID' => 'required|',
             'ProductCode' => 'required|',
@@ -69,15 +70,18 @@ class ProductController extends Controller
             'ApprovedBy' => 'required|',
             'ViewTime' => 'required|'
         ]);
+        
         // Handle file upload (image)
         if ($request->hasFile('ProductImage')) {
+            
             $uploadedFile = $request->file('ProductImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            $uploadedFile->move("ProductImage/",$imageName);
+            $uploadedFile->move("media/ProductImage/",$imageName);
         }
 
         $product = new Product();
+        $product->CategoryParentID = $request->input('CategoryParentID');
         $product->SupplierID = $request->input('SupplierID');
         $product->MaterialID = $request->input('MaterialID');
         $product->ProductCode = $request->input('ProductCode');
@@ -86,7 +90,7 @@ class ProductController extends Controller
         $product->ProductPageTitle = $request->input('ProductPageTitle');
         $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
         $product->ProductMetaDescription = $request->input('ProductMetaDescription');
-        $product->ProductImage = 'ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
         $product->IsShowprice = $request->input('IsShowprice');
@@ -145,12 +149,12 @@ class ProductController extends Controller
             'SupplierID' => 'required|',
             'MaterialID' => 'required|',
             'ProductCode' => 'required|',
-            'ProductName' => 'required|string|max:255|unique:products',
+            'ProductName' => 'required|',
             'ProductAlias' => 'required|',
             'ProductPageTitle' => 'required|',
             'ProductMetaKeyword' => 'required|',
             'ProductMetaDescription' => 'required|',
-            'ProductImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'ProductImage' => 'required|',
             'CurentPrice' => 'required|',
             'OldPrice' => 'required|',
             'IsShowprice' => 'required|',
@@ -174,17 +178,53 @@ class ProductController extends Controller
             'ApprovedBy' => 'required|',
             'ViewTime' => 'required|'
         ]);
-        
-        // Lấy các trường dữ liệu từ request
-        $data = $request->all('TabID','SupplierID','MaterialID','ProductCode',
-        'ProductName','ProductAlias','ProductPageTitle','ProductMetaKeyword','ProductMetaDescription','ProductImage',
-        'CurentPrice','OldPrice','IsShowprice','Discount','StoreStatus','Abstract','ProductContent','OtherContent','Promotion',
-        'TransportInformation','RelatedNews','RelatedProduct','ViewOder','IsTypical','IsHotProduct','IsPromotion',
-        'IsEnjoyProduct','IsBestSeller','IsWeeklyProduct','IsApproved','ApprovedBy','ViewTime');
+        if ($request->hasFile('ProductImage')) {
 
+            $uploadedFile = $request->file('ProductImage');
+            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
+            if ($product->ProductImage) {
+                $oldImagePath = public_path('media/ProductImage/' . $product->ProductImage);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+            $uploadedFile->move("media/ProductImage/",$imageName);
+        }
 
-        // Cập nhật thông tin sản phẩm
-        $product->update($data);
+        $product->CategoryParentID = $request->input('CategoryParentID');
+        $product->SupplierID = $request->input('SupplierID');
+        $product->MaterialID = $request->input('MaterialID');
+        $product->ProductCode = $request->input('ProductCode');
+        $product->ProductName = $request->input('ProductName');
+        $product->ProductAlias = $request->input('ProductAlias');
+        $product->ProductPageTitle = $request->input('ProductPageTitle');
+        $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
+        $product->ProductMetaDescription = $request->input('ProductMetaDescription');
+        $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $product->CurentPrice = $request->input('CurentPrice');
+        $product->OldPrice = $request->input('OldPrice');
+        $product->IsShowprice = $request->input('IsShowprice');
+        $product->Discount = $request->input('Discount');
+        $product->StoreStatus = $request->input('StoreStatus');
+        $product->Abstract = $request->input('Abstract');
+        $product->ProductContent = $request->input('ProductContent');
+        $product->OtherContent = $request->input('OtherContent');
+        $product->Promotion = $request->input('Promotion');
+        $product->TransportInformation = $request->input('TransportInformation');
+        $product->RelatedNews = $request->input('RelatedNews');
+        $product->RelatedProduct = $request->input('RelatedProduct');
+        $product->ViewOder = $request->input('ViewOder');
+        $product->IsTypical = $request->input('IsTypical');
+        $product->IsHotProduct = $request->input('IsHotProduct');
+        $product->IsPromotion = $request->input('IsPromotion');
+        $product->IsEnjoyProduct = $request->input('IsEnjoyProduct');
+        $product->IsBestSeller = $request->input('IsBestSeller');
+        $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
+        $product->IsApproved = $request->input('IsApproved');
+        $product->ApprovedBy = $request->input('ApprovedBy');
+        $product->ViewTime = $request->input('ViewTime');
+
+        $product->update();
 
         return redirect()->route('product.index')->with('success', 'Product updated successfully!');
     }

@@ -29,18 +29,18 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <div class="form-group">
-                            <label>ProductParentID</label>
-                            <select class="form-control" name="ProductParentID" id="subcate_id">
-
+                        <label>CategoryParentID</label>
+                        <select class="form-control" name="CategoryParentID" id="subcate_id">
+                            @foreach($cats as $cat)
                                 <option 
-                                @if($product->ProductParentID == $category->ProductParentID)
+                                @if($product->CategoryParentID == $cat->CategoryParentID)
                                     {{"selected"}}
                                 @endif
-                                 value="{{$product->ProductParentID}}">{{$product->ProductName}}</option>
-
-                            </select>
-                        </div>
+                                value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>SupplierID</label>
                         <input class="form-control" type="text" value="{{ $product->SupplierID }}" name="SupplierID" placeholder="Please Enter Product SupplierID" />
                     </div>

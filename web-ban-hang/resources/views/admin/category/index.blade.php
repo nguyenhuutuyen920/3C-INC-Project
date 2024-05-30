@@ -27,7 +27,7 @@ function kiemtra () {
                 <tr>
                     <th>Category_ID</th>
                     <th>FieldParentID</th>
-                    <th>Customer_ParentID</th>
+                    <th>Category_ParentID</th>
                     <th>Category_Name</th>
                     <th>Category_Alias</th>
                     <th>Category_PageTitle</th>
@@ -69,6 +69,9 @@ function kiemtra () {
                 @endforeach
             </tbody>
         </table>
+        <div class="pagination-user" style="display: flex; flex-direction: row-reverse;">
+            {{ $cats->links('pagination::bootstrap-4') }}
+        </div>
         </div>
         <!-- /.row -->
     </div>

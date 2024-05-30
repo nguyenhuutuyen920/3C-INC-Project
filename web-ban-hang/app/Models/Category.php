@@ -22,12 +22,12 @@ class Category extends Model
         'TypicalImage'
     ];
     protected $primaryKey = 'CategoryID';
-    public function parentCategory()
-    {
-        return $this->belongsTo(Category::class, 'CategoryParentID');
-    }
     public function field()
     {
         return $this->belongsTo(Field::class, 'FieldID');
+    }
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'CategoryParentID');
     }
 }

@@ -32,6 +32,7 @@ function kiemtra () {
                     <th>NewsMetaKeyword</th>
                     <th>NewsMetaDescription</th>
                     <th>NewsTitle</th>
+                    <th>NewsImage</th>
                     <th>Abstract</th>
                     <th>NewsContent</th>
                     <th>NewsSource</th>
@@ -52,11 +53,13 @@ function kiemtra () {
                     <tr class="">
                         <td>{{ $new->NewsID}}</td>
                         <td>{{ $new->NewsCategoryID}}</td>
-                        <td>{{ $new->NewsImage}}</td>
                         <td>{{ $new->NewsAlias}}</td>
                         <td>{{ $new->NewsMetaKeyword}}</td>
                         <td>{{ $new->NewsMetaDescription}}</td>
                         <td>{{ $new->NewsTitle}}</td>
+                        <td>
+                            <img src="{{ asset($new->NewsImage) }}" width="150">
+                        </td>
                         <td>{{ $new->Abstract}}</td>
                         <td>{{ $new->NewsContent}}</td>
                         <td>{{ $new->NewsSource}}</td>
@@ -75,12 +78,15 @@ function kiemtra () {
                             </form>
                         </td>
                         <td class="center">
-                            <i class="fa fa-pencil fa-fw"></i> <a href="{{ route('new.edit',$new->NewsID) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <i class=""></i> <a href="{{ route('new.edit',$new->NewsID) }}" class="btn btn-primary btn-sm">Edit</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <div class="pagination-user" style="display: flex; flex-direction: row-reverse;">
+            {{ $news->links('pagination::bootstrap-4') }}
+        </div>
         </div>
         <!-- /.row -->
     </div>

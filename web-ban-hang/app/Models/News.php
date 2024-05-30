@@ -14,6 +14,7 @@ class News extends Model
         'NewsMetaKeyword',
         'NewsMetaDescription',
         'NewsTitle',
+        'NewsImage',
         'Abstract',
         'NewsContent',
         'NewsSource',

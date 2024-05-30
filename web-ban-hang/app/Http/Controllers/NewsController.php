@@ -39,6 +39,7 @@ class NewsController extends Controller
             'NewsMetaKeyword' => 'required|',
             'NewsMetaDescription' => 'required|',
             'NewsTitle' => 'required|',
+            'NewsImage' => 'required|',
             'Abstract' => 'required|',
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
@@ -50,13 +51,31 @@ class NewsController extends Controller
             'IsApproved' => 'required|',
             'ApprovedBy' => 'required|',
         ]);
+        if ($request->hasFile('NewsImage')) {
+            $uploadedFile = $request->file('NewsImage');
+            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-
-        // Create a new product instance
-        $data = $request->all();
-
-        News::create($data);
-
+            $uploadedFile->move("NewsImage/",$imageName);
+        }
+        $new = new News();
+        $new->NewsAlias = $request->input('NewsAlias');
+        $new->NewsMetaKeyword = $request->input('NewsMetaKeyword');
+        $new->NewsMetaDescription = $request->input('NewsMetaDescription');
+        $new->NewsTitle = $request->input('NewsTitle');
+        $new->NewsImage = 'NewsImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $new->Abstract = $request->input('Abstract');
+        $new->NewsContent = $request->input('NewsContent');
+        $new->NewsSource = $request->input('NewsSource');
+        $new->ViewTime = $request->input('ViewTime');
+        $new->RelatedNews = $request->input('RelatedNews');
+        $new->ViewOrder = $request->input('ViewOrder');
+        $new->IsTypical = $request->input('IsTypical');
+        $new->IsHotNews = $request->input('IsHotNews');
+        $new->IsApproved = $request->input('IsApproved');
+        $new->ApprovedBy = $request->input('ApprovedBy');
+        // Create a new new instance
+        
+        $new->save();
         // Redirect to a specific route after successful creation
         return redirect()->route('new.index')->with('success', 'Thêm sản phẩm thành công!');
     }
