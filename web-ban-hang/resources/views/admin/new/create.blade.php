@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script src="admin_asset/ckeditor5/ckeditor.js"></script>
+
     <style type="text/css">
         .ck-editor__editable_inline {
             height: 500px;

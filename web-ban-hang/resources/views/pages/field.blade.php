@@ -1,3 +1,13 @@
+<style>
+  
+.sidebar li .submenu{ 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	padding-left: 1rem; 
+	padding-right: 1rem;
+}
+</style>
 @extends('layouts.index')
 @section('content')
 
@@ -27,22 +37,30 @@
                       <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                   </div>
                   <ul class="field-menu p-2 m-0">
-                          @foreach ($field->categories as $cat)
-                              <li class="has-children arrow-top list-unstyled">
-                                  <a href="{{ route('category', $cat->CategoryID) }}">
-                                      <p class="text-secondary">{{ $cat->CategoryName }}</p>
+                    {{-- <li class="nav-item has-submenu list-unstyled">
+                      <a class="nav-link" href="#"> More menus  </a>
+                      <ul class="submenu collapse">
+                        <li><a class="nav-link" href="#">Submenu item 4 </a></li>
+                        <li><a class="nav-link" href="#">Submenu item 5 </a></li>
+                        <li><a class="nav-link" href="#">Submenu item 6 </a></li>
+                        <li><a class="nav-link" href="#">Submenu item 7 </a></li>
+                      </ul>
+                    </li> --}}
+                    @foreach ($field->categories as $cat)
+                              <li class="nav-item has-submenu list-unstyled">
+                                  <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
+                                      {{ $cat->CategoryName }}
                                   </a>
-                                  <ul class="dropdown ">
+                                  <ul class="submenu collapse pl-1">
                                           @foreach ($cat->products as $prod)
                                               <li class="list-unstyled">
-                                                <a class="dropdown-item" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
+                                                <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
                                               </li>
                                           @endforeach
                                   </ul>
                                   <div class="dropdown-divider"></div>
                               </li>
                           @endforeach
-                          
                   </ul>
               </div>
           </div>
@@ -51,24 +69,20 @@
             
           </div>
           <div class="product-content col-lg-10 col-md-12 col-sm-12 p-0" >
-            <ul class="content_menu-field  m-0  " >
+            <ul class="content_menu-field  m-0  w-100 h-100" >  
               {{-- @foreach($news as $n) --}}
-              <div class="card" style="width: 215px; height:300px; float: left; margin: 0px 15px 15px 0px;">
-                {{-- @foreach ($collection as $item)
-                <img class="card-img-top w-100" src="" alt="Card image cap">
+              <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;">
+                {{-- @foreach ($collection as $item) --}}
+                <div class="div-img " style="width: 100%">
+                  <img class="w-100" src="../img/anhdep.jpg" alt="Card image cap">
+                </div>
                 <div class="card-body p-2">
                   <h5 class="card-title mb-1">Card title</h5>
                   <p class="card-text mb-1" style="font-size: 12px">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
                 </div>
-                @endforeach --}}
+                {{-- @endforeach --}}
               </div>
-              
-              
-
-            
-              
-              
                   {{-- @endforeach --}}
             </ul>
             
@@ -77,5 +91,35 @@
         </div>
       </div> 
     </section>
+    <script>
+      
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.product_menu-field .nav-link').forEach(function(element){
+    
+    element.addEventListener('click', function (e) {
+
+      let nextEl = element.nextElementSibling;
+      let parentEl  = element.parentElement;	
+
+        if(nextEl) {
+            e.preventDefault();	
+            let mycollapse = new bootstrap.Collapse(nextEl);
+            
+            if(nextEl.classList.contains('show')){
+              mycollapse.hide();
+            } else {
+                mycollapse.show();
+                // find other submenus with class=show
+                var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                // if it exists, then close all of them
+                if(opened_submenu){
+                  new bootstrap.Collapse(opened_submenu);
+                }
+            }
+        }
+    }); // addEventListener
+  }) // forEach
+}); 
+    </script>
     <!--=========== END COURSE BANNER SECTION ================-->
 @endsection

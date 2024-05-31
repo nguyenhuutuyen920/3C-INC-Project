@@ -8,17 +8,17 @@
           <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
             <ul class="content_menu-new  m-0 p-2" style="width: 100%">
               @foreach($news as $n)
-                    <li class="new-menu float-left p-0 ml-4 list-unstyled">
-                      <div class="media media-new d-flex" style="margin-bottom: 10px">
-                        <div class="new " style="width: 200px; height: 230px;">
-                          <a class="new_img w-100 h-100" href="{{ route('new_content',$n->NewsID)}}">
+                    <li class="new-menu float-left p-0 ml-4 list-unstyled mb-4" style="width: 320px;height:415px">
+                      <div class="media media-new d-flex flex-column" style="margin-bottom: 10px">
+                        <div class="new w-100" style="height: 230px;">
+                          <a class="new_img " href="{{ route('new_content',$n->NewsID)}}">
                             <img class="media-object w-100 h-100" src="{{ asset($n->NewsImage) }}" width="150">
                           </a>
                         </div>
-                        <div class="new-body pl-1 pt-3">
-                         <a class="new_title" href="{{ route('new_content',$n->NewsID)}}"><h5>{{$n->NewsTitle}}</h5></a>
-                         <p class="new_date text-dark">22-5-2024{{$n->create_at}}</p>
-                         <p class="new_abstract text-dark">{{$n->Abstract}}</p></br>
+                        <div class="new-body pl-1 pt-3 w-100">
+                         <a class="new_title text-center" href="{{ route('new_content',$n->NewsID)}}"><h5>{{$n->NewsTitle}}</h5></a>
+                         <span class="new_abstract text-dark ">{{$n->Abstract}}</span>
+                         <p class="new_date text-dark text-right">{{$n->create_at}}</p>
                         </div>
                       </div>                    
                     </li>

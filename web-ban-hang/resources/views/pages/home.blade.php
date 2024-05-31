@@ -14,7 +14,6 @@
           <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
             <h2>TẦM NHÌN</h2>
             <p>Với những thay đổi mang tính chiến lược, tầm nhìn 2020-2030 của 3C INC được thể hiện rõ nét trong thông điệp “Kết nối giá trị, khơi dậy tiềm năng”.</p>
-            <a class="slider_btn" href="canhan/gioi-thieu/gioi-thieu-chung/tam-nhin-va-su-menh">Chi tiết</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -23,7 +22,6 @@
           <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
             <h2>SỨ MỆNH</h2>
             <p>Với 3C INC, sứ mệnh của chúng tôi là đem lại những sản phẩm và dịch vụ kết nối mỗi người dân, gia đình, doanh nghiệp trong một hệ sinh thái, nơi những nhu cầu trong cuộc sống, công việc, học tập và giải trí được phát hiện, đánh thức và thỏa mãn nhằm đạt được sự  hài lòng, phát triển và hạnh phúc.</p>
-            <a class="slider_btn" href="canhan/gioi-thieu/gioi-thieu-chung/tam-nhin-va-su-menh">Chi tiết</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -34,7 +32,6 @@
             <p>Mỗi khi gặp khách hàng, chúng ta sẽ:
             Đón tiếp mỗi khách hàng với lời chào, cử chỉ, nụ cười, ánh mắt thân thiện. 
             Cố gắng tìm hiểu và cung cấp thông tin đúng về tất cả các dịch vụ, sản phẩm của 3C INC và trả lời nhanh chóng, chính xác các câu hỏi của khách hàng;</p>
-            <a class="slider_btn" href="canhan/ho-tro-khach-hang/cham-soc-khach-hang/ket-noi-dai-lau">Chi tiết</a>
           </div>
         </div>
       </div>
@@ -80,7 +77,7 @@
                     <div class="media">
                       <div class="media-left">
                         <a class="news_img" href="{{route('new_content',$n->NewsID)}}">
-                          <img class="media-object" src="img/anhdep.jfif" alt="img">
+                          <img class="media-object" src="{{asset($n->NewsImage)}}" alt="img">
                         </a>
                       </div>
                       <div class="media-body pl-2">

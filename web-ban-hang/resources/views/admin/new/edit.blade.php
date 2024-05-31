@@ -4,7 +4,7 @@
     <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
     <style type="text/css">
-        .ck-editor__editable_inline {
+        #editor {
             height: 500px;
         }
     </style>
@@ -54,12 +54,16 @@
                     <input class="form-control" type="text" value="{{ $new->NewsTitle}}" name="NewsTitle" placeholder="Please Enter New Title"/>
                 </div>
                 <div class="form-group">
+                    <label>News Image</label>
+                    <input class="form-control" type="file" value="{{ $new->NewsImage}}" name="NewsImage" />
+                </div>
+                <div class="form-group">
                     <label>Abstract</label>
                     <input class="form-control" type="text" value="{{ $new->Abstract}}" name="Abstract" placeholder="Please Enter New Abstract"/>
                 </div>
                 <div class="form-group">
                     <label>News Content</label>
-                    <textarea class="form-control" type="text" id="editor" value="{{ $new->NewsContent}}" name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                    <textarea class="form-control" type="text" id="editor" name="NewsContent" placeholder="Please Enter New Content">{{ $new->NewsContent}}</textarea>
                 </div>
                 <div class="form-group">
                     <label>News Source</label>

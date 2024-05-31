@@ -23,9 +23,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $prods = Product::all();
-        $cats = Category::all();
-        return view('admin.new.create',compact('cats','prods'));
+        return view('admin.new.create');
     }
 
     /**
@@ -38,9 +36,9 @@ class NewsController extends Controller
             'NewsAlias' => 'required|',
             'NewsMetaKeyword' => 'required|',
             'NewsMetaDescription' => 'required|',
-            'NewsTitle' => 'required|',
+            'NewsTitle' => 'required|unique:news',
             'NewsImage' => 'required|',
-            'Abstract' => 'required|',
+            'Abstract' => 'required|max:100',
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
@@ -81,7 +79,7 @@ class NewsController extends Controller
     }
     public function upload(Request $request)
     {
-       if ($request->hasFile('upload')) {
+        if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
@@ -90,7 +88,7 @@ class NewsController extends Controller
             $request->file('upload')->move(public_path('media'), $fileName);
 
             $url = asset('media/' . $fileName);
-            return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
+            return response()->json(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
         }
     }
 
@@ -107,9 +105,8 @@ class NewsController extends Controller
      */
     public function edit(News $new)
     {
-        $prods = Product::all();
-        $cats = Category::all();
-        return view('admin.new.edit',compact('cats','prods'),compact('new'));
+
+        return view('admin.new.edit',compact('new'));
     }
 
     /**
@@ -122,7 +119,8 @@ class NewsController extends Controller
             'NewsMetaKeyword' => 'required|',
             'NewsMetaDescription' => 'required|',
             'NewsTitle' => 'required|',
-            'Abstract' => 'required|',
+            'NewsImage' => 'required|',
+            'Abstract' => 'required|max:100',
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
@@ -133,13 +131,39 @@ class NewsController extends Controller
             'IsApproved' => 'required|',
             'ApprovedBy' => 'required|',
         ]);
-        $data = $request->all('NewsAlias','NewsMetaKeyword','NewsMetaDescription','NewsTitle',
+        if ($request->hasFile('NewsImage')) {
+
+            $uploadedFile = $request->file('NewsImage');
+            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
+            if ($new->ProductImage) {
+                $oldImagePath = public_path('media' . $new->ProductImage);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+            $uploadedFile->move("media",$imageName);
+        }
+        $data = $request->all('NewsAlias','NewsMetaKeyword','NewsMetaDescription','NewsTitle','NewsImage',
         'Abstract','NewsContent','NewsSource','ViewTime','RelatedNews','RelatedProduct',
         'ViewOrder','IsTypical','IsHotNews','IsApproved','ApprovedBy');
 
         $new->update($data);
 
         return redirect()->route('new.index')->with('success', 'Product updated successfully!');
+    }
+    public function updateupload(Request $request)
+    {
+       if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('media'), $fileName);
+
+            $url = asset('media/' . $fileName);
+            return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
+        }
     }
 
     /**

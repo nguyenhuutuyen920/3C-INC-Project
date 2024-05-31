@@ -26,8 +26,6 @@ function kiemtra () {
             <thead>
                 <tr>
                     <th>NewsID</th>
-                    <th>NewsCategoryID</th>
-                    <th>NewsImage</th>
                     <th>NewsAlias</th>
                     <th>NewsMetaKeyword</th>
                     <th>NewsMetaDescription</th>
@@ -38,7 +36,6 @@ function kiemtra () {
                     <th>NewsSource</th>
                     <th>ViewTime</th>
                     <th>RelatedNews</th>
-                    <th>RelatedProduct</th>
                     <th>ViewOrder</th>
                     <th>IsHotNews</th>
                     <th>IsTypical</th>
@@ -52,7 +49,6 @@ function kiemtra () {
                 @foreach ($news as $new)
                     <tr class="">
                         <td>{{ $new->NewsID}}</td>
-                        <td>{{ $new->NewsCategoryID}}</td>
                         <td>{{ $new->NewsAlias}}</td>
                         <td>{{ $new->NewsMetaKeyword}}</td>
                         <td>{{ $new->NewsMetaDescription}}</td>
@@ -65,7 +61,6 @@ function kiemtra () {
                         <td>{{ $new->NewsSource}}</td>
                         <td>{{ $new->ViewTime}}</td>
                         <td>{{ $new->RelatedNews}}</td>
-                        <td>{{ $new->RelatedProduct}}</td>
                         <td>{{ $new->ViewOrder}}</td>
                         <td>{{ $new->IsHotNews}}</td>
                         <td>{{ $new->IsTypical}}</td>
@@ -74,7 +69,7 @@ function kiemtra () {
                         <td class="center">
                             <form action="{{ route('new.destroy',$new->NewsID)}}" method="post">
                                 @csrf @method('DELETE')
-                                <i class="fa fa-trash-o fa-fw"></i><button class="btn btn-primary btn-sm"> Delete</button>
+                                <i class=""></i><button class="btn btn-primary btn-sm"> Delete</button>
                             </form>
                         </td>
                         <td class="center">
