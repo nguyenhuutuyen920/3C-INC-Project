@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
-    <script src="admin_asset/ckeditor5/ckeditor.js"></script>
+    {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
 
     <style type="text/css">
         .ck-editor__editable_inline {
@@ -110,17 +110,17 @@
 </div>
 @endsection
 @section('scripts')
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
                 ckfinder: {
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
                 }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
 </body>
 </html>

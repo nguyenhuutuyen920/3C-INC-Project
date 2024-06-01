@@ -34,7 +34,8 @@ class HomeController extends Controller
      * Show the form for creating a new resource.
      */
     public function contact(){
-        return view("pages.contact");
+        $fields = Field::all();
+        return view("pages.contact",compact('fields'));
     }
 
     public function news(){
@@ -48,8 +49,9 @@ class HomeController extends Controller
         return view("pages.new_content",compact("new","news","fields"));
     }
     public function service(){
+        $fields = Field::all();
         $services = Service::all();
-        return view("pages.service",compact("services"));
+        return view("pages.service",compact("services","fields"));
     }
     public function create()
     {
