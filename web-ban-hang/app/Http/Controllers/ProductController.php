@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -237,5 +238,8 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('product.index');
+    }
+    public function getProductBySupplier(Supplier $supplier) {
+        dd($supplier->load(['products']));
     }
 }

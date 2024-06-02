@@ -49,5 +49,7 @@ Route::get('/field/{field}', [FieldController::class, 'show'])->name('field');
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category');
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
 
+Route::get('/supplier/{supplier}', [ProductController::class, 'getProductBySupplier'])->name('supplier');
+
 Auth::routes();
 
