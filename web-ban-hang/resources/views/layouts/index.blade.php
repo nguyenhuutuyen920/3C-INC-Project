@@ -22,6 +22,8 @@
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ asset('js/jquery.js')}}"></script>
+    <script src="{{ asset('js/jquery.sticky.js')}}"></script>
     <!-- Favicon -->
     {{-- <link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
     <!-- CSS
@@ -83,7 +85,7 @@
 
     <!-- Javascript Files
     ================================================== -->
-
+    
     <!-- initialize jQuery Library -->
     {{-- <script src="js/js/jquery.min.js"></script>
     <!-- Preloader js file -->

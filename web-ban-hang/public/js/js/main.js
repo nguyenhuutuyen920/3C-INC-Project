@@ -37,14 +37,26 @@ $(function() {
 
     }, 1000);
 
-		$('body').on('click', '.arrow-collapse', function(e) {
-      var $this = $(this);
-      if ( $this.closest('li').find('.collapse').hasClass('show') ) {
-        $this.removeClass('active');
-      } else {
-        $this.addClass('active');
-      }
-      e.preventDefault();  
+	$(document).ready(function() {
+		$('body').on('click', '.navbar-toggler', function(e) {
+		  // Ghi ra console kiểm tra xem có bất kỳ ul nào có class 'show' không
+		  console.log($('ul').hasClass('show'));
+	  
+		  var $this = $(this);
+	  
+		  // Kiểm tra xem bất kỳ ul nào có class 'show' không
+		  if ($('ul').hasClass('show')) {
+			// Nếu có, loại bỏ class 'active' khỏi '.navbar-toggler'
+			$this.removeClass('active');
+		  } else {
+			// Nếu không, thêm class 'active' vào '.navbar-toggler'
+			$this.addClass('active');
+		  }
+	  
+		  // Ngăn chặn hành động mặc định của sự kiện click
+		  e.preventDefault();
+		});
+		
       
     });
 

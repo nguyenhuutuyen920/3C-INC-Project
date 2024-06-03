@@ -17,7 +17,6 @@ const mix = require('laravel-mix');
     .autoload({
         jquery: ['$', 'window.jQuery', 'jQuery'],
     });
-const mix = require('laravel-mix');
 
 // Cấu hình Laravel Mix
 // Tự động tải jQuery và Popper.js để sử dụng với Bootstrap
