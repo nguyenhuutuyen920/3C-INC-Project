@@ -1,12 +1,11 @@
-<style>
-  
-.sidebar li .submenu{ 
-	list-style: none; 
-	margin: 0; 
-	padding: 0; 
-	padding-left: 1rem; 
-	padding-right: 1rem;
-}
+<style>  
+  .sidebar li .submenu{ 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    padding-left: 1rem; 
+    padding-right: 1rem;
+  }
 </style>
 @extends('layouts.index')
 @section('content')
@@ -14,8 +13,8 @@
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="field"  style="background: #fff">
       <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f2f2">
-        <div class="container-fluid menu-field  d-flex p-0" >
-          <div class="sidebar_menu-new col-lg-2 col-md-12 col-sm-12 p-0" style="height:max-content">
+        <div class="container menu-field  d-flex p-0" >
+          <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
             <div class="field">
               <div class="menu-field">
                   <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
@@ -37,30 +36,21 @@
                       <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                   </div>
                   <ul class="field-menu p-2 m-0">
-                    {{-- <li class="nav-item has-submenu list-unstyled">
-                      <a class="nav-link" href="#"> More menus  </a>
-                      <ul class="submenu collapse">
-                        <li><a class="nav-link" href="#">Submenu item 4 </a></li>
-                        <li><a class="nav-link" href="#">Submenu item 5 </a></li>
-                        <li><a class="nav-link" href="#">Submenu item 6 </a></li>
-                        <li><a class="nav-link" href="#">Submenu item 7 </a></li>
-                      </ul>
-                    </li> --}}
                     @foreach ($field->categories as $cat)
-                              <li class="nav-item has-submenu list-unstyled">
-                                  <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
-                                      {{ $cat->CategoryName }}
-                                  </a>
-                                  <ul class="submenu collapse pl-1">
-                                          @foreach ($cat->products as $prod)
-                                              <li class="list-unstyled">
-                                                <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
-                                              </li>
-                                          @endforeach
-                                  </ul>
-                                  <div class="dropdown-divider"></div>
-                              </li>
-                          @endforeach
+                      <li class="nav-item has-submenu list-unstyled">
+                          <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
+                              {{ $cat->CategoryName }}
+                          </a>
+                          <ul class="submenu collapse pl-1">
+                              @foreach ($cat->products as $prod)
+                                  <li class="list-unstyled">
+                                    <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
+                                  </li>
+                              @endforeach
+                          </ul>
+                          <div class="dropdown-divider"></div>
+                      </li>
+                    @endforeach
                   </ul>
               </div>
           </div>
@@ -68,24 +58,54 @@
           
             
           </div>
-          <div class="product-content col-lg-10 col-md-12 col-sm-12 p-0" >
-            <ul class="content_menu-field  m-0  w-100 h-100" >  
-              {{-- @foreach($news as $n) --}}
-              <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;">
-                {{-- @foreach ($collection as $item) --}}
-                <div class="div-img " style="width: 100%">
-                  <img class="w-100" src="../img/anhdep.jpg" alt="Card image cap">
-                </div>
-                <div class="card-body p-2">
-                  <h5 class="card-title mb-1">Card title</h5>
-                  <p class="card-text mb-1" style="font-size: 12px">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
-                </div>
-                {{-- @endforeach --}}
+          <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0" >
+            <div class="automation">
+              <div class="automation_banner" style="width:100%;height:300px" >
+                <img class="w-100 h-100" src="../img/anhthietbitudonghoa.jpg" alt="">
               </div>
-                  {{-- @endforeach --}}
-            </ul>
-            
+              <div class="automation_content">
+                @foreach ($fields as $field)
+                <div class="automation_content-title">
+                  <p>{{}}</p>
+                </div>
+                <div class="automation_content-card">
+                  <img src="" alt="">
+                  <div class="automation-body">
+                    <h4></h4>
+                    <p></p>
+                  </div>
+                </div>
+                @endforeach
+              </div>
+              <div class="automation_footer">
+                <div class="automation_footer-solution">
+                  <div class="solution-main">
+                    <div class="solution-img">
+                      <img src="" alt="">
+                    </div>
+                    <div class="solution-body">
+                      <h4></h4>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="solution-related">
+                    <p></p>
+                  </div>
+                </div>
+                <div class="automation_footer-project">
+                  <div class="project-img">
+                    <img src="" alt="">
+                  </div>
+                  <div class="project-body">
+                    <h4></h4>
+                  </div>
+                </div>
+                <div class="project-related">
+                  <p></p>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
           
         </div>

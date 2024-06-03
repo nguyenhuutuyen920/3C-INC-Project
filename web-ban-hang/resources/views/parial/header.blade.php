@@ -57,7 +57,7 @@
       <header class="site-navbar shadow p-3 bg-white rounded js-sticky-header site-navbar-target" role="banner">
         <div class="container-fluid">
           <div class="row align-items-center position-relative col-lg-12 col-md-12 col-sm-12" style="display:flex; flex-wrap:nowrap;justify-content: space-between;">
-            <a class="navbar-brand" style="display: contents" href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand"  href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>
             <div>
               <button class="navbar-toggler d-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="icon-menu h3"></span>

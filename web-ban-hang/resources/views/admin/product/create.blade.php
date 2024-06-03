@@ -37,7 +37,12 @@
                 </div>
                 <div class="form-group">
                     <label>SupplierID</label>
-                    <input class="form-control" name="SupplierID" placeholder="Please Enter Product SupplierID" />
+                    <select class="form-control" name="SupplierID" id="subcate_id">
+                        @foreach($supps as $supp)
+                            <option 
+                            value="{{$supp->SupplierID}}">{{$supp->SupplierName}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>MaterialID</label>

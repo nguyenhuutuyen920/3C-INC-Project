@@ -6,7 +6,7 @@
       <div class="container pt-4">
         <div class="row">
           <!-- start course content -->
-          <div class="col-lg-9 col-md-9 col-sm-9">
+          <div class="col-lg-9 col-md-12 col-sm-12">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
@@ -16,9 +16,7 @@
                     <div class="blogimg_container w-100">
                       <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->created_at}}</i></p>
                       <h2 class="blog_title"> {{$new->NewsTitle}}</h2>
-                      <p class="blog_img">
-                        {{!!$new->NewsContent !!}}
-                      </p>
+                      <p class="blog_img"> {{!!$new->NewsContent !!}} </p>
                     </div>
                     <div class="blog_commentbox">
                     </div>
@@ -40,8 +38,8 @@
           <!-- End course content -->
 
           <!-- start course archive sidebar -->
-          <div class="col-lg-3 col-md-3 col-sm-3">
-            <div class="courseArchive_sidebar">
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="courseArchive_sidebar p-0 col-lg-12 col-md-12 col-sm-12">
               <!-- start single sidebar -->
               <div class="single_sidebar">
                 <h2>Tin tức <span class="fa fa-angle-double-right"></span></h2>
@@ -50,18 +48,31 @@
                   <li class="list-unstyled">
                     <div class="media">
                       <div class="media-left">
-                        <a href="{{$n->NewsID}}" class="news_img">
-                          <img alt="img" src="{{$n->NewsImage}}" class="media-object">
+                        <a href="{{$n->NewsID}}" class="news_img" >
+                          <img style="width: 100px;height:100px;" alt="img" src="{{ asset($n->NewsImage) }}" class="media-object">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="{{$n->NewsID}}">{{$n->NewsTitle}}</a>
+                       <a style="font-size: 15px" href="{{$n->NewsID}}">{{$n->NewsTitle}}</a>
                       </div>
                     </div>
                   </li>
 				        @endforeach                 
                 </ul>
               </div>
+            </div>
+            <div class="field col-lg-12 col-md-12 col-sm-12 p-0" style="border:3px solid #007bff">
+              <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
+                <h5 class="text-light">LĨNH VỰC</h5>
+              </div>
+              <ul class="field-menu m-0 p-0">
+                @foreach ($fields as $field)
+                  <li class="pt-2 pl-2 list-unstyled">
+                    <a href="{{route('field', $field->FieldID)}}"><span class="text-dark">{{$field->FieldName}}</span></a>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                @endforeach
+              </ul>
             </div>
           </div>
           <!-- start course archive sidebar -->

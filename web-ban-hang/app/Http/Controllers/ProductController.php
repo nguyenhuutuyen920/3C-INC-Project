@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Field;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $supps = Supplier::all();
         $cats = Category::all();
-        return view('admin.product.create', compact('cats'));
+        return view('admin.product.create', compact('cats','supps'));
     }
 
     /**
@@ -239,7 +241,5 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index');
     }
-    public function getProductBySupplier(Supplier $supplier) {
-        dd($supplier->load(['products']));
-    }
+    
 }

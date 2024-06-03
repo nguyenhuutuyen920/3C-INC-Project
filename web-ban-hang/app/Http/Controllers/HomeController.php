@@ -10,6 +10,7 @@ use App\Models\Introduce;
 use App\Models\News;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,6 +53,12 @@ class HomeController extends Controller
         $fields = Field::all();
         $services = Service::all();
         return view("pages.service",compact("services","fields"));
+    }
+    public function getProductBySupplier(Supplier $supplier) {
+        $field = Field::find(1);    
+        $fields = Field::all();
+        $products = $supplier->load(['products']);
+        return view('pages.supplier',compact('products','fields','field'));
     }
     public function create()
     {

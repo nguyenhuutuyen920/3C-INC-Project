@@ -140,18 +140,31 @@ class NewsController extends Controller
             $uploadedFile = $request->file('NewsImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
             if ($new->ProductImage) {
-                $oldImagePath = public_path('media' . $new->ProductImage);
+                $oldImagePath = public_path('NewsImage' . $new->ProductImage);
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
             }
-            $uploadedFile->move("media",$imageName);
+            $uploadedFile->move("NewsImage",$imageName);
         }
-        $data = $request->all('NewsAlias','NewsMetaKeyword','NewsMetaDescription','NewsTitle','NewsImage',
-        'Abstract','NewsContent','NewsSource','ViewTime','RelatedNews','RelatedProduct',
-        'ViewOrder','IsTypical','IsHotNews','IsApproved','ApprovedBy');
-
-        $new->update($data);
+        $new->NewsAlias = $request->input('NewsAlias');
+        $new->NewsMetaKeyword = $request->input('NewsMetaKeyword');
+        $new->NewsMetaDescription = $request->input('NewsMetaDescription');
+        $new->NewsTitle = $request->input('NewsTitle');
+        $new->NewsImage = 'NewsImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $new->Abstract = $request->input('Abstract');
+        $new->NewsContent = $request->input('NewsContent');
+        $new->NewsSource = $request->input('NewsSource');
+        $new->ViewTime = $request->input('ViewTime');
+        $new->RelatedNews = $request->input('RelatedNews');
+        $new->ViewOrder = $request->input('ViewOrder');
+        $new->IsTypical = $request->input('IsTypical');
+        $new->IsHotNews = $request->input('IsHotNews');
+        $new->IsApproved = $request->input('IsApproved');
+        $new->ApprovedBy = $request->input('ApprovedBy');
+        // Create a new new instance
+        
+        $new->update();
 
         return redirect()->route('new.index')->with('success', 'Product updated successfully!');
     }
