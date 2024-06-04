@@ -5,7 +5,7 @@
     {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
 
     <style type="text/css">
-        .ck-editor__editable_inline {
+        .editor {
             height: 500px;
         }
     </style>
@@ -64,7 +64,12 @@
                     </div>
                     <div class="form-group">
                         <label>News Content</label>
+                        {{-- <div id="toolbar-container"></div>
+                        <div id="editor">
+                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                        </div> --}}
                         <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+
                     </div>
                     <div class="form-group">
                         <label>News Source</label>
@@ -114,13 +119,25 @@
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
                 ckfinder: {
-                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
+<<<<<<< Updated upstream
         })
         .catch( error => {
             console.error( error );
         } );
 </script>
+=======
+            })
+            // .then(editor => {
+            //     const toolbarContainer = document.querySelector('#toolbar-container');
+            //     toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+            // })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+>>>>>>> Stashed changes
 @endsection
 </body>
 </html>

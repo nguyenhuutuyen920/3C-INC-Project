@@ -36,7 +36,11 @@ class HomeController extends Controller
      */
     public function contact(){
         $fields = Field::all();
+<<<<<<< Updated upstream
         return view("pages.contact",compact('fields'));
+=======
+        return view("pages.contact",compact("fields"));
+>>>>>>> Stashed changes
     }
 
     public function news(){

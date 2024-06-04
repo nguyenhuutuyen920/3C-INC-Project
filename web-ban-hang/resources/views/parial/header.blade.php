@@ -133,5 +133,60 @@
                 </div>
             </nav>
         </div>
+<<<<<<< Updated upstream
     </div>
 </header>
+=======
+      </div>
+
+      <header class="site-navbar shadow p-3 bg-white rounded js-sticky-header site-navbar-target" role="banner">
+        <div class="container-fluid">
+          <div class="row align-items-center position-relative col-lg-12 col-md-12 col-sm-12" style="display:flex; flex-wrap:nowrap;justify-content: space-between;">
+            <a class="navbar-brand" style="display: contents" href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>
+            <div>
+              <button class="navbar-toggler d-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="icon-menu h3"></span>
+              </button>
+                <nav class="site-navigation col-12 text-right ml-auto"  role="navigation">
+                  <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" id="navbarSupportedContent">
+                    <li><a href="{{ route('home')}}" class="nav-link mr-4">Trang Chủ</a></li>
+                    <li><a href="{{ route('service')}}" class="nav-link mr-4">Dịch Vụ</a></li>
+                    <li class="has-children">
+                      <a href="" class="nav-link mr-4">Lĩnh Vực</a>
+                      <ul class="dropdown arrow-top">
+                          @foreach ($fields as $field)
+                          <li class="has-children">
+                              <a href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
+                              <ul class="dropdown">
+                                  @foreach ($field->categories as $cat)
+                                      <li><a class="dropdown-item" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
+                                  @endforeach
+                              </ul>
+                          </li>
+                          @endforeach
+                        </ul>
+                    </li>
+                    <li><a href="" class="nav-link mr-4">Giải Pháp</a></li>
+                    <li><a href="" class="nav-link mr-4">Dự Án</a></li>
+                    <li><a href="{{ route('contact')}}" class="nav-link mr-4">Liên Hệ</a></li>
+                  </ul>
+                </nav>
+            </div>
+            
+            {{-- <div class="toggle-button d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div> --}}
+
+            
+          </div>
+        </div>
+      </header>
+
+
+    <script src="{{ asset('js/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/js/main.js') }}"></script>
+  </body>
+</html>
+>>>>>>> Stashed changes

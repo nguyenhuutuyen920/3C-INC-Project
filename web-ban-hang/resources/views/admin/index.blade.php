@@ -53,7 +53,12 @@
     <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
     {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
     <script src="admin_asset/ckeditor5-build-classic/ckeditor.js"></script>
+<<<<<<< Updated upstream
     
+=======
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script> --}}
+
+>>>>>>> Stashed changes
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <!-- <script src="admin_asset/ckeditor/ckeditor.js" ></script> -->
     <script src="admin_asset/tinymce/tinymce.min.js"></script>
