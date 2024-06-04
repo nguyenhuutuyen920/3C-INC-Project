@@ -45,7 +45,7 @@ Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 
-Route::get('/field/{field}', [FieldController::class, 'show'])->name('field');
+Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category');
 Route::get('/product/{product}', [HomeController::class, 'getProductBySupplier'])->name('product');
 

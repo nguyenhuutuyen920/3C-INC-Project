@@ -197,15 +197,13 @@ License URI: http://www.gnu.org/licenses/gpl.html
     background-color: #00579C; 
   }
   .navbar-nav > li > .dropdown-menu:before { 
-    border-bottom: 15px solid #00579C; 
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
+    border-top: 20px solid #fff transparent;
     content: "";
     height: 0;
     position: absolute;
-    right: 25px;
-    top: -15px;
-    width: 0;
+    /* right: 25px; */
+    top: -18px;
+    width: 95px;
   }
   .navbar-nav > li > .dropdown-menu li a {
     border-bottom: 1px dotted rgba(255, 255, 255, 0.3);

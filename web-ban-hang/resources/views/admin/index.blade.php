@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MOBIFONE THAI NGUYEN 2016">
+    <meta name="description" content="3C-INC">
     <meta name="author" content="">
     <title>Admin-3C-INC</title>
     <base href="{{asset('')}}">

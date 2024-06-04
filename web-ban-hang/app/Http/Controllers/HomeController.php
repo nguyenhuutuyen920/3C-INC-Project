@@ -58,7 +58,13 @@ class HomeController extends Controller
         $field = Field::find(1);    
         $fields = Field::all();
         $products = $supplier->load(['products']);
-        return view('pages.supplier',compact('products','fields','field'));
+        return view('pages.product',compact('products','fields','field'));
+    }
+    public function field(Field $field)
+    {
+        $fields = Field::with('categories')->get(); // Lấy tất cả các trường với các danh mục liên quan
+        $field->load('categories.products');
+        return view("pages.field", compact("field", "fields"));
     }
     public function create()
     {

@@ -45,12 +45,10 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-        public function show(Field $field)
-        {
-            $fields = Field::with('categories')->get(); // Lấy tất cả các trường với các danh mục liên quan
-            $field->load('categories.products');
-            return view("pages.field", compact("field", "fields"));
-        }
+    public function show(Field $field)
+    {
+        
+    }
         
     /**
      * Show the form for editing the specified resource.

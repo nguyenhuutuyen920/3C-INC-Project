@@ -5,60 +5,22 @@ $(function() {
 	};
 	siteSticky();
 
-	var siteMenuClone = function() {
 
-		$('.js-clone-nav').each(function() {
-			var $this = $(this);
-			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
-		});
-
-
-		setTimeout(function() {
-			
-			var counter = 0;
-      $('.site-mobile-menu .has-children').each(function(){
-        var $this = $(this);
-        
-        $this.prepend('<span class="arrow-collapse collapsed">');
-
-        $this.find('.arrow-collapse').attr({
-          'data-toggle' : 'collapse',
-          'data-target' : '#collapseItem' + counter,
-        });
-
-        $this.find('> ul').attr({
-          'class' : 'collapse',
-          'id' : 'collapseItem' + counter,
-        });
-
-        counter++;
-
-      });
-
-    }, 1000);
-
-	$(document).ready(function() {
-		$('body').on('click', '.navbar-toggler', function(e) {
-		  // Ghi ra console kiểm tra xem có bất kỳ ul nào có class 'show' không
-		  console.log($('ul').hasClass('show'));
-	  
-		  var $this = $(this);
-	  
-		  // Kiểm tra xem bất kỳ ul nào có class 'show' không
-		  if ($('ul').hasClass('show')) {
-			// Nếu có, loại bỏ class 'active' khỏi '.navbar-toggler'
-			$this.removeClass('active');
-		  } else {
-			// Nếu không, thêm class 'active' vào '.navbar-toggler'
-			$this.addClass('active');
+	(function($){
+		$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+		  if (!$(this).next().hasClass('show')) {
+			$(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
 		  }
-	  
-		  // Ngăn chặn hành động mặc định của sự kiện click
-		  e.preventDefault();
+		  var $subMenu = $(this).next(".dropdown-menu");
+		  $subMenu.toggleClass('show');
+	
+		  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+			$('.dropdown-submenu .show').removeClass("show");
+		  });
+	
+		  return false;
 		});
-		
-      
-    });
+	})(jQuery)
 
 		$(window).resize(function() {
 			var $this = $(this),
