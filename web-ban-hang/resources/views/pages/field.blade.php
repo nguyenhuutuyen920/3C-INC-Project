@@ -4,7 +4,7 @@
 <!--=========== BEGIN COURSE BANNER SECTION ================-->
 <section class="automation">
     <style>
-        .sidebar li .submenu{
+        .sidebar li .submenu {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -12,7 +12,7 @@
             padding-right: 1rem;
         }
     </style>
-    <section id="field" style="background: #fff">
+    <section id="field" style="background: #f1f1f1">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
             <div class="container menu-field d-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
@@ -24,8 +24,8 @@
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
                                 <li class="list-unstyled">
-                                    <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
-                                        <p class="text-secondary">{{ $f->FieldName }}</p>
+                                    <a href="" class="field-link" data-field-id="{{ $f->FieldID }}">
+                                        <p class="text-secondary m-0">{{ $f->FieldName }}</p>
                                     </a>
                                     <div class="dropdown-divider"></div>
                                 </li>
@@ -37,20 +37,22 @@
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>
                             <ul class="field-menu p-2 m-0">
-                                @foreach ($field->categories as $cat)
-                                <li class="nav-item has-submenu list-unstyled">
-                                    <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
-                                        {{ $cat->CategoryName }}
-                                    </a>
-                                    <ul class="submenu collapse pl-1">
-                                        @foreach ($cat->products as $prod)
-                                        <li class="list-unstyled">
-                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                </li>
+                                @foreach ($fields as $f)
+                                    @foreach ($f->categories as $cat)
+                                    <li class="nav-item has-submenu list-unstyled">
+                                        <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
+                                            {{ $cat->CategoryName }}
+                                        </a>
+                                        <ul class="submenu collapse pl-1">
+                                            @foreach ($cat->products as $prod)
+                                            <li class="list-unstyled">
+                                                <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    @endforeach
                                 @endforeach
                             </ul>
                         </div>
@@ -58,15 +60,23 @@
                 </div>
                 <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0">
                     @foreach ($fields as $f)
-                    <div id="field-{{ $f->FieldID }}" class="field-content">
+                    <div id="field-{{ $f->FieldID }}" class="field-content" style="display:none;">
                         @if ($f->FieldID == 1)
-                        @include('pages.fields.field_one')
+                            <div class="page">
+                                @include('pages.fields.field_one')
+                            </div>
                         @elseif ($f->FieldID == 2)
-                        @include('pages.fields.field_two')
+                            <div class="page">
+                                @include('pages.fields.field_two')
+                            </div>
                         @elseif ($f->FieldID == 3)
-                        @include('pages.fields.field_three')
+                            <div class="page">
+                                @include('pages.fields.field_three')
+                            </div>
                         @elseif ($f->FieldID == 4)
-                        @include('pages.fields.field_four')
+                            <div class="page">
+                                @include('pages.fields.field_four')
+                            </div>
                         @endif
                     </div>
                     @endforeach
@@ -102,15 +112,19 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function(){
+            let defaultFieldId = '{{ $defaultField }}';
+            let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
+
+            $('.field-content').hide();
+            $('#field-' + storedFieldId).show();
+
             $('.field-link').click(function(e){
                 e.preventDefault();
                 var fieldId = $(this).data('field-id');
-                $('.field-content').removeClass('active').hide();
-                $('#field-' + fieldId).addClass('active').show();
+                $('.field-content').hide();
+                $('#field-' + fieldId).show();
+                localStorage.setItem('currentFieldId', fieldId);
             });
-
-            // Optional: Automatically show the first field content on page load
-            $('.field-content:first').addClass('active').show();
         });
     </script>
 </section>
