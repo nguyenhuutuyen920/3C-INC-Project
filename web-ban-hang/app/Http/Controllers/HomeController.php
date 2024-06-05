@@ -62,12 +62,12 @@ class HomeController extends Controller
         return view('pages.product',compact('products','fields','field'));
     }
     public function field(Field $field)
-    {
-        $defaultField = 1;
-        $fields = Field::with('categories')->get(); // Lấy tất cả các trường với các danh mục liên quan
-        $field->load('categories.products');
-        return view("pages.field", compact("field","defaultField", "fields"));
-    }
+{
+    $defaultField = 1;
+    $fields = Field::with('categories.products')->get(); // Lấy tất cả các trường với các danh mục và sản phẩm liên quan
+    $field->load('categories.products');
+    return view("pages.field", compact("field", "defaultField", "fields"));
+}
     public function product_info(){
         $fields = Field::all();
         return view("pages.product_info",compact("fields"));

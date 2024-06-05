@@ -24,7 +24,7 @@
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
                                 <li class="list-unstyled">
-                                    <a href="" class="field-link" data-field-id="{{ $f->FieldID }}">
+                                    <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
                                         <p class="text-secondary m-0">{{ $f->FieldName }}</p>
                                     </a>
                                     <div class="dropdown-divider"></div>
@@ -36,24 +36,8 @@
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>
-                            <ul class="field-menu p-2 m-0">
-                                @foreach ($fields as $f)
-                                    @foreach ($f->categories as $cat)
-                                    <li class="nav-item has-submenu list-unstyled">
-                                        <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
-                                            {{ $cat->CategoryName }}
-                                        </a>
-                                        <ul class="submenu collapse pl-1">
-                                            @foreach ($cat->products as $prod)
-                                            <li class="list-unstyled">
-                                                <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    @endforeach
-                                @endforeach
+                            <ul class="field-menu p-2 m-0 product-list">
+                                <!-- Danh mục sản phẩm sẽ được cập nhật động -->
                             </ul>
                         </div>
                     </div>
@@ -86,37 +70,46 @@
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            document.querySelectorAll('.product_menu-field .nav-link').forEach(function(element){
-                element.addEventListener('click', function (e) {
-                    let nextEl = element.nextElementSibling;
-                    let parentEl  = element.parentElement;
-                    if(nextEl) {
-                        e.preventDefault();
-                        let mycollapse = new bootstrap.Collapse(nextEl);
-                        if(nextEl.classList.contains('show')){
-                            mycollapse.hide();
-                        } else {
-                            mycollapse.show();
-                            var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
-                            if(opened_submenu){
-                                new bootstrap.Collapse(opened_submenu);
-                            }
-                        }
-                    }
-                });
-            })
-        });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
         $(document).ready(function(){
             let defaultFieldId = '{{ $defaultField }}';
             let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
 
+            // Hàm để cập nhật danh mục sản phẩm
+            function updateProductMenu(fieldId) {
+                let fieldData = @json($fields);
+                let selectedField = fieldData.find(field => field.FieldID == fieldId);
+                if (!selectedField) {
+                    console.error('Field not found for fieldId:', fieldId);
+                    return;
+                }
+
+                let productMenuHtml = '';
+                selectedField.categories.forEach(cat => {
+                    productMenuHtml += `
+                        <li class="nav-item has-submenu list-unstyled">
+                            <a class="nav-link text-secondary p-0" href="{{ route('category', '') }}/${cat.CategoryID}">
+                                ${cat.CategoryName}
+                            </a>
+                            <ul class="submenu collapse pl-1">
+                                ${cat.products.map(prod => `
+                                    <li class="list-unstyled">
+                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', '') }}/${prod.ProductID}">
+                                            ${prod.ProductName}
+                                        </a>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                    `;
+                });
+
+                $('.product_menu-field .product-list').html(productMenuHtml);
+            }
+
             $('.field-content').hide();
             $('#field-' + storedFieldId).show();
+            updateProductMenu(storedFieldId);
 
             $('.field-link').click(function(e){
                 e.preventDefault();
@@ -124,6 +117,7 @@
                 $('.field-content').hide();
                 $('#field-' + fieldId).show();
                 localStorage.setItem('currentFieldId', fieldId);
+                updateProductMenu(fieldId);
             });
         });
     </script>
