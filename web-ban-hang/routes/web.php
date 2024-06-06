@@ -48,9 +48,9 @@ Route::get('/product_info', [HomeController::class, 'product_info'])->name('prod
 
 Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');
-Route::get('/product/{product}', [HomeController::class, 'getProductBySupplier'])->name('product');
+// Route::get('/product/{product}', [HomeController::class, 'getProductBySupplier'])->name('product');
 
-// Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
+Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
 
 Auth::routes();
 

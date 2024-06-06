@@ -28,6 +28,7 @@
                                         <p class="text-secondary m-0">{{ $f->FieldName }}</p>
                                     </a>
                                     <div class="dropdown-divider"></div>
+                                </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -82,18 +83,18 @@
                     return;
                 }
 
-                let supplierMenuHtml = '';
+                let productMenuHtml = '';
                 selectedField.categories.forEach(cat => {
-                    supplierMenuHtml += `
+                    productMenuHtml += `
                         <li class="nav-item has-submenu list-unstyled">
-                            <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
+                            <a class="nav-link text-secondary p-0" href="{{ route('category', '') }}/${cat.CategoryID}">
                                 ${cat.CategoryName}
                             </a>
-                            <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
-                                ${cat.supplier.map(sup => `
+                            <ul class="submenu collapse pl-1">
+                                ${cat.products.map(prod => `
                                     <li class="list-unstyled">
-                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', '') }}/${sup.id}">
-                                            ${sup.SupplierName}
+                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.ProductID}">
+                                            ${prod.ProductName}
                                         </a>
                                     </li>
                                 `).join('')}
@@ -103,7 +104,7 @@
                     `;
                 });
 
-                $('.product_menu-field .product-list').html(supplierMenuHtml);
+                $('.product_menu-field .product-list').html(productMenuHtml);
             }
 
             $('.field-content').hide();
@@ -118,14 +119,9 @@
                 localStorage.setItem('currentFieldId', fieldId);
                 updateProductMenu(fieldId);
             });
-
-            $(document).on('click', '.category-link', function(e) {
-                e.preventDefault();
-                var categoryId = $(this).data('category-id');
-                $('#category-' + categoryId).toggle();
-            });
         });
     </script>
 </section>
 <!--=========== END COURSE BANNER SECTION ================-->
 @endsection
+    

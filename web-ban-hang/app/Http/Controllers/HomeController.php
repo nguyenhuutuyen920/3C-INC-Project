@@ -57,17 +57,11 @@ class HomeController extends Controller
     }
     public function getProductBySupplier(Supplier $supplier,Field $field) {
         $fields = Field::with('categories.supplier')->get();
-        $products = $supplier->products()->with('category')->get();
-        dd($products);
+        // dd($supplier->load(['products']));
+        $products = $supplier->load(['products']);
+        // dd($products);
         return view('pages.product',compact('products','fields','field'));
     }
-    // public function getProductBySupplier(Supplier $supplier) {
-    //     $fields = Field::with('categories.supplier')->get();
-    //     $products = $supplier->products()->with('category')->get();
-        
-    //     return view('pages.product', compact('products', 'fields'));
-    // }
-    
     public function field(Field $field)
     {
         $defaultField = 1;
