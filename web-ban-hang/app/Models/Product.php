@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'SupplierID',
         'CategoryParentID',
@@ -41,10 +42,15 @@ class Product extends Model
         'IsApproved',
         'ApprovedBy',
         'ViewTime',
-];
+    ];
+
     protected $primaryKey = 'ProductID';
-    public function categories()
+
+
+
+    public function supplier()
     {
-        return $this->belongsTo(Category::class, 'CategoryID');
+        return $this->belongsTo(Supplier::class, 'id','ProductID');
     }
 }
+

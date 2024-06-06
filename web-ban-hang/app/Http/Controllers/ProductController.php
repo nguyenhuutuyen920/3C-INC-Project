@@ -152,7 +152,7 @@ class ProductController extends Controller
             'SupplierID' => 'required|',
             'MaterialID' => 'required|',
             'ProductCode' => 'required|',
-            'ProductName' => 'required|unique:products',
+            'ProductName' => 'required|',
             'ProductAlias' => 'required|',
             'ProductPageTitle' => 'required|',
             'ProductMetaKeyword' => 'required|',

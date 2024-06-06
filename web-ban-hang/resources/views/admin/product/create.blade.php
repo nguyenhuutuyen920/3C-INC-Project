@@ -37,13 +37,8 @@
                 </div>
                 <div class="form-group">
                     <label>SupplierID</label>
-                    <select class="form-control" name="SupplierID" id="subcate_id">
-                        @foreach($supps as $supp)
-                            <option 
-                            value="{{$supp->SupplierID}}">{{$supp->SupplierName}}</option>
-                        @endforeach
-                    </select>
-                </div>
+                    <input class="form-control" type="text" name="SupplierID" placeholder="Please Enter SupplierID " />
+                </div> 
                 <div class="form-group">
                     <label>MaterialID</label>
                     <input class="form-control" type="text" name="MaterialID" placeholder="Please Enter MaterialID " />

@@ -82,18 +82,18 @@
                     return;
                 }
 
-                let supplierMenuHtml = '';
+                let productMenuHtml = '';
                 selectedField.categories.forEach(cat => {
-                    supplierMenuHtml += `
+                    productMenuHtml += `
                         <li class="nav-item has-submenu list-unstyled">
                             <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
                                 ${cat.CategoryName}
                             </a>
                             <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
-                                ${cat.supplier.map(sup => `
+                                ${cat.products.map(prod => `
                                     <li class="list-unstyled">
-                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', '') }}/${sup.id}">
-                                            ${sup.SupplierName}
+                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', '') }}/${prod.ProductID}">
+                                            ${prod.ProductName}
                                         </a>
                                     </li>
                                 `).join('')}
@@ -103,7 +103,7 @@
                     `;
                 });
 
-                $('.product_menu-field .product-list').html(supplierMenuHtml);
+                $('.product_menu-field .product-list').html(productMenuHtml);
             }
 
             $('.field-content').hide();

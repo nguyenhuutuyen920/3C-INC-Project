@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('supplier', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('CategoryID');
             $table->string('SupplierAlias',250);
             $table->string('SupplierMetaKeyword',250);
             $table->string('SupplierMetaDescription',250);

@@ -26,8 +26,8 @@ class Category extends Model
     {
         return $this->belongsTo(Field::class, 'FieldID');
     }
-    public function products()
+    public function supplier()
     {
-        return $this->hasMany(Product::class, 'CategoryParentID');
+        return $this->hasMany(Supplier::class, 'id', 'CategoryID');
     }
 }
