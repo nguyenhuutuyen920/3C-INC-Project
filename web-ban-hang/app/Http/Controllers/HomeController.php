@@ -8,6 +8,7 @@ use App\Models\Field;
 use App\Models\Home;
 use App\Models\Introduce;
 use App\Models\News;
+use App\Models\Product;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Supplier;
@@ -45,22 +46,40 @@ class HomeController extends Controller
         $news = News::paginate(7);
         return view("pages.new",compact("news","fields"));
     }
+    public function project(){
+        $fields = Field::all();
+        $projects = Project::paginate(7);
+        return view("pages.projects.project",compact("projects","fields"));
+    }
     public function new_content(News $new){
         $fields = Field::all();
         $news = News::orderBy('NewsID','DESC')->paginate(4);
         return view("pages.new_content",compact("new","news","fields"));
+    }
+    public function project_info(Project $project){
+        $fields = Field::all();
+        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
+        return view("pages.projects.project_info",compact("project","projects","fields"));
     }
     public function service(){
         $fields = Field::all();
         $services = Service::all();
         return view("pages.service",compact("services","fields"));
     }
-    public function getProductBySupplier(Supplier $supplier,Field $field) {
+    public function category(Field $field){
+        $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
-        // dd($supplier->load(['products']));
-        $products = $supplier->load(['products']);
+        $field->load('categories.supplier');
+        $products = Product::all();
+        return view("pages.category", compact("products","field", "defaultField", "fields"));
+    }
+    public function getProductBySupplier(Supplier $supplier,Field $field) {
+        $defaultField = 1;
+        $fields = Field::with('categories.supplier')->get();
+        $products = $supplier->products;
+        $supplier->load(['products']);
         // dd($products);
-        return view('pages.product',compact('products','fields','field'));
+        return view('pages.product',compact('products', "defaultField",'fields','field'));
     }
     public function field(Field $field)
     {

@@ -12,10 +12,12 @@ class Project extends Model
         'ProjectTitle',
         'BiddingPackage',
         'ConstructionName',
+        'Abstract',
         'ProjectContent',
         'ProjectImage',
         'Investors',
         'PricePackage'
     ];
     protected $primaryKey = 'ProjectID';
+    
 }

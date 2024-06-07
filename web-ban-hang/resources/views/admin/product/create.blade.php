@@ -29,16 +29,21 @@
                 <div class="form-group">
                     <label>Category ParentID</label>
                     <select class="form-control" name="CategoryParentID" id="subcate_id">
-                    @foreach($cats as $cat)
-                        <option 
-                         value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
-                    @endforeach
+                        @foreach($cats as $cat)
+                            <option 
+                            value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label>SupplierID</label>
-                    <input class="form-control" type="text" name="SupplierID" placeholder="Please Enter SupplierID " />
-                </div> 
+                    <select class="form-control" name="SupplierID" >
+                        @foreach($supps as $supp)
+                            <option 
+                            value="{{$supp->id}}">{{$supp->SupplierName}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group">
                     <label>MaterialID</label>
                     <input class="form-control" type="text" name="MaterialID" placeholder="Please Enter MaterialID " />

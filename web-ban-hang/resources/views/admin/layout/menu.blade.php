@@ -53,13 +53,13 @@
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-th-list fa-fw"></i> Introduce<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-th-list fa-fw"></i> Project<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('introduce.index') }}">List Introduce</a>
+                    <a href="{{ route('project.index') }}">List Project</a>
                 </li>
                 <li>
-                    <a href="{{ route('introduce.create') }}">Create Introduce</a>
+                    <a href="{{ route('project.create') }}">Create Project</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

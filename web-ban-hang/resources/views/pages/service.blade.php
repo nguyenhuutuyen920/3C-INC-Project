@@ -13,7 +13,7 @@
                   <ul class="field-menu m-0">
                     @foreach ($fields as $field)
                       <li class="pt-2 pl-2">
-                        <a href="{{ $field->FieldID}}"><span class="text-dark">{{$field->FieldName}}</span></a>
+                        <a href="{{ route('field',$field->FieldID) }}"><span class="text-dark">{{$field->FieldName}}</span></a>
                         <div class="dropdown-divider"></div>
                       </li>
                     @endforeach
@@ -21,18 +21,18 @@
                 </div>
     
               </div>
-            <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
+            <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12 p-0 ml-3" style="border: 1px solid #ccc">
                 <ul class="content_menu-new  m-0 p-2" style="width: 100%">
                   {{-- @foreach($services as $service) --}}
-                        <li class="service-menu float-left p-0 ml-4 list-unstyled mb-4 w-100 h-100">
+                        <li class="service-menu float-left p-0 list-unstyled mb-4 w-100 h-100">
                           <div class="media media-service" style="margin-bottom: 10px">
-                                <a class="service_img " styl="width:100px;height:100px" href="{{-- route('service_content',$service->ServiceID)--}}">
-                                    <img class="media-object w-100 h-100" src="img/anhdep.jpg" width="150">
+                                <a class="service_img " style="width:200px;height:150px" href="{{-- route('service_content',$service->ServiceID)--}}">
+                                    <img class="media-object w-100 h-100" src="img/anhdep.jpg">
                                 </a>
-                              <div class="service-body pl-1 pt-3">
-                                <a class="service_title text-center" href="{{-- route('service_content',$service->ServiceID)--}}"><h5>ddbajcsaicbacaichsocaihoc{{--$service->ServiceTitle--}}</h5></a>
+                              <div class="service-body pl-2  w-100">
+                                <a class="service_title " href="{{-- route('service_content',$service->ServiceID)--}}"><h5>ddbajcsaicbacaichsocaihoc{{--$service->ServiceTitle--}}</h5></a>
                                 <span class="service_abstract text-dark ">idfhdssiuhfdsifhdodjadan{{--$service->Abstract--}}</span>
-                                <p class="service_date text-dark text-right">{{--$service->create_at--}}</p>
+                                <p class="service_date text-dark ">{{--$service->create_at--}}</p>
                               </div>
                           </div>                    
                         </li>

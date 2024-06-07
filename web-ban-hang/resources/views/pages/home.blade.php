@@ -10,7 +10,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="numbertext">1 / 3</div>
-          <img src="https://giupban.com.vn/wp-content/uploads/31.jpg" class="d-block w-100" style="height: 900px" alt="...">
+          <img src="https://giupban.com.vn/wp-content/uploads/31.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
             <h2>TẦM NHÌN</h2>
             <p>Với những thay đổi mang tính chiến lược, tầm nhìn 2020-2030 của 3C INC được thể hiện rõ nét trong thông điệp “Kết nối giá trị, khơi dậy tiềm năng”.</p>
@@ -18,7 +18,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">2 / 3</div>
-          <img src="https://hanoispiritofplace.com/wp-content/uploads/2018/04/hinh-nen-may-tinh-69.jpg" class="d-block w-100" style="height: 900px" alt="...">
+          <img src="https://hanoispiritofplace.com/wp-content/uploads/2018/04/hinh-nen-may-tinh-69.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
             <h2>SỨ MỆNH</h2>
             <p>Với 3C INC, sứ mệnh của chúng tôi là đem lại những sản phẩm và dịch vụ kết nối mỗi người dân, gia đình, doanh nghiệp trong một hệ sinh thái, nơi những nhu cầu trong cuộc sống, công việc, học tập và giải trí được phát hiện, đánh thức và thỏa mãn nhằm đạt được sự  hài lòng, phát triển và hạnh phúc.</p>
@@ -26,7 +26,7 @@
         </div>
         <div class="carousel-item">
           <div class="numbertext">3 / 3</div>
-          <img src="https://msmobile.com.vn/upload_images/images/2019/07/30/Tai-Hinh-Nen-Dep-Cho-Laptop-Win-10-3.jpg" class="d-block w-100" style="height: 900px" alt="...">
+          <img src="https://msmobile.com.vn/upload_images/images/2019/07/30/Tai-Hinh-Nen-Dep-Cho-Laptop-Win-10-3.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;;" id="slider_caption-3">
             <h2>Cam kết khách hàng</h2>
             <p>Mỗi khi gặp khách hàng, chúng ta sẽ:
@@ -104,10 +104,26 @@
       <div class="container">
        <!-- Our courses titile -->
         <div class="row">
-          <div class="col-lg-12 col-md-12"> 
+          <div class="col-lg-12 col-md-12 col-sm-12"> 
             <div class="title_area">
               <h2 class="title_two">DỰ ÁN TIÊU BIỂU</h2>
-              <span></span> 
+              <div class="project_menu p-0 d-flex overflow-auto">
+                @foreach ($projects as $proj)
+                  <div class="container p-2 m-0">
+                    <div class="project_card" style="width:220px; height:270px">
+                      <a class="project_card-img" href="{{ route('project',$proj->ProjectID)}}">
+                        <img class="w-100" style="height: 180px" src="img/anhdep.jpg" alt="">
+                      </a>
+                      <div class="project_card-body">
+                        <a href="{{ route('project',$proj->ProjectID)}}">
+                          <h5 class="mt-2">{{$proj->ProjectTitle}}</h5>
+                        </a>
+                        <p class="text-dark">{{$proj->Abstract}}</p>
+                      </div>
+                    </div>  
+                  </div>
+                @endforeach
+              </div> 
             </div>
           </div>
         </div>

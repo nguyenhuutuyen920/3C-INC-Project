@@ -87,14 +87,14 @@
                 selectedField.categories.forEach(cat => {
                     productMenuHtml += `
                         <li class="nav-item has-submenu list-unstyled">
-                            <a class="nav-link text-secondary p-0" href="{{ route('category', '') }}/${cat.CategoryID}">
+                            <a class="nav-link text-secondary p-0" href="{{ route('category', '') }}">
                                 ${cat.CategoryName}
                             </a>
                             <ul class="submenu collapse pl-1">
-                                ${cat.products.map(prod => `
+                                ${cat.supplier.map(prod => `
                                     <li class="list-unstyled">
-                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.ProductID}">
-                                            ${prod.ProductName}
+                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                            ${prod.SupplierName}
                                         </a>
                                     </li>
                                 `).join('')}

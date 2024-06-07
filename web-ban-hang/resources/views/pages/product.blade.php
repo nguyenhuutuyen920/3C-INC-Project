@@ -1,114 +1,130 @@
-<style>
-  
-    .sidebar li .submenu{ 
-        list-style: none; 
-        margin: 0; 
-        padding: 0; 
-        padding-left: 1rem; 
-        padding-right: 1rem;
-    }
+@extends('layouts.index')
+@section('content')
+
+<!--=========== BEGIN COURSE BANNER SECTION ================-->
+<section class="automation">
+    <style>
+        .sidebar li .submenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     </style>
-    @extends('layouts.index')
-    @section('content')
-    
-        <!--=========== BEGIN COURSE BANNER SECTION ================-->
-        <section id="field"  style="background: #fff">
-          <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #f6f2f2">
-            <div class="container-fluid menu-field  d-flex p-0" >
-              <div class="sidebar_menu-new col-lg-2 col-md-12 col-sm-12 p-0" style="height:max-content">
-                <div class="field">
-                  <div class="menu-field">
-                      <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                          <h6 class="text-light">LĨNH VỰC</h6>
-                      </div>
-                      <ul class="field-menu p-2 m-0">
-                          @foreach ($fields as $f)
-                              <li class="list-unstyled">
-                                  <a href="{{ route('field', $f->FieldID) }}">
-                                      <p class="text-secondary">{{ $f->FieldName }}</p>
-                                  </a>
-                                  <div class="dropdown-divider"></div>
-                              </li>
-                          @endforeach
-                      </ul>
-                  </div>
-                  <div class="product_menu-field">
-                      <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                          <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
-                      </div>
-                      <ul class="field-menu p-2 m-0">
-                        @foreach ($field->categories as $cat)
-                                  <li class="nav-item has-submenu list-unstyled">
-                                      <a class="nav-link text-secondary p-0" href="{{ route('category', $cat->CategoryID) }}">
-                                          {{ $cat->CategoryName }}
-                                      </a>
-                                      <ul class="submenu collapse pl-1">
-                                              @foreach ($cat->products as $prod)
-                                                  <li class="list-unstyled">
-                                                    <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('product', $prod->ProductID) }}">{{ $prod->ProductName }}</a>
-                                                  </li>
-                                              @endforeach
-                                      </ul>
-                                      <div class="dropdown-divider"></div>
-                                  </li>
-                              @endforeach
-                      </ul>
-                  </div>
-              </div>
-              
-              
-                
-              </div>
-              <div class="product-content col-lg-10 col-md-12 col-sm-12 p-0" >
-                <ul class="content_menu-field  m-0  w-100 h-100" >  
-                  <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;">
-                    @foreach ($products as $prod)
-                    <div class="div-img " style="width: 100%">
-                      <img class="w-100" src="{{ asset($prod->ProductImage) }}" alt="Card image cap">
+    <section id="field" style="background: #f1f1f1">
+        <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
+            <div class="container menu-field d-flex p-0">
+                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
+                    <div class="field">
+                        <div class="menu-field">
+                            <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
+                                <h6 class="text-light">LĨNH VỰC</h6>
+                            </div>
+                            <ul class="field-menu p-2 m-0">
+                                @foreach ($fields as $f)
+                                <li class="list-unstyled">
+                                    <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
+                                        <p class="text-secondary m-0">{{ $f->FieldName }}</p>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="supplier_menu-field">
+                            <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
+                                <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
+                            </div>
+                            <ul class="field-menu p-2 m-0 supplier-list">
+                                <!-- Danh mục sản phẩm sẽ được cập nhật động -->
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card-body p-2">
-                      <h5 class="card-title mb-1">{{$prod->ProductName}}</h5>
-                      <p class="card-text mb-1" style="font-size: 12px">{{$prod->Abstract}}</p>
-                      <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
-                    </div>
-                    @endforeach
+                </div>
+                <div class="supplier-content col-lg-9 col-md-12 col-sm-12 p-0">
+                  <div class="product-content col-lg-10 col-md-12 col-sm-12 p-0" >
+                    <ul class="content_menu-field  m-0  w-100 h-100" >  
+                      @foreach ($products as $prod)
+                      <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;">
+                        
+                        <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">
+                          <img src="{{ asset($prod->ProductImage) }}" width="100%">
+                        </a>
+                        <div class="card-body p-2">
+                          <a href="{{ route('product_info',$prod->ProductID)}}">
+                            <h5 class="card-title mb-1">{{$prod->ProductName}}</h5>
+                          </a>
+                          <p class="card-text mb-1" style="font-size: 12px">{{$prod->Abstract}}</p>
+                          <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
+                        </div>
+                      </div>
+                      @endforeach
+
+                    </ul>
                   </div>
-                </ul>
-                
-              </div>
-              
+                </div>
             </div>
-          </div> 
-        </section>
-        <script>
-          
-    document.addEventListener("DOMContentLoaded", function(){
-      document.querySelectorAll('.product_menu-field .nav-link').forEach(function(element){
-        
-        element.addEventListener('click', function (e) {
-    
-          let nextEl = element.nextElementSibling;
-          let parentEl  = element.parentElement;	
-    
-            if(nextEl) {
-                e.preventDefault();	
-                let mycollapse = new bootstrap.Collapse(nextEl);
-                
-                if(nextEl.classList.contains('show')){
-                  mycollapse.hide();
-                } else {
-                    mycollapse.show();
-                    // find other submenus with class=show
-                    var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
-                    // if it exists, then close all of them
-                    if(opened_submenu){
-                      new bootstrap.Collapse(opened_submenu);
-                    }
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            let defaultFieldId = '{{ $defaultField }}';
+            let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
+
+            // Hàm để cập nhật danh mục sản phẩm
+            function updatesupplierMenu(fieldId) {
+                let fieldData = @json($fields);
+                let selectedField = fieldData.find(field => field.FieldID == fieldId);
+                if (!selectedField) {
+                    console.error('Field not found for fieldId:', fieldId);
+                    return;
                 }
+
+                let supplierMenuHtml = '';
+                selectedField.categories.forEach(cat => {
+                    supplierMenuHtml += `
+                        <li class="nav-item has-submenu list-unstyled">
+                            <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
+                                ${cat.CategoryName}
+                            </a>
+                            <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
+                                ${cat.supplier.map(prod => `
+                                    <li class="list-unstyled">
+                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                            ${prod.SupplierName}
+                                        </a>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                    `;
+                });
+
+                $('.supplier_menu-field .supplier-list').html(supplierMenuHtml);
             }
-        }); // addEventListener
-      }) // forEach
-    }); 
-        </script>
-        <!--=========== END COURSE BANNER SECTION ================-->
-    @endsection
+
+            $('.field-content').hide();
+            $('#field-' + storedFieldId).show();
+            updatesupplierMenu(storedFieldId);
+
+            $('.field-link').click(function(e){
+                e.preventDefault();
+                var fieldId = $(this).data('field-id');
+                $('.field-content').hide();
+                $('#field-' + fieldId).show();
+                localStorage.setItem('currentFieldId', fieldId);
+                updatesupplierMenu(fieldId);
+            });
+
+            $(document).on('click', '.category-link', function(e) {
+                e.preventDefault();
+                var categoryId = $(this).data('category-id');
+                $('#category-' + categoryId).toggle();
+            });
+        });
+    </script>
+</section>
+<!--=========== END COURSE BANNER SECTION ================-->
+@endsection
