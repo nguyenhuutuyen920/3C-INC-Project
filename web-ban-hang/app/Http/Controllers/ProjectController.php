@@ -59,12 +59,30 @@ class ProjectController extends Controller
         $project->ConstructionName = $request->input('ConstructionName');
         $project->Abstract = $request->input('Abstract');
         $project->ProjectContent = $request->input('ProjectContent');
-        $project->ProjectImage = 'media/ProductImage/' . $imageName;
+        $project->ProjectImage = 'media/ProjectImage/' . $imageName;
         $project->Investors = $request->input('Investors');
         $project->PricePackage = $request->input('PricePackage');
 
         $project->save();
         return redirect()->route('project.index')->with('success','Thêm dự án thành công!');
+    }
+    public function uploadproject(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('project_img'), $fileName);
+
+            $url = asset('project_img/' . $fileName);
+
+            return response()->json([
+                'uploaded' => true,
+                'url' => $url
+            ]);
+        }
     }
 
     /**

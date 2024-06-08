@@ -62,6 +62,7 @@
     <link href="admin_asset/summernote-master/dist/summernote.css" rel="stylesheet">
     @yield('script')
     @yield('scripts')
+    @yield('javascript')
 </body>
 
 </html>

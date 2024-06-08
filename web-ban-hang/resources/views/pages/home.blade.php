@@ -116,7 +116,7 @@
                       </a>
                       <div class="project_card-body">
                         <a href="{{ route('project',$proj->ProjectID)}}">
-                          <h5 class="mt-2">{{$proj->ProjectTitle}}</h5>
+                          <h5 class="mt-2 text-dark">{{$proj->ProjectTitle}}</h5>
                         </a>
                         <p class="text-dark">{{$proj->Abstract}}</p>
                       </div>

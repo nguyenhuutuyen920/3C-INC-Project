@@ -26,8 +26,8 @@
                 <h3 class="text-primary" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
                 <ul class="footer_widget_nav list-unstyled">
                   <li><a class=" text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
-                  <li><a class=" text-dark " href="">Sản phẩm</a></li>
-                  <li><a class=" text-dark " href="">Dự án</a></li>
+                  <li><a class=" text-dark " href="{{route('category')}}">Sản phẩm</a></li>
+                  <li><a class=" text-dark " href="{{route('project')}}">Dự án</a></li>
                   <li><a class=" text-dark " href="">Giải pháp</a></li>
                   <li><a class=" text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
                 </ul>

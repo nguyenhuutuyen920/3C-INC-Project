@@ -36,6 +36,7 @@ Route::post('admin/category/store', [CategoryController::class, 'store'])->name(
 Route::post('admin/product/store', [ProductController::class, 'store'])->name('product.store');
 Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.store');
 Route::post('upload', [NewsController::class, 'upload'])->name('ckeditor.upload');
+Route::post('uploadproject', [ProjectController::class, 'uploadproject'])->name('ckeditor.uploadproject');
 Route::post('admin/project/store', [ProjectController::class, 'store'])->name('project.store');
 Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
@@ -49,7 +50,7 @@ Route::get('/product_info', [HomeController::class, 'product_info'])->name('prod
 Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
-Route::get('/project{project}', [HomeController::class, 'project_info'])->name('project_info');
+Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 
 Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
 

@@ -8,15 +8,15 @@
           <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
             <ul class="content_menu-new  m-0 p-2" style="width: 100%">
               @foreach($projects as $proj)
-                    <li class="new-menu float-left p-0 ml-4 list-unstyled mb-4" style="width: 320px;height:415px">
-                      <div class="media media-new d-flex flex-column" style="margin-bottom: 10px">
-                        <div class="new w-100" style="height: 230px;">
+                    <li class="new-menu p-0 ml-4 list-unstyled mb-4" style="width: 320px;">
+                      <div class="media media-new d-flex w-100" style="margin-bottom: 10px">
+                        {{-- <div class="new" style="width:500px;height: 230px;"> --}}
                           <a class="new_img " href="{{ route('project_info',$proj->ProjectID)}}">
-                            <img class="media-object w-100 h-100" src="{{ asset($proj->ProjectImage) }}" width="150">
+                            <img class="media-object" style="width: 220px; height:180px;" src="{{ asset($proj->ProjectImage) }}">
                           </a>
-                        </div>
-                        <div class="new-body pl-1 pt-3 w-100">
-                         <a class="new_title text-center" href="{{ route('project_info',$proj->ProjectID)}}"><h5>{{$proj->ProjectTitle}}</h5></a>
+                        {{-- </div> --}}
+                        <div class="new-body pl-3 w-100">
+                         <a class="new_title" href="{{ route('project_info',$proj->ProjectID)}}"><h5>{{$proj->ProjectTitle}}</h5></a>
                          <span class="new_abstract text-dark ">{{$proj->Abstract}}</span>
                          <p class="new_date text-dark text-right">{{$proj->create_at}}</p>
                         </div>

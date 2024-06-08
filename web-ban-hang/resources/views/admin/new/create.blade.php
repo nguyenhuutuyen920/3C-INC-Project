@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
     {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
 
     <style type="text/css">
-        .editor {
+        #editor {
             height: 500px;
         }
     </style>
@@ -121,23 +120,11 @@
                 ckfinder: {
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
-<<<<<<< Updated upstream
         })
         .catch( error => {
             console.error( error );
         } );
 </script>
-=======
-            })
-            // .then(editor => {
-            //     const toolbarContainer = document.querySelector('#toolbar-container');
-            //     toolbarContainer.appendChild(editor.ui.view.toolbar.element);
-            // })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
->>>>>>> Stashed changes
 @endsection
 </body>
 </html>

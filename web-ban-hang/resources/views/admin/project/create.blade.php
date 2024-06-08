@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
+
+    <style type="text/css">
+        #editor {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
 @extends('admin.index')
 @section('content')
 <div id="page-wrapper">
@@ -42,9 +54,13 @@
                         <label>Abstract</label>
                         <input class="form-control" type="text" name="Abstract" placeholder="Please Enter Introduce Keyword"/>
                     </div>
-                    <div class="form-group"> 
+                    <div class="form-group">
                         <label>ProjectContent</label>
-                        <input class="form-control" type="text" name="ProjectContent" placeholder="Please Enter Introduce Description"/>
+                        {{-- <div id="toolbar-container"></div>
+                        <div id="editor">
+                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                        </div> --}}
+                        <textarea class="form-control" type="text" id="editor"  name="ProjectContent" placeholder="Please Enter Project Content"></textarea>
                     </div>
                     <div class="form-group">
                         <label>ProjectImage</label>
@@ -69,3 +85,18 @@
     <!-- /.container-fluid -->
 </div>
 @endsection
+@section('javascript')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.uploadproject', ['_token' => csrf_token()]) }}"
+                }
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+@endsection
+</body>
+</html>
