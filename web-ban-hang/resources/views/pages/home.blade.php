@@ -103,20 +103,20 @@
     <section id="ourCourses">
       <div class="container">
        <!-- Our courses titile -->
-        <div class="row">
+        <div class="row h-100">
           <div class="col-lg-12 col-md-12 col-sm-12"> 
-            <div class="title_area">
+            <div class="title_area m-0 h-100">
               <h2 class="title_two">DỰ ÁN TIÊU BIỂU</h2>
-              <div class="project_menu p-0 d-flex overflow-auto">
+              <div class="project_menu p-0 d-flex overflow-auto h-100">
                 @foreach ($projects as $proj)
                   <div class="container p-2 m-0">
                     <div class="project_card" style="width:220px; height:270px">
-                      <a class="project_card-img" href="{{ route('project',$proj->ProjectID)}}">
+                      <a class="project_card-img" href="{{ route('project_info',$proj->ProjectID)}}">
                         <img class="w-100" style="height: 180px" src="img/anhdep.jpg" alt="">
                       </a>
                       <div class="project_card-body">
-                        <a href="{{ route('project',$proj->ProjectID)}}">
-                          <h5 class="mt-2 text-dark">{{$proj->ProjectTitle}}</h5>
+                        <a href="{{ route('project_info',$proj->ProjectID)}}">
+                          <h6 class="mt-2 text-dark">{{$proj->ProjectTitle}}</h6>
                         </a>
                         <p class="text-dark">{{$proj->Abstract}}</p>
                       </div>

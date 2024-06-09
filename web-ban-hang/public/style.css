@@ -123,6 +123,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
   /*--------------------*/
   .container{
     width: 100%;
+    height: 100%;
   }
   .container-fluid.col-md-12.col-lg-12.col-sm-12 {
     height: 100%;
@@ -693,7 +694,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
     float: left;
     display: inline;
     width: 100%;
-    /* height: 100%; */
+    height: 550px;
     padding: 60px 0px;
   }
   .ourCourse_content{
