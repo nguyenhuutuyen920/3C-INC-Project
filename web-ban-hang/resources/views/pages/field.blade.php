@@ -70,56 +70,58 @@
     </section>
 
     <script>
-        $(document).ready(function(){
-            let defaultFieldId = '{{ $defaultField }}';
-            let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
+    $(document).ready(function(){
+        let defaultFieldId = '{{ $defaultField }}';
+        let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
 
-            // Hàm để cập nhật danh mục sản phẩm
-            function updateProductMenu(fieldId) {
-                let fieldData = @json($fields);
-                let selectedField = fieldData.find(field => field.FieldID == fieldId);
-                if (!selectedField) {
-                    console.error('Field not found for fieldId:', fieldId);
-                    return;
-                }
-
-                let productMenuHtml = '';
-                selectedField.categories.forEach(cat => {
-                    productMenuHtml += `
-                        <li class="nav-item has-submenu list-unstyled">
-                            <a class="nav-link text-secondary p-0" href="{{ route('category', '') }}">
-                                ${cat.CategoryName}
-                            </a>
-                            <ul class="submenu collapse pl-1">
-                                ${cat.supplier.map(prod => `
-                                    <li class="list-unstyled">
-                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
-                                            ${prod.SupplierName}
-                                        </a>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                            <div class="dropdown-divider"></div>
-                        </li>
-                    `;
-                });
-
-                $('.product_menu-field .product-list').html(productMenuHtml);
+        // Hàm để cập nhật danh mục sản phẩm
+        function updateProductMenu(fieldId) {
+            let fieldData = @json($fields);
+            let selectedField = fieldData.find(field => field.FieldID == fieldId);
+            if (!selectedField) {
+                console.error('Field not found for fieldId:', fieldId);
+                return;
             }
 
-            $('.field-content').hide();
-            $('#field-' + storedFieldId).show();
-            updateProductMenu(storedFieldId);
-
-            $('.field-link').click(function(e){
-                e.preventDefault();
-                var fieldId = $(this).data('field-id');
-                $('.field-content').hide();
-                $('#field-' + fieldId).show();
-                localStorage.setItem('currentFieldId', fieldId);
-                updateProductMenu(fieldId);
+            let productMenuHtml = '';
+            selectedField.categories.forEach(cat => {
+                let route = (fieldId == 1) ? '{{ route('hello', '') }}' : '{{ route('category', '') }}';
+                productMenuHtml += `
+                    <li class="nav-item has-submenu list-unstyled">
+                        <a class="nav-link text-secondary p-0" href="${route}">
+                            ${cat.CategoryName}
+                        </a>
+                        <ul class="submenu collapse pl-1">
+                            ${cat.supplier.map(prod => `
+                                <li class="list-unstyled">
+                                    <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                        ${prod.SupplierName}
+                                    </a>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <div class="dropdown-divider"></div>
+                    </li>
+                `;
             });
+
+            $('.product_menu-field .product-list').html(productMenuHtml);
+        }
+
+        $('.field-content').hide();
+        $('#field-' + storedFieldId).show();
+        updateProductMenu(storedFieldId);
+
+        $('.field-link').click(function(e){
+            e.preventDefault();
+            var fieldId = $(this).data('field-id');
+            $('.field-content').hide();
+            $('#field-' + fieldId).show();
+            localStorage.setItem('currentFieldId', fieldId);
+            updateProductMenu(fieldId);
         });
+    });
+
     </script>
 </section>
 <!--=========== END COURSE BANNER SECTION ================-->

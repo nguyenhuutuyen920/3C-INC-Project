@@ -13,7 +13,8 @@
           <img src="https://giupban.com.vn/wp-content/uploads/31.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
             <h2>TẦM NHÌN</h2>
-            <p>Với những thay đổi mang tính chiến lược, tầm nhìn 2020-2030 của 3C INC được thể hiện rõ nét trong thông điệp “Kết nối giá trị, khơi dậy tiềm năng”.</p>
+            <p>3C phát triển nhanh, hiệu quả nhưng an toàn và bền vững, hướng đến mục tiêu tiếp tục trở thành một trong những Công ty hàng đầu Việt Nam trong lĩnh vực kinh doanh CNTT, Viễn thông, thiết bị thí nghiệm, duy trì vị thế số 1 về cung cấp Thiết bị điện 500KV.
+            </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -21,7 +22,8 @@
           <img src="https://hanoispiritofplace.com/wp-content/uploads/2018/04/hinh-nen-may-tinh-69.jpg" class="d-block w-100" alt="...">
           <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
             <h2>SỨ MỆNH</h2>
-            <p>Với 3C INC, sứ mệnh của chúng tôi là đem lại những sản phẩm và dịch vụ kết nối mỗi người dân, gia đình, doanh nghiệp trong một hệ sinh thái, nơi những nhu cầu trong cuộc sống, công việc, học tập và giải trí được phát hiện, đánh thức và thỏa mãn nhằm đạt được sự  hài lòng, phát triển và hạnh phúc.</p>
+            <p>3C không ngừng phát triển nhằm tối ưu hóa nhu cầu của khách hàng bằng các sản phẩm, dịch vụ tốt nhất với chính sách chăm sóc khách hàng chuyên nghiệp; cam kết mang lại giá trị, sự thịnh vượng cho nhân viên; đồng thời đóng góp vào sự phát triển chung của xã hội, cộng đồng.
+            </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -54,9 +56,11 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="aboutus_area wow fadeInLeft">
             <h2 class="titile">Lịch sử hình thành</h2>
-            <p>Công ty Cổ phần Máy tính – Truyền thông – Điều khiển 3C (Computer – Communication – Control, 3C INC), được thành lập vào ngày 09/10/1989 tại TP. Hà Nội. 3C INC là một trong 3 công ty hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thể kỷ trước.</p>
+            <p>Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thể kỷ trước.
+            </p>
 
-              <p>Với trên 30 năm xây dựng và phát triển, 3C INC đã khẳng định được vị thế của mình trên thị trường cung cấp các sản phẩm, dịch vụ đã tham gia. Hiện nay, Công ty 3C đã trở thành một trong những nhà cung cấp hàng đầu các sản phẩm, dịch vụ công nghệ cao cho ngành CNTT, ngành Viễn thông, ngành Điện và các ngành công nghiệp khác tại Việt Nam.</p>
+              <p>Với 35 năm xây dựng và phát triển, 3C đã khẳng định được vị thế của mình trên thị trường cung cấp các sản phẩm, dịch vụ đã tham gia. Hiện nay, 3C đã trở thành một trong những nhà cung cấp hàng đầu các sản phẩm, dịch vụ công nghệ cao cho ngành Điện cao thế và Công nghệ thông tin.
+              </p>
               
               <p> Kể từ khi thành lập, Công ty 3C đã tập hợp được một đội ngũ cán bộ có trình độ cao trong lĩnh vực quản lý, kinh tế và khoa học kỹ thuật, hầu hết đội ngũ này là được đào tạo tại nước ngoài hoặc các trường có chất lượng cao tại Việt Nam. 
                 Kể từ đó đến nay, nguồn nhân lực của 3C được phát triển và kế thừa theo hướng tập trung vào chất lượng để đáp ứng được các công việc đòi hỏi trình độ chuyên môn và công nghệ cao của từng giai đoạn khác nhau của công ty. Với đội ngũ cán bộ có chất lượng, 3C INC cam kết luôn đáp ứng và làm hài lòng tất cả các khách hàng sử dụng các sản phảm và dịch vụ của 3C INC cung cấp. </p>

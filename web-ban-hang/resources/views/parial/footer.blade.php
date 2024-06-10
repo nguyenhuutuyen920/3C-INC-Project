@@ -17,8 +17,8 @@
               <div class="single_footer_widget">
                 <h3 class="text-primary" style="font-family: segoeuib;">Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
-                <p>Địa chỉ trụ sở chính : Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
-                <p>Giao dịch khách hàng:Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699   - Fax: 024 38433316</p>
+                <p>Địa chỉ trụ sở chính: Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
+                <p>Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
               </div>
             </div>
             <div class="col-ld-4  col-md-4 col-sm-4">
@@ -26,7 +26,7 @@
                 <h3 class="text-primary" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
                 <ul class="footer_widget_nav list-unstyled">
                   <li><a class=" text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
-                  <li><a class=" text-dark " href="{{route('category')}}">Sản phẩm</a></li>
+                  <li><a class=" text-dark " href="">Hỗ trợ khách hàng</a></li>
                   <li><a class=" text-dark " href="{{route('project')}}">Dự án</a></li>
                   <li><a class=" text-dark " href="">Giải pháp</a></li>
                   <li><a class=" text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
@@ -41,7 +41,7 @@
                   <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" target="_blank"  href="#"><i class="icon-google-plus"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" target="_blank"  href="#"><i class="icon-linkedin"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/user/VMSMobiFone"><i class="icon-youtube"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/@CINC-vm8ec"><i class="icon-youtube"></i></a></li>
                 </ul>
               </div>
             </div>

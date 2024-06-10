@@ -88,6 +88,13 @@ class HomeController extends Controller
         $field->load('categories.supplier');
         return view("pages.field", compact("field", "defaultField", "fields"));
     }
+    public function hello(Field $field){
+        $defaultField = 1;
+        $fields = Field::with('categories.supplier')->get();
+        $field->load('categories.supplier');
+        $products = Product::all();
+        return view("pages.hello", compact("products","field", "defaultField", "fields"));
+    }
     public function product_info(){
         $fields = Field::all();
         return view("pages.product_info",compact("fields"));

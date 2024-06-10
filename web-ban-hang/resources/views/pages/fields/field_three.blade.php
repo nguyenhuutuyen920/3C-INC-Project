@@ -11,9 +11,9 @@
                 <img class="w-100 h-100" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/444762145_7612327958821848_2868938011894177004_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=QegLrfM_VGIQ7kNvgGRj-3I&_nc_ht=scontent.fhan19-1.fna&oh=00_AYAo_KrCxEJBzVbCkgWooDpVtKyRInxYPx_448ukl_JI4A&oe=66659C68" alt="">
             </div>
             <div class="card-automation-body w-100 pl-2">
-                <div class="card-title">
+                <div class="card-title  m-0">
                     <a href="">
-                        <h5>hello</h5>
+                        <h6 class=" m-0">hello</h6>
                     </a>
                 </div>
                 <p>abstract</p>
@@ -24,9 +24,9 @@
                 <img class="w-100 h-100" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/444762145_7612327958821848_2868938011894177004_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=QegLrfM_VGIQ7kNvgGRj-3I&_nc_ht=scontent.fhan19-1.fna&oh=00_AYAo_KrCxEJBzVbCkgWooDpVtKyRInxYPx_448ukl_JI4A&oe=66659C68" alt="">
             </div>
             <div class="card-automation-body w-100 pl-2">
-                <div class="card-title">
+                <div class="card-title  m-0">
                     <a href="">
-                        <h5>hello</h5>
+                        <h6 class="m-0">hello</h6>
                     </a>
                 </div>
                 <p>abstract</p>

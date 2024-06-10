@@ -116,7 +116,7 @@
                                     <a class="dropdown-toggle text-dark mr-4 " href="{{ route('field', $field->FieldID) }}" id="navbarDropdown" >{{ $field->FieldName }}</a>
                                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach ($field->categories as $cat)
-                                         <li><a class="text-dark" href="{{ route('category', $cat->CategoryID) }}">{{ $cat->CategoryName }}</a></li>
+                                         <li><a class="text-dark" href="{{ route('category') }}">{{ $cat->CategoryName }}</a></li>
                                         @endforeach
                                       </ul>
                                   </li>

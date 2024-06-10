@@ -273,14 +273,14 @@ License URI: http://www.gnu.org/licenses/gpl.html
     line-height: 65px;
     margin-left: 20px;
     margin-top: 20px;
-    background-color: rgba(49, 59, 61, 0.6);
+    /* background-color: rgba(49, 59, 61, 0.6); */
     padding: 8px;
     margin-bottom: 5px;
     text-transform: uppercase;
   }
   
   .slider_caption p {
-    background-color: rgba(49, 59, 61, 0.6);
+    /* background-color: rgba(49, 59, 61, 0.6); */
     color: #fff;
     margin-left: 20px;
     margin-bottom: 20px;
@@ -488,13 +488,11 @@ License URI: http://www.gnu.org/licenses/gpl.html
 .news_tab li:last-child{
   border-bottom: none;
 }
-.menu-new{
-  
-}
+
 .news_img {
   display: block;
-  height: 70px;
-  width: 100px;
+  height: 140px;
+  width: 160px;
 }
 .news_img>img{
   width: 100%;

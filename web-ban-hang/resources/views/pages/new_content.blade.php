@@ -52,8 +52,8 @@
                           <img style="width: 100px;height:100px;" alt="img" src="{{ asset($n->NewsImage) }}" class="media-object">
                         </a>
                       </div>
-                      <div class="media-body">
-                       <a style="font-size: 15px" href="{{$n->NewsID}}">{{$n->NewsTitle}}</a>
+                      <div class="media-body pl-2">
+                       <a style="font-size: 12px" href="{{$n->NewsID}}"><span>{{$n->NewsTitle}}</span></a>
                       </div>
                     </div>
                   </li>
@@ -61,7 +61,7 @@
                 </ul>
               </div>
             </div>
-            <div class="field col-lg-12 col-md-12 col-sm-12 p-0" style="border:3px solid #007bff">
+            <div class="field col-lg-12 col-md-12 col-sm-12 p-0" style="border:2px solid #007bff">
               <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                 <h5 class="text-light">LĨNH VỰC</h5>
               </div>
