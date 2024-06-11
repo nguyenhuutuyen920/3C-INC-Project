@@ -15,7 +15,6 @@ return new class extends Migration
             $table->Increments('ProductID');
             $table->unsignedBigInteger('CategoryParentID');
             $table->string('SupplierID', 250);
-            $table->string('MaterialID', 250);
             $table->string('ProductCode', 250);
             $table->string('ProductName', 250);
             $table->string('ProductAlias', 250);
@@ -39,7 +38,6 @@ return new class extends Migration
             $table->boolean('IsTypical');
             $table->boolean('IsHotProduct');
             $table->boolean('IsPromotion');
-            $table->boolean('IsEnjoyProduct');
             $table->boolean('IsBestSeller');
             $table->boolean('IsWeeklyProduct');
             $table->boolean('IsApproved');

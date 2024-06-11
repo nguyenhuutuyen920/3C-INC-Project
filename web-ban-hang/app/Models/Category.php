@@ -28,6 +28,6 @@ class Category extends Model
     }
     public function supplier()
     {
-        return $this->hasMany(Supplier::class, 'id', 'CategoryID');
+        return $this->hasMany(Supplier::class, 'CategoryID', 'CategoryID');
     }
 }

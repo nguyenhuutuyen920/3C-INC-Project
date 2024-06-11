@@ -45,10 +45,9 @@
                   <div class="product-content col-lg-10 col-md-12 col-sm-12 p-0" >
                     <ul class="content_menu-field  m-0  w-100 h-100" >  
                       @foreach ($products as $prod)
-                      <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;">
-                        
+                      <div class="card" style="width: 200px;margin: 0px 15px 15px 0px;float:left">
                         <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">
-                          <img src="{{ asset($prod->ProductImage) }}" width="100%">
+                          <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px">
                         </a>
                         <div class="card-body p-2">
                           <a href="{{ route('product_info',$prod->ProductID)}}">

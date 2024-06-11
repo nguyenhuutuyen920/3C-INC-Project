@@ -17,6 +17,6 @@ class Supplier extends Model
     }
     public function supplier()
     {
-        return $this->belongsTo(Category::class, 'CategoryID','id');
+        return $this->belongsTo(Category::class, 'CategoryID','CategoryID');
     }
 }

@@ -25,41 +25,39 @@ function kiemtra () {
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>ProductID</th>
-                        <th>CategoryParentID</th>
-                        <th>SupplierID</th>
-                        <th>MaterialID</th>
-                        <th>ProductCode</th>
-                        <th>ProductName</th>
-                        <th>ProductAlias</th>
-                        <th>ProductPageTitle</th>
-                        <th>ProductMetaKeyword</th>
-                        <th>ProductMetaDescription</th>
-                        <th>ProductImage</th>
-                        <th>CurentPrice</th>
-                        <th>OldPrice</th>
-                        <th>IsShowprice</th>
-                        <th>Discount</th>
-                        <th>StoreStatus</th>
-                        <th>Abstract</th>
-                        <th>ProductContent</th>
-                        <th>OtherContent</th>
-                        <th>Promotion</th>
-                        <th>TransportInformation</th>
-                        <th>RelatedNews</th>
-                        <th>RelatedProduct</th>
-                        <th>ViewOder</th>
-                        <th>IsTypical</th>
-                        <th>IsHotProduct</th>
-                        <th>IsPromotion</th>
-                        <th>IsEnjoyProduct</th>
-                        <th>IsBestSeller</th>
-                        <th>IsWeeklyProduct</th>
-                        <th>IsApproved</th>
-                        <th>ApprovedBy</th>
-                        <th>ViewTime</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>ID Sản Phẩm</th>
+                        <th>ID Danh Mục</th>
+                        <th>ID Hãng</th>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Bí Danh Sản Phẩm</th>
+                        <th>Tiêu Đề Sản Phẩm</th>
+                        <th>Từ Khóa Sản Phẩm</th>
+                        <th>Mô tả Sản Phẩm</th>
+                        <th>Hình Ảnh Sản Phẩm</th>
+                        <th>Giá Tiền Hiện Tại</th>
+                        <th>Giá Tiền Cũ</th>
+                        <th>Hiển Thị Giá Tiền</th>
+                        <th>Giảm Giá</th>
+                        <th>Trạng Thái</th>
+                        <th>Tóm Tắt</th>
+                        <th>Nội Dung Sản Phẩm</th>
+                        <th>Nội Dung Khác</th>
+                        <th>Khuyến Mãi</th>
+                        <th>Thông Tin Vận Tải</th>
+                        <th>Tin Tức Liên Quan</th>
+                        <th>Sản Phẩm Liên Quan</th>
+                        <th>Xem Thứ Tự</th>
+                        <th>Điển Hình</th>
+                        <th>Sản Phẩm Hot</th>
+                        <th>Đang Khuyến Mãi</th>
+                        <th>Sản Phẩm Bán Chạy</th>
+                        <th>Sản Phẩm Hàng Tuần</th>
+                        <th>Được Phê Duyệt</th>
+                        <th>Được Chấp Nhận Bởi</th>
+                        <th>Xem thời Gian</th>
+                        <th>Xóa</th>
+                        <th>Chỉnh Sửa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,7 +66,6 @@ function kiemtra () {
                         <td>{{$prod->ProductID}}</td>
                         <td>{{$prod->CategoryParentID}}</td>
                         <td>{{$prod->SupplierID}}</td>
-                        <td>{{$prod->MaterialID}}</td>
                         <td>{{$prod->ProductCode}}</td>
                         <td>{{$prod->ProductName}}</td>
                         <td>{{$prod->ProductAlias}}</td>
@@ -94,7 +91,6 @@ function kiemtra () {
                         <td>{{$prod->IsTypical}}</td>
                         <td>{{$prod->IsHotProduct}}</td>
                         <td>{{$prod->IsPromotion}}</td>
-                        <td>{{$prod->IsEnjoyProduct}}</td>
                         <td>{{$prod->IsBestSeller}}</td>
                         <td>{{$prod->IsWeeklyProduct}}</td>
                         <td>{{$prod->IsApproved}}</td>

@@ -42,7 +42,6 @@ class ProductController extends Controller
         $request->validate([
             'CategoryParentID'=> 'required',
             'SupplierID' => 'required|',
-            'MaterialID' => 'required|',
             'ProductCode' => 'required|',
             'ProductName' => 'required|string|max:255|unique:products',
             'ProductAlias' => 'required|',
@@ -55,7 +54,7 @@ class ProductController extends Controller
             'IsShowprice' => 'required|',
             'Discount' => 'required|',
             'StoreStatus' => 'required|',
-            'Abstract' => 'required|',
+            'Abstract' => 'required|max:150',
             'ProductContent' => 'required|',
             'OtherContent' => 'required|',
             'Promotion' => 'required|',
@@ -66,7 +65,6 @@ class ProductController extends Controller
             'IsTypical' => 'required|',
             'IsHotProduct' => 'required|',
             'IsPromotion' => 'required|',
-            'IsEnjoyProduct' => 'required|',
             'IsBestSeller' => 'required|',
             'IsWeeklyProduct' => 'required|',
             'IsApproved' => 'required|',
@@ -86,7 +84,6 @@ class ProductController extends Controller
         $product = new Product();
         $product->CategoryParentID = $request->input('CategoryParentID');
         $product->SupplierID = $request->input('SupplierID');
-        $product->MaterialID = $request->input('MaterialID');
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
@@ -110,7 +107,6 @@ class ProductController extends Controller
         $product->IsTypical = $request->input('IsTypical');
         $product->IsHotProduct = $request->input('IsHotProduct');
         $product->IsPromotion = $request->input('IsPromotion');
-        $product->IsEnjoyProduct = $request->input('IsEnjoyProduct');
         $product->IsBestSeller = $request->input('IsBestSeller');
         $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
         $product->IsApproved = $request->input('IsApproved');
@@ -150,7 +146,6 @@ class ProductController extends Controller
         $request->validate([
             'CategoryParentID' => 'required|',
             'SupplierID' => 'required|',
-            'MaterialID' => 'required|',
             'ProductCode' => 'required|',
             'ProductName' => 'required|',
             'ProductAlias' => 'required|',
@@ -163,7 +158,7 @@ class ProductController extends Controller
             'IsShowprice' => 'required|',
             'Discount' => 'required|',
             'StoreStatus' => 'required|',
-            'Abstract' => 'required|',
+            'Abstract' => 'required|max:150',
             'ProductContent' => 'required|',
             'OtherContent' => 'required|',
             'Promotion' => 'required|',
@@ -174,7 +169,6 @@ class ProductController extends Controller
             'IsTypical' => 'required|',
             'IsHotProduct' => 'required|',
             'IsPromotion' => 'required|',
-            'IsEnjoyProduct' => 'required|',
             'IsBestSeller' => 'required|',
             'IsWeeklyProduct' => 'required|',
             'IsApproved' => 'required|',
@@ -196,7 +190,6 @@ class ProductController extends Controller
 
         $product->CategoryParentID = $request->input('CategoryParentID');
         $product->SupplierID = $request->input('SupplierID');
-        $product->MaterialID = $request->input('MaterialID');
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
@@ -220,7 +213,6 @@ class ProductController extends Controller
         $product->IsTypical = $request->input('IsTypical');
         $product->IsHotProduct = $request->input('IsHotProduct');
         $product->IsPromotion = $request->input('IsPromotion');
-        $product->IsEnjoyProduct = $request->input('IsEnjoyProduct');
         $product->IsBestSeller = $request->input('IsBestSeller');
         $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
         $product->IsApproved = $request->input('IsApproved');

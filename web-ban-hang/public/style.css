@@ -461,6 +461,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
   height: 5px;  
 }
 .newsfeed_area{
+  margin-top: 70px;
   float: left;
   display: inline;
   width: 100%;

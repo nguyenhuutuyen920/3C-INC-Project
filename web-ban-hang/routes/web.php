@@ -50,6 +50,8 @@ Route::get('/product_info', [HomeController::class, 'product_info'])->name('prod
 Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');
 Route::get('/hello', [HomeController::class, 'hello'])->name('hello');
+Route::get('/hello2', [HomeController::class, 'hello2'])->name('hello2');
+Route::get('/hello3', [HomeController::class, 'hello3'])->name('hello3');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 

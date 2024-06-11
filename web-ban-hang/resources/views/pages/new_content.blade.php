@@ -6,7 +6,7 @@
       <div class="container pt-4">
         <div class="row">
           <!-- start course content -->
-          <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="col-lg-8 col-md-12 col-sm-12">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
@@ -16,11 +16,11 @@
                     <div class="blogimg_container w-100">
                       <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->created_at}}</i></p>
                       <h2 class="blog_title"> {{$new->NewsTitle}}</h2>
-                      <p class="blog_img"> {{!!$new->NewsContent !!}} </p>
+                      <p class="blog_img"> {!!$new->NewsContent !!} </p>
                     </div>
                     <div class="blog_commentbox">
                     </div>
-                  	</div>
+                  </div>
                   <!-- single blog nex & prev button -->
                   <!-- <div class="single_blog_prevnext">
                     <a class="prev_post wow fadeInLeft" href="#"><i class="fa fa-angle-left"></i>Previous Post</a>
@@ -38,7 +38,7 @@
           <!-- End course content -->
 
           <!-- start course archive sidebar -->
-          <div class="col-lg-3 col-md-12 col-sm-12">
+          <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="courseArchive_sidebar p-0 col-lg-12 col-md-12 col-sm-12">
               <!-- start single sidebar -->
               <div class="single_sidebar">
@@ -46,10 +46,10 @@
                 <ul class="news_tab pl-2">
                 @foreach($news as $n)
                   <li class="list-unstyled">
-                    <div class="media">
+                    <div class="media mt-2">
                       <div class="media-left">
                         <a href="{{$n->NewsID}}" class="news_img" >
-                          <img style="width: 100px;height:100px;" alt="img" src="{{ asset($n->NewsImage) }}" class="media-object">
+                          <img style="width: 100px;height:80px;" alt="img" src="{{ asset($n->NewsImage) }}" class="media-object">
                         </a>
                       </div>
                       <div class="media-body pl-2">

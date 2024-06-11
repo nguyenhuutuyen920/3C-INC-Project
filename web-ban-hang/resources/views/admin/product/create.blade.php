@@ -27,7 +27,7 @@
                 @csrf
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-group">
-                    <label>Category ParentID</label>
+                    <label>ID Danh Mục</label>
                     <select class="form-control" name="CategoryParentID" id="subcate_id">
                         @foreach($cats as $cat)
                             <option 
@@ -36,135 +36,128 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>SupplierID</label>
+                    <label>ID Hãng</label>
                     <select class="form-control" name="SupplierID" >
+                        <option value="0">Không có hãng nào</option>
                         @foreach($supps as $supp)
                             <option 
                             value="{{$supp->id}}">{{$supp->SupplierName}}</option>
                         @endforeach
                     </select>
+                </div>               
+                <div class="form-group">
+                    <label>Mã Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductCode" placeholder="Vui lòng nhập Mã Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>MaterialID</label>
-                    <input class="form-control" type="text" name="MaterialID" placeholder="Please Enter MaterialID " />
-                </div>                   
-                <div class="form-group">
-                    <label>Product Code</label>
-                    <input class="form-control" type="text" name="ProductCode" placeholder="Please Enter Product Code " />
+                    <label>Tên Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductName" placeholder="Vui lòng nhập Tên Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Name</label>
-                    <input class="form-control" type="text" name="ProductName" placeholder="Please Enter ProductName " />
+                    <label>Bí Danh Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductAlias" placeholder="Vui lòng nhập Bí Danh Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Alias</label>
-                    <input class="form-control" type="text" name="ProductAlias" placeholder="Please Enter Product Alias " />
+                    <label>Tiêu Đề Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductPageTitle" placeholder="Vui lòng nhập Tiêu Đề Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Page Title</label>
-                    <input class="form-control" type="text" name="ProductPageTitle" placeholder="Please Enter Product Page Title " />
+                    <label>Từ Khóa Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductMetaKeyword" placeholder="Vui lòng nhập Từ Khóa Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Meta Keyword</label>
-                    <input class="form-control" type="text" name="ProductMetaKeyword" placeholder="Please Enter Product Meta Keyword " />
+                    <label>Mô tả Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductMetaDescription" placeholder="Vui lòng nhập Mô tả Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Meta Description</label>
-                    <input class="form-control" type="text" name="ProductMetaDescription" placeholder="Please Enter Product Meta Description " />
+                    <label>Hình Ảnh Sản Phẩm</label>
+                    <input class="form-control" type="file" name="ProductImage" placeholder="Vui lòng nhập Hình Ảnh Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Image</label>
-                    <input class="form-control" type="file" name="ProductImage" placeholder="Please Enter Product Image " />
+                    <label>Giá Tiền Hiện Tại</label>
+                    <input class="form-control" type="text" name="CurentPrice" placeholder="Vui lòng nhập Giá Tiền Hiện Tại " />
                 </div>
                 <div class="form-group">
-                    <label>Curent Price</label>
-                    <input class="form-control" type="text" name="CurentPrice" placeholder="Please Enter Curent Price " />
+                    <label>Giá Tiền Cũ</label>
+                    <input class="form-control" type="text" name="OldPrice" placeholder="Vui lòng nhập Giá Tiền Cũ" />
                 </div>
                 <div class="form-group">
-                    <label>Old Price</label>
-                    <input class="form-control" type="text" name="OldPrice" placeholder="Please Enter Old Price " />
+                    <label>Hiển Thị Giá Tiền</label>
+                    <input class="form-control" type="text" name="IsShowprice" placeholder="Vui lòng nhập Hiển Thị Giá Tiền " />
                 </div>
                 <div class="form-group">
-                    <label>IsShowprice</label>
-                    <input class="form-control" type="text" name="IsShowprice" placeholder="Please Enter IsShowprice " />
+                    <label>Giảm Giá</label>
+                    <input class="form-control" type="text" name="Discount" placeholder="Vui lòng nhập Giảm Giá " />
                 </div>
                 <div class="form-group">
-                    <label>Discount</label>
-                    <input class="form-control" type="text" name="Discount" placeholder="Please Enter Discount " />
+                    <label>Trạng Thái</label>
+                    <input class="form-control" type="text" name="StoreStatus" placeholder="Vui lòng nhập Trạng Thái " />
                 </div>
                 <div class="form-group">
-                    <label>Store Status</label>
-                    <input class="form-control" type="text" name="StoreStatus" placeholder="Please Enter Store Status " />
+                    <label>Tóm Tắt</label>
+                    <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng nhập Tóm Tắt " />
                 </div>
                 <div class="form-group">
-                    <label>Abstract</label>
-                    <input class="form-control" type="text" name="Abstract" placeholder="Please Enter Abstract " />
+                    <label>Nội Dung Sản Phẩm</label>
+                    <input class="form-control" type="text" name="ProductContent" placeholder="Vui lòng nhập Nội Dung Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Product Content</label>
-                    <input class="form-control" type="text" name="ProductContent" placeholder="Please Enter Product Content " />
+                    <label>Nội Dung Khác</label>
+                    <input class="form-control" type="text" name="OtherContent" placeholder="Vui lòng nhập Nội Dung Khác " />
                 </div>
                 <div class="form-group">
-                    <label>Other Content</label>
-                    <input class="form-control" type="text" name="OtherContent" placeholder="Please Enter Other Content " />
+                    <label>Khuyến Mãi</label>
+                    <input class="form-control" type="text" name="Promotion" placeholder="Vui lòng nhập Khuyến Mãi " />
                 </div>
                 <div class="form-group">
-                    <label>Promotion</label>
-                    <input class="form-control" type="text" name="Promotion" placeholder="Please Enter Promotion " />
+                    <label>Thông Tin Vận Tải</label>
+                    <input class="form-control" type="text" name="TransportInformation" placeholder="Vui lòng nhập Thông Tin Vận Tải " />
                 </div>
                 <div class="form-group">
-                    <label>Transport Information</label>
-                    <input class="form-control" type="text" name="TransportInformation" placeholder="Please Enter Transport Information " />
+                    <label>Tin Tức Liên Quan</label>
+                    <input class="form-control" type="text" name="RelatedNews" placeholder="Vui lòng nhập Tin Tức Liên Quan " />
                 </div>
                 <div class="form-group">
-                    <label>Related News</label>
-                    <input class="form-control" type="text" name="RelatedNews" placeholder="Please Enter Related News " />
+                    <label>Sản Phẩm Liên Quan</label>
+                    <input class="form-control" type="text" name="RelatedProduct" placeholder="Vui lòng nhập Sản Phẩm Liên Quan " />
                 </div>
                 <div class="form-group">
-                    <label>Related Product</label>
-                    <input class="form-control" type="text" name="RelatedProduct" placeholder="Please Enter Related Product " />
+                    <label>Xem Thứ Tự</label>
+                    <input class="form-control" type="text" name="ViewOder" placeholder="Vui lòng nhập Xem Thứ Tự " />
                 </div>
                 <div class="form-group">
-                    <label>ViewOder</label>
-                    <input class="form-control" type="text" name="ViewOder" placeholder="Please Enter ViewOder " />
+                    <label>Điển Hình</label>
+                    <input class="form-control" type="text" name="IsTypical" placeholder="Vui lòng nhập Điển Hình " />
                 </div>
                 <div class="form-group">
-                    <label>IsTypical</label>
-                    <input class="form-control" type="text" name="IsTypical" placeholder="Please Enter IsTypical " />
+                    <label>Sản Phẩm Hot</label>
+                    <input class="form-control" type="text" name="IsHotProduct" placeholder="Vui lòng nhập Sản Phẩm Hot " />
                 </div>
                 <div class="form-group">
-                    <label>IsHotProduct</label>
-                    <input class="form-control" type="text" name="IsHotProduct" placeholder="Please Enter IsHotProduct " />
+                    <label>Đang Khuyến Mãi</label>
+                    <input class="form-control" type="text" name="IsPromotion" placeholder="Vui lòng nhập Đang Khuyến Mãi " />
                 </div>
                 <div class="form-group">
-                    <label>IsPromotion</label>
-                    <input class="form-control" type="text" name="IsPromotion" placeholder="Please Enter IsPromotion " />
+                    <label>Sản Phẩm Bán Chạy</label>
+                    <input class="form-control" type="text" name="IsBestSeller" placeholder="Vui lòng nhập Sản Phẩm Bán Chạy " />
                 </div>
                 <div class="form-group">
-                    <label>IsEnjoy Product</label>
-                    <input class="form-control" type="text" name="IsEnjoyProduct" placeholder="Please Enter IsEnjoy Product " />
+                    <label>Sản Phẩm Hàng Tuần</label>
+                    <input class="form-control" type="text" name="IsWeeklyProduct" placeholder="Vui lòng nhập Sản Phẩm Hàng Tuần " />
                 </div>
                 <div class="form-group">
-                    <label>IsBest Seller</label>
-                    <input class="form-control" type="text" name="IsBestSeller" placeholder="Please Enter IsBest Seller " />
+                    <label>Được Phê Duyệt</label>
+                    <input class="form-control" type="text" name="IsApproved" placeholder="Vui lòng nhập Is Approved " />
                 </div>
                 <div class="form-group">
-                    <label>IsWeekly Product</label>
-                    <input class="form-control" type="text" name="IsWeeklyProduct" placeholder="Please Enter IsWeeklyProduct " />
+                    <label>Được Chấp Nhận Bởi</label>
+                    <input class="form-control" type="text" name="ApprovedBy" placeholder="Vui lòng nhập Được Chấp Nhận Bởi " />
                 </div>
                 <div class="form-group">
-                    <label>IsApproved</label>
-                    <input class="form-control" type="text" name="IsApproved" placeholder="Please Enter IsApproved " />
+                    <label>Xem thời Gian</label>
+                    <input class="form-control" type="text" name="ViewTime" placeholder="Vui lòng nhập Xem thời Gian " />
                 </div>
-                <div class="form-group">
-                    <label>ApprovedBy</label>
-                    <input class="form-control" type="text" name="ApprovedBy" placeholder="Please Enter ApprovedBy " />
-                </div>
-                <div class="form-group">
-                    <label>ViewTime</label>
-                    <input class="form-control" type="text" name="ViewTime" placeholder="Please Enter ViewTime " />
-                </div>
-                <button type="submit" class="btn btn-default">Product Add</button>
+                <button type="submit" class="btn btn-success">Product Add</button>
                 <button type="reset" class="btn btn-default">Reset</button>
             </form>
             </div>

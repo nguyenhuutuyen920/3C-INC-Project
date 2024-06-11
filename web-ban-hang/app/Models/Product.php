@@ -12,7 +12,6 @@ class Product extends Model
     protected $fillable = [
         'SupplierID',
         'CategoryParentID',
-        'MaterialID',
         'ProductCode',
         'ProductName',
         'ProductAlias',

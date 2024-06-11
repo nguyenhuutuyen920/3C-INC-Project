@@ -6,7 +6,7 @@
       <div class="container pt-4">
         <div class="row">
           <!-- start course content -->
-          <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="col-lg-8 col-md-12 col-sm-12">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
@@ -16,7 +16,7 @@
                     <div class="blogimg_container w-100">
                       <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$project->created_at}}</i></p>
                       <h2 class="blog_title"> {{$project->ProjectTitle}}</h2>
-                      <p class="blog_img"> {{!!$project->ProjectContent!!}} </p>
+                      <p class="blog_img"> {!!$project->ProjectContent!!} </p>
                     </div>
                     <div class="blog_commentbox">
                     </div>
@@ -38,26 +38,26 @@
           <!-- End course content -->
 
           <!-- start course archive sidebar -->
-          <div class="col-lg-3 col-md-12 col-sm-12">
+          <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="courseArchive_sidebar p-0 col-lg-12 col-md-12 col-sm-12">
               <!-- start single sidebar -->
               <div class="single_sidebar">
                 <h2>Dự Án <span class="fa fa-angle-double-right"></span></h2>
-                <ul class="news_tab pl-1">
-                @foreach($projects as $proj)
-                  <li class="list-unstyled">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="{{$proj->ProjectID}}" class="project_img" >
-                          <img style="width: 60px;height:60px;" alt="img" src="{{ asset($proj->ProjectImage) }}" class="media-object">
-                        </a>
+                <ul class="news_tab pl-1 mt-2">
+                  @foreach($projects as $proj)
+                    <li class="list-unstyled">
+                      <div class="media mt-2">
+                        <div class="media-left">
+                          <a href="{{$proj->ProjectID}}" class="project_img" >
+                            <img style="width: 100px;height:80px;" alt="img" src="{{ asset($proj->ProjectImage) }}" class="media-object">
+                          </a>
+                        </div>
+                        <div class="media-body pl-2">
+                        <a style="font-size: 15px" href="{{$proj->ProjectID}}">{{$proj->ProjectTitle}}</a>
+                        </div>
                       </div>
-                      <div class="media-body pl-1">
-                       <a style="font-size: 17px" href="{{$proj->ProjectID}}">{{$proj->ProjectTitle}}</a>
-                      </div>
-                    </div>
-                  </li>
-				        @endforeach                 
+                    </li>
+                  @endforeach                 
                 </ul>
               </div>
             </div>

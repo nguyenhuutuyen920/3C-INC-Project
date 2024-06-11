@@ -127,7 +127,7 @@
                             </ul>
                         </li>
                         <li><a href="#" class="nav-link pl-0 text-dark font-weight-bold mr-4">Giải Pháp</a></li>
-                        <li><a href="#" class="nav-link pl-0 text-dark font-weight-bold mr-4">Dự Án</a></li>
+                        <li><a href="{{ route('news')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Tin Tức</a></li>
                         <li><a href="{{ route('contact')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Liên Hệ</a></li>
                     </ul>
                 </div>
