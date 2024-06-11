@@ -60,7 +60,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="newsfeed_area wow fadeInRight mt-6">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0"
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0&controls=0&autohide=1&showinfo=0&modestbranding=1&loop=1"
              title="YouTube video player" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
