@@ -100,7 +100,7 @@
     </div>
   </section>
   
-  {{-- <script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
       const NewMenu = document.querySelector('.New_list');
       let scrollAmount = 0;
@@ -130,7 +130,7 @@
       });
   
       scrollNews();
-    }); --}}
+    });
   </script>
 
 </section>
