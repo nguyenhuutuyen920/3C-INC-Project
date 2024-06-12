@@ -84,9 +84,9 @@
         <a href="#" class=""><span class="text-light mr-2   icon-phone"></span> <span class="text-light d-none d-md-inline-block">84+ 243 843 3316</span></a>
 
         <div class="float-right">
-          <a href="#" class=""><span class="text-light mr-2   icon-youtube"></span> <span class="text-light d-none d-md-inline-block">Youtube</span></a>
+          <a href="https://zalo.me/0565799835" class=""><span class="text-light mr-2 "></span> <span class="text-light d-none d-md-inline-block">Zalo</span></a>
           <span class="text-light mx-md-2 d-inline-block"></span>
-          <a href="#" class=""><span class="text-light mr-2   icon-facebook"></span> <span class="text-light d-none d-md-inline-block">Facebook</span></a>
+          <a href="https://www.facebook.com/3c.com.vn" class=""><span class="text-light mr-2   icon-facebook"></span> <span class="text-light d-none d-md-inline-block">Facebook</span></a>
         </div>
 
       </div>
@@ -99,16 +99,16 @@
     <div class="container p-0">
         <div class="row">
             <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-              <a class="navbar-brand mr-5"  href="{{ route('home')}}"><img src="img/logo.png" alt=""></a>
+              <a class="navbar-brand"  href="{{ route('home')}}"><img width="60px" height="60px" src="../img/logo_3c.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class=""><a class="text-dark font-weight-bold mr-4 " href="{{ route('home')}}">Trang Chủ </a></li>
-                        <li><a class="text-dark font-weight-bold mr-4" href="{{ route('service')}}">Dịch Vụ</a></li>
+                        <li><a class="text-dark font-weight-bold mr-4" href="{{ route('service')}}">Giới Thiệu</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lĩnh Vực</a>
+                            <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <li class="dropdown">
                                 @foreach ($fields as $field)
@@ -126,7 +126,7 @@
                             
                             </ul>
                         </li>
-                        <li><a href="#" class="nav-link pl-0 text-dark font-weight-bold mr-4">Giải Pháp</a></li>
+                        <li><a href="{{ route('project')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Dự Án</a></li>
                         <li><a href="{{ route('news')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Tin Tức</a></li>
                         <li><a href="{{ route('contact')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Liên Hệ</a></li>
                     </ul>

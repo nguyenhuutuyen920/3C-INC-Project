@@ -11,9 +11,9 @@
 <footer id="footer">
       <!-- Start footer top area -->
       <div class="footer_top pt-3" style="background-color: #f1f1f1">
-        <div class="container-fluid col-ld-12  col-md-12 col-sm-12" >
-          <div class="row">
-            <div class="col-ld-4  col-md-4 col-sm-4">
+        <div class="container-fluid col-lg-12  col-md-12 col-sm-12" >
+          <div class="row w-100">
+            <div class="col-lg-4 col-md-4 col-sm-4">
               <div class="single_footer_widget">
                 <h3 class="text-primary" style="font-family: segoeuib;">Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
@@ -21,28 +21,21 @@
                 <p>Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
               </div>
             </div>
-            <div class="col-ld-4  col-md-4 col-sm-4">
+            <div class="col-lg-3  col-md-3 col-sm-3 p-0">
               <div class="single_footer_widget">
                 <h3 class="text-primary" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
                 <ul class="footer_widget_nav list-unstyled">
-                  <li><a class=" text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
-                  <li><a class=" text-dark " href="">Hỗ trợ khách hàng</a></li>
+                  <li><a class=" text-dark " href="{{ route('service')}}">Giới thiệu</a></li>
+                  <li><a class=" text-dark " href="">Sản phẩm</a></li>
+                  <li><a class=" text-dark " href="{{ route('project')}}">Dự án</a></li>
                   <li><a class=" text-dark " href="{{route('news')}}">Tin tức</a></li>
-                  <li><a class=" text-dark " href="">Giải pháp</a></li>
                   <li><a class=" text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-ld-4  col-md-4 col-sm-4">
-              <div class="single_footer_widget">
-                <h3 class="text-primary" style="font-family: segoeuib;">Social Links</h3>
-                <ul class="footer_social list-unstyled d-flex">
-                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" target="_blank" href="#"><i class="icon-facebook"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" target="_blank"  href="#"><i class="icon-twitter"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" target="_blank"  href="#"><i class="icon-google-plus"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" target="_blank"  href="#"><i class="icon-linkedin"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" target="_blank"  href="https://www.youtube.com/@CINC-vm8ec"><i class="icon-youtube"></i></a></li>
-                </ul>
+            <div class="col-lg-5 col-md-5 col-sm-5 p-0">
+              <div class="single_footer_widget p-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.4395177107926!2d105.83398067424014!3d21.05510088687545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aa533671734f%3A0x3b5c36f9d5fa7d28!2zMTgxIE5naGkgVMOgbSwgWcOqbiBQaOG7pSwgVMOieSBI4buTLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1718164465012!5m2!1svi!2s" width="550" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
@@ -54,14 +47,9 @@
       <div class="footer_bottom " style="background-color: #f1f1f1">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-7">
-              <div class="footer_bootomLeft">
-                <p> © Copyright 2020 - 3C-INC</p>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-              <div class="footer_bootomRight">
-                <p>Giấy phép số: 144/GP-BC do Bộ thông tin - Truyền thông cấp ngày 18/04/2007</p>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="footer_bootomLeft text-center">
+                <p> © Copyright 2024 - 3C.INC</p>
               </div>
             </div>
           </div>

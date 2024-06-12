@@ -85,7 +85,18 @@
 
             let productMenuHtml = '';
             selectedField.categories.forEach(cat => {
-                let route = (fieldId == 1) ? '{{ route('hello', '') }}' : '{{ route('category', '') }}';
+                let route;
+                if (fieldId == 1) {
+                    route = '{{ route('automation', '') }}';
+                }
+                else if (fieldId == 2) {
+                    route = '{{ route('category', '') }}';
+                }
+                else if (fieldId == 3) {
+                    route = '{{ route('hello2', '') }}';
+                } else {
+                    route = '{{ route('hello3', '') }}';
+                }
                 productMenuHtml += `
                     <li class="nav-item has-submenu list-unstyled">
                         <a class="nav-link text-secondary p-0" href="${route}">
