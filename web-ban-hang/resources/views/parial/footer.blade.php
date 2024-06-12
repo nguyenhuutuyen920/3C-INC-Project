@@ -27,7 +27,7 @@
                 <ul class="footer_widget_nav list-unstyled">
                   <li><a class=" text-dark " href="{{ route('service')}}">Dịch vụ</a></li>
                   <li><a class=" text-dark " href="">Hỗ trợ khách hàng</a></li>
-                  <li><a class=" text-dark " href="{{route('project')}}">Dự án</a></li>
+                  <li><a class=" text-dark " href="{{route('news')}}">Tin tức</a></li>
                   <li><a class=" text-dark " href="">Giải pháp</a></li>
                   <li><a class=" text-dark " href="{{ route('contact')}}">Liên hệ</a></li>
                 </ul>

@@ -49,7 +49,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Start about us area -->
-      <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="aboutus_area wow fadeInLeft">
           <h2 class="titile">Giới Thiệu</h2>
           <p>Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thế kỷ trước.</p>
@@ -57,7 +57,7 @@
           <p>Kể từ khi thành lập, Công ty 3C đã tập hợp được một đội ngũ cán bộ có trình độ cao trong lĩnh vực quản lý, kinh tế và khoa học kỹ thuật, hầu hết đội ngũ này là được đào tạo tại nước ngoài hoặc các trường có chất lượng cao tại Việt Nam. Kể từ đó đến nay, nguồn nhân lực của 3C được phát triển và kế thừa theo hướng tập trung vào chất lượng để đáp ứng được các công việc đòi hỏi trình độ chuyên môn và công nghệ cao của từng giai đoạn khác nhau của công ty. Với đội ngũ cán bộ có chất lượng, 3C INC cam kết luôn đáp ứng và làm hài lòng tất cả các khách hàng sử dụng các sản phảm và dịch vụ của 3C INC cung cấp.</p>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="newsfeed_area wow fadeInRight mt-6">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0&controls=0&autohide=1&showinfo=0&modestbranding=1&loop=1"
@@ -69,6 +69,70 @@
       </div>
     </div>
   </div>
+  <section id="ourNews">
+    <div class="container pt-5" >
+      <!-- Our courses title -->
+      <div class="row h-100">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="title_area m-0 h-100">
+            <h2 class="title_two mb-3">TIN TỨC</h2>
+            <div class="row">
+              @foreach ($news as $proj)
+              <div class="col-lg-3 col-md-6 col-sm-12 ">
+                <div class="New_card shadow " style="height: 360px;">
+                  <a class="New_card-img" href="{{ route('new_content', $proj->NewsID) }}">
+                    <img class="w-100" style="height: 180px" src="{{ $proj->NewsImage }}" alt="">
+                  </a>
+                  <div class="New_card-body p-3 h-50 d-flex flex-column justify-content-between">
+                    <a href="">
+                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $proj->NewsTitle}}</h5>
+                    </a>
+                    <a href="{{ route('new_content', $proj->NewsID) }}">
+                      <p class="text-dark mb-0" style="font-size: 18px">Xem Thêm</p>
+                    </a>
+                  </div>
+                </div>
+              </div>@endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const NewMenu = document.querySelector('.New_list');
+      let scrollAmount = 0;
+      let isPaused = false;
+  
+      function scrollNews() {
+        if (!isPaused) {
+          scrollAmount -= 1; // Adjust scroll speed here
+          if (scrollAmount <= -NewMenu.scrollWidth / 2) {
+            scrollAmount = 0;
+          }
+          NewMenu.style.transform = `translateX(${scrollAmount}px)`;
+        }
+        requestAnimationFrame(scrollNews);
+      }
+  
+      // Clone the New cards to create an infinite scroll effect
+      NewMenu.innerHTML += NewMenu.innerHTML;
+  
+      // Event listeners to pause/resume scrolling
+      NewMenu.addEventListener('mouseover', function() {
+        isPaused = true;
+      });
+  
+      NewMenu.addEventListener('mouseout', function() {
+        isPaused = false;
+      });
+  
+      scrollNews();
+    }); --}}
+  </script>
+
 </section>
 
 

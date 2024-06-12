@@ -28,7 +28,7 @@ class HomeController extends Controller
         $fields = Field::with(['categories'])->get();
         $cats = Category::all()->groupBy('FieldParentID');
         $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
-        $news = News::orderBy('NewsID','DESC')->paginate(10);
+        $news = News::orderBy('NewsID','ASC')->paginate(8);
         return view("pages.home",compact("news","projects","cats","fields"));
     }
 
@@ -44,23 +44,15 @@ class HomeController extends Controller
     public function news(){
         $fields = Field::all();
         $news = News::paginate(7);
-        return view("pages.new",compact("news","fields"));
+        return view("pages.news.new",compact("news","fields"));
     }
-    public function project(){
-        $fields = Field::all();
-        $projects = Project::paginate(7);
-        return view("pages.projects.project",compact("projects","fields"));
-    }
+    
     public function new_content(News $new){
         $fields = Field::all();
         $news = News::orderBy('NewsID','DESC')->paginate(4);
-        return view("pages.new_content",compact("new","news","fields"));
+        return view("pages.news.new_content",compact("new","news","fields"));
     }
-    public function project_info(Project $project){
-        $fields = Field::all();
-        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
-        return view("pages.projects.project_info",compact("project","projects","fields"));
-    }
+    
     public function service(){
         $fields = Field::all();
         $services = Service::all();
