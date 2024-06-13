@@ -78,15 +78,15 @@
           <h2 class="title_two mb-4">SẢN PHẨM ĐIỆN CAO THẾ</h2>
           <div class="project_menu p-0 d-flex">
             <div class="project_list d-flex">
-              @foreach ($projects as $proj)
+              @foreach ($products as $prod)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
                 <div class="project_card">
-                  <a class="project_card-img" href="{{ route('project_info', $proj->ProjectID) }}">
-                    <img class="w-100" style="height: 180px" src="{{$proj->ProjectImage}}" alt="">
+                  <a class="project_card-img" href="{{ route('product_info', $prod->ProductID) }}">
+                    <img class="w-100" style="height: 180px" src="{{$prod->ProductImage}}" alt="">
                   </a>
-                  <div class="project_card-body">
-                    <a href="{{ route('project_info', $proj->ProjectID) }}">
-                      <h5 class="mt-2 text-dark">{{ $proj->ProjectTitle }}</h5>
+                  <div class="Product_card-body">
+                    <a href="{{ route('product_info', $prod->ProductID) }}">
+                      <h5 class="mt-2 text-dark">{{ $prod->ProductName }}</h5>
                     </a>
                   </div>
                 </div>
@@ -143,15 +143,15 @@
         <div class="title_area m-0 h-100">
           <h2 class="title_two mb-3">SẢN PHẨM CÔNG NGHỆ THÔNG TIN</h2>
           <div class="row mt-5 mb-5">
-            @foreach ($news as $proj)
+            @foreach ($products as $prod)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
                 <div class="Technology_card shadow " style="height: 360px;">
                   <a class="Technology_card-img" href="">
-                    <img class="w-100" style="height: 180px" src="{{ $proj->NewsImage }}" alt="">
+                    <img class="w-100" style="height: 180px" src="{{ $prod->ProductImage }}" alt="">
                   </a>
                   <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between">
                     <a href="">
-                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $proj->NewsTitle}}</h5>
+                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $prod->ProductName}}</h5>
                     </a>
                     <a href="">
                       <p class="text-dark mb-0" style="font-size: 18px">Xem Thêm</p>
@@ -174,17 +174,17 @@
         <div class="title_area m-0 h-100">
           <h2 class="title_two mb-3">TIN TỨC</h2>
           <div class="row mt-5 mb-5">
-            @foreach ($news as $proj)
+            @foreach ($news as $n)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
                 <div class="New_card shadow " style="height: 360px;">
-                  <a class="New_card-img" href="{{ route('new_content', $proj->NewsID) }}">
-                    <img class="w-100" style="height: 180px" src="{{ $proj->NewsImage }}" alt="">
+                  <a class="New_card-img" href="{{ route('new_content', $n->NewsID) }}">
+                    <img class="w-100" style="height: 180px" src="{{ $n->NewsImage }}" alt="">
                   </a>
                   <div class="New_card-body p-3 h-50 d-flex flex-column justify-content-between">
                     <a href="">
-                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $proj->NewsTitle}}</h5>
+                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $n->NewsTitle}}</h5>
                     </a>
-                    <a href="{{ route('new_content', $proj->NewsID) }}">
+                    <a href="{{ route('new_content', $n->NewsID) }}">
                       <p class="text-dark mb-0" style="font-size: 18px">Xem Thêm</p>
                     </a>
                   </div>

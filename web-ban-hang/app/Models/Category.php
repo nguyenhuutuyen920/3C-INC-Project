@@ -30,4 +30,8 @@ class Category extends Model
     {
         return $this->hasMany(Supplier::class, 'CategoryID', 'CategoryID');
     }
+    public function device()
+    {
+        return $this->hasMany(Device::class, 'CategoryID', 'CategoryID');
+    }
 }

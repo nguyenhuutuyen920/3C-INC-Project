@@ -58,7 +58,6 @@
                           </div>
                         </div>
                         @endforeach
-
                       </ul>
                 </div>
             </div>
@@ -81,23 +80,48 @@
 
                 let supplierMenuHtml = '';
                 selectedField.categories.forEach(cat => {
-                    supplierMenuHtml += `
-                        <li class="nav-item has-submenu list-unstyled">
-                            <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
-                                ${cat.CategoryName}
-                            </a>
-                            <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
-                                ${cat.supplier.map(prod => `
-                                    <li class="list-unstyled">
-                                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
-                                            ${prod.SupplierName}
-                                        </a>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                            <div class="dropdown-divider"></div>
-                        </li>
-                    `;
+                    let route;
+                    if (fieldId == 1) {
+                        route = '{{ route('automation', '') }}';
+                    }
+                    else if (fieldId == 2) {
+                        route = '{{ route('category', '') }}';
+                    }
+                    else if (fieldId == 3) {
+                        route = '{{ route('hello2', '') }}';
+                    } else {
+                        route = '{{ route('hello3', '') }}';
+                    }
+
+                    let hasSupplier = cat.supplier && cat.supplier.length > 0;
+                    if (hasSupplier) {
+                        supplierMenuHtml += `
+                            <li class="nav-item has-submenu list-unstyled">
+                                <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
+                                    ${cat.CategoryName}
+                                </a>
+                                <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
+                                    ${cat.supplier.map(prod => `
+                                        <li class="list-unstyled">
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                                ${prod.SupplierName}
+                                            </a>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                                <div class="dropdown-divider"></div>
+                            </li>
+                        `;
+                    } else {
+                        supplierMenuHtml += `
+                            <li class="nav-item list-unstyled">
+                                <a class="nav-link text-secondary p-0 category-link" href="${route}">
+                                    ${cat.CategoryName}
+                                </a>
+                                <div class="dropdown-divider"></div>
+                            </li>
+                        `;
+                    }
                 });
 
                 $('.supplier_menu-field .supplier-list').html(supplierMenuHtml);
@@ -117,9 +141,11 @@
             });
 
             $(document).on('click', '.category-link', function(e) {
-                e.preventDefault();
                 var categoryId = $(this).data('category-id');
-                $('#category-' + categoryId).toggle();
+                if (categoryId) {
+                    e.preventDefault();
+                    $('#category-' + categoryId).toggle();
+                }
             });
         });
     </script>

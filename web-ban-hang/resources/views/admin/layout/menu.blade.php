@@ -65,6 +65,18 @@
             <!-- /.nav-second-level -->
         </li>
         <li>
+            <a href="#"><i class="fa fa-th-list fa-fw"></i> Device<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{ route('device.index') }}">List Device</a>
+                </li>
+                <li>
+                    <a href="{{ route('device.create') }}">Create Device</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
             <a href="admin/user/list"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>

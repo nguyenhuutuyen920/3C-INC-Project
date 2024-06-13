@@ -27,9 +27,9 @@ class HomeController extends Controller
     {
         $fields = Field::with(['categories'])->get();
         $cats = Category::all()->groupBy('FieldParentID');
-        $projects = Project::orderBy("ProjectID","DESC")->paginate(10);
+        $products = Product::orderBy("ProductID","DESC")->paginate(4);
         $news = News::orderBy('NewsID','ASC')->paginate(8);
-        return view("pages.home",compact("news","projects","cats","fields"));
+        return view("pages.home",compact("news","products","cats","fields"));
     }
 
     /**
@@ -87,10 +87,14 @@ class HomeController extends Controller
     }
     public function field(Field $field)
     {
+        $news = News::orderBy('NewsID','DESC')->paginate(4);
+        $project = Project::orderBy('ProjectID','DESC')->paginate(1);
+        $projects = Project::all();
+        $products = Product::all();
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
-        return view("pages.field", compact("field", "defaultField", "fields"));
+        return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news"));
     }
     public function automation(Field $field){
         $defaultField = 1;
@@ -113,9 +117,10 @@ class HomeController extends Controller
         $products = Product::all();
         return view("pages.hello", compact("products","field", "defaultField", "fields"));
     }
-    public function product_info(){
+    public function product_info(Product $product){
+        $defaultField = 1;
         $fields = Field::all();
-        return view("pages.product_info",compact("fields"));
+        return view("pages.product_info",compact("fields","product", "defaultField"));
     }
     public function create()
     {

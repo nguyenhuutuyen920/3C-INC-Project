@@ -74,9 +74,9 @@ class ProjectController extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
 
-            $request->file('upload')->move(public_path('project_img'), $fileName);
+            $request->file('upload')->move(public_path('media/ProjectImage'), $fileName);
 
-            $url = asset('project_img/' . $fileName);
+            $url = asset('media/ProjectImage/' . $fileName);
 
             return response()->json([
                 'uploaded' => true,
@@ -161,6 +161,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('project.index');
     }
 }

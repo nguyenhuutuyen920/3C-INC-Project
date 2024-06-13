@@ -84,38 +84,37 @@
             }
 
             let productMenuHtml = '';
-selectedField.categories.forEach(cat => {
-    let route;
-    if (fieldId == 1) {
-        route = '{{ route('automation', '') }}';
-    }
-    if (fieldId == 2) {
-        route = '{{ route('hello2', '') }}';
-    }
-    if (fieldId == 3) {
-        route = '{{ route('hello3', '') }}';
-    } else {
-        route = '{{ route('category', '') }}';
-    }
-
-    productMenuHtml += `
-        <li class="nav-item has-submenu list-unstyled">
-            <a class="nav-link text-secondary p-0" href="${route}">
-                ${cat.CategoryName}
-            </a>
-            <ul class="submenu collapse pl-1">
-                ${cat.supplier.map(prod => `
-                    <li class="list-unstyled">
-                        <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
-                            ${prod.SupplierName}
+            selectedField.categories.forEach(cat => {
+                let route;
+                if (fieldId == 1) {
+                    route = '{{ route('automation', '') }}';
+                }
+                else if (fieldId == 2) {
+                    route = '{{ route('category', '') }}';
+                }
+                else if (fieldId == 3) {
+                    route = '{{ route('hello2', '') }}';
+                } else {
+                    route = '{{ route('hello3', '') }}';
+                }
+                productMenuHtml += `
+                    <li class="nav-item has-submenu list-unstyled">
+                        <a class="nav-link text-secondary p-0" href="${route}">
+                            ${cat.CategoryName}
                         </a>
+                        <ul class="submenu collapse pl-1">
+                            ${cat.supplier.map(prod => `
+                                <li class="list-unstyled">
+                                    <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                        ${prod.SupplierName}
+                                    </a>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <div class="dropdown-divider"></div>
                     </li>
-                `).join('')}
-            </ul>
-            <div class="dropdown-divider"></div>
-        </li>
-    `;
-});
+                `;
+            });
 
 
             $('.product_menu-field .product-list').html(productMenuHtml);

@@ -108,24 +108,40 @@
                         <li class=""><a class="text-dark font-weight-bold mr-4 " href="{{ route('home')}}">Trang Chủ </a></li>
                         <li><a class="text-dark font-weight-bold mr-4" href="{{ route('service')}}">Giới Thiệu</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li class="dropdown">
-                                @foreach ($fields as $field)
-                                  <li class="has-children">
-                                    <a class="dropdown-toggle text-dark mr-4 " href="{{ route('field', $field->FieldID) }}" id="navbarDropdown" >{{ $field->FieldName }}</a>
-                                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        @foreach ($field->categories as $cat)
-                                         <li><a class="text-dark" href="{{ route('category') }}">{{ $cat->CategoryName }}</a></li>
-                                        @endforeach
-                                      </ul>
-                                  </li>
-                                @endforeach
-                                
+                          <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="dropdown">
+                              @foreach ($fields as $field)
+                                <li class="has-children">
+                                  <a class="dropdown-toggle text-dark mr-4" href="{{ route('field', $field->FieldID) }}" id="navbarDropdown">{{ $field->FieldName }}</a>
+                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @foreach ($field->categories as $cat)
+                                      @php
+                                        $route = '';
+                                        switch ($field->FieldID) {
+                                          case 1:
+                                            $route = route('automation');
+                                            break;
+                                          case 2:
+                                            $route = route('category');
+                                            break;
+                                          case 3:
+                                            $route = route('hello2');
+                                            break;
+                                          default:
+                                            $route = route('hello3');
+                                            break;
+                                        }
+                                      @endphp
+                                      <li><a class="text-dark" href="{{ $route }}">{{ $cat->CategoryName }}</a></li>
+                                    @endforeach
+                                  </ul>
+                                </li>
+                              @endforeach
                             </li>
-                            
-                            </ul>
+                          </ul>
                         </li>
+                        
                         <li><a href="{{ route('project')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Dự Án</a></li>
                         <li><a href="{{ route('news')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Tin Tức</a></li>
                         <li><a href="{{ route('contact')}}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Liên Hệ</a></li>

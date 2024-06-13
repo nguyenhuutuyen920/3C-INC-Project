@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntroduceController;
@@ -29,6 +30,7 @@ Route::prefix('admin')->group(function () {
         'product'=> ProductController::class,
         'new'=> NewsController::class,
         'project'=>ProjectController::class,
+        'device'=>DeviceController::class,
         'user'=> UserController::class,
     ]);
 });
@@ -38,6 +40,7 @@ Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.stor
 Route::post('upload', [NewsController::class, 'upload'])->name('ckeditor.upload');
 Route::post('uploadproject', [ProjectController::class, 'uploadproject'])->name('ckeditor.uploadproject');
 Route::post('admin/project/store', [ProjectController::class, 'store'])->name('project.store');
+Route::post('admin/device/store', [DeviceController::class, 'store'])->name('device.store');
 Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -45,7 +48,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
-Route::get('/product_info', [HomeController::class, 'product_info'])->name('product_info');
+Route::get('/product_info/{product}', [HomeController::class, 'product_info'])->name('product_info');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 
