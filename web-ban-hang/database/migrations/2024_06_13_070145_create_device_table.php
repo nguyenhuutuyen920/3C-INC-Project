@@ -19,7 +19,7 @@ class CreateDeviceTable extends Migration
             $table->string('DeviceTitle',255);
             $table->string('DeviceImage',255);
             $table->string('DeviceContent',255);
-            $table->string('Technicaldata',255);
+            $table->longText('Technicaldata');
             $table->string('RelatedProduct',255);
             $table->integer('hienThiTuDongHoa');
             $table->integer('HienThiVienThongXayLap');

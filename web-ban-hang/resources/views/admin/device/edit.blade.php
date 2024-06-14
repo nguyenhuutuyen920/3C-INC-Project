@@ -23,13 +23,13 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-            <form action="{{ route('device.update')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('device.update',$device->DeviceID)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-group">
                     <label>CategoryID</label>
                     <select class="form-control" name="CategoryID" id="subcate_id">
-                        @foreach($categories as $cat)
+                        @foreach($cats as $cat)
                             <option 
                             @if($device->CategoryID == $cat->CategoryID)
                                 {{"selected"}}

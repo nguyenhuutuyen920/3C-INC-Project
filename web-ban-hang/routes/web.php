@@ -51,6 +51,7 @@ Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/product_info/{product}', [HomeController::class, 'product_info'])->name('product_info');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
+Route::get('/device/{device}', [HomeController::class, 'device'])->name('device');
 
 Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');

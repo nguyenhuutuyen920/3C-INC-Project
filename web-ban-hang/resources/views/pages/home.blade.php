@@ -58,11 +58,43 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="newsfeed_area wow fadeInRight">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0&controls=0&autohide=1&showinfo=0&modestbranding=1&loop=1"
-             title="YouTube video player" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <ul class="nav nav-tabs feed_tabs" id="myTab2">
+            <li class="active mr-2"><a href="#news" data-toggle="tab">Tin tức</a></li>
+            <li><a href="#video" data-toggle="tab">Video</a></li>         
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <!-- Start news tab content -->
+            <div class="tab-pane  active" id="news">                
+              <ul class="news_tab">
+              @foreach($news as $n)
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <a class="news_img" href="{{route('new_content',$n->NewsID)}}">
+                        <img class="media-object" src="{{asset($n->NewsImage)}}" alt="img">
+                      </a>
+                    </div>
+                    <div class="media-body pl-3">
+                     <a href="{{route('new_content',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span class="feed_date">{{$n->updated_at}}</span>
+                    </div>
+                  </div>                    
+                </li>
+              @endforeach
+              </ul>                
+              <a class="see_all" href="{{route('news')}}">Xem tất cả</a>
+            </div>
+
+            <div class="tab-pane fade " id="video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0&controls=0&autohide=1&showinfo=0&modestbranding=1&loop=1"
+                 title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +107,7 @@
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12 p-0">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-4">SẢN PHẨM ĐIỆN CAO THẾ</h2>
+          <h2 class="title_two mb-4">SẢN PHẨM THIẾT BỊ ĐIỆN</h2>
           <div class="project_menu p-0 d-flex">
             <div class="project_list d-flex">
               @foreach ($products as $prod)

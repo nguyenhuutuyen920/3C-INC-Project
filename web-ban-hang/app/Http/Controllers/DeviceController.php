@@ -40,7 +40,7 @@ class DeviceController extends Controller
     {
         $request->validate([
             'CategoryID'=>'required|',
-            'DeviceTitle'=>'required|unique:device',
+            'DeviceTitle'=>'required|unique:devices',
             'DeviceImage'=>'required|',
             'DeviceContent'=>'required|',
             'Technicaldata'=>'required|',
@@ -49,6 +49,7 @@ class DeviceController extends Controller
             'HienThiVienThongXayLap'=>'required|',
             'HienThiThiNghiemDoLuong'=>'required|',
         ]);
+        // dd($request->all());
         if ($request->hasFile('DeviceImage')) {
             
             $uploadedFile = $request->file('DeviceImage');
@@ -66,7 +67,7 @@ class DeviceController extends Controller
         $device->hienThiTuDongHoa = $request->input('hienThiTuDongHoa');
         $device->HienThiVienThongXayLap = $request->input('HienThiVienThongXayLap');
         $device->HienThiThiNghiemDoLuong = $request->input('HienThiThiNghiemDoLuong');
-
+    
         $device->save();
         return redirect()->route('device.index')->with('success','Thêm dự án thành công!');
     }
@@ -108,7 +109,8 @@ class DeviceController extends Controller
      */
     public function edit(Device $device)
     {
-        return view('admin.device.edit', compact('device'));
+        $cats = Category::all();
+        return view('admin.device.edit', compact('device','cats'));
     }
 
     /**

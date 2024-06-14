@@ -407,7 +407,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #b1beff;
 }
 
 .fade {
@@ -478,6 +478,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
   color: #fff;  
 }
 .news_tab {
+  background-color: #fff;
   margin-top: 15px;
 }
 .news_tab li {
@@ -1944,7 +1945,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
   
   
   .active, .dot:hover {
-    background-color: #717171;
+    background-color: #b1b4ff;
   }
   
   

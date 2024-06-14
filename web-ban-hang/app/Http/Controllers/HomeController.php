@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Device;
 use App\Models\Field;
 use App\Models\Home;
 use App\Models\Introduce;
@@ -46,6 +47,13 @@ class HomeController extends Controller
             $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
             return view("pages.projects.project_info",compact("project","projects","fields"));
     }
+    public function device(Device $device)
+    {
+        $defaultField = 1;
+        $fields = Field::all();
+        $project = Project::orderBy('ProjectID','DESC')->paginate(4);
+        return view("pages.device",compact("device","project","fields", "defaultField"));
+    }
     public function project()
     {
             $fields = Field::all();
@@ -87,6 +95,7 @@ class HomeController extends Controller
     }
     public function field(Field $field)
     {
+        $devices = Device::all();
         $news = News::orderBy('NewsID','DESC')->paginate(4);
         $project = Project::orderBy('ProjectID','DESC')->paginate(1);
         $projects = Project::all();
@@ -94,7 +103,7 @@ class HomeController extends Controller
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
-        return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news"));
+        return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news","devices"));
     }
     public function automation(Field $field){
         $defaultField = 1;
