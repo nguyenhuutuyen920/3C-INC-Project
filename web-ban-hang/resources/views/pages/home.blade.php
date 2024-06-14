@@ -87,7 +87,7 @@
               <a class="see_all" href="{{route('news')}}">Xem tất cả</a>
             </div>
 
-            <div class="tab-pane fade " id="video">
+            <div class="tab-pane " id="video">
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/WahcpSLT_TY?si=QrNk33PXMOQs1c8P&autoplay=1&mute=1&start=0&controls=0&autohide=1&showinfo=0&modestbranding=1&loop=1"
                  title="YouTube video player" 
