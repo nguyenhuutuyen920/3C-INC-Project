@@ -28,8 +28,8 @@
       <div class="numbertext">3 / 3</div>
       <img src="../img/banner1.jpg" class="d-block w-100" alt="...">
       <div class="slider_caption" style="position: absolute;" id="slider_caption-3">
-        <h2>Cam kết khách hàng</h2>
-        <p>Mỗi khi gặp khách hàng, chúng ta sẽ: Đón tiếp mỗi khách hàng với lời chào, cử chỉ, nụ cười, ánh mắt thân thiện. Cố gắng tìm hiểu và cung cấp thông tin đúng về tất cả các dịch vụ, sản phẩm của 3C INC và trả lời nhanh chóng, chính xác các câu hỏi của khách hàng;</p>
+        <h2>MỤC TIÊU</h2>
+        <p>Trở thành nhà phân phối chuyên nghiệp trong cung cấp lắp đặt bảo trì các thiết bị viễn thông như: tổng đài nội bộ, máy fax, điện thoại để bàn, điện thoại IP, di động... trên cơ sở xây dựng và phát triển các kênh phân phối tại miền Bắc, miền Trung, Đồng Nai, Bình Dương, Bà Rịa, Vũng Tàu song song với việc củng cố và hoàn thiện các kênh phân phối đã thiết lập.</p>
       </div>
     </div>
   </div>
@@ -177,7 +177,7 @@
           <div class="row mt-5 mb-5">
             @foreach ($products as $prod)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
-                <div class="Technology_card shadow " style="height: 360px;">
+                <div class="Technology_card shadow " style="height: 330px;">
                   <a class="Technology_card-img" href="">
                     <img class="w-100" style="height: 180px" src="{{ $prod->ProductImage }}" alt="">
                   </a>
@@ -198,7 +198,7 @@
     </div>
   </div>
 </section>
-<section id="ourNews">
+{{-- <section id="ourNews">
   <div class="container pt-5 mb-5" >
     <!-- Our courses title -->
     <div class="row h-100">
@@ -208,7 +208,7 @@
           <div class="row mt-5 mb-5">
             @foreach ($news as $n)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
-                <div class="New_card shadow " style="height: 360px;">
+                <div class="New_card shadow " style="height: 330px;">
                   <a class="New_card-img" href="{{ route('new_content', $n->NewsID) }}">
                     <img class="w-100" style="height: 180px" src="{{ $n->NewsImage }}" alt="">
                   </a>
@@ -228,7 +228,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 
 

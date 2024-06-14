@@ -6,7 +6,7 @@
 .menu-area{background: #fff}
 .dropdown-menu{padding:0;margin:0;border:0 solid transition!important;border:0 solid rgba(0,0,0,.15);border-radius:0;-webkit-box-shadow:none!important;box-shadow:none!important}
 .mainmenu a, .navbar-default .navbar-nav > li > a, .mainmenu ul li a , .navbar-expand-lg .navbar-nav .nav-link{color:#000;font-size:16px;text-transform:capitalize;padding:16px 0;font-family:'Roboto',sans-serif;display: block !important;}
-.mainmenu .active a,.mainmenu .active a:focus,.mainmenu .active a:hover,.mainmenu li a:hover,.mainmenu li a:focus ,.navbar-default .navbar-nav>.show>a, .navbar-default .navbar-nav>.show>a:focus, .navbar-default .navbar-nav>.show>a:hover{color: #000;background: #fff;outline: 0;}
+.mainmenu .active a,.mainmenu .active a:focus,.mainmenu .active a:hover,.mainmenu li a:hover,.mainmenu li a:focus ,.navbar-default .navbar-nav>.show>a, .navbar-default .navbar-nav>.show>a:focus, .navbar-default .navbar-nav>.show>a:hover{color: #fff;background: #fff;outline: 0;}
 /*==========Sub Menu=v==========*/
 .mainmenu .collapse ul > li:hover > a{background: #fff;}
 .mainmenu .collapse ul ul > li:hover > a, .navbar-default .navbar-nav .show .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .show .dropdown-menu > li > a:hover{background: #fff;}
@@ -99,7 +99,7 @@
     <div class="container p-0">
         <div class="row">
             <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-              <a class="navbar-brand"  href="{{ route('home')}}"><img width="60px" height="60px" src="../img/logo_3c.png" alt=""></a>
+              <a class="navbar-brand m-0 p-1"  href="{{ route('home')}}"><img width="50px" height="50px" src="../img/logo_3c.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -111,33 +111,13 @@
                           <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Giới Thiệu</a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="dropdown">
-                              @foreach ($fields as $field)
                                 <li class="has-children">
-                                  <a class="dropdown-toggle text-dark mr-4" href="{{ route('field', $field->FieldID) }}" id="navbarDropdown">{{ $field->FieldName }}</a>
-                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    @foreach ($field->categories as $cat)
-                                      {{-- @php
-                                        $route = '';
-                                        switch ($field->FieldID) {
-                                          case 1:
-                                            $route = route('automation');
-                                            break;
-                                          case 2:
-                                            $route = route('category');
-                                            break;
-                                          case 3:
-                                            $route = route('hello2');
-                                            break;
-                                          default:
-                                            $route = route('hello3');
-                                            break;
-                                        }
-                                      @endphp --}}
-                                      <li><a class="text-dark" href="">{{ $cat->CategoryName }}</a></li>
-                                    @endforeach
-                                  </ul>
+                                  <a class="text-dark mr-4" href="{{ route('introduce')}}" id="Dropdown">Tầm nhìn - Sứ mệnh</a>
                                 </li>
-                              @endforeach
+                                <li class="has-children">
+                                  <a class="text-dark mr-4" href="" id="Dropdown">Lịch sử hình thành</a>
+                                </li>
+                                
                             </li>
                           </ul>
                         </li>
@@ -147,7 +127,7 @@
                             <li class="dropdown">
                               @foreach ($fields as $field)
                                 <li class="has-children">
-                                  <a class="dropdown-toggle text-dark mr-4" href="{{ route('field', $field->FieldID) }}" id="navbarDropdown">{{ $field->FieldName }}</a>
+                                  <a class="dropdown-toggle text-dark mr-4" href="{{ route('field', $field->FieldID) }}" id="Dropdown">{{ $field->FieldName }}</a>
                                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @foreach ($field->categories as $cat)
                                       @php
@@ -167,7 +147,7 @@
                                             break;
                                         }
                                       @endphp
-                                      <li><a class="text-dark" href="{{ $route }}">{{ $cat->CategoryName }}</a></li>
+                                      <li><a class="text-dark" href="{{ $route }}" id="Dropdown">{{ $cat->CategoryName }}</a></li>
                                     @endforeach
                                   </ul>
                                 </li>

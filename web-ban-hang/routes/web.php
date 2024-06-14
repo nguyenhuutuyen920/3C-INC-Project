@@ -44,6 +44,7 @@ Route::post('admin/device/store', [DeviceController::class, 'store'])->name('dev
 Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/introduce', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');

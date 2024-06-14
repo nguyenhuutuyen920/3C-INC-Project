@@ -39,7 +39,10 @@ class HomeController extends Controller
     public function contact(){
         $fields = Field::all();
         return view("pages.contact",compact('fields'));
-
+    }
+    public function introduce(){
+        $fields = Field::all();
+        return view("pages.introduces.introduce",compact('fields'));
     }
     public function project_info(Project $project)
     {
