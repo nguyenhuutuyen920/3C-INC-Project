@@ -106,8 +106,8 @@
                 <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class=""><a class="text-dark font-weight-bold mr-4 " href="{{ route('home')}}">Trang Chủ </a></li>
-                        {{-- <li><a class="text-dark font-weight-bold mr-4" href="{{ route('service')}}">Giới Thiệu</a></li> --}}
-                        <li class="dropdown">
+                        <li><a class="text-dark font-weight-bold mr-4" href="{{ route('introduce')}}">Giới Thiệu</a></li>
+                        {{-- <li class="dropdown">
                           <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Giới Thiệu</a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="dropdown">
@@ -120,7 +120,7 @@
                                 
                             </li>
                           </ul>
-                        </li>
+                        </li> --}}
                         <li class="dropdown">
                           <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

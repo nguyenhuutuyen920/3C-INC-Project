@@ -13,7 +13,7 @@
       <div class="footer_top pt-3 pb-4" style="background-color: #f1f1f1">
         <div class="container-fluid col-lg-12  col-md-12 col-sm-12" >
           <div class="row w-100">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-12">
               <div class="single_footer_widget">
                 <h3 class="text-primary" style="font-family: segoeuib;">Giới thiệu</h3>
                 <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
@@ -21,10 +21,10 @@
                 <p>Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
               </div>
             </div>
-            <div class="col-lg-3  col-md-3 col-sm-3 p-0">
+            <div class="col-lg-4  col-md-4 col-sm-12 p-0">
               <div class="single_footer_widget">
-                <h3 class="text-primary" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
-                <ul class="footer_widget_nav list-unstyled">
+                <h3 class="text-primary m-3" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h3>
+                <ul class="footer_widget_nav list-unstyled ml-3">
                   <li><a class=" text-dark " href="{{ route('service')}}">Giới thiệu</a></li>
                   <li><a class=" text-dark " href="">Sản phẩm</a></li>
                   <li><a class=" text-dark " href="{{ route('project')}}">Dự án</a></li>
@@ -33,9 +33,9 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 p-0">
-              <div class="single_footer_widget p-0">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.4395177107926!2d105.83398067424014!3d21.05510088687545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aa533671734f%3A0x3b5c36f9d5fa7d28!2zMTgxIE5naGkgVMOgbSwgWcOqbiBQaOG7pSwgVMOieSBI4buTLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1718164465012!5m2!1svi!2s"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+              <div class="single_footer_widget p-0 ml-2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.4395177107926!2d105.83398067424014!3d21.05510088687545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aa533671734f%3A0x3b5c36f9d5fa7d28!2zMTgxIE5naGkgVMOgbSwgWcOqbiBQaOG7pSwgVMOieSBI4buTLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1718164465012!5m2!1svi!2s"   style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>

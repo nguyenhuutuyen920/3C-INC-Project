@@ -42,7 +42,7 @@ class HomeController extends Controller
     }
     public function introduce(){
         $fields = Field::all();
-        return view("pages.introduces.introduce",compact('fields'));
+        return view("pages.introduce",compact('fields'));
     }
     public function project_info(Project $project)
     {
@@ -76,11 +76,11 @@ class HomeController extends Controller
         return view("pages.news.new_content",compact("new","news","fields"));
     }
     
-    public function service(){
-        $fields = Field::all();
-        $services = Service::all();
-        return view("pages.service",compact("services","fields"));
-    }
+    // public function service(){
+    //     $fields = Field::all();
+    //     $services = Service::all();
+    //     return view("pages.service",compact("services","fields"));
+    // }
     public function category(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
@@ -112,22 +112,26 @@ class HomeController extends Controller
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
+        $news = News::orderBy('NewsID','DESC')->paginate(4);
+        $devices = Device::all();
+        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
+        $project = Project::all();
         $products = Product::all();
-        return view("pages.automation", compact("products","field", "defaultField", "fields"));
+        return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
     }
     public function hello2(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
         $products = Product::all();
-        return view("pages.hello", compact("products","field", "defaultField", "fields"));
+        return view("pages.hello2", compact("products","field", "defaultField", "fields"));
     }
     public function hello3(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
         $products = Product::all();
-        return view("pages.hello", compact("products","field", "defaultField", "fields"));
+        return view("pages.hello3", compact("products","field", "defaultField", "fields"));
     }
     public function product_info(Product $product){
         $defaultField = 1;

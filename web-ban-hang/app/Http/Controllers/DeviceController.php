@@ -71,7 +71,7 @@ class DeviceController extends Controller
         $device->save();
         return redirect()->route('device.index')->with('success','Thêm dự án thành công!');
     }
-    public function uploadproject(Request $request)
+    public function upload(Request $request)
     {
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
@@ -124,7 +124,7 @@ class DeviceController extends Controller
     {
         $request->validate([
             'CategoryID'=>'required|',
-            'DeviceTitle'=>'required|unique:device',
+            'DeviceTitle'=>'required|',
             'DeviceImage'=>'required|',
             'DeviceContent'=>'required|',
             'Technicaldata'=>'required|',
@@ -145,6 +145,18 @@ class DeviceController extends Controller
             }
             $uploadedFile->move("media/DeviceImage/",$imageName);
         }
+        $device->CategoryID = $request->input('CategoryID');
+        $device->DeviceTitle = $request->input('DeviceTitle');
+        $device->DeviceContent = $request->input('DeviceContent');
+        $device->Technicaldata = $request->input('Technicaldata');
+        $device->RelatedProduct = $request->input('RelatedProduct');
+        $device->DeviceImage = 'media/DeviceImage/' . $imageName;
+        $device->hienThiTuDongHoa = $request->input('hienThiTuDongHoa');
+        $device->HienThiVienThongXayLap = $request->input('HienThiVienThongXayLap');
+        $device->HienThiThiNghiemDoLuong = $request->input('HienThiThiNghiemDoLuong');
+    
+        $device->update();
+        return redirect()->route('device.index')->with('success','Thêm dự án thành công!');
     }
 
     /**

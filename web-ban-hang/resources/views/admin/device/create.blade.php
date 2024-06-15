@@ -3,11 +3,6 @@
 <head>
     {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
 
-    <style type="text/css">
-        #editor {
-            height: 500px;
-        }
-    </style>
 </head>
 <body>
 @extends('admin.index')
@@ -61,7 +56,7 @@
                 </div>                   
                 <div class="form-group">
                     <label>Thông Số Kĩ Thuật</label>
-                    <textarea class="form-control" type="text" id="editor" name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật"></textarea>
+                    <textarea class="form-control" type="text" id="editor" style="height: 500px" name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>

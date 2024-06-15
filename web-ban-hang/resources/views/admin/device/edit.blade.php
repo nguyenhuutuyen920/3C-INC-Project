@@ -23,8 +23,8 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-            <form action="{{ route('device.update',$device->DeviceID)}}" method="POST" enctype="multipart/form-data">
-                @csrf
+            <form action="{{ route('device.update',$device->DeviceID)}}" method="post" enctype="multipart/form-data">
+                @csrf @method('PUT')
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-group">
                     <label>CategoryID</label>
@@ -52,7 +52,7 @@
                 </div>                   
                 <div class="form-group">
                     <label>Thông Số Kĩ Thuật</label>
-                    <textarea class="form-control" type="text" name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật">{{$device->Technicaldata}}</textarea>
+                    <textarea class="form-control" type="text" id="editor" style="height: 500px" name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật">{{$device->Technicaldata}}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>
@@ -80,4 +80,17 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+@endsection
+@section('javascript')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                }
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

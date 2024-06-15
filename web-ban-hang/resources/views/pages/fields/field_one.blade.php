@@ -6,21 +6,20 @@
         </div>
         @foreach ($devices as $dev)
             @if ($dev->hienThiTuDongHoa == 1)
-            <div class="automaiton_content-card card-automation d-flex p-2">
-                <a href="{{ route('device',$dev->DeviceID)}}" class="card-automation-img" style="width: 180px; height: 150px;">
-                    <img class="w-100 h-100" src="{{asset($dev->DeviceImage)}}" alt="">
-                </a>
-                <div class="card-automation-body w-100 pl-2">
-                    <div class="card-title">
-                        <a href="{{ route('device',$dev->DeviceID)}}">
-                            <h5>{{$dev->DeviceTitle}}</h5>
-                        </a>
-                        <p>{{$dev->DeviceContent}}</p>
+                <div class="automaiton_content-card card-automation d-flex p-2">
+                    <a href="{{ route('device',$dev->DeviceID)}}" class="card-automation-img" style="width: 180px; height: 150px;">
+                        <img class="w-100 h-100" src="{{asset($dev->DeviceImage)}}" alt="">
+                    </a>
+                    <div class="card-automation-body w-100 pl-2">
+                        <div class="card-title">
+                            <a href="{{ route('device',$dev->DeviceID)}}">
+                                <h5>{{$dev->DeviceTitle}}</h5>
+                            </a>
+                            <p>{{$dev->DeviceContent}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endif
-        
+            @endif
         @endforeach
     </div>
     <div class="automation_footer d-flex mt-3 badge-primary" style="border: 2px solid rgb(128, 128, 130)">

@@ -1,21 +1,17 @@
 @extends('layouts.index')
 @section('content')
-
-<!--=========== BEGIN COURSE BANNER SECTION ================-->
-<section class="automation">
-    <style>
-        .sidebar li .submenu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    </style>
-    <section id="field" style="background: #f1f1f1">
-        <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
-            <div class="container menu-field d-flex p-0">
-                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
+<style>
+    p{
+        color: #000;
+    }
+    strong{
+        color: #000;
+    }
+</style>
+<section id="automation h-100">
+        <div class=" container menu-field pt-5 h-100">
+            <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 float-left" style="height:max-content">
                     <div class="field">
                         <div class="menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
@@ -41,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="supplier-content col-lg-9 col-md-12 col-sm-12 pl-3" style="background-color: #ffffff">
+                <div class="supplier-content col-lg-9 col-md-12 col-sm-12 pl-3 float-left" style="background-color: #ffffff">
                     <div class="product-title-contact d-flex pt-3" >
                         <div class="product-img"> 
                             <img style="width:250px;height: 250px;" src="{{asset($device->DeviceImage)}}"> 
@@ -62,12 +58,11 @@
                     <div class="dropdown-divider"></div>
                     <div class="product-content mt-3">
                         <h3>THÔNG TIN THIẾT BỊ</h3>
-                        <p style="font-size: 15px">{!!$device->Technicaldata!!}</p>
+                        <p style="font-size: 15px;">{!!$device->Technicaldata!!}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
     <script>
         $(document).ready(function() {
@@ -153,5 +148,4 @@
         });
     </script>
 </section>
-<!--=========== END COURSE BANNER SECTION ================-->
 @endsection

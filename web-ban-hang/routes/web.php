@@ -38,7 +38,7 @@ Route::post('admin/category/store', [CategoryController::class, 'store'])->name(
 Route::post('admin/product/store', [ProductController::class, 'store'])->name('product.store');
 Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.store');
 Route::post('upload', [NewsController::class, 'upload'])->name('ckeditor.upload');
-Route::post('uploadproject', [ProjectController::class, 'uploadproject'])->name('ckeditor.uploadproject');
+Route::post('upload', [ProjectController::class, 'upload'])->name('ckeditor.upload');
 Route::post('admin/project/store', [ProjectController::class, 'store'])->name('project.store');
 Route::post('admin/device/store', [DeviceController::class, 'store'])->name('device.store');
 Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');

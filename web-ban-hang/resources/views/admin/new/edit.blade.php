@@ -3,11 +3,6 @@
 <head>
     <title>Laravel CkEditor5 Image Upload Web tech Knowledge</title>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
-    <style type="text/css">
-        #editor {
-            height: 500px;
-        }
-    </style>
 </head>
 <body>
 @extends('admin.index')
@@ -63,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <label>News Content</label>
-                    <textarea class="form-control" type="text" id="editor" name="NewsContent" placeholder="Please Enter New Content">{{ $new->NewsContent}}</textarea>
+                    <textarea class="form-control" type="text" id="editor" style="height: 500px" name="NewsContent" placeholder="Please Enter New Content">{{ $new->NewsContent}}</textarea>
                 </div>
                 <div class="form-group">
                     <label>News Source</label>
@@ -108,19 +103,18 @@
     <!-- /.container-fluid -->
 </div>
 @endsection
-{{-- @endsection
 @section('scripts')
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
                 ckfinder: {
-                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-@endsection --}}
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+@endsection
 </body>
 </html>

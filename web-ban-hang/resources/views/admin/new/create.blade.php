@@ -3,11 +3,6 @@
 <head>
     {{-- <script src="admin_asset/ckeditor5/ckeditor.js"></script> --}}
 
-    <style type="text/css">
-        #editor {
-            height: 500px;
-        }
-    </style>
 </head>
 <body>
 @extends('admin.index')
@@ -67,7 +62,7 @@
                         <div id="editor">
                             <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
                         </div> --}}
-                        <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                        <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
 
                     </div>
                     <div class="form-group">
