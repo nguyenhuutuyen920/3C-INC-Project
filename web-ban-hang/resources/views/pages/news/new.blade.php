@@ -8,7 +8,7 @@
           <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
             <ul class="content_menu-new  m-0 p-2" style="width: 100%">
               @foreach($news as $n)
-                    <li class="new-menu float-left p-0 ml-4 list-unstyled mb-4" style="width: 320px;height:415px">
+                    <li class="new-menu float-left p-0 ml-4 list-unstyled mb-4" style="width: 45%" >
                       <div class="media media-new d-flex flex-column" style="margin-bottom: 10px">
                         <div class="new w-100" style="height: 230px;">
                           <a class="new_img " href="{{ route('new_content',$n->NewsID)}}">

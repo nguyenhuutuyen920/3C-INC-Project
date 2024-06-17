@@ -29,8 +29,9 @@ class HomeController extends Controller
         $fields = Field::with(['categories'])->get();
         $cats = Category::all()->groupBy('FieldParentID');
         $products = Product::orderBy("ProductID","DESC")->paginate(4);
+        $devices = Device::orderBy("DeviceID","DESC")->paginate(8);
         $news = News::orderBy('NewsID','ASC')->paginate(8);
-        return view("pages.home",compact("news","products","cats","fields"));
+        return view("pages.home",compact("news","products","cats","fields","devices"));
     }
 
     /**
@@ -50,12 +51,12 @@ class HomeController extends Controller
             $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
             return view("pages.projects.project_info",compact("project","projects","fields"));
     }
-    public function device(Device $device)
+    public function device(Device $device,Field $field)
     {
         $defaultField = 1;
-        $fields = Field::all();
-        $project = Project::orderBy('ProjectID','DESC')->paginate(4);
-        return view("pages.device",compact("device","project","fields", "defaultField"));
+        $fields = Field::with('categories.supplier')->get();
+        $field->load('categories.supplier');
+        return view("pages.device", compact("field", "defaultField", "fields","device"));
     }
     public function project()
     {
@@ -133,10 +134,11 @@ class HomeController extends Controller
         $products = Product::all();
         return view("pages.hello3", compact("products","field", "defaultField", "fields"));
     }
-    public function product_info(Product $product){
+    public function product_info(Product $product,Field $field){
         $defaultField = 1;
-        $fields = Field::all();
-        return view("pages.product_info",compact("fields","product", "defaultField"));
+        $fields = Field::with('categories.supplier')->get();
+        $field->load('categories.supplier');
+        return view("pages.product_info",compact("fields","product", "defaultField","field"));
     }
     public function create()
     {

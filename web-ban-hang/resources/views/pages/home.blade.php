@@ -59,8 +59,8 @@
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="newsfeed_area wow fadeInRight">
           <ul class="nav nav-tabs feed_tabs" id="myTab2">
-            <li class="active mr-2"><a href="#news" data-toggle="tab">Tin tức</a></li>
-            <li><a href="#video" data-toggle="tab">Video</a></li>         
+            <li class="active mr-2"><a class="new" href="#news" data-toggle="tab">Tin tức</a></li>
+            <li><a class="video" href="#video" data-toggle="tab">Video</a></li>         
           </ul>
 
           <!-- Tab panes -->
@@ -108,17 +108,17 @@
       <div class="col-lg-12 col-md-12 col-sm-12 p-0">
         <div class="title_area m-0 h-100">
           <h2 class="title_two mb-4">SẢN PHẨM THIẾT BỊ ĐIỆN</h2>
-          <div class="project_menu p-0 d-flex">
-            <div class="project_list d-flex">
-              @foreach ($products as $prod)
+          <div class="device_menu p-0 d-flex">
+            <div class="device_list d-flex">
+              @foreach ($devices as $dev)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
-                <div class="project_card">
-                  <a class="project_card-img" href="{{ route('product_info', $prod->ProductID) }}">
-                    <img class="w-100" style="height: 180px" src="{{$prod->ProductImage}}" alt="">
+                <div class="device_card">
+                  <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
+                    <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
                   </a>
-                  <div class="Product_card-body">
-                    <a href="{{ route('product_info', $prod->ProductID) }}">
-                      <h5 class="mt-2 text-dark">{{ $prod->ProductName }}</h5>
+                  <div class="Device_card-body">
+                    <a href="{{ route('device',$dev->DeviceID)}}">
+                      <h5 class="mt-2 text-dark">{{ $dev->DeviceTitle }}</h5>
                     </a>
                   </div>
                 </div>
@@ -132,7 +132,7 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const projectMenu = document.querySelector('.project_list');
+      const projectMenu = document.querySelector('.device_list');
       let scrollAmount = 0;
       let isPaused = false;
   
@@ -178,14 +178,14 @@
             @foreach ($products as $prod)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
                 <div class="Technology_card shadow " style="height: 330px;">
-                  <a class="Technology_card-img" href="">
+                  <a class="Technology_card-img" href="{{ route('product_info', $prod->ProductID) }}">
                     <img class="w-100" style="height: 180px" src="{{ $prod->ProductImage }}" alt="">
                   </a>
                   <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between">
-                    <a href="">
+                    <a href="{{ route('product_info', $prod->ProductID) }}">
                       <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $prod->ProductName}}</h5>
                     </a>
-                    <a href="">
+                    <a href="{{ route('product_info', $prod->ProductID) }}">
                       <p class="text-dark mb-0" style="font-size: 18px">Xem Thêm</p>
                     </a>
                   </div>

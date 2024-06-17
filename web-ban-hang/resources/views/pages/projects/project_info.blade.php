@@ -49,14 +49,16 @@
                       <div class="media mt-2">
                         <div class="media-left">
                           <a href="{{$proj->ProjectID}}" class="project_img" >
-                            <img style="width: 100px;height:80px;" alt="img" src="{{ asset($proj->ProjectImage) }}" class="media-object">
+                            <img style="width: 100px;height:70px;" alt="img" src="{{ asset($proj->ProjectImage) }}" class="media-object">
                           </a>
                         </div>
                         <div class="media-body pl-2">
-                        <a style="font-size: 15px" href="{{$proj->ProjectID}}">{{$proj->ProjectTitle}}</a>
+                        <a class="font-weight-bold" style="font-size: 15px" href="{{$proj->ProjectID}}">{{$proj->ProjectTitle}}</a>
                         </div>
                       </div>
                     </li>
+                    <div class="dropdown-divider"></div>
+
                   @endforeach                 
                 </ul>
               </div>
@@ -68,7 +70,7 @@
               <ul class="field-menu m-0 p-0">
                 @foreach ($fields as $field)
                   <li class="pt-2 pl-2 list-unstyled">
-                    <a href="{{route('field', $field->FieldID)}}"><span class="text-dark">{{$field->FieldName}}</span></a>
+                    <a href="{{route('field', $field->FieldID)}}"><span class="text-dark font-weight-bold">{{$field->FieldName}}</span></a>
                     <div class="dropdown-divider"></div>
                   </li>
                 @endforeach

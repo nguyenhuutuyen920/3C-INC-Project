@@ -1,21 +1,11 @@
 @extends('layouts.index')
 @section('content')
 
-<!--=========== BEGIN COURSE BANNER SECTION ================-->
-<section class="automation">
-    <style>
-        .sidebar li .submenu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    </style>
-    <section id="field" style="background: #f1f1f1">
-        <div class=" container menu-field  pt-5">
-            <div class="col-lg-12 col-md-12 col-sm-12 d-flex p-0">
-                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
+
+    <section id="field" style="background: #f1f1f1;">
+        <div class="container pt-5" >
+            <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
+                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
                     <div class="field">
                         <div class="menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
@@ -67,74 +57,75 @@
                 </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function(){
+                let defaultFieldId = '{{ $defaultField }}';
+                let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
+        
+                // Hàm để cập nhật danh mục sản phẩm
+                function updateProductMenu(fieldId) {
+                    let fieldData = @json($fields);
+                    let selectedField = fieldData.find(field => field.FieldID == fieldId);
+                    if (!selectedField) {
+                        console.error('Field not found for fieldId:', fieldId);
+                        return;
+                    }
+        
+                    let productMenuHtml = '';
+                    selectedField.categories.forEach(cat => {
+                        let route;
+                        if (fieldId == 1) {
+                            route = '{{ route('automation', '') }}';
+                        }
+                        else if (fieldId == 2) {
+                            route = '{{ route('category', '') }}';
+                        }
+                        else if (fieldId == 3) {
+                            route = '{{ route('hello2', '') }}';
+                        } else {
+                            route = '{{ route('hello3', '') }}';
+                        }
+                        productMenuHtml += `
+                            <li class="nav-item has-submenu list-unstyled">
+                                <a class="nav-link text-secondary p-0" href="${route}">
+                                    ${cat.CategoryName}
+                                </a>
+                                <ul class="submenu collapse pl-1">
+                                    ${cat.supplier.map(prod => `
+                                        <li class="list-unstyled">
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                                ${prod.SupplierName}
+                                            </a>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                                <div class="dropdown-divider"></div>
+                            </li>
+                        `;
+                    });
+        
+                    $('.product_menu-field .product-list').html(productMenuHtml);
+                }
+        
+                $('.field-content').hide();
+                $('#field-' + storedFieldId).show();
+                updateProductMenu(storedFieldId);
+        
+                $('.field-link').click(function(e){
+                    e.preventDefault();
+                    var fieldId = $(this).data('field-id');
+                    $('.field-content').hide();
+                    $('#field-' + fieldId).show();
+                    localStorage.setItem('currentFieldId', fieldId);
+                    updateProductMenu(fieldId);
+                });
+            });
+        
+            </script>
     </section>
 
-    <script>
-    $(document).ready(function(){
-        let defaultFieldId = '{{ $defaultField }}';
-        let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
+    
 
-        // Hàm để cập nhật danh mục sản phẩm
-        function updateProductMenu(fieldId) {
-            let fieldData = @json($fields);
-            let selectedField = fieldData.find(field => field.FieldID == fieldId);
-            if (!selectedField) {
-                console.error('Field not found for fieldId:', fieldId);
-                return;
-            }
-
-            let productMenuHtml = '';
-            selectedField.categories.forEach(cat => {
-                let route;
-                if (fieldId == 1) {
-                    route = '{{ route('automation', '') }}';
-                }
-                else if (fieldId == 2) {
-                    route = '{{ route('category', '') }}';
-                }
-                else if (fieldId == 3) {
-                    route = '{{ route('hello2', '') }}';
-                } else {
-                    route = '{{ route('hello3', '') }}';
-                }
-                productMenuHtml += `
-                    <li class="nav-item has-submenu list-unstyled">
-                        <a class="nav-link text-secondary p-0" href="${route}">
-                            ${cat.CategoryName}
-                        </a>
-                        <ul class="submenu collapse pl-1">
-                            ${cat.supplier.map(prod => `
-                                <li class="list-unstyled">
-                                    <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
-                                        ${prod.SupplierName}
-                                    </a>
-                                </li>
-                            `).join('')}
-                        </ul>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                `;
-            });
-
-            $('.product_menu-field .product-list').html(productMenuHtml);
-        }
-
-        $('.field-content').hide();
-        $('#field-' + storedFieldId).show();
-        updateProductMenu(storedFieldId);
-
-        $('.field-link').click(function(e){
-            e.preventDefault();
-            var fieldId = $(this).data('field-id');
-            $('.field-content').hide();
-            $('#field-' + fieldId).show();
-            localStorage.setItem('currentFieldId', fieldId);
-            updateProductMenu(fieldId);
-        });
-    });
-
-    </script>
-</section>
 <!--=========== END COURSE BANNER SECTION ================-->
 @endsection
     

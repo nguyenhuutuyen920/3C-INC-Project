@@ -56,7 +56,7 @@
                 </div>                   
                 <div class="form-group">
                     <label>Thông Số Kĩ Thuật</label>
-                    <textarea class="form-control" type="text" id="editor" style="height: 500px" name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật"></textarea>
+                    <textarea class="form-contro" type="text" id="editor" style="height: 500px;"  name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>
@@ -90,7 +90,7 @@
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
                 ckfinder: {
-                    uploadUrl: "{{ route('ckeditor.uploadproject', ['_token' => csrf_token()]) }}"
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
         })
         .catch( error => {

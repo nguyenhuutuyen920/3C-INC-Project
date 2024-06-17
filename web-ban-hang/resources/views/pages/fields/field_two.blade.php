@@ -1,7 +1,7 @@
 <div class="automation ml-2">
     <div class="automaiton_content " style="border: 2px solid rgb(156, 156, 156)">
         <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="m-0">Thiết bị tự động hóa</h5>
+            <h5 class="m-0">Thiết bị Công nghệ thông tin</h5>
         </div>
         <div class="card w-100 h-100" style="display: flow-root">
             @foreach ($products as $prod)

@@ -53,7 +53,7 @@
                         </a>
                       </div>
                       <div class="media-body pl-2">
-                       <a style="font-size: 12px" href="{{$n->NewsID}}"><span>{{$n->NewsTitle}}</span></a>
+                       <a style="" href="{{$n->NewsID}}"><span class="font-weight-bold">{{$n->NewsTitle}}</span></a>
                       </div>
                     </div>
                   </li>

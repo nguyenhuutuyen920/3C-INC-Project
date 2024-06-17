@@ -14,7 +14,7 @@
     </style>
     <section id="field" style="background: #f1f1f1">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
-            <div class="container menu-field d-flex p-0">
+            <div class="container menu-field d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
                     <div class="field">
                         <div class="menu-field">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="supplier-content col-lg-9 col-md-12 col-sm-12 p-0">
-                    <ul class="content_menu-field  m-0  w-100 h-100" >  
+                    <ul class="content_menu-field  m-0  w-100 h-100 pt-2 pl-3" >  
                         @foreach ($products as $prod)
                         <div class="card" style="width: 200px;height:auto;margin: 0px 15px 15px 0px;">
                           <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">

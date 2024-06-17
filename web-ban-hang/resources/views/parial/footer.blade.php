@@ -10,7 +10,7 @@
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <footer id="footer">
       <!-- Start footer top area -->
-      <div class="footer_top pt-3 pb-4" style="background-color: #f1f1f1">
+      <div class="footer_top" style="background-color: #f1f1f1">
         <div class="container-fluid col-lg-12  col-md-12 col-sm-12" >
           <div class="row w-100">
             <div class="col-lg-4 col-md-4 col-sm-12">

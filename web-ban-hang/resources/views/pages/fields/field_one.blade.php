@@ -28,11 +28,13 @@
             <div class="dropdown-divider mt-0"></div>
             @foreach ($news as $n)
             <div class="solution-card d-flex pl-2 mb-2">
-                <div class="solution-img">
+                <a href="{{ route('new_content',$n->NewsID)}}" class="solution-img">
                     <img style="width:120px; height:120px" src="{{asset($n->NewsImage)}}" alt="">
-                </div>
+                </a>
                 <div class="solution-body pl-2">
-                    <h6>{{$n->NewsTitle}}</h6>
+                    <a href="{{ route('new_content',$n->NewsID)}}">
+                        <h6 class="text-light">{{$n->NewsTitle}}</h6>
+                    </a>
                     <p class="overflow-hidden">{{$n->Abstract}}</p>
                 </div>
             </div>
@@ -43,11 +45,13 @@
             <div class="dropdown-divider mt-0"></div>
             @foreach ($project as $proj)
             <div class="project-card d-flex pl-2">
-                <div class="project-img">
+                <a href="{{ route('project_info',$proj->ProjectID)}}" class="project-img">
                     <img style="width:120px; height:120px" src="{{asset($proj->ProjectImage)}}" alt="">
-                </div>
+                </a>
                 <div class="project-body pl-2">
-                    <h6>{{$proj->ProjectTitle}}</h6>
+                    <a href="{{ route('project_info',$proj->ProjectID)}}">
+                        <h6 class="text-light">{{$proj->ProjectTitle}}</h6>
+                    </a>
                     <p>{{$proj->Abstract}}</p>
                 </div>
             </div>

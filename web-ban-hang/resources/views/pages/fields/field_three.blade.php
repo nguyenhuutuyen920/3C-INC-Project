@@ -2,7 +2,7 @@
 
     <div class="automaiton_content" style="border: 2px solid rgb(156, 156, 156)">
         <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="m-0">Thiết bị tự động hóa</h5>
+            <h5 class="m-0">Thiết bị viễn thông xây lắp</h5>
         </div>
         @foreach ($devices as $dev)
             @if ($dev->HienThiVienThongXayLap == 1)
@@ -28,12 +28,14 @@
         </div>
         <div class="automation_footer-solution w-100 mt-2">
             @foreach ($project as $proj)
-            <div class="project-card d-flex pl-2">
-                <div class="project-img">
+            <div class="project-card d-flex pl-2 pb-2">
+                <a class="project-img" href="{{ route('project_info',$proj->ProjectID)}}">
                     <img style="width:120px; height:120px" src="{{asset($proj->ProjectImage)}}" alt="">
-                </div>
+                </a>
                 <div class="project-body pl-2">
-                    <h6>{{$proj->ProjectTitle}}</h6>
+                    <a href="{{ route('project_info',$proj->ProjectID)}}">
+                        <h6 class="text-light">{{$proj->ProjectTitle}}</h6>
+                    </a>
                     <p>{{$proj->Abstract}}</p>
                 </div>
             </div>

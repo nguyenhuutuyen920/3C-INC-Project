@@ -30,7 +30,7 @@ function kiemtra () {
                     <th>Tên Thiết Bị</th>
                     <th>Hình Ảnh Thiết Bị</th>
                     <th>Nội Dung Thiết Bị</th>
-                    <th>Thông Số Kĩ Thuật</th>
+                    <th style="max-width: 600px">Thông Số Kĩ Thuật</th>
                     <th>Thiết Bị Liên Quan</th>
                     <th>Hiển Thị Tự Động Hóa</th>
                     <th>Hiển Thị Thiết Bị Xây Lắp</th>
@@ -50,7 +50,7 @@ function kiemtra () {
                             <img src="{{ asset($dev->DeviceImage)}}" alt="">
                         </td>
                         <td>{{ $dev->DeviceContent}}</td>
-                        <td>{{ $dev->Technicaldata}}</td>
+                        <td >{!! $dev->Technicaldata!!}</td>
                         <td>{{ $dev->RelatedProduct}}</td>
                         <td>{{ $dev->hienThiTuDongHoa}}</td>
                         <td>{{ $dev->HienThiVienThongXayLap}}</td>

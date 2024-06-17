@@ -1,7 +1,7 @@
 <div class="automation ml-2">
     <div class="automaiton_content" style="border: 2px solid rgb(156, 156, 156)">
         <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="m-0">Thiết bị tự động hóa</h5>
+            <h5 class="m-0">Thiết bị thí nghiệm đo lường</h5>
         </div>
         <div class="automaiton_content-card card-automation d-flex p-2">
             <div class="card-automation-img">
@@ -26,11 +26,13 @@
             <div class="dropdown-divider mt-0"></div>
             @foreach ($news as $n)
             <div class="solution-card d-flex pl-2 mb-2">
-                <div class="solution-img">
+                <a class="solution-img" href="{{ route('new_content',$n->NewsID)}}">
                     <img style="width:120px; height:120px" src="{{asset($n->NewsImage)}}" alt="">
-                </div>
+                </a>
                 <div class="solution-body pl-2">
-                    <h6>{{$n->NewsTitle}}</h6>
+                    <a href="{{ route('new_content',$n->NewsID)}}">
+                        <h6 class="text-light">{{$n->NewsTitle}}</h6>
+                    </a>
                     <p class="overflow-hidden">{{$n->Abstract}}</p>
                 </div>
             </div>
@@ -40,12 +42,14 @@
             <h5 class="p-2 m-0">Dự Án</h5>
             <div class="dropdown-divider mt-0"></div>
             @foreach ($project as $proj)
-            <div class="project-card d-flex pl-2">
-                <div class="project-img">
+            <div class="project-card d-flex pl-2 pb-2">
+                <a class="project-img" href="{{ route('project_info',$proj->ProjectID)}}">
                     <img style="width:120px; height:120px" src="{{asset($proj->ProjectImage)}}" alt="">
-                </div>
+                </a>
                 <div class="project-body pl-2">
-                    <h6>{{$proj->ProjectTitle}}</h6>
+                    <a href="{{ route('project_info',$proj->ProjectID)}}">
+                        <h6 class="text-light">{{$proj->ProjectTitle}}</h6>
+                    </a>
                     <p>{{$proj->Abstract}}</p>
                 </div>
             </div>

@@ -46,7 +46,7 @@ function kiemtra () {
                         <td>{{$proj->BiddingPackage}}</td>
                         <td>{{$proj->ConstructionName}}</td>
                         <td>{{$proj->Abstract}}</td>
-                        <td>{{$proj->ProjectContent}}</td>
+                        <td>{!!$proj->ProjectContent!!}</td>
                         <td>
                             <img src="{{ asset($proj->ProjectImage) }}" width="150">
                         </td>

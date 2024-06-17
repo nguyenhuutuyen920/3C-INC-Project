@@ -57,7 +57,7 @@ function kiemtra () {
                             <img src="{{ asset($new->NewsImage) }}" width="150">
                         </td>
                         <td>{{ $new->Abstract}}</td>
-                        <td>{{ $new->NewsContent}}</td>
+                        <td>{!! $new->NewsContent!!}</td>
                         <td>{{ $new->NewsSource}}</td>
                         <td>{{ $new->ViewTime}}</td>
                         <td>{{ $new->RelatedNews}}</td>
