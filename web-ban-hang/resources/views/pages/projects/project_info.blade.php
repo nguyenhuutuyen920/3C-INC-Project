@@ -3,7 +3,10 @@
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="courseArchive"  style="background: #fff">
+
       <div class="container pt-4">
+      <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark" href="{{route('project')}}"> Dự Án</a><span class="feed_date"> / </span> <span class="font-weight-bold">{{$project->ProjectTitle}}</span>
+
         <div class="row">
           <!-- start course content -->
           <div class="col-lg-8 col-md-12 col-sm-12">
@@ -14,7 +17,7 @@
                 <div class="col-lg-12 col-12 col-sm-12">
                   <div class="single_blog">
                     <div class="blogimg_container w-100">
-                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$project->created_at}}</i></p>
+                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$project->create_at}}</i></p>
                       <h2 class="blog_title"> {{$project->ProjectTitle}}</h2>
                       <p class="blog_img"> {!!$project->ProjectContent!!} </p>
                     </div>

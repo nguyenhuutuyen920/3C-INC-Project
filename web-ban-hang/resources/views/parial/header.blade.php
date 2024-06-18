@@ -95,7 +95,7 @@
 
   </div>
 </div>
-<header class="site-navbar shadow p-0 bg-white rounded js-sticky-header site-navbar-target" role="banner">
+<header class="site-navbar shadow p-0 bg-white js-sticky-header site-navbar-target" role="banner">
     <div class="container p-0">
         <div class="row">
             <nav class="navbar navbar-light navbar-expand-lg mainmenu">
@@ -140,7 +140,7 @@
                                             $route = route('category');
                                             break;
                                           case 3:
-                                            $route = route('hello2');
+                                            $route = route('vienthongxaylap');
                                             break;
                                           default:
                                             $route = route('hello3');

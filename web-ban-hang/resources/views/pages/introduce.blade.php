@@ -3,7 +3,8 @@
 
 <section id="introduce">
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="container">
+        <div class="container pt-5">
+            <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold"> Giới Thiệu</a><span class="feed_date"> / </span>
             <div class="introduce-img">
                 <img class="mt-5" style="width:60%;height:30%;margin-left: 20%" src="../img/logo_3c.png" alt="">
             </div>

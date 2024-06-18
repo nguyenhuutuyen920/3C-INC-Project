@@ -17,7 +17,7 @@
             <div class="container menu-field d-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
                     <div class="field">
-                        <div class="menu-field" style="border: 1px solid #cfcfcf">
+                        <div class="menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">LĨNH VỰC</h6>
                             </div>
@@ -32,7 +32,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="product_menu-field mt-2" style="border: 1px solid #cfcfcf">
+                        <div class="product_menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>

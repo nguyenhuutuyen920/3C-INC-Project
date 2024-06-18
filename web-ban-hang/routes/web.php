@@ -57,7 +57,7 @@ Route::get('/device/{device}', [HomeController::class, 'device'])->name('device'
 Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');
 Route::get('/automation', [HomeController::class, 'automation'])->name('automation');
-Route::get('/hello2', [HomeController::class, 'hello2'])->name('hello2');
+Route::get('/vienthongxaylap', [HomeController::class, 'vienthongxaylap'])->name('vienthongxaylap');
 Route::get('/hello3', [HomeController::class, 'hello3'])->name('hello3');
 
 

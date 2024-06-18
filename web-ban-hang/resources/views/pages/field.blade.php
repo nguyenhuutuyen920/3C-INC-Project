@@ -7,7 +7,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
                     <div class="field">
-                        <div class="menu-field">
+                        <div class="menu-field" style="border: 1px solid #cfcfcf">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">LĨNH VỰC</h6>
                             </div>
@@ -22,7 +22,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="product_menu-field">
+                        <div class="product_menu-field mt-3" style="border: 1px solid #cfcfcf">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>
@@ -81,7 +81,7 @@
                             route = '{{ route('category', '') }}';
                         }
                         else if (fieldId == 3) {
-                            route = '{{ route('hello2', '') }}';
+                            route = '{{ route('vienthongxaylap', '') }}';
                         } else {
                             route = '{{ route('hello3', '') }}';
                         }

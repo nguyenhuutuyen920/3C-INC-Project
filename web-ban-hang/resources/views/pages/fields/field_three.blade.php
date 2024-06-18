@@ -13,7 +13,7 @@
                     <div class="card-automation-body w-100 pl-2">
                         <div class="card-title">
                             <a href="{{ route('device',$dev->DeviceID)}}">
-                                <h5>{{$dev->DeviceTitle}}</h5>
+                                <h4 class="text-dark">{{$dev->DeviceTitle}}</h4>
                             </a>
                             <p>{{$dev->DeviceContent}}</p>
                         </div>

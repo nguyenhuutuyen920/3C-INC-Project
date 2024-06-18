@@ -34,72 +34,72 @@
                     @csrf
                     <div class="form-group">
                         <label>News Alias</label>
-                        <input class="form-control" type="text" name="NewsAlias" placeholder="Please Enter New ALias"/>
+                        <input class="form-control" type="text" name="NewsAlias" placeholder="Vui lòng nhập tin tức bí danh"/>
                     </div>                   
                     <div class="form-group">
                         <label>News MetaKeyword</label>
-                        <input class="form-control" type="text" name="NewsMetaKeyword" placeholder="Please Enter New News MetaKeyword"/>
+                        <input class="form-control" type="text" name="NewsMetaKeyword" placeholder="Vui lòng nhập từ khóa tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>News MetaDescription</label>
-                        <input class="form-control" type="text" name="NewsMetaDescription" placeholder="Please Enter News MetaDescription"/>
+                        <input class="form-control" type="text" name="NewsMetaDescription" placeholder="Vui lòng nhập miêu tả tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>News Title</label>
-                        <input class="form-control" type="text" name="NewsTitle" placeholder="Please Enter New Title"/>
+                        <input class="form-control" type="text" name="NewsTitle" placeholder="Vui lòng nhập tiêu đề tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>News Image</label>
-                        <input class="form-control" type="file" name="NewsImage" placeholder="Please Enter New Title"/>
+                        <input class="form-control" type="file" name="NewsImage" placeholder="Vui lòng nhập hình ảnh tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>Abstract</label>
-                        <input class="form-control" type="text" name="Abstract" placeholder="Please Enter New Abstract"/>
+                        <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng nhập tóm tắt tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>News Content</label>
                         {{-- <div id="toolbar-container"></div>
                         <div id="editor">
-                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng nhập tin tức Content"></textarea>
                         </div> --}}
-                        <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                        <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="NewsContent" placeholder="Vui lòng nhập nội dung tin tức (Lưu ý kích thước của ảnh khi cho vào)"></textarea>
 
                     </div>
                     <div class="form-group">
                         <label>News Source</label>
-                        <input class="form-control" type="text" name="NewsSource" placeholder="Please Enter New Source"/>
+                        <input class="form-control" type="text" name="NewsSource" placeholder="Vui lòng nhập nguồn tin tức"/>
                     </div>
                     <div class="form-group">
                         <label>View Time</label>
-                        <input class="form-control" type="text" name="ViewTime" placeholder="Please Enter View Time "/>
+                        <input class="form-control" type="text" name="ViewTime" placeholder="Vui lòng nhập thời gian xem tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>Related News</label>
-                        <input class="form-control" type="text" name="RelatedNews" placeholder="Please Related News "/>
+                        <input class="form-control" type="text" name="RelatedNews" placeholder="Vui lòng nhập tin tức khác"/>
                     </div>
                     <div class="form-group">
                         <label>View Order</label>
-                        <input class="form-control" type="number" name="ViewOrder" placeholder="Please Enter View Order "/>
+                        <input class="form-control" type="number" name="ViewOrder" placeholder="Vui lòng nhập tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>IsHotNews</label>
-                        <input class="form-control" type="text" name="IsHotNews" placeholder="Please Enter IsHotNews "/>
+                        <input class="form-control" type="text" name="IsHotNews" placeholder="Vui lòng nhập tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>IsTypical</label>
-                        <input class="form-control" type="text" name="IsTypical" placeholder="Please Enter IsTypical "/>
+                        <input class="form-control" type="text" name="IsTypical" placeholder="Vui lòng nhập tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>IsApproved</label>
-                        <input class="form-control" type="text" name="IsApproved" placeholder="Please Enter IsApproved "/>
+                        <input class="form-control" type="text" name="IsApproved" placeholder="Vui lòng nhập tin tức "/>
                     </div>
                     <div class="form-group">
                         <label>ApprovedBy</label>
-                        <input class="form-control" type="text" name="ApprovedBy" placeholder="Please Enter ApprovedBy "/>
+                        <input class="form-control" type="text" name="ApprovedBy" placeholder="Vui lòng nhập tin tức "/>
                     </div>
                     
-                    <button type="submit" class="btn btn-default">News Add</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-default">Thêm tin tức</button>
+                    <button type="reset" class="btn btn-default">đặt lại</button>
                 </form>
             </div>
         </div>

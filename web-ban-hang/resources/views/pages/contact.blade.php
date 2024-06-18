@@ -8,6 +8,8 @@
     <!--=========== BEGIN CONTACT SECTION ================-->
     <section id="contact">
       <div class="container">
+        <a class="text-dark"href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold"> Liên Hệ</a><span class="feed_date"> / </span>
+
        <div class="row">
           <div class="col-lg-12 col-md-12"> 
             <div class="title_area">
@@ -26,7 +28,7 @@
                 <input name="SenderEmail" type="mail" class="wp-form-control wpcf7-email" placeholder="Địa chỉ email">          
                 <input name="ContactTitle" type="text" class="wp-form-control wpcf7-text" placeholder="Tiêu đề">
                 <textarea name="ContactContent" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Nội dung cần gửi"></textarea>
-                <input type="submit"  class="wpcf7-submit .bg-success">
+                <input type="submit"  class="wpcf7-submit badge-success">
               </form>
               @if(session('success'))
                 <div class="alert alert-success">
@@ -57,13 +59,4 @@
        </div>
       </div>
     </section>
-    <!--=========== END CONTACT SECTION ================-->
-
-    <!--=========== BEGIN GOOGLE MAP SECTION ================-->
-    <section id="googleMap">
-      <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/181+Nghi+T%C3%A0m,+Y%C3%AAn+Ph%E1%BB%A5,+T%C3%A2y+H%E1%BB%93,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.0551009,105.8339807,17z/data=!3m1!4b1!4m6!3m5!1s0x3135aa533671734f:0x3b5c36f9d5fa7d28!8m2!3d21.0550959!4d105.8365556!16s%2Fg%2F11c29kwk73?hl=vi-VN&entry=ttu"></iframe>
-    </section>
-
-    <!--=========== END GOOGLE MAP SECTION ================-->
-    
 @endsection

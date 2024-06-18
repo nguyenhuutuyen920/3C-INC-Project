@@ -2,12 +2,13 @@
 @section('content')
 
 
-    <section id="field" style="background: #f1f1f1;">
-        <div class="container pt-5" >
-            <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
+    <section id="field" style="background: #fff;">
+        <div class="container pt-3 pb-5" >
+            <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span> / </span><a class="text-dark" href="{{route('automation')}}"> Thiết Bị</a><span> / </span><span>{{$device->DeviceTitle}}</span>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0  pt-5 ">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
                     <div class="field">
-                        <div class="menu-field">
+                        <div class="menu-field" style="border: 1px solid #cfcfcf">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">LĨNH VỰC</h6>
                             </div>
@@ -22,7 +23,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="product_menu-field">
+                        <div class="product_menu-field mt-2" style="border: 1px solid #cfcfcf">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>
@@ -33,14 +34,14 @@
                     </div>
                 </div>
                 <div class="supplier-content col-lg-9 col-md-12 col-sm-12 pl-3" style="background-color: #ffffff">
-                    <div class="product-title-contact d-flex pt-3" >
+                    <div class="product-title-contact d-lg-flex pt-3" >
                         <div class="product-img"> 
                             <img style="width:250px;height: 250px;" src="{{asset($device->DeviceImage)}}"> 
                         </div>
                         <div class="product-body pl-3 mt-2 d-flex flex-column justify-content-between">
                             <div class="product-body-content">
-                                <h4>{{$device->DeviceTitle}}</h4>
-                                <p>Nội dung: {{$device->DeviceContent}}</p>
+                                <h3 class="font-weight-bold">{{$device->DeviceTitle}}</h3>
+                                <p class="text-dark">Nội dung: {{$device->DeviceContent}}</p>
                                 
                             </div>
                             <div class="product-body-contact mb-3 ml-5">
@@ -82,7 +83,7 @@
                             route = '{{ route('category', '') }}';
                         }
                         else if (fieldId == 3) {
-                            route = '{{ route('hello2', '') }}';
+                            route = '{{ route('vienthongxaylap', '') }}';
                         } else {
                             route = '{{ route('hello3', '') }}';
                         }

@@ -4,6 +4,8 @@
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section class="new">
       <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #fff">
+      <a class="text-dark" style="margin-left: 145px" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold" href="{{route('project')}}"> Dự Án</a><span class="feed_date"> / </span>
+
         <div class="container menu-new  d-flex p-0" >
           <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
             <ul class="content_menu-new  m-0 p-2" style="width: 100%">

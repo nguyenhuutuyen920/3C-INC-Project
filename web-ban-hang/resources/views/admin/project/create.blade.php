@@ -40,43 +40,43 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
                         <label>ProjectTitle</label>
-                        <input class="form-control" type="text" name="ProjectTitle" placeholder="Please Enter Introduce Page Title"/>
+                        <input class="form-control" type="text" name="ProjectTitle" placeholder="Vui lòng nhập tiêu đề dự án"/>
                     </div>                   
                     <div class="form-group">
                         <label>BiddingPackage</label>
-                        <input class="form-control" type="text" name="BiddingPackage" placeholder="Please Enter Introduce Alias"/>
+                        <input class="form-control" type="text" name="BiddingPackage" placeholder="Vui lòng nhập bí danh dự án"/>
                     </div>
                     <div class="form-group">
                         <label>ConstructionName</label>
-                        <input class="form-control" type="text" name="ConstructionName" placeholder="Please Enter Introduce Keyword"/>
+                        <input class="form-control" type="text" name="ConstructionName" placeholder="Vui lòng nhập tên công trình dự án"/>
                     </div>
                     <div class="form-group">
                         <label>Abstract</label>
-                        <input class="form-control" type="text" name="Abstract" placeholder="Please Enter Introduce Keyword"/>
+                        <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng nhập từ khóa dự án"/>
                     </div>
                     <div class="form-group">
                         <label>ProjectContent</label>
                         {{-- <div id="toolbar-container"></div>
                         <div id="editor">
-                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Please Enter New Content"></textarea>
+                            <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng nhập New Content"></textarea>
                         </div> --}}
-                        <textarea class="form-control" type="text" id="editor"  name="ProjectContent" placeholder="Please Enter Project Content"></textarea>
+                        <textarea class="form-control" type="text" id="editor"  name="ProjectContent" placeholder="Vui lòng nhập nội dung dự án"></textarea>
                     </div>
                     <div class="form-group">
                         <label>ProjectImage</label>
-                        <input class="form-control" type="file" name="ProjectImage" placeholder="Please Enter Introduce Image"/>
+                        <input class="form-control" type="file" name="ProjectImage" placeholder="Vui lòng nhập hình ảnh dự án"/>
                     </div>
                     <div class="form-group">
                         <label>Investors</label>
-                        <input class="form-control" type="text" name="Investors" placeholder="Please Enter Title"/>
+                        <input class="form-control" type="text" name="Investors" placeholder="Vui lòng nhập chủ đầu tư dự án"/>
                     </div>
                     <div class="form-group">
                         <label>PricePackage</label>
-                        <textarea class="form-control" type="text" name="PricePackage" placeholder="Please Enter Introduce Abtract"></textarea>
+                        <input class="form-control" type="number" name="PricePackage" placeholder="Vui lòng nhập giá trị dự án">
                     </div>
                     
-                    <button type="submit" class="btn btn-default">Project Add</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-default">Thêm dự án</button>
+                    <button type="reset" class="btn btn-default">đặt lại</button>
                 </form>
             </div>
         </div>
@@ -90,7 +90,7 @@
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
                 ckfinder: {
-                    uploadUrl: "{{ route('ckeditor.uploadproject', ['_token' => csrf_token()]) }}"
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
         })
         .catch( error => {

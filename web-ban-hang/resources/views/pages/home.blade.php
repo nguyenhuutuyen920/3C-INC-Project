@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
 
-<div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-12 p-0" style="padding-top:" data-ride="carousel">
+<section id="carouselExampleIndicators" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-12 p-0" style="padding-top:" data-ride="carousel">
   <ol class="carousel-indicators">
     <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li class="rounded-circle" style="width:5px; height:10px; padding-left: 6px;" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -41,7 +41,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</section>
 <!--=========== END SLIDER SECTION ================-->
 
 <!--=========== BEGIN ABOUT US SECTION ================-->
@@ -51,15 +51,16 @@
       <!-- Start about us area -->
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="aboutus_area wow fadeInLeft">
-          <h2 class="titile text-center">Giới Thiệu</h2>
-          <p>Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thế kỷ trước.</p>
-          <p>Với 35 năm xây dựng và phát triển, 3C đã khẳng định được vị thế của mình trên thị trường cung cấp các sản phẩm, dịch vụ đã tham gia. Hiện nay, 3C đã trở thành một trong những nhà cung cấp hàng đầu các sản phẩm, dịch vụ công nghệ cao cho ngành Điện cao thế và Công nghệ thông tin.</p>
+          <h2 class="titile text-center font-weight-bold">Giới Thiệu</h2>
+          <p class="text-dark font-weight-bold">Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thế kỷ trước.</p>
+          <p class="text-dark font-weight-bold">Với 35 năm xây dựng và phát triển, 3C đã khẳng định được vị thế của mình trên thị trường cung cấp các sản phẩm, dịch vụ đã tham gia. Hiện nay, 3C đã trở thành một trong những nhà cung cấp hàng đầu các sản phẩm, dịch vụ công nghệ cao cho ngành Điện cao thế và Công nghệ thông tin.</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="newsfeed_area wow fadeInRight">
           <ul class="nav nav-tabs feed_tabs" id="myTab2">
-            <li class="active mr-2"><a class="new" href="#news" data-toggle="tab">Tin tức</a></li>
+            <li class=" mr-2"><a class="new" href="#news" data-toggle="tab">Tin tức</a></li>
+            <li style="width:2px; height:25px;margin-right:8px; background: #417dff"></li>
             <li><a class="video" href="#video" data-toggle="tab">Video</a></li>         
           </ul>
 
@@ -69,16 +70,16 @@
             <div class="tab-pane  active" id="news">                
               <ul class="news_tab">
               @foreach($news as $n)
-                <li>
-                  <div class="media">
+                <li class="p-0">
+                  <div class="media ">
                     <div class="media-left">
-                      <a class="news_img" href="{{route('new_content',$n->NewsID)}}">
+                      <a class="news_img pb-3" href="{{route('new_content',$n->NewsID)}}">
                         <img class="media-object" src="{{asset($n->NewsImage)}}" alt="img">
                       </a>
                     </div>
                     <div class="media-body pl-3">
-                     <a href="{{route('new_content',$n->NewsID)}}">{{$n->NewsTitle}}</a>
-                     <span class="feed_date">{{$n->updated_at}}</span>
+                     <a class="text-dark" style="font-size: 15px" href="{{route('new_content',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                     <span class="text-dark font-weight-bold" style="font-size: 11px">{{$n->Abstract}}</span>
                     </div>
                   </div>                    
                 </li>
@@ -107,11 +108,11 @@
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12 p-0">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-4">SẢN PHẨM THIẾT BỊ ĐIỆN</h2>
+          <h2 class="title_two mb-4 font-weight-bold">SẢN PHẨM THIẾT BỊ ĐIỆN</h2>
           <div class="device_menu p-0 d-flex">
             <div class="device_list d-flex">
               @foreach ($devices as $dev)
-              <div class="col-lg-3 col-md-6 col-sm-12 ">
+              <div class="col-lg-3 col-md-4 col-sm-6 ">
                 <div class="device_card">
                   <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
                     <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
@@ -173,7 +174,7 @@
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-3">SẢN PHẨM CÔNG NGHỆ THÔNG TIN</h2>
+          <h2 class="title_two mb-3 font-weight-bold">SẢN PHẨM CÔNG NGHỆ THÔNG TIN</h2>
           <div class="row mt-5 mb-5">
             @foreach ($products as $prod)
               <div class="col-lg-3 col-md-6 col-sm-12 ">
@@ -186,7 +187,7 @@
                       <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $prod->ProductName}}</h5>
                     </a>
                     <a href="{{ route('product_info', $prod->ProductID) }}">
-                      <p class="text-dark mb-0" style="font-size: 18px">Xem Thêm</p>
+                      <p class="text-dark mb-0 " style="font-size: 18px;">Xem Thêm</p>
                     </a>
                   </div>
                 </div>

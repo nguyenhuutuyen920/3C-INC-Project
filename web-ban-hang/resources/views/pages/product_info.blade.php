@@ -83,7 +83,7 @@
                             route = '{{ route('category', '') }}';
                         }
                         else if (fieldId == 3) {
-                            route = '{{ route('hello2', '') }}';
+                            route = '{{ route('vienthongxaylap', '') }}';
                         } else {
                             route = '{{ route('hello3', '') }}';
                         }

@@ -56,7 +56,7 @@
                 </div>                   
                 <div class="form-group">
                     <label>Thông Số Kĩ Thuật</label>
-                    <textarea class="form-contro" type="text" id="editor" style="height: 500px;"  name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật"></textarea>
+                    <textarea class="form-contro" type="text" id="editor" style="height: 500px;"  name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật(Lưu ý kích thước của ảnh khi cho vào)"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>
@@ -75,8 +75,8 @@
                     <input class="form-control" type="number" min="0" max="1" name="HienThiThiNghiemDoLuong" placeholder="Vui Lòng Nhập Hiển Thị Thiết Bị Thí Nghiệm Đo Lường"/>
                 </div>
                 
-                <button type="submit" class="btn btn-default">Device Add</button>
-                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="submit" class="btn btn-default">Thêm thiết bị</button>
+                <button type="reset" class="btn btn-default">đặt lại</button>
             </form>
             </div>
         </div>

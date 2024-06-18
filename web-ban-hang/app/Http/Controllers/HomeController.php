@@ -65,10 +65,10 @@ class HomeController extends Controller
             return view("pages.projects.project",compact("projects","fields"));
     }
         
-    public function news(){
+    public function news(News $new){
         $fields = Field::all();
-        $news = News::paginate(7);
-        return view("pages.news.new",compact("news","fields"));
+        $news = News::orderBy('NewsID','DESC')->paginate();
+        return view("pages.news.new",compact("news","new","fields"));
     }
     
     public function new_content(News $new){
@@ -120,12 +120,16 @@ class HomeController extends Controller
         $products = Product::all();
         return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
     }
-    public function hello2(Field $field){
+    public function vienthongxaylap(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
+        $news = News::orderBy('NewsID','DESC')->paginate(4);
+        $devices = Device::all();
+        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
+        $project = Project::all();
         $products = Product::all();
-        return view("pages.hello2", compact("products","field", "defaultField", "fields"));
+        return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
     }
     public function hello3(Field $field){
         $defaultField = 1;
