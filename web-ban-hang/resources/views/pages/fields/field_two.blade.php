@@ -1,7 +1,7 @@
 <div class="automation ml-2">
     <div class="automaiton_content " style="border: 2px solid rgb(156, 156, 156)">
-        <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="m-0">Thiết bị Công nghệ thông tin</h5>
+        <div class="automation_content-title p-1 badge-primary p-2" >
+            <h5 class="m-0 font-weight-bold text-light">Thiết bị Công nghệ thông tin</h5>
         </div>
         <div class="card w-100 h-100" style="display: flow-root">
             @foreach ($products as $prod)
@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-automation-body w-100 pl-2 mb-1">
                                 <a href="{{ route('product_info',$prod->ProductID)}}">
-                                    <h6 class="text-center m-0 mt-1" style="font-family: arial, Helvetica, sans-serif; font-size: 15px;">{{ $prod->ProductName}}</h6>
+                                    <h6 class="text-center m-0 mt-1 text-dark font-weight-bold" style="font-family: arial, Helvetica, sans-serif; font-size: 18px;">{{ $prod->ProductName}}</h6>
                                 </a>
                                 <p class="text-center m-0">{{$prod->Abstract}}</p>
                         </div>

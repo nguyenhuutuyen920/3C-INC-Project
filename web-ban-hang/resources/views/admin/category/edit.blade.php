@@ -53,20 +53,12 @@
                         <input class="form-control" type="text" name="CategoryAlias" value="{{ $category->CategoryAlias}}" />
                     </div>                   
                     <div class="form-group">
-                        <label>Category Page Title</label>
-                        <input class="form-control" type="text" name="CategoryPageTitle" value="{{ $category->CategoryPageTitle}}" />
-                    </div>
-                    <div class="form-group">
                         <label>Category MetaKeyword</label>
                         <input class="form-control" type="text" name="CategoryMetaKeyword" value="{{ $category->CategoryMetaKeyword}}" />
                     </div>
                     <div class="form-group">
                         <label>Category MetaDescription</label>
                         <input class="form-control" type="text" name="CategoryMetaDescription" value="{{ $category->CategoryMetaDescription}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>ViewOrder</label>
-                        <input class="form-control" type="number" min="0" max="1" name="ViewOrder" value="{{ $category->ViewOrder}}" />
                     </div>
                     <div class="form-group">
                         <label>IsVisible</label>
@@ -78,7 +70,7 @@
                     </div>
                     <div class="form-group">
                         <label>Typical Image</label>
-                        <input class="form-control" type="number" min="0" max="1" name="TypicalImage" value="{{ $category->TypicalImage}}" />
+                        <input class="form-control" type="file" name="TypicalImage" value="{{ $category->TypicalImage}}" />
                     </div>
 
                     <button type="submit" class="btn btn-default">Category Edit</button>

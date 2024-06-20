@@ -89,7 +89,7 @@
                     } else if (fieldId == 3) {
                         route = '{{ route('vienthongxaylap', '') }}';
                     } else {
-                        route = '{{ route('hello3', '') }}';
+                        route = '{{ route('doluong', '') }}';
                     }
 
                     let hasSupplier = cat.supplier && cat.supplier.length > 0;

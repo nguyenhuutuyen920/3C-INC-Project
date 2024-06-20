@@ -95,7 +95,7 @@
                 else if (fieldId == 3) {
                     route = '{{ route('vienthongxaylap', '') }}';
                 } else {
-                    route = '{{ route('hello3', '') }}';
+                    route = '{{ route('doluong', '') }}';
                 }
                 productMenuHtml += `
                     <li class="nav-item has-submenu list-unstyled">

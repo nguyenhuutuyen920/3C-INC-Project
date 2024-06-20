@@ -41,13 +41,17 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>SupplierID</label>
-                        <input class="form-control" type="text" value="{{ $product->SupplierID }}" name="SupplierID" placeholder="Please Enter Product SupplierID" />
-                    </div>
-                    <div class="form-group">
-                        <label>MaterialID</label>
-                        <input class="form-control" type="text" value="{{ $product->MaterialID }}" name="MaterialID" placeholder="Please Enter MaterialID " />
-                    </div>                   
+                        <label>ID Hãng</label>
+                        <select class="form-control" name="SupplierID" >
+                            @foreach($supps as $supp)
+                                <option 
+                                @if($product->SupplierID == $supp->id)
+                                    {{"selected"}}
+                                @endif
+                                value="{{$supp->id}}">{{$supp->SupplierName}}</option>
+                            @endforeach
+                        </select>
+                    </div>             
                     <div class="form-group">
                         <label>Product Code</label>
                         <input class="form-control" type="text" value="{{ $product->ProductCode }}" name="ProductCode" placeholder="Please Enter Product Code " />
@@ -61,16 +65,8 @@
                         <input class="form-control" type="text" value="{{ $product->ProductAlias }}" name="ProductAlias" placeholder="Please Enter Product Alias " />
                     </div>
                     <div class="form-group">
-                        <label>Product Page Title</label>
-                        <input class="form-control" type="text" value="{{ $product->ProductPageTitle }}" name="ProductPageTitle" placeholder="Please Enter Product Page Title " />
-                    </div>
-                    <div class="form-group">
                         <label>Product Meta Keyword</label>
                         <input class="form-control" type="text" value="{{ $product->ProductMetaKeyword }}" name="ProductMetaKeyword" placeholder="Please Enter Product Meta Keyword " />
-                    </div>
-                    <div class="form-group">
-                        <label>Product Meta Description</label>
-                        <input class="form-control" type="text" value="{{ $product->ProductMetaDescription }}" name="ProductMetaDescription" placeholder="Please Enter Product Meta Description " />
                     </div>
                     <div class="form-group">
                         <label>Product Image</label>
@@ -113,59 +109,11 @@
                         <input class="form-control" type="text" value="{{ $product->Promotion }}" name="Promotion" placeholder="Please Enter Promotion " />
                     </div>
                     <div class="form-group">
-                        <label>Transport Information</label>
-                        <input class="form-control" type="text" value="{{ $product->TransportInformation }}" name="TransportInformation" placeholder="Please Enter Transport Information " />
-                    </div>
-                    <div class="form-group">
-                        <label>Related News</label>
-                        <input class="form-control" type="text" value="{{ $product->RelatedNews }}" name="RelatedNews" placeholder="Please Enter Related News " />
-                    </div>
-                    <div class="form-group">
                         <label>Related Product</label>
                         <input class="form-control" type="text" value="{{ $product->RelatedProduct }}" name="RelatedProduct" placeholder="Please Enter Related Product " />
                     </div>
-                    <div class="form-group">
-                        <label>ViewOder</label>
-                        <input class="form-control" type="text" value="{{ $product->ViewOder }}" name="ViewOder" placeholder="Please Enter ViewOder " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsTypical</label>
-                        <input class="form-control" type="text" value="{{ $product->IsTypical }}" name="IsTypical" placeholder="Please Enter IsTypical " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsHotProduct</label>
-                        <input class="form-control" type="text" value="{{ $product->IsHotProduct }}" name="IsHotProduct" placeholder="Please Enter IsHotProduct " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsPromotion</label>
-                        <input class="form-control" type="text" value="{{ $product->IsPromotion }}" name="IsPromotion" placeholder="Please Enter IsPromotion " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsEnjoy Product</label>
-                        <input class="form-control" type="text" value="{{ $product->IsEnjoyProduct }}" name="IsEnjoyProduct" placeholder="Please Enter IsEnjoy Product " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsBest Seller</label>
-                        <input class="form-control" type="text" value="{{ $product->IsBestSeller }}" name="IsBestSeller" placeholder="Please Enter IsBest Seller " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsWeekly Product</label>
-                        <input class="form-control" type="text" value="{{ $product->IsWeeklyProduct }}" name="IsWeeklyProduct" placeholder="Please Enter IsWeeklyProduct " />
-                    </div>
-                    <div class="form-group">
-                        <label>IsApproved</label>
-                        <input class="form-control" type="text" value="{{ $product->IsApproved }}" name="IsApproved" placeholder="Please Enter IsApproved " />
-                    </div>
-                    <div class="form-group">
-                        <label>ApprovedBy</label>
-                        <input class="form-control" type="text" value="{{ $product->ApprovedBy }}" name="ApprovedBy" placeholder="Please Enter ApprovedBy " />
-                    </div>
-                    <div class="form-group">
-                        <label>ViewTime</label>
-                        <input class="form-control" type="text" value="{{ $product->ViewTime }}" name="ViewTime" placeholder="Please Enter ViewTime " />
-                    </div>
 
-                    <button type="submit" class="btn btn-default">Post Edit</button>
+                    <button type="submit" class="btn btn-default">Chỉnh sửa sản phẩm</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 <form>
             </div>

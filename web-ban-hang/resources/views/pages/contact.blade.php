@@ -28,7 +28,7 @@
                 <input name="SenderEmail" type="mail" class="wp-form-control wpcf7-email" placeholder="Địa chỉ email">          
                 <input name="ContactTitle" type="text" class="wp-form-control wpcf7-text" placeholder="Tiêu đề">
                 <textarea name="ContactContent" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Nội dung cần gửi"></textarea>
-                <input type="submit"  class="wpcf7-submit badge-success">
+                <input type="submit"  class="wpcf7-submit badge-success pl-5 pr-5">
               </form>
               @if(session('success'))
                 <div class="alert alert-success">

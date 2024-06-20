@@ -12,7 +12,7 @@ function kiemtra () {
     <div class="container-fluid" style="width:100%; overflow:auto;">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
+                <h1 class="page-header">Danh mục sản phẩm
                     <small>List</small>
                 </h1>
             </div>
@@ -30,13 +30,11 @@ function kiemtra () {
                     <th>Category_ParentID</th>
                     <th>Category_Name</th>
                     <th>Category_Alias</th>
-                    <th>Category_PageTitle</th>
                     <th>Category_metaKeyword</th>
                     <th>Category_MetaDescription</th>
-                    <th>ViewOrder</th>
+                    <th>TypeicalImage</th>
                     <th>IsVisible</th>
                     <th>IsTypical</th>
-                    <th>TypeicalImage</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
@@ -49,13 +47,13 @@ function kiemtra () {
                         <td>{{ $cat->CategoryParentID}}</td>
                         <td>{{ $cat->CategoryName}}</td>
                         <td>{{ $cat->CategoryAlias}}</td>
-                        <td>{{ $cat->CategoryPageTitle}}</td>
                         <td>{{ $cat->CategoryMetaKeyword}}</td>
                         <td>{{ $cat->CategoryMetaDescription}}</td>
-                        <td>{{ $cat->ViewOrder}}</td>
+                        <td>
+                            <img src="{{ asset($cat->TypicalImage) }}" width="150">
+                        </td>
                         <td>{{ $cat->IsVisible}}</td>
                         <td>{{ $cat->IsTypical}}</td>
-                        <td>{{ $cat->TypeicalImage}}</td>
                         <td class="center">
                             <form action="{{ route('category.destroy',$cat->CategoryID)}}" method="post">
                                 @csrf @method('DELETE')

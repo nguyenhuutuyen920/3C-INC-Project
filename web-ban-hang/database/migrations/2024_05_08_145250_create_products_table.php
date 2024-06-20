@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('ProductCode', 250);
             $table->string('ProductName', 250);
             $table->string('ProductAlias', 250);
-            $table->string('ProductPageTitle', 250);
-            $table->string('ProductMetaKeyword', 250);
-            $table->string('ProductMetaDescription', 250);
+            $table->string('ProductKeyword', 250);
             $table->string('ProductImage', 250);
             $table->float('CurentPrice');
             $table->float('OldPrice');
@@ -31,18 +29,7 @@ return new class extends Migration
             $table->longText('ProductContent');
             $table->longText('OtherContent');
             $table->string('Promotion', 250);
-            $table->longText('TransportInformation');
-            $table->string('RelatedNews', 150);
             $table->string('RelatedProduct', 150);
-            $table->binary('ViewOder');
-            $table->boolean('IsTypical');
-            $table->boolean('IsHotProduct');
-            $table->boolean('IsPromotion');
-            $table->boolean('IsBestSeller');
-            $table->boolean('IsWeeklyProduct');
-            $table->boolean('IsApproved');
-            $table->string('ApprovedBy', 50);
-            $table->integer('ViewTime');
             $table->timestamps();
         });
         

@@ -6,7 +6,7 @@
         <div class="container pt-5">
             <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold"> Giới Thiệu</a><span class="feed_date"> / </span>
             <div class="introduce-img">
-                <img class="mt-5" style="width:60%;height:30%;margin-left: 20%" src="../img/logo_3c.png" alt="">
+                <img width="100%" src="../img/tapthecongty.jpg" alt="">
             </div>
             <h4 class="mt-5 font-weight-bold">LỊCH SỬ</h4>
             <p class="mt-3 text-dark">Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thể kỷ trước.</p>
@@ -17,10 +17,7 @@
             <p class="mt-3 text-dark">3C không ngừng phát triển nhằm tối ưu hóa nhu cầu của khách hàng bằng các sản phẩm, dịch vụ tốt nhất với chính sách chăm sóc khách hàng chuyên nghiệp; cam kết mang lại giá trị, sự thịnh vượng cho nhân viên; đồng thời đóng góp vào sự phát triển chung của xã hội, cộng đồng.</p>
             <h4 class="mt-5 font-weight-bold">MỤC TIÊU</h4>
             <p class="mt-3 text-dark">Trở thành nhà phân phối chuyên nghiệp trong cung cấp lắp đặt bảo trì các thiết bị viễn thông như: tổng đài nội bộ, máy fax, điện thoại để bàn, điện thoại IP, di động... trên cơ sở xây dựng và phát triển các kênh phân phối tại miền Bắc, miền Trung, Đồng Nai, Bình Dương, Bà Rịa, Vũng Tàu song song với việc củng cố và hoàn thiện các kênh phân phối đã thiết lập.</p>
-            <img width="100%" src="../img/tapthecongty.jpg" alt="">
-            <img width="100%" src="../img/tapthebk.jpg" alt="">
-            <img width="100%" src="../img/tapthe2022.jpg" alt="">
-            <img width="100%" src="../img/nhanbangkhen.png" alt="">  
+
         </div>
     </div>
 </section>

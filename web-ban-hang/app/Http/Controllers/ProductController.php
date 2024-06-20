@@ -38,16 +38,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate form data
         $request->validate([
-            'CategoryParentID'=> 'required',
+            'CategoryParentID' => 'required|',
             'SupplierID' => 'required|',
             'ProductCode' => 'required|',
             'ProductName' => 'required|string|max:255|unique:products',
             'ProductAlias' => 'required|',
-            'ProductPageTitle' => 'required|',
             'ProductMetaKeyword' => 'required|',
-            'ProductMetaDescription' => 'required|',
             'ProductImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'CurentPrice' => 'required|',
             'OldPrice' => 'required|',
@@ -58,18 +55,7 @@ class ProductController extends Controller
             'ProductContent' => 'required|',
             'OtherContent' => 'required|',
             'Promotion' => 'required|',
-            'TransportInformation' => 'required|',
-            'RelatedNews' => 'required|',
-            'RelatedProduct' => 'required|',
-            'ViewOder' => 'required|',
-            'IsTypical' => 'required|',
-            'IsHotProduct' => 'required|',
-            'IsPromotion' => 'required|',
-            'IsBestSeller' => 'required|',
-            'IsWeeklyProduct' => 'required|',
-            'IsApproved' => 'required|',
-            'ApprovedBy' => 'required|',
-            'ViewTime' => 'required|'
+            'RelatedProduct' => 'required|'
         ]);
         
         // Handle file upload (image)
@@ -87,9 +73,7 @@ class ProductController extends Controller
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
-        $product->ProductPageTitle = $request->input('ProductPageTitle');
         $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
-        $product->ProductMetaDescription = $request->input('ProductMetaDescription');
         $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
@@ -100,18 +84,7 @@ class ProductController extends Controller
         $product->ProductContent = $request->input('ProductContent');
         $product->OtherContent = $request->input('OtherContent');
         $product->Promotion = $request->input('Promotion');
-        $product->TransportInformation = $request->input('TransportInformation');
-        $product->RelatedNews = $request->input('RelatedNews');
         $product->RelatedProduct = $request->input('RelatedProduct');
-        $product->ViewOder = $request->input('ViewOder');
-        $product->IsTypical = $request->input('IsTypical');
-        $product->IsHotProduct = $request->input('IsHotProduct');
-        $product->IsPromotion = $request->input('IsPromotion');
-        $product->IsBestSeller = $request->input('IsBestSeller');
-        $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
-        $product->IsApproved = $request->input('IsApproved');
-        $product->ApprovedBy = $request->input('ApprovedBy');
-        $product->ViewTime = $request->input('ViewTime');
 
         $product->save();
 
@@ -133,8 +106,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $supps = Supplier::all();
         $cats = Category::all();
-        return view('admin.product.edit',compact('product',"cats"));
+        return view('admin.product.edit',compact('product',"cats","supps"));
     }
 
     /**
@@ -149,9 +123,7 @@ class ProductController extends Controller
             'ProductCode' => 'required|',
             'ProductName' => 'required|',
             'ProductAlias' => 'required|',
-            'ProductPageTitle' => 'required|',
             'ProductMetaKeyword' => 'required|',
-            'ProductMetaDescription' => 'required|',
             'ProductImage' => 'required|',
             'CurentPrice' => 'required|',
             'OldPrice' => 'required|',
@@ -162,18 +134,7 @@ class ProductController extends Controller
             'ProductContent' => 'required|',
             'OtherContent' => 'required|',
             'Promotion' => 'required|',
-            'TransportInformation' => 'required|',
-            'RelatedNews' => 'required|',
-            'RelatedProduct' => 'required|',
-            'ViewOder' => 'required|',
-            'IsTypical' => 'required|',
-            'IsHotProduct' => 'required|',
-            'IsPromotion' => 'required|',
-            'IsBestSeller' => 'required|',
-            'IsWeeklyProduct' => 'required|',
-            'IsApproved' => 'required|',
-            'ApprovedBy' => 'required|',
-            'ViewTime' => 'required|'
+            'RelatedProduct' => 'required|'
         ]);
         if ($request->hasFile('ProductImage')) {
 
@@ -193,9 +154,7 @@ class ProductController extends Controller
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
-        $product->ProductPageTitle = $request->input('ProductPageTitle');
         $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
-        $product->ProductMetaDescription = $request->input('ProductMetaDescription');
         $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
@@ -206,18 +165,7 @@ class ProductController extends Controller
         $product->ProductContent = $request->input('ProductContent');
         $product->OtherContent = $request->input('OtherContent');
         $product->Promotion = $request->input('Promotion');
-        $product->TransportInformation = $request->input('TransportInformation');
-        $product->RelatedNews = $request->input('RelatedNews');
         $product->RelatedProduct = $request->input('RelatedProduct');
-        $product->ViewOder = $request->input('ViewOder');
-        $product->IsTypical = $request->input('IsTypical');
-        $product->IsHotProduct = $request->input('IsHotProduct');
-        $product->IsPromotion = $request->input('IsPromotion');
-        $product->IsBestSeller = $request->input('IsBestSeller');
-        $product->IsWeeklyProduct = $request->input('IsWeeklyProduct');
-        $product->IsApproved = $request->input('IsApproved');
-        $product->ApprovedBy = $request->input('ApprovedBy');
-        $product->ViewTime = $request->input('ViewTime');
 
         $product->update();
 

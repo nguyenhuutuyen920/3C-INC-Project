@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <section id="field" style="background: #f1f1f1;">
+    <section id="field" style="background: #f1f1f1;" class="pb-5">
         <div class="container pt-5" >
             <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
@@ -85,7 +85,7 @@
                         else if (fieldId == 3) {
                             route = '{{ route('vienthongxaylap', '') }}';
                         } else {
-                            route = '{{ route('hello3', '') }}';
+                            route = '{{ route('doluong', '') }}';
                         }
                         productMenuHtml += `
                             <li class="nav-item has-submenu list-unstyled">

@@ -48,20 +48,12 @@
                         <input class="form-control" type="text" name="CategoryAlias" placeholder="Please Enter Category ALias"/>
                     </div>                   
                     <div class="form-group">
-                        <label>Category Page Title</label>
-                        <input class="form-control" type="text" name="CategoryPageTitle" placeholder="Please Enter Category Page Title"/>
-                    </div>
-                    <div class="form-group">
                         <label>Category MetaKeyword</label>
                         <input class="form-control" type="text" name="CategoryMetaKeyword" placeholder="Please Enter Category Keyword"/>
                     </div>
                     <div class="form-group">
                         <label>Category MetaDescription</label>
                         <input class="form-control" type="text" name="CategoryMetaDescription" placeholder="Please Enter Category Description"/>
-                    </div>
-                    <div class="form-group">
-                        <label>ViewOrder</label>
-                        <input class="form-control" type="number" min="0" max="1" name="ViewOrder" placeholder="Please Enter Category Vieworder"/>
                     </div>
                     <div class="form-group">
                         <label>IsVisible</label>
@@ -73,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label>Typical Image</label>
-                        <input class="form-control" type="number" min="0" max="1" name="TypicalImage" placeholder="Please Enter Category Typical Image"/>
+                        <input class="form-control" type="file" name="TypicalImage" placeholder="Please Enter Category Typical Image"/>
                     </div>
                     
                     <button type="submit" class="btn btn-default">Category Add</button>

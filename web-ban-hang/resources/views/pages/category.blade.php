@@ -12,7 +12,7 @@
             padding-right: 1rem;
         }
     </style>
-    <section id="field" style="background: #f1f1f1">
+    <section id="field" style="background: #f1f1f1" class="pb-5">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
             <div class="container menu-field d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
@@ -90,7 +90,7 @@
                     else if (fieldId == 3) {
                         route = '{{ route('vienthongxaylap', '') }}';
                     } else {
-                        route = '{{ route('hello3', '') }}';
+                        route = '{{ route('doluong', '') }}';
                     }
 
                     let hasSupplier = cat.supplier && cat.supplier.length > 0;

@@ -109,6 +109,18 @@ class HomeController extends Controller
         $field->load('categories.supplier');
         return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news","devices"));
     }
+    public function linhvuc(Field $field)
+    {
+        $devices = Device::all();
+        $news = News::orderBy('NewsID','DESC')->paginate(4);
+        $project = Project::orderBy('ProjectID','DESC')->paginate(1);
+        $projects = Project::all();
+        $products = Product::all();
+        $defaultField = 1;
+        $fields = Field::with('categories.supplier')->get();
+        $field->load('categories.supplier');
+        return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news","devices"));
+    }
     public function automation(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
@@ -131,12 +143,12 @@ class HomeController extends Controller
         $products = Product::all();
         return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
     }
-    public function hello3(Field $field){
+    public function doluong(Field $field){
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
         $products = Product::all();
-        return view("pages.hello3", compact("products","field", "defaultField", "fields"));
+        return view("pages.doluong", compact("products","field", "defaultField", "fields"));
     }
     public function product_info(Product $product,Field $field){
         $defaultField = 1;
@@ -155,10 +167,10 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "SenderName"=> "required",
-            "SenderEmail"=> "required",
-            "ContactTitle"=> "required",
-            "ContactContent"=> "required"
+            "SenderName"=> "required|",
+            "SenderEmail"=> "required|",
+            "ContactTitle"=> "required|",
+            "ContactContent"=> "required|"
         ]);
 
         $data = $request->all();

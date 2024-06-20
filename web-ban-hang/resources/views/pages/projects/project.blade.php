@@ -2,54 +2,51 @@
 @section('content')
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
-    <section class="new">
-      <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #fff">
-      <a class="text-dark" style="margin-left: 145px" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold" href="{{route('project')}}"> Dự Án</a><span class="feed_date"> / </span>
+    <section class="project">
+      <div class="col-lg-12 col-md-12 col-sm-12 pt-5"  style="background: #ffffff">
+      <a class="text-dark" style="margin-left: 145px" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold" href="{{route('automation')}}"> Dự Án</a><span class="feed_date"> / </span>
 
-        <div class="container menu-new  d-flex p-0" >
-          <div class="d-flex flex-column col-lg-9 col-md-12 col-sm-12">
-            <ul class="content_menu-new  m-0 p-2" style="width: 100%">
-              @foreach($projects as $proj)
-                <li class="new-menu p-0 ml-4 list-unstyled mt-4 pb-1" >
-                  <div class="media media-new d-flex w-100 h-100" style="margin-bottom: 10px">
-                    {{-- <div class="new" style="width:500px;height: 230px;"> --}}
-                      <a class="new_img " href="{{ route('project_info',$proj->ProjectID)}}">
-                        <img class="media-object" style="width: 220px; height:180px;" src="{{ asset($proj->ProjectImage) }}">
+        <div class="container menu-project  d-lg-flex p-0 mt-3" >
+          <div class="d-flex flex-column col-lg-12 col-md-12 col-sm-12">
+            <ul class="content_menu-project  m-0 p-2" style="width: 100%">
+              @foreach($projects as $n)
+                <li class="project-menu float-left p-0 pl-4 list-unstyled mb-4 col-lg-4 col-md-5 col-sm-12"  >
+                  <div class="media media-project d-flex flex-column" style="margin-bottom: 10px;">
+                    <div class="project w-100" style="height: 230px;">
+                      <a class="project_img " href="{{ route('project_info',$n->ProjectID)}}">
+                        <img class="media-object w-100 h-100" src="{{ asset($n->ProjectImage) }}" width="150">
                       </a>
-                    {{-- </div> --}}
-                    <div class="new-body pl-3 w-100">
-                      <a class="new_title" href="{{ route('project_info',$proj->ProjectID)}}">
-                        <h5 class="font-weight-bold mb-5 text-dark" style="font-size: 1.69231em; ">{{$proj->ProjectTitle}}</h5>
-                      </a>
-                      <p class="new_abstract text-dark">{{$proj->Abstract}}</p>
-                      <p class="new_date text-dark text-right">{{$proj->create_at}}</p>
+                    </div>
+                    <div class="project-body pl-1 pt-3 w-100">
+                      <a class="project_title" href="{{ route('project_info',$n->ProjectID)}}"><h5 class="text-dark font-weight-bold">{{$n->ProjectTitle}}</h5></a>
+                      <span class="project_abstract text-dark ">{{$n->Abstract}}</span>
+                      <p class="project_date text-dark text-right">{{$n->create_at}}</p>
                     </div>
                   </div>                    
                 </li>
-                <div class="dropdown-divider"></div>
               @endforeach
             </ul>
-            <div class="paginate-new" style="display: flex; justify-content: center; flex-direction: row-reverse;">
+            <div class="paginate-project" style="display: flex; justify-content: center; flex-direction: row-reverse;">
               {{ $projects->links('pagination::bootstrap-4') }}
             </div>
           </div>
           
-          <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content; ">
+          {{-- <div class="sidebar_menu-project col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content; ">
             <div class="field">
               <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                <h5 class="text-light">LĨNH VỰC</h5>
+                <h5 class="text-light font-weight-bold text-center">LĨNH VỰC</h5>
               </div>
-              <ul class="field-menu m-0">
+              <ul class="field-menu m-0 badge-secondary">
                 @foreach ($fields as $field)
                   <li class="pt-2">
-                    <a href="{{ $field->FieldID}}"><span class=" pl-3 text-dark">{{$field->FieldName}}</span></a>
+                    <a href="{{ $field->FieldID}}"><span class="text-light pl-3 ">{{$field->FieldName}}</span></a>
                     <div class="dropdown-divider"></div>
                   </li>
                 @endforeach
               </ul>
             </div>
 
-          </div>
+          </div> --}}
         </div>
       </div> 
     </section>

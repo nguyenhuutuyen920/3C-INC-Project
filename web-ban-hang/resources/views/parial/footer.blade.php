@@ -10,26 +10,40 @@
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <footer id="footer">
       <!-- Start footer top area -->
-      <div class="footer_top" style="background-color: #f1f1f1">
+      <div class="footer_top pt-5 pb-5" style="background-color: #303941">
         <div class="container-fluid col-lg-12  col-md-12 col-sm-12" >
           <div class="row w-100">
             <div class="col-lg-4 col-md-4 col-sm-12">
               <div class="single_footer_widget">
-                <h2 class="text-primary font-weight-bold" style="font-family: segoeuib;">Giới thiệu</h2>
-                <p>CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
-                <p>Địa chỉ trụ sở chính: Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
-                <p>Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
+                <h3 class="text-primary font-weight-bold text-light" style="font-family: segoeuib;">Giới thiệu</h3>
+                <p class="text-light">CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
+                <p class="text-light">Địa chỉ trụ sở chính: Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
+                <p class="text-light">Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
+                <img width="40%" height="40%" src="../img/logo_3c.png" alt="">
               </div>
             </div>
-            <div class="col-lg-4  col-md-4 col-sm-12 p-0">
+            <div class="col-lg-2  col-md-2 col-sm-12 p-0">
               <div class="single_footer_widget">
-                <h2 class="text-primary m-3 font-weight-bold" style="font-family: segoeuib;">Sản phẩm & Dịch vụ</h2>
-                <ul class="footer_widget_nav list-unstyled ml-3">
-                  <li><a class=" text-dark font-weight-bold " href="{{ route('service')}}">Giới thiệu</a></li>
-                  <li><a class=" text-dark font-weight-bold " href="">Sản phẩm</a></li>
-                  <li><a class=" text-dark font-weight-bold " href="{{ route('project')}}">Dự án</a></li>
-                  <li><a class=" text-dark font-weight-bold " href="{{route('news')}}">Tin tức</a></li>
-                  <li><a class=" text-dark font-weight-bold " href="{{ route('contact')}}">Liên hệ</a></li>
+                <h3 class="text-primary font-weight-bold text-light" style="font-family: segoeuib;">Chính sách và hướng dẫn</h3>
+                <ul class="footer_widget_nav list-unstyled ">
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Chính sách bán hàng</a></li>
+
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Phương thức thanh toán</a></li>
+
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Vận chuyển và giao nhận</a></li>
+
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Chính sách bảo hành</a></li>
+
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Hướng dẫn mua hàng</a></li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-12 p-0">
+              <div class="single_footer_widget">
+                <h3 class="text-primary  font-weight-bold text-light" style="font-family: segoeuib;">Điều khoản và điều kiện</h3>
+                <ul class="footer_widget_nav list-unstyled ">
+                  <li><a class=" text-light font-weight-bold p-2 " style="border-bottom: dotted #FFFFFF 1px" href="">Quy định bảo hành</a></li>
                 </ul>
               </div>
             </div>
@@ -44,12 +58,12 @@
       <!-- End footer top area -->
 
       <!-- Start footer bottom area -->
-      <div class="footer_bottom " style="background-color: #f1f1f1">
+      <div class="footer_bottom " style="background-color: #303941">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="footer_bootomLeft text-center">
-                <p> © Copyright 2024 - 3C.INC</p>
+                <p class="text-light"> © Copyright 2024 - 3C.INC</p>
               </div>
             </div>
           </div>

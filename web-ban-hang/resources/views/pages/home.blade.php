@@ -45,7 +45,7 @@
 <!--=========== END SLIDER SECTION ================-->
 
 <!--=========== BEGIN ABOUT US SECTION ================-->
-<section id="aboutUs">
+<section id="aboutUs" class="pt-5 pb-5">
   <div class="container-fluid">
     <div class="row">
       <!-- Start about us area -->
@@ -102,7 +102,7 @@
     </div>
   </div>
 </section>
-<section id="ourCourses">
+<section id="ourCourses" class="pt-5 pb-5 ">
   <div class="container" style=" overflow: hidden;">
     <!-- Our courses title -->
     <div class="row h-100">
@@ -169,7 +169,7 @@
 
 
 <section id="ourTechnology">
-  <div class="container pt-5 mb-5" >
+  <div class="container pt-3 mb-3" >
     <!-- Our courses title -->
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12">

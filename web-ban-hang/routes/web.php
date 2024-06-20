@@ -54,11 +54,11 @@ Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 Route::get('/device/{device}', [HomeController::class, 'device'])->name('device');
 
-Route::get('/field/{field}', [HomeController::class, 'field'])->name('field');
+Route::get('/field', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');
 Route::get('/automation', [HomeController::class, 'automation'])->name('automation');
 Route::get('/vienthongxaylap', [HomeController::class, 'vienthongxaylap'])->name('vienthongxaylap');
-Route::get('/hello3', [HomeController::class, 'hello3'])->name('hello3');
+Route::get('/doluong', [HomeController::class, 'doluong'])->name('doluong');
 
 
 Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');

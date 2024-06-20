@@ -17,13 +17,11 @@ return new class extends Migration
             $table->unsignedInteger('CategoryParentID')->default(0); 
             $table->string('CategoryName', 250)->unique();
             $table->string('CategoryAlias', 250);
-            $table->string('CategoryPageTitle', 250);
             $table->string('CategoryMetaKeyword', 250);
             $table->string('CategoryMetaDescription', 250);
-            $table->integer('ViewOrder');
             $table->binary('IsVisible');
             $table->binary('IsTypical');
-            $table->string('TypicalImage', 150);
+            $table->string('TypicalImage', 250);
             $table->timestamps();
         });
         Schema::table('categories', function (Blueprint $table) {

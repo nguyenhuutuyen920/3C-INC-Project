@@ -39,19 +39,34 @@ class CategoryController extends Controller
             'CategoryParentID'=> 'required',
             'CategoryName' => 'required|unique:categories',
             'CategoryAlias' => 'required',
-            'CategoryPageTitle' => 'required',
             'CategoryMetaKeyword' => 'required',
             'CategoryMetaDescription' => 'required',
-            'ViewOrder' => 'required',
             'IsVisible' => 'required',
             'IsTypical' => 'required',
             'TypicalImage' => 'required'
         ]);
 
-        $data = $request->all();
+        if ($request->hasFile('TypicalImage')) {
+            
+            $uploadedFile = $request->file('TypicalImage');
+            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
+            $uploadedFile->move("media/CategoryImage/",$imageName);
+        }
 
-        Category::create($data);
+        $category = new Category();
+        $category->FieldParentID = $request->input('FieldParentID');
+        $category->CategoryParentID = $request->input('CategoryParentID');
+        $category->CategoryName = $request->input('CategoryName');
+        $category->CategoryAlias = $request->input('CategoryAlias');
+        $category->CategoryMetaKeyword = $request->input('CategoryMetaKeyword');
+        $category->CategoryMetaKeyword = $request->input('CategoryMetaKeyword');
+        $category->TypicalImage = 'media/CategoryImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $category->CategoryMetaDescription = $request->input('CategoryMetaDescription');
+        $category->IsVisible = $request->input('IsVisible');
+        $category->IsTypical = $request->input('IsTypical');
+
+        $category->save();
 
         return redirect()->route('category.index');
     }
@@ -85,18 +100,36 @@ class CategoryController extends Controller
             'CategoryParentID'=> 'required',
             'CategoryName' => 'required|',
             'CategoryAlias' => 'required',
-            'CategoryPageTitle' => 'required',
             'CategoryMetaKeyword' => 'required',
             'CategoryMetaDescription' => 'required',
-            'ViewOrder' => 'required',
             'IsVisible' => 'required',
             'IsTypical' => 'required',
             'TypicalImage' => 'required'
         ]);
+        if ($request->hasFile('TypicalImage')) {
 
-        $data = $request->all('FieldParentID','CategoryParentID','CategoryName','CategoryAlias','CategoryPageTitle',
-        'CategoryMetaKeyword','CategoryMetaDescription','ViewOrder','IsVisible','IsTypical','TypicalImage');
-        $category->update($data);
+            $uploadedFile = $request->file('TypicalImage');
+            $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
+            if ($category->TypicalImage) {
+                $oldImagePath = public_path('media/CategoryImage/' . $category->TypicalImage);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+            $uploadedFile->move("media/CategoryImage/",$imageName);
+        }
+
+        $category->FieldParentID = $request->input('FieldParentID');
+        $category->CategoryParentID = $request->input('CategoryParentID');
+        $category->CategoryName = $request->input('CategoryName');
+        $category->CategoryAlias = $request->input('CategoryAlias');
+        $category->CategoryMetaKeyword = $request->input('CategoryMetaKeyword');
+        $category->TypicalImage = 'media/CategoryImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $category->CategoryMetaDescription = $request->input('CategoryMetaDescription');
+        $category->IsVisible = $request->input('IsVisible');
+        $category->IsTypical = $request->input('IsTypical');
+
+        $category->update();
 
         return redirect()->route('category.index');
     }

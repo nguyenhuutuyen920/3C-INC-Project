@@ -1,8 +1,8 @@
 <div class="automation ml-2">
 
     <div class="automaiton_content" style="border: 2px solid rgb(156, 156, 156)">
-        <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="m-0">Thiết bị viễn thông xây lắp</h5>
+        <div class="automation_content-title p-1 badge-primary p-2" >
+            <h5 class="m-0 font-weight-bold">Thiết bị viễn thông xây lắp</h5>
         </div>
         @foreach ($devices as $dev)
             @if ($dev->HienThiVienThongXayLap == 1)
@@ -22,9 +22,9 @@
             @endif
         @endforeach
     </div>
-    <div class="automation_footer mt-3 badge-primary" style="border: 2px solid rgb(128, 128, 130)">
-        <div class="automation_content-title p-1" style="background: rgb(104, 187, 239)">
-            <h5 class="p-2 m-0">Dự Án</h5>
+    {{-- <div class="automation_footer mt-3 " style="border: 2px solid rgb(128, 128, 130)">
+        <div class="automation_content-title badge-primary">
+            <h5 class="p-2 m-0 font-weight-bold">Dự Án</h5>
         </div>
         <div class="automation_footer-solution w-100 mt-2">
             @foreach ($project as $proj)
@@ -42,9 +42,9 @@
             @endforeach
             <div class="project_related-title mt-5 ml-2">
             @foreach ($projects as $proj)
-                <li class="m-0 pt-1">{{$proj->ProjectTitle}}</li>
+                <li class="m-0 font-weight-bold pt-1">{{$proj->ProjectTitle}}</li>
             @endforeach
             </div>
         </div>  
-    </div>
+    </div> --}}
 </div>
