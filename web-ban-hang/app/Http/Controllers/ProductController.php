@@ -44,7 +44,7 @@ class ProductController extends Controller
             'ProductCode' => 'required|',
             'ProductName' => 'required|string|max:255|unique:products',
             'ProductAlias' => 'required|',
-            'ProductMetaKeyword' => 'required|',
+            'ProductKeyword' => 'required|',
             'ProductImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'CurentPrice' => 'required|',
             'OldPrice' => 'required|',
@@ -57,7 +57,6 @@ class ProductController extends Controller
             'Promotion' => 'required|',
             'RelatedProduct' => 'required|'
         ]);
-        
         // Handle file upload (image)
         if ($request->hasFile('ProductImage')) {
             
@@ -73,7 +72,7 @@ class ProductController extends Controller
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
-        $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
+        $product->ProductKeyword = $request->input('ProductKeyword');
         $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
@@ -123,7 +122,7 @@ class ProductController extends Controller
             'ProductCode' => 'required|',
             'ProductName' => 'required|',
             'ProductAlias' => 'required|',
-            'ProductMetaKeyword' => 'required|',
+            'ProductKeyword' => 'required|',
             'ProductImage' => 'required|',
             'CurentPrice' => 'required|',
             'OldPrice' => 'required|',
@@ -154,7 +153,7 @@ class ProductController extends Controller
         $product->ProductCode = $request->input('ProductCode');
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
-        $product->ProductMetaKeyword = $request->input('ProductMetaKeyword');
+        $product->ProductKeyword = $request->input('ProductKeyword');
         $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');

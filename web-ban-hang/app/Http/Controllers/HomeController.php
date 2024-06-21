@@ -121,16 +121,13 @@ class HomeController extends Controller
         $field->load('categories.supplier');
         return view("pages.field", compact("field", "defaultField", "fields","products","projects","project","news","devices"));
     }
-    public function automation(Field $field){
+    public function automation(Field $field,Category $category){
         $defaultField = 1;
-        $fields = Field::with('categories.supplier')->get();
-        $field->load('categories.supplier');
-        $news = News::orderBy('NewsID','DESC')->paginate(4);
-        $devices = Device::all();
-        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
-        $project = Project::all();
-        $products = Product::all();
-        return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
+        $fields = Field::with('categories.devices')->get();
+        $field->load('categories.devices');
+        $devices = $category->devices;
+        $category->load(['devices']);
+        return view("pages.automation", compact("field", "defaultField", "fields","devices"));
     }
     public function vienthongxaylap(Field $field){
         $defaultField = 1;

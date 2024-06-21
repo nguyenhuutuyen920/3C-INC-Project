@@ -28,9 +28,9 @@ class Category extends Model
     }
     public function supplier()
     {
-        return $this->hasMany(Supplier::class, 'CategoryID', 'CategoryID');
+        return $this->hasMany(Supplier::class, 'CategoryID', 'FieldParentID');
     }
-    public function device()
+    public function devices()
     {
         return $this->hasMany(Device::class, 'CategoryID', 'CategoryID');
     }

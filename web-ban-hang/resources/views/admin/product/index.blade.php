@@ -31,9 +31,7 @@ function kiemtra () {
                         <th>Mã Sản Phẩm</th>
                         <th>Tên Sản Phẩm</th>
                         <th>Bí Danh Sản Phẩm</th>
-                        <th>Tiêu Đề Sản Phẩm</th>
                         <th>Từ Khóa Sản Phẩm</th>
-                        <th>Mô tả Sản Phẩm</th>
                         <th>Hình Ảnh Sản Phẩm</th>
                         <th>Giá Tiền Hiện Tại</th>
                         <th>Giá Tiền Cũ</th>
@@ -44,18 +42,7 @@ function kiemtra () {
                         <th>Nội Dung Sản Phẩm</th>
                         <th>Nội Dung Khác</th>
                         <th>Khuyến Mãi</th>
-                        <th>Thông Tin Vận Tải</th>
-                        <th>Tin Tức Liên Quan</th>
                         <th>Sản Phẩm Liên Quan</th>
-                        <th>Xem Thứ Tự</th>
-                        <th>Điển Hình</th>
-                        <th>Sản Phẩm Hot</th>
-                        <th>Đang Khuyến Mãi</th>
-                        <th>Sản Phẩm Bán Chạy</th>
-                        <th>Sản Phẩm Hàng Tuần</th>
-                        <th>Được Phê Duyệt</th>
-                        <th>Được Chấp Nhận Bởi</th>
-                        <th>Xem thời Gian</th>
                         <th>Xóa</th>
                         <th>Chỉnh Sửa</th>
                     </tr>
@@ -69,9 +56,7 @@ function kiemtra () {
                         <td>{{$prod->ProductCode}}</td>
                         <td>{{$prod->ProductName}}</td>
                         <td>{{$prod->ProductAlias}}</td>
-                        <td>{{$prod->ProductPageTitle}}</td>
-                        <td>{{$prod->ProductMetaKeyword}}</td>
-                        <td>{{$prod->ProductMetaDescription}}</td>
+                        <td>{{$prod->ProductKeyword}}</td>
                         <td>
                             <img src="{{ asset($prod->ProductImage) }}" width="150">
                         </td>
@@ -84,18 +69,7 @@ function kiemtra () {
                         <td>{{$prod->ProductContent}}</td>
                         <td>{{$prod->OtherContent}}</td>
                         <td>{{$prod->Promotion}}</td>
-                        <td>{{$prod->TransportInformation}}</td>
-                        <td>{{$prod->RelatedNews}}</td>
                         <td>{{$prod->RelatedProduct}}</td>
-                        <td>{{$prod->ViewOder}}</td>
-                        <td>{{$prod->IsTypical}}</td>
-                        <td>{{$prod->IsHotProduct}}</td>
-                        <td>{{$prod->IsPromotion}}</td>
-                        <td>{{$prod->IsBestSeller}}</td>
-                        <td>{{$prod->IsWeeklyProduct}}</td>
-                        <td>{{$prod->IsApproved}}</td>
-                        <td>{{$prod->ApprovedBy}}</td>
-                        <td>{{$prod->ViewTime}}</td>
                         <td class="center">
                             <form action="{{ route('product.destroy',$prod->ProductID)}}" method="post">
                                 @csrf @method('DELETE')

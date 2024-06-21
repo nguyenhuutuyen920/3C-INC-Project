@@ -21,11 +21,11 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="product_menu-field mt-3" style="border: 1px solid #cfcfcf">
+                    {{-- <div class="product_menu-field mt-3" style="border: 1px solid #aeaeae">
                         <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                             <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="category-content col-lg-9 col-md-12 col-sm-12 p-0">
@@ -65,7 +65,7 @@
                     }
 
                     categoryMenuHtml += `
-                        <div class="automation_content-card float-left" style="width: 240px; height: 240px;">
+                        <div class="automation_content-card float-left ml-2" style="width: 240px; height: 240px;border: 1px solid #aeaeae">
                             <div class="card-automation d-lg-flex flex-column p-2 h-100 w-100">
                                 <a href="${route}" class="card-automation-img" style="width: 100%; height: 150px;">
                                     <img class="w-100 h-100" src="{{asset('${cat.TypicalImage}')}}" alt="">

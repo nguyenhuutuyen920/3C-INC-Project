@@ -65,8 +65,8 @@
                         <input class="form-control" type="text" value="{{ $product->ProductAlias }}" name="ProductAlias" placeholder="Please Enter Product Alias " />
                     </div>
                     <div class="form-group">
-                        <label>Product Meta Keyword</label>
-                        <input class="form-control" type="text" value="{{ $product->ProductMetaKeyword }}" name="ProductMetaKeyword" placeholder="Please Enter Product Meta Keyword " />
+                        <label>Product Keyword</label>
+                        <input class="form-control" type="text" value="{{ $product->ProductKeyword }}" name="ProductKeyword" placeholder="Please Enter Product Meta Keyword " />
                     </div>
                     <div class="form-group">
                         <label>Product Image</label>

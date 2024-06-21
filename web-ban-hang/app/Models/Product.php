@@ -15,7 +15,7 @@ class Product extends Model
         'ProductCode',
         'ProductName',
         'ProductAlias',
-        'ProductMetaKeyword',
+        'ProductKeyword',
         'ProductImage',
         'CurentPrice',
         'OldPrice',

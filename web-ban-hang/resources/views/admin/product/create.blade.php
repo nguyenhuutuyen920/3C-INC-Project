@@ -59,11 +59,7 @@
                 </div>
                 <div class="form-group">
                     <label>Từ Khóa Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductMetaKeyword" placeholder="Vui lòng nhập Từ Khóa Sản Phẩm " />
-                </div>
-                <div class="form-group">
-                    <label>Mô tả Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductMetaDescription" placeholder="Vui lòng nhập Mô tả Sản Phẩm " />
+                    <input class="form-control" type="text" name="ProductKeyword" placeholder="Vui lòng nhập Từ Khóa Sản Phẩm " />
                 </div>
                 <div class="form-group">
                     <label>Hình Ảnh Sản Phẩm</label>
