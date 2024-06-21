@@ -84,7 +84,7 @@
                 selectedField.categories.forEach(cat => {
                     let route;
                     if (fieldId == 1) {
-                        route = `${cat.CategoryID}`;
+                        route = `{{ route('automation', ['id' => '']) }}${cat.CategoryID}`;
                     }
                     else if (fieldId == 2) {
                         route = '{{ route('category', '') }}';

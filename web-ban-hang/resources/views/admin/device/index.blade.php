@@ -47,7 +47,7 @@ function kiemtra () {
                         <td>{{ $dev->CategoryID}}</td>
                         <td>{{ $dev->DeviceTitle}}</td>
                         <td>
-                            <img src="{{ asset($dev->DeviceImage)}}" alt="">
+                            <img src="{{ asset($dev->DeviceImage)}}" alt="" width="150">
                         </td>
                         <td>{{ $dev->DeviceContent}}</td>
                         <td >{!! $dev->Technicaldata!!}</td>
