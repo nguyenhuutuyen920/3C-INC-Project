@@ -82,19 +82,23 @@
                 selectedField.categories.forEach(cat => {
                     let route;
                     if (fieldId == 1) {
-                        route = '{{ route('automation', '') }}';
+                        route = `{{ route('automation', ['id' => '']) }}${cat.CategoryID}`;
                     }
                     else if (fieldId == 2) {
                         route = '{{ route('category', '') }}';
                     }
                     else if (fieldId == 3) {
-                        route = '{{ route('vienthongxaylap', '') }}';
+                        route = `{{ route('vienthongxaylap', ['id' => '']) }}${cat.CategoryID}`;
                     } else {
-                        route = '{{ route('doluong', '') }}';
+                        route = `{{ route('doluong', ['id' => '']) }}${cat.CategoryID}`;
                     }
-
+                    
                     let hasSupplier = cat.supplier && cat.supplier.length > 0;
+                    
                     if (hasSupplier) {
+                        if (hasSupplier == field.categories){
+                            
+                        }
                         supplierMenuHtml += `
                             <li class="nav-item has-submenu list-unstyled">
                                 <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">

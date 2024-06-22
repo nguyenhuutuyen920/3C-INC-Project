@@ -89,10 +89,10 @@ class HomeController extends Controller
         $products = Product::all();
         return view("pages.category", compact("products","field", "defaultField", "fields"));
     }
-    public function getProductBySupplier(Supplier $supplier,Field $field) {
+    public function getProductBySupplier(Supplier $supplier,Field $field,Category $category) {
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
-        $products = $supplier->products;
+        $products = $category->$supplier->products;
         $supplier->load(['products']);
         // dd($products);
         return view('pages.product',compact('products', "defaultField",'fields','field'));
@@ -132,23 +132,27 @@ class HomeController extends Controller
         // dd($devices);
         return view("pages.automation", compact("field", "defaultField", "fields","devices"));
     }
-    public function vienthongxaylap(Field $field){
+    public function vienthongxaylap(Request $request,Field $field,Category $category){
         $defaultField = 1;
-        $fields = Field::with('categories.supplier')->get();
-        $field->load('categories.supplier');
-        $news = News::orderBy('NewsID','DESC')->paginate(4);
-        $devices = Device::all();
-        $projects = Project::orderBy('ProjectID','DESC')->paginate(4);
-        $project = Project::all();
-        $products = Product::all();
-        return view("pages.automation", compact("project","projects","products","field", "defaultField", "fields","devices","news"));
+        $fields = Field::with('categories.devices')->get();
+        $field->load('categories.devices');
+        // $devices = $category->devices;
+        // $category->load(['devices']);
+
+        $devices = Device::where('CategoryID', $request->id)->get();
+        // dd($devices);
+        return view("pages.vienthongxaylap", compact("field", "defaultField", "fields","devices"));
     }
-    public function doluong(Field $field){
+    public function doluong (Request $request,Field $field,Category $category){
         $defaultField = 1;
-        $fields = Field::with('categories.supplier')->get();
-        $field->load('categories.supplier');
-        $products = Product::all();
-        return view("pages.doluong", compact("products","field", "defaultField", "fields"));
+        $fields = Field::with('categories.devices')->get();
+        $field->load('categories.devices');
+        // $devices = $category->devices;
+        // $category->load(['devices']);
+
+        $devices = Device::where('CategoryID', $request->id)->get();
+        // dd($devices);
+        return view("pages.doluong", compact("field", "defaultField", "fields","devices"));
     }
     public function product_info(Product $product,Field $field){
         $defaultField = 1;

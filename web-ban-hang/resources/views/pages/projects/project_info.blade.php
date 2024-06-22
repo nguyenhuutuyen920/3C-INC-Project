@@ -4,7 +4,7 @@
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="courseArchive"  style="background: #fff">
 
-      <div class="container pt-4">
+      <div class="container pt-4 mb-5 pb-5">
       <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark" href="{{route('project')}}"> Dự Án</a><span class="feed_date"> / </span> <span class="font-weight-bold">{{$project->ProjectTitle}}</span>
 
         <div class="row">

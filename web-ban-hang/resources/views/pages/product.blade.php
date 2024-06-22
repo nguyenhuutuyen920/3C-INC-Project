@@ -14,7 +14,7 @@
     </style>
     <section id="field" style="background: #f1f1f1">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
-            <div class="container menu-field d-flex p-0">
+            <div class="container-fluid menu-field d-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
                     <div class="field">
                         <div class="menu-field">
@@ -83,13 +83,15 @@
                 selectedField.categories.forEach(cat => {
                     let route;
                     if (fieldId == 1) {
-                        route = '{{ route('automation', '') }}';
-                    } else if (fieldId == 2) {
+                    route = `{{ route('automation', ['id' => '']) }}${cat.CategoryID}`;
+                    }
+                    else if (fieldId == 2) {
                         route = '{{ route('category', '') }}';
-                    } else if (fieldId == 3) {
-                        route = '{{ route('vienthongxaylap', '') }}';
+                    }
+                    else if (fieldId == 3) {
+                        route = `{{ route('vienthongxaylap', ['id' => '']) }}${cat.CategoryID}`;
                     } else {
-                        route = '{{ route('doluong', '') }}';
+                        route = `{{ route('doluong', ['id' => '']) }}${cat.CategoryID}`;
                     }
 
                     let hasSupplier = cat.supplier && cat.supplier.length > 0;

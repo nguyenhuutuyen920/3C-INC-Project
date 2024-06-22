@@ -137,16 +137,16 @@
                                         $route = '';
                                         switch ($field->FieldID) {
                                           case 1:
-                                            $route = route('automation');
+                                            $route = route('automation', ['id' => $cat->CategoryID]);
                                             break;
                                           case 2:
                                             $route = route('category');
                                             break;
                                           case 3:
-                                            $route = route('vienthongxaylap');
+                                            $route = route('vienthongxaylap', ['id' => $cat->CategoryID]);
                                             break;
                                           default:
-                                            $route = route('doluong');
+                                            $route = route('doluong', ['id' => $cat->CategoryID]);
                                             break;
                                         }
                                       @endphp

@@ -46,7 +46,7 @@
                     @foreach ($devices as $dev)
                         @if ($dev->hienThiTuDongHoa == 1)
                             <div class="automation_content-card float-left" style="width: 240px; height: 240px;">
-                                <div class="card-automation d-lg-flex flex-column p-2 h-100 w-100">
+                                <div class="card-automation d-lg-flex flex-column pl-3 pt-3 h-100 w-100">
                                     <a href="{{ route('device',$dev->DeviceID)}}" class="card-automation-img" style="width: 100%; height: 150px;">
                                         <img class="w-100 h-100" src="{{asset($dev->DeviceImage)}}" alt="">
                                     </a>
@@ -90,9 +90,9 @@
                         route = '{{ route('category', '') }}';
                     }
                     else if (fieldId == 3) {
-                        route = '{{ route('vienthongxaylap', '') }}';
+                        route = `{{ route('vienthongxaylap', ['id' => '']) }}${cat.CategoryID}`;
                     } else {
-                        route = '{{ route('doluong', '') }}';
+                        route = `{{ route('doluong', ['id' => '']) }}${cat.CategoryID}`;
                     }
 
                     let hasSupplier = cat.device && cat.device.length > 0;

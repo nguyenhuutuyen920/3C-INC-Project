@@ -59,7 +59,7 @@
                         route = '{{ route('category', '') }}';
                     }
                     else if (fieldId == 3) {
-                        route = '{{ route('vienthongxaylap', '') }}';
+                        route = `{{ route('vienthongxaylap', ['id' => '']) }}${cat.CategoryID}`;
                     } else {
                         route = '{{ route('doluong', '') }}';
                     }
