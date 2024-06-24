@@ -5,7 +5,7 @@
     <section id="field" style="background: #f1f1f1;" class="pb-5">
         <div class="container pt-5" >
             <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
-                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
+                {{-- <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
                     <div class="field">
                         <div class="menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
@@ -31,18 +31,24 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="product-content col-lg-9 col-md-12 col-sm-12 p-0">
+                </div> --}}
+                <div class="product-content col-lg-12 col-md-12 col-sm-12 p-0">
                     <div class="product-title-contact d-flex p-3" >
                         <div class="product-img"> 
-                            <img style="width:250px;height: 250px;" src="{{asset($product->ProductImage)}}"> 
+                            <img style="width:350px;height: 350px;" src="{{asset($product->ProductImage)}}"> 
                         </div>
-                        <div class="product-body pl-3 mt-2 d-flex flex-column justify-content-between">
+                        <div class="product-body pl-5 mt-2 d-flex flex-column justify-content-between">
                             <div class="product-body-content">
-                                <h4>{{$product->ProductName}}</h4>
-                                <p>Giá: {{$product->CurentPrice}} VND</p>
+                                <h3 class="font-weight-bold">{{$product->ProductName}}</h3>
+                                @if ($product->IsShowprice == 1)
+                                    <p>Giá: {{$product->OldPrice}} VND</p>
+                                @else
+                                    <p>Giá: {{$product->CurentPrice}} VND</p>
+                                @endif
                                 <p>Tình Trạng: {{$product->StoreStatus}}</p>
-                                
+                                @foreach ($products as $prod)
+                                    <a href="{{ route('product_info',$prod->ProductID)}}"><span class="text-dark" style="background: #e1e1e1; border-radius: 10px;padding: 2px 10px 2px 10px">{{$prod->ProductKeyword}}</span></a>
+                                @endforeach
                             </div>
                             <div class="product-body-contact mb-3 ml-5">
                                 <a class=" pl-5 pr-5 pt-2 pb-2 badge-success" style="font-size: 22px;border-radius: 10px" href="{{ route('contact')}}">
@@ -59,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <script>
+        {{-- <script>
             $(document).ready(function(){
                 let defaultFieldId = '{{ $defaultField }}';
                 let storedFieldId = localStorage.getItem('currentFieldId') || defaultFieldId;
@@ -123,7 +129,7 @@
                 });
             });
         
-            </script>
+            </script> --}}
     </section>
 
     

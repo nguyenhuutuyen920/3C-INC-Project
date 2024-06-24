@@ -38,7 +38,6 @@
                 <div class="form-group">
                     <label>ID Hãng</label>
                     <select class="form-control" name="SupplierID" >
-                        <option value="0">Không có hãng nào</option>
                         @foreach($supps as $supp)
                             <option 
                             value="{{$supp->id}}">{{$supp->SupplierName}}</option>
@@ -66,16 +65,16 @@
                     <input class="form-control" type="file" name="ProductImage" placeholder="Vui lòng nhập Hình Ảnh Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Giá Tiền Hiện Tại</label>
+                    <label>Giá Tiền Hiện Tại Gốc</label>
                     <input class="form-control" type="text" name="CurentPrice" placeholder="Vui lòng nhập Giá Tiền Hiện Tại " />
                 </div>
                 <div class="form-group">
-                    <label>Giá Tiền Cũ</label>
+                    <label>Giá Gốc</label>
                     <input class="form-control" type="text" name="OldPrice" placeholder="Vui lòng nhập Giá Tiền Cũ" />
                 </div>
                 <div class="form-group">
                     <label>Hiển Thị Giá Tiền</label>
-                    <input class="form-control" type="text" name="IsShowprice" placeholder="Vui lòng nhập Hiển Thị Giá Tiền " />
+                    <input class="form-control" type="number" max="1" min="0" name="IsShowprice" placeholder="Chỉ nhập 1 hoặc 0 (1 là có, 0 là không ) " />
                 </div>
                 <div class="form-group">
                     <label>Giảm Giá</label>

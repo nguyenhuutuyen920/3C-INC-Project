@@ -65,13 +65,25 @@
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-th-list fa-fw"></i> Device<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-thumb-tack fa-fw"></i> Device<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
                     <a href="{{ route('device.index') }}">List Device</a>
                 </li>
                 <li>
                     <a href="{{ route('device.create') }}">Create Device</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-th-list fa-fw"></i> Supplier<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{ route('supplier.index') }}">List Supplier</a>
+                </li>
+                <li>
+                    <a href="{{ route('supplier.create') }}">Create Supplier</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

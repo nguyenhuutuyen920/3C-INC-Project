@@ -4,41 +4,14 @@
 
     <section id="field" style="background: #fff;">
         <div class="container pt-3 pb-5" >
-            <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span> / </span><a class="text-dark" href="{{route('automation')}}"> Thiết Bị</a><span> / </span><span>{{$device->DeviceTitle}}</span>
-            <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0  pt-5 ">
-                <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
-                    <div class="field">
-                        <div class="menu-field" style="border: 1px solid #cfcfcf">
-                            <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">LĨNH VỰC</h6>
-                            </div>
-                            <ul class="field-menu p-2 m-0">
-                                @foreach ($fields as $f)
-                                <li class="list-unstyled">
-                                    <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
-                                        <p class="text-secondary m-0">{{ $f->FieldName }}</p>
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="product_menu-field mt-2" style="border: 1px solid #cfcfcf">
-                            <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
-                            </div>
-                            <ul class="field-menu p-2 m-0 product-list">
-                                <!-- Danh mục sản phẩm sẽ được cập nhật động -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="supplier-content col-lg-9 col-md-12 col-sm-12 pl-3" style="background-color: #ffffff">
-                    <div class="product-title-contact d-lg-flex pt-3" >
+            <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span> / </span><a class="text-dark" href="{{route('automation',$device->DeviceID)}}"> Thiết Bị</a><span> / </span><span class="font-weight-bold">{{$device->DeviceTitle}}</span>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0  pt-3 ">
+                <div class="supplier-content " style="background-color: #ffffff">
+                    <div class="product-title-contact d-lg-flex d-md-flex pt-3" >
                         <div class="product-img"> 
-                            <img style="width:250px;height: 250px;" src="{{asset($device->DeviceImage)}}"> 
+                            <img style="width:350px;height: 350px;" src="{{asset($device->DeviceImage)}}"> 
                         </div>
-                        <div class="product-body pl-3 mt-2 d-flex flex-column justify-content-between">
+                        <div class="product-body pl-5 mt-2 d-flex flex-column justify-content-between">
                             <div class="product-body-content">
                                 <h3 class="font-weight-bold">{{$device->DeviceTitle}}</h3>
                                 <p class="text-dark">Nội dung: {{$device->DeviceContent}}</p>

@@ -5,7 +5,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="container pt-5">
             <a class="text-dark" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold"> Giới Thiệu</a><span class="feed_date"> / </span>
-            <div class="introduce-img">
+            <div class="introduce-img mt-4">
                 <img width="100%" src="../img/tapthecongty.jpg" alt="">
             </div>
             <h4 class="mt-5 font-weight-bold">LỊCH SỬ</h4>

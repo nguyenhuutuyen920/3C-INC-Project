@@ -6,17 +6,16 @@
         <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
             <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0">
                 <div class="field">
-                    <div class="menu-field" style="border: 1px solid #cfcfcf">
+                    <div class="menu-field" >
                         <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                             <h6 class="text-light">LĨNH VỰC</h6>
                         </div>
                         <ul class="field-menu p-2 m-0">
                             @foreach ($fields as $f)
-                            <li class="list-unstyled">
+                            <li class="list-unstyled mb-2" style="heiht:30px;border: 1px solid #b1b1b1">
                                 <a href="#" class="field-link btn-group" data-field-id="{{ $f->FieldID }}">
-                                    <p class="text-dark m-0">{{ $f->FieldName }}</p>
+                                    <p class="text-dark font-weight-bold p-2 m-0">{{ $f->FieldName }}</p>
                                 </a>
-                                <div class="dropdown-divider"></div>
                             </li>
                             @endforeach
                         </ul>
@@ -65,8 +64,8 @@
                     }
 
                     categoryMenuHtml += `
-                        <div class="automation_content-card float-left ml-2" style="width: 240px; height: 240px;border: 1px solid #aeaeae">
-                            <div class="card-automation d-lg-flex flex-column p-2 h-100 w-100">
+                        <div class="automation_content-card float-left ml-2" style="width: 220px; height: 240px;border: 1px solid #aeaeae">
+                            <div class="card-automation d-lg-flex flex-column h-100 w-100">
                                 <a href="${route}" class="card-automation-img" style="width: 100%; height: 150px;">
                                     <img class="w-100 h-100" src="{{asset('${cat.TypicalImage}')}}" alt="">
                                 </a>

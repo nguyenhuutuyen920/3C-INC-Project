@@ -128,8 +128,8 @@
                               <li class="badge-primary" style="padding: 2px"></li>
                               @foreach ($fields as $field)
                                 <li class="has-children">
-                                  <a class="dropdown-toggle text-dark mr-4 font-weight-bold" href="{{ route('field', $field->FieldID) }}" id="Dropdown">{{ $field->FieldName }}</a>
-                                  <ul class="dropdown-menu pt-0 pb-2" aria-labelledby="navbarDropdown">
+                                  <a class=" text-dark mr-4 font-weight-bold" href="{{ route('field', $field->FieldID) }}" id="Dropdown">{{ $field->FieldName }}</a>
+                                  {{-- <ul class="dropdown-menu pt-0 pb-2" aria-labelledby="navbarDropdown">
                                     <li class="badge-primary" style="padding: 2px"></li>
 
                                     @foreach ($field->categories as $cat)
@@ -152,7 +152,7 @@
                                       @endphp
                                       <li><a class="text-dark font-weight-bold" href="{{ $route }}" id="Dropdown">{{ $cat->CategoryName }}</a></li>
                                     @endforeach
-                                  </ul>
+                                  </ul> --}}
                                 </li>
                               @endforeach
                             </li>

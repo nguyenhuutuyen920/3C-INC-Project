@@ -112,7 +112,7 @@
           <div class="device_menu p-0 d-flex">
             <div class="device_list d-flex">
               @foreach ($devices as $dev)
-              <div class="col-lg-3 col-md-4 col-sm-6 ">
+              <div class="col-lg-3">
                 <div class="device_card">
                   <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
                     <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
@@ -177,7 +177,7 @@
           <h2 class="title_two mb-3 font-weight-bold">SẢN PHẨM CÔNG NGHỆ THÔNG TIN</h2>
           <div class="row mt-5 mb-5">
             @foreach ($products as $prod)
-              <div class="col-lg-3 col-md-6 col-sm-12 ">
+              <div class="col-lg-3 col-md-6 col-sm-6 ">
                 <div class="Technology_card shadow " style="height: 330px;">
                   <a class="Technology_card-img" href="{{ route('product_info', $prod->ProductID) }}">
                     <img class="w-100" style="height: 180px" src="{{ $prod->ProductImage }}" alt="">

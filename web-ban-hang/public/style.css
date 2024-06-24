@@ -1550,7 +1550,9 @@
     width: 250px;
     height: 250px;
   }
-  
+  .device_card{
+    width: 200px;
+  }
 }
 
 
@@ -1565,7 +1567,9 @@
   width: 300px;
   height: 300px;
 }
-
+.device_card{
+  width: 200px;
+}
 }
 
 @media(max-width:480px ){	
@@ -1576,6 +1580,9 @@
   .map{
     width: 300px;
     height: 300px;
+  }
+  .device_card{
+    width: 200px;
   }
 }
 
@@ -1588,6 +1595,9 @@
     width: 300px;
     height: 300px;
   }
+  .device_card{
+    width: 200px;
+  }
 }
 
 @media(max-width:320px ){
@@ -1599,7 +1609,9 @@
     width: 300px;
     height: 300px;
   }
-	
+	.device_card{
+    width: 200px;
+  }
 }
 /*--------------------*/
 

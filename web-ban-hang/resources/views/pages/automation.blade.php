@@ -17,22 +17,21 @@
             <div class="container-fluid menu-field d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
                     <div class="field">
-                        <div class="menu-field" style="border: 1px solid #cfcfcf">
+                        <div class="menu-field" style="border: 1px solid #b1b1b1">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">LĨNH VỰC</h6>
                             </div>
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
-                                <li class="list-unstyled">
+                                <li class="list-unstyled p-2 mb-2" style="border: 1px solid #b1b1b1">
                                     <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
-                                        <p class="text-secondary m-0">{{ $f->FieldName }}</p>
+                                        <p class="text-dark font-weight-bold m-0">{{ $f->FieldName }}</p>
                                     </a>
-                                    <div class="dropdown-divider"></div>
                                 @endforeach
                             </ul>
                         </div>
                         
-                        <div class="supplier_menu-field mt-2" style="border: 1px solid #cfcfcf">
+                        <div class="supplier_menu-field mt-2" style="border: 1px solid #b1b1b1">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
                             </div>
@@ -98,29 +97,27 @@
                     let hasSupplier = cat.device && cat.device.length > 0;
                     if (hasSupplier) {
                         supplierMenuHtml += `
-                            <li class="nav-item has-submenu list-unstyled">
-                                <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
+                            <li class="nav-item has-submenu list-unstyled" style="border: 1px solid #b1b1b1">
+                                <a class="nav-link text-dark font-weight-bold p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
                                     ${cat.CategoryName}
                                 </a>
                                 <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
                                     ${cat.supplier.map(prod => `
                                         <li class="list-unstyled">
-                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark font-weight-bold" href="{{ route('supplier', '') }}/${prod.id}">
                                                 ${prod.SupplierName}
                                             </a>
                                         </li>
                                     `).join('')}
                                 </ul>
-                                <div class="dropdown-divider"></div>
                             </li>
                         `;
                     } else {
                         supplierMenuHtml += `
-                            <li class="nav-item list-unstyled">
-                                <a class="nav-link text-secondary p-0 category-link" href="${route}">
+                            <li class="nav-item list-unstyled p-2 mb-2" style="border: 1px solid #b1b1b1">
+                                <a class="nav-link text-dark font-weight-bold p-0 category-link" href="${route}">
                                     ${cat.CategoryName}
                                 </a>
-                                <div class="dropdown-divider"></div>
                             </li>
                         `;
                     }

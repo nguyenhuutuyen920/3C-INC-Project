@@ -9,6 +9,15 @@ class Supplier extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "id",
+        "CategoryID",
+        "SupplierAlias",
+        "SupplierMetaKeyword",
+        "SupplierMetaDescription",
+        "SupplierName",
+        "SupplierImage"
+    ];
     protected $table = 'supplier';
 
 

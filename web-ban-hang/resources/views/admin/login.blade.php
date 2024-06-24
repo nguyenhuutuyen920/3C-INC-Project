@@ -48,10 +48,10 @@
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" name="Email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="Password" type="password">
                                 </div>
                                 <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>

@@ -12,37 +12,32 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SubcateController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// Route cho trang đăng nhập Admin
 Route::get('/admin/login',[AdminController::class, 'login'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class, 'check_login']);
 
-Route::get('/admin/register',[AdminController::class, 'register'])->name('admin.register');
-Route::post('/admin/register',[AdminController::class, 'check_register']);
+// Routes được bảo vệ bởi middleware 'auth'
+Route::prefix('admin')->middleware('auth')->group(function () {
 
-Route::prefix('admin')->group(function () {
-    Route::get('/',[AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
     Route::resources([
-        'category'=> CategoryController::class,
-        'product'=> ProductController::class,
-        'new'=> NewsController::class,
-        'project'=>ProjectController::class,
-        'device'=>DeviceController::class,
-        'user'=> UserController::class,
+        'category' => CategoryController::class,
+        'product' => ProductController::class,
+        'new' => NewsController::class,
+        'project' => ProjectController::class,
+        'device' => DeviceController::class,
+        'user' => UserController::class,
+        'supplier' => SupplierController::class,
     ]);
 });
-Route::post('admin/category/store', [CategoryController::class, 'store'])->name('category.store');
-Route::post('admin/product/store', [ProductController::class, 'store'])->name('product.store');
-Route::post('admin/new/store', [NewsController::class, 'store'])->name('new.store');
-Route::post('upload', [NewsController::class, 'upload'])->name('ckeditor.upload');
-Route::post('upload', [ProjectController::class, 'upload'])->name('ckeditor.upload');
-Route::post('admin/project/store', [ProjectController::class, 'store'])->name('project.store');
-Route::post('admin/device/store', [DeviceController::class, 'store'])->name('device.store');
-Route::post('contact/store', [HomeController::class, 'store'])->name('contact.store');
 
+// Các route khác không yêu cầu xác thực
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/introduce', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
@@ -60,8 +55,5 @@ Route::get('/automation', [HomeController::class, 'automation'])->name('automati
 Route::get('/vienthongxaylap', [HomeController::class, 'vienthongxaylap'])->name('vienthongxaylap');
 Route::get('/doluong', [HomeController::class, 'doluong'])->name('doluong');
 
-
 Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
-
-Auth::routes();
 

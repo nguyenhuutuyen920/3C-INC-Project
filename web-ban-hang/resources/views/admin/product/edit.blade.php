@@ -29,7 +29,7 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label>CategoryParentID</label>
+                        <label>ID Danh Mục</label>
                         <select class="form-control" name="CategoryParentID" id="subcate_id">
                             @foreach($cats as $cat)
                                 <option 
@@ -53,63 +53,63 @@
                         </select>
                     </div>             
                     <div class="form-group">
-                        <label>Product Code</label>
+                        <label>Mã Sản Phẩm</label>
                         <input class="form-control" type="text" value="{{ $product->ProductCode }}" name="ProductCode" placeholder="Please Enter Product Code " />
                     </div>
                     <div class="form-group">
-                        <label>Product Name</label>
+                        <label>Tên Sản Phẩm</label>
                         <input class="form-control" type="text" value="{{ $product->ProductName }}" name="ProductName" placeholder="Please Enter ProductName " />
                     </div>
                     <div class="form-group">
-                        <label>Product Alias</label>
+                        <label>Bí Danh Sản Phẩm</label>
                         <input class="form-control" type="text" value="{{ $product->ProductAlias }}" name="ProductAlias" placeholder="Please Enter Product Alias " />
                     </div>
                     <div class="form-group">
-                        <label>Product Keyword</label>
+                        <label>Từ Khóa Sản Phẩm</label>
                         <input class="form-control" type="text" value="{{ $product->ProductKeyword }}" name="ProductKeyword" placeholder="Please Enter Product Meta Keyword " />
                     </div>
                     <div class="form-group">
-                        <label>Product Image</label>
+                        <label>Hình Ảnh Sản Phẩm</label>
                         <input class="form-control" type="file" value="{{ $product->ProductImage }}" name="ProductImage" placeholder="Please Enter Product Image " />
                     </div>
                     <div class="form-group">
-                        <label>Curent Price</label>
-                        <input class="form-control" type="text" value="{{ $product->CurentPrice }}" name="CurentPrice" placeholder="Please Enter Curent Price " />
+                        <label>Giá Tiền Hiện Tại</label>
+                        <input class="form-control" type="text"  value="{{ $product->CurentPrice }}" name="CurentPrice" placeholder="Please Enter Curent Price " />
                     </div>
                     <div class="form-group">
-                        <label>Old Price</label>
+                        <label>Giá Gốc</label>
                         <input class="form-control" type="text" value="{{ $product->OldPrice }}" name="OldPrice" placeholder="Please Enter Old Price " />
                     </div>
                     <div class="form-group">
-                        <label>IsShowprice</label>
-                        <input class="form-control" type="text" value="{{ $product->IsShowprice }}" name="IsShowprice" placeholder="Please Enter IsShowprice " />
+                        <label>Hiển Thị Giá Tiền Gốc</label>
+                        <input class="form-control" type="number"  max="1" min="0" value="{{ $product->IsShowprice }}" name="IsShowprice" placeholder="Please Enter IsShowprice " />
                     </div>
                     <div class="form-group">
-                        <label>Discount</label>
+                        <label>Giảm Giá</label>
                         <input class="form-control" type="text" value="{{ $product->Discount }}" name="Discount" placeholder="Please Enter Discount " />
                     </div>
                     <div class="form-group">
-                        <label>Store Status</label>
+                        <label>Trạng Thái</label>
                         <input class="form-control" type="text" value="{{ $product->StoreStatus }}" name="StoreStatus" placeholder="Please Enter Store Status " />
                     </div>
                     <div class="form-group">
-                        <label>Abstract</label>
+                        <label>Tóm Tắt</label>
                         <input class="form-control" type="text" value="{{ $product->Abstract }}" name="Abstract" placeholder="Please Enter Abstract " />
                     </div>
                     <div class="form-group">
-                        <label>Product Content</label>
+                        <label>Nội Dung Sản Phẩm</label>
                         <input class="form-control" type="text" value="{{ $product->ProductContent }}" name="ProductContent" placeholder="Please Enter Product Content " />
                     </div>
                     <div class="form-group">
-                        <label>Other Content</label>
+                        <label>Nội Dung Khác</label>
                         <input class="form-control" type="text" value="{{ $product->OtherContent }}" name="OtherContent" placeholder="Please Enter Other Content " />
                     </div>
                     <div class="form-group">
-                        <label>Promotion</label>
+                        <label>Khuyến Mãi</label>
                         <input class="form-control" type="text" value="{{ $product->Promotion }}" name="Promotion" placeholder="Please Enter Promotion " />
                     </div>
                     <div class="form-group">
-                        <label>Related Product</label>
+                        <label>Sản Phẩm Liên Quan</label>
                         <input class="form-control" type="text" value="{{ $product->RelatedProduct }}" name="RelatedProduct" placeholder="Please Enter Related Product " />
                     </div>
 
