@@ -9,7 +9,7 @@ function kiemtra () {
 }
 </script>
 <div id="page-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid"  style="width:100%; overflow:auto;">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">User   
@@ -31,11 +31,7 @@ function kiemtra () {
                     <th>Sex</th>
                     <th>Mobile</th>
                     <th>Address</th>
-                    <th>password</th>
-                    <th>IsActive</th>
-                    <th>ActiveCode</th>
-                    <th>LastLogin</th>
-                    <th>IsSystemAdmin</th>
+                    <th>Password</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
@@ -50,10 +46,6 @@ function kiemtra () {
                         <td>{{ $user->Mobile}}</td>
                         <td>{{ $user->Address}}</td>
                         <td>{{ $user->Password}}</td>
-                        <td>{{ $user->IsActive}}</td>
-                        <td>{{ $user->ActiveCode}}</td>
-                        <td>{{ $user->LastLogin}}</td>
-                        <td>{{ $user->IsSystemAdmin}}</td>
                         <td class="center">
                             <form action="{{ route('user.destroy',$user->UserID)}}" method="post">
                                 @csrf @method('DELETE')

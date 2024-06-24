@@ -57,7 +57,7 @@
                         <label>Address</label>
                         <textarea   class="form-control" name="Address" rows="3" placeholder="Please Enter Address">{{ $user->Address}}</textarea>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>IsSystemAdmin</label>
                         <label class="radio-inline">
                             <input name="IsSystemAdmin" value="0" {{$user->IsSystemAdmin == 0 ? 'checked':''}} type="radio">
@@ -67,7 +67,7 @@
                             <input name="IsSystemAdmin" value="1" {{$user->IsSystemAdmin == 1 ? 'checked':''}} type="radio">
                             Admin
                         </label>
-                    </div>
+                    </div> --}}
                     
                     <button type="submit" class="btn btn-default">User Edit</button>
                     <button type="reset" class="btn btn-default">Reset</button>

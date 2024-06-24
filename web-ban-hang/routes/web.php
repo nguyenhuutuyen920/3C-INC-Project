@@ -19,12 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 // Route cho trang đăng nhập Admin
 Route::get('/admin/login',[AdminController::class, 'login'])->name('admin.login');
-Route::post('/admin/login',[AdminController::class, 'check_login']);
+Route::post('/admin/check_login',[AdminController::class, 'check_login'])->name('admin.check_login');
 
 // Routes được bảo vệ bởi middleware 'auth'
 Route::prefix('admin')->middleware('auth')->group(function () {
-
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
     Route::resources([
         'category' => CategoryController::class,

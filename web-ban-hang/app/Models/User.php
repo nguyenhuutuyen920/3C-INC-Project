@@ -25,6 +25,7 @@ class User extends Authenticatable
         'Password',
     ];
     protected $primaryKey = 'UserID';
+    protected $table = 'users';
     /**
      * The attributes that should be hidden for arrays.
      *

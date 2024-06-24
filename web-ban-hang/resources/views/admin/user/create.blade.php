@@ -54,7 +54,7 @@
                         <label>Address</label>
                         <textarea   class="form-control" name="Address" rows="3" placeholder="Please Enter Address"></textarea>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>IsSystemAdmin</label>
                         <label class="radio-inline">
                             <input name="IsSystemAdmin" value="0" checked="" type="radio">member
@@ -62,7 +62,7 @@
                         <label class="radio-inline">
                             <input name="IsSystemAdmin" value="1" type="radio">Admin
                         </label>
-                    </div>
+                    </div> --}}
                     
                     <button type="submit" class="btn btn-default">User Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>

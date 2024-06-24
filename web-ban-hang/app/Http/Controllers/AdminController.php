@@ -25,20 +25,20 @@ class AdminController extends Controller
     public function check_login(Request $request)
     {
         request()->validate([ 
-            'Email'=>'required|exists:users',
+            'FullName'=>'required|exists:users',
             'Password'=>'required|',
         ]);
 
 
         // Lấy dữ liệu từ yêu cầu
-        $email = $request->input('Email'); // Lấy giá trị từ trường 'txtemail'
-        $password = $request->input('Password'); // Lấy giá trị từ trường 'txtpassword'
+        $FullName = $request->input('FullName'); // Lấy giá trị từ trường 'txtFullName'
+        $Password = $request->input('Password'); // Lấy giá trị từ trường 'txtPassword'
 
-        $user = User::where('Email', $email)->first();
+        $user = User::where('FullName', $FullName)->first();
 
         // Kiểm tra nếu người dùng tồn tại và mật khẩu khớp
-        if ($user && Hash::check($password, $user->password)) {
-            dd();
+        if ($user && Hash::check($Password, $user->Password)) {
+            dd(1);
             // Đăng nhập người dùng
             Auth::login($user);
 
@@ -46,7 +46,7 @@ class AdminController extends Controller
             return redirect()->route('home');
         } else {
             // Trả về phản hồi lỗi nếu đăng nhập không thành công
-            return back()->withErrors(['Email' => 'Thông tin đăng nhập không đúng.']);
+            return back()->withErrors(['FullName' => 'Thông tin đăng nhập không đúng.']);
         }
     }
 
