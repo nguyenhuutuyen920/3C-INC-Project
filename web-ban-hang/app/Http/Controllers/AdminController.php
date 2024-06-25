@@ -24,10 +24,11 @@ class AdminController extends Controller
 
     public function check_login(Request $request)
     {
-        request()->validate([ 
-            'FullName'=>'required|exists:users',
-            'Password'=>'required|',
-        ]);
+
+        // request()->validate([ 
+        //     'FullName'=>'required|exists:users',
+        //     'Password'=>'required|',
+        // ]);
 
 
         // Lấy dữ liệu từ yêu cầu
@@ -35,15 +36,15 @@ class AdminController extends Controller
         $Password = $request->input('Password'); // Lấy giá trị từ trường 'txtPassword'
 
         $user = User::where('FullName', $FullName)->first();
+        // dd(Hash::check($Password, $user->Password));
 
         // Kiểm tra nếu người dùng tồn tại và mật khẩu khớp
         if ($user && Hash::check($Password, $user->Password)) {
-            dd(1);
             // Đăng nhập người dùng
             Auth::login($user);
 
             // Chuyển hướng người dùng đến trang quản trị (admin.index)
-            return redirect()->route('home');
+            return redirect()->route('admin.index');
         } else {
             // Trả về phản hồi lỗi nếu đăng nhập không thành công
             return back()->withErrors(['FullName' => 'Thông tin đăng nhập không đúng.']);

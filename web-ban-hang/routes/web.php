@@ -23,7 +23,7 @@ Route::post('/admin/check_login',[AdminController::class, 'check_login'])->name(
 
 // Routes được bảo vệ bởi middleware 'auth'
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
 
     Route::resources([
         'category' => CategoryController::class,

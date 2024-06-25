@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -36,12 +37,16 @@ class UserController extends Controller
             'Sex' => 'required',
             'Mobile' => 'required|min:10',
             'Address' => 'required',
-            'IsSystemAdmin' => 'required'
         ]);
-        
-        $data = $request->all();
+        $user = new User();
+        $user->FullName = $request->input('FullName');
+        $user->Email = $request->input('Email');
+        $user->Password = Hash::make($request->input('Password'));
+        $user->Sex = $request->input('Sex');
+        $user->Mobile = $request->input('Mobile');
+        $user->Address = $request->input('Address');
 
-        User::create($data);
+        $user->save();
 
         return redirect()->route('user.index');
     }
@@ -74,12 +79,15 @@ class UserController extends Controller
             'Sex' => 'required',
             'Mobile' => 'required|min:10',
             'Address' => 'required',
-            'IsSystemAdmin' => 'required'
         ]);
-        $data = $request->all('FullName','Email','Password','Sex','Mobile','Address',
-        'IsSystemAdmin');
+        $user->FullName = $request->input('FullName');
+        $user->Email = $request->input('Email');
+        $user->Password = Hash::make($request->input('Password'));
+        $user->Sex = $request->input('Sex');
+        $user->Mobile = $request->input('Mobile');
+        $user->Address = $request->input('Address');
 
-        $user->update($data);
+        $user->update();
 
         return redirect()->route('user.index')->with('success', 'Product updated successfully!');
     }
