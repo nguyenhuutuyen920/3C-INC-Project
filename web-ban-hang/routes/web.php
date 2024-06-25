@@ -40,6 +40,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/introduce', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
