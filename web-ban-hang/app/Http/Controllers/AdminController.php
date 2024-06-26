@@ -25,10 +25,10 @@ class AdminController extends Controller
     public function check_login(Request $request)
     {
 
-        // request()->validate([ 
-        //     'FullName'=>'required|exists:users',
-        //     'Password'=>'required|',
-        // ]);
+        request()->validate([ 
+            'FullName'=>'required|',
+            'Password'=>'required|',
+        ]);
 
 
         // Lấy dữ liệu từ yêu cầu
