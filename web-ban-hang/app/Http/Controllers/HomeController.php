@@ -37,10 +37,6 @@ class HomeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function contact(){
-        $fields = Field::all();
-        return view("pages.contact",compact('fields'));
-    }
     public function introduce(){
         $fields = Field::all();
         return view("pages.introduce",compact('fields'));
@@ -92,7 +88,7 @@ class HomeController extends Controller
     public function getProductBySupplier(Supplier $supplier,Field $field,Category $category) {
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
-        $products = $category->$supplier->products;
+        $products = $supplier->products;
         $supplier->load(['products']);
         // dd($products);
         return view('pages.product',compact('products', "defaultField",'fields','field'));
@@ -158,7 +154,8 @@ class HomeController extends Controller
         $defaultField = 1;
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
-        return view("pages.product_info",compact("fields","product", "defaultField","field"));
+        $products = Product::all();
+        return view("pages.product_info",compact("fields","product","products", "defaultField","field"));
     }
     public function create()
     {
@@ -170,17 +167,17 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "SenderName"=> "required|",
-            "SenderEmail"=> "required|",
-            "ContactTitle"=> "required|",
-            "ContactContent"=> "required|"
-        ]);
+        // $request->validate([
+        //     "SenderName"=> "required|",
+        //     "SenderEmail"=> "required|",
+        //     "ContactTitle"=> "required|",
+        //     "ContactContent"=> "required|"
+        // ]);
 
-        $data = $request->all();
-        Contact::create($data);
+        // $data = $request->all();
+        // Contact::create($data);
 
-        return redirect()->route("contact")->with("success","Liên hệ thành công");
+        // return redirect()->route("contact")->with("success","Liên hệ thành công");
     }
 
     /**

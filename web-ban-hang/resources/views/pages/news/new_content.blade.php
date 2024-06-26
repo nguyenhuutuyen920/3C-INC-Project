@@ -16,7 +16,7 @@
                 <div class="col-lg-12 col-12 col-sm-12">
                   <div class="single_blog">
                     <div class="blogimg_container w-100">
-                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->created_at}}</i></p>
+                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->ViewTime}}</i></p>
                       <h2 class="blog_title font-weight-bold"> {{$new->NewsTitle}}</h2>
                       <p class="blog_img"> {!!$new->NewsContent !!} </p>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -13,7 +14,8 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function contact(){
-        return view("pages.contact");
+        $fields = Field::all();
+        return view("pages.contact",compact('fields'));
     }
 
     /**
@@ -34,18 +36,17 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $request->validate([
-            "SenderName"=> "require|",
-            "SenderEmail"=> "require|",
-            "ContactTitle"=> "require|",
-            "ContactContent"=> "require|"
+            "SenderName"=> "required|",
+            "SenderEmail"=> "required|",
+            "ContactTitle"=> "required|",
+            "ContactContent"=> "required|"
         ]);
-        $data = $request->all();
 
+        $data = $request->all();
         Contact::create($data);
 
-        return redirect()->route("pages.contact")->with("success","Liên hệ thành công");
+        return redirect()->route("contact")->with("success","Liên hệ thành công");
     }
 
     /**

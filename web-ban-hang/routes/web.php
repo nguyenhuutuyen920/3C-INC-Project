@@ -37,9 +37,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 // Các route khác không yêu cầu xác thực
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/introduce', [HomeController::class, 'introduce'])->name('introduce');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
@@ -48,6 +48,16 @@ Route::get('/product_info/{product}', [HomeController::class, 'product_info'])->
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 Route::get('/device/{device}', [HomeController::class, 'device'])->name('device');
+
+Route::post('/newupload', [NewsController::class, 'newupload'])->name('ckeditor.newupload');
+Route::post('/productupload', [ProductController::class, 'productupload'])->name('ckeditor.productupload');
+Route::post('/deviceupload', [DeviceController::class, 'deviceupload'])->name('ckeditor.deviceupload');
+Route::post('/projectupload', [ProjectController::class, 'projectupload'])->name('ckeditor.projectupload');
+Route::post('/neweditupload', [NewsController::class, 'neweditupload'])->name('ckeditor.neweditupload');
+Route::post('/producteditupload', [ProductController::class, 'producteditupload'])->name('ckeditor.producteditupload');
+Route::post('/deviceeditupload', [DeviceController::class, 'deviceeditupload'])->name('ckeditor.deviceeditupload');
+Route::post('/editupload', [ProjectController::class, 'editupload'])->name('ckeditor.editupload');
+
 
 Route::get('/field', [HomeController::class, 'field'])->name('field');
 Route::get('/category', [HomeController::class, 'category'])->name('category');

@@ -51,7 +51,7 @@ class ProjectController extends Controller
             $uploadedFile = $request->file('ProjectImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            $uploadedFile->move("media/ProjectImage/",$imageName);
+            $uploadedFile->move("ProjectImage/",$imageName);
         }
         $project = new Project();
         $project->ProjectTitle = $request->input('ProjectTitle');
@@ -59,14 +59,14 @@ class ProjectController extends Controller
         $project->ConstructionName = $request->input('ConstructionName');
         $project->Abstract = $request->input('Abstract');
         $project->ProjectContent = $request->input('ProjectContent');
-        $project->ProjectImage = 'media/ProjectImage/' . $imageName;
+        $project->ProjectImage = 'ProjectImage/' . $imageName;
         $project->Investors = $request->input('Investors');
         $project->PricePackage = $request->input('PricePackage');
 
         $project->save();
         return redirect()->route('project.index')->with('success','Thêm dự án thành công!');
     }
-    public function uploadproject(Request $request)
+    public function projectupload(Request $request)
     {
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
@@ -131,19 +131,19 @@ class ProjectController extends Controller
             $uploadedFile = $request->file('ProjectImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
             if ($project->ProjectImage) {
-                $oldImagePath = public_path('media/ProjectImage/' . $project->ProjectImage);
+                $oldImagePath = public_path('ProjectImage/' . $project->ProjectImage);
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
             }
-            $uploadedFile->move("media/ProjectImage/",$imageName);
+            $uploadedFile->move("ProjectImage/",$imageName);
         }
         $project->ProjectTitle = $request->input('ProjectTitle');
         $project->BiddingPackage = $request->input('BiddingPackage');
         $project->ConstructionName = $request->input('ConstructionName');
         $project->Abstract = $request->input('Abstract');
         $project->ProjectContent = $request->input('ProjectContent');
-        $project->ProjectImage = 'media/ProductImage/' . $imageName;
+        $project->ProjectImage = 'ProjectImage/' . $imageName;
         $project->Investors = $request->input('Investors');
         $project->PricePackage = $request->input('PricePackage');
 
@@ -152,6 +152,32 @@ class ProjectController extends Controller
         return redirect()->route('project.index')->with('success', 'Project updated successfully!');
 
     }
+    public function editupload(Request $request)
+{
+    if ($request->hasFile('upload')) {
+        $originName = $request->file('upload')->getClientOriginalName();
+        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+        $extension = $request->file('upload')->getClientOriginalExtension();
+        $fileName = $fileName . '_' . time() . '.' . $extension;
+
+        // Kiểm tra và xóa tệp cũ nếu tồn tại
+        $oldFilePath = public_path('media/ProjectImage/' . $fileName);
+        if (file_exists($oldFilePath)) {
+            unlink($oldFilePath);
+        }
+
+        // Di chuyển tệp mới vào thư mục đã chỉ định
+        $request->file('upload')->move(public_path('media/ProjectImage/'), $fileName);
+
+        $url = asset('media/ProjectImage/' . $fileName);
+
+        return response()->json([
+            'uploaded' => true,
+            'url' => $url
+        ]);
+    }
+}
+
 
     /**
      * Remove the specified resource from storage.

@@ -42,12 +42,12 @@ class NewsController extends Controller
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
-            'RelatedNews' => 'required|',
-            'ViewOrder' => 'required|',
-            'IsTypical' => 'required|',
-            'IsHotNews' => 'required|',
-            'IsApproved' => 'required|',
-            'ApprovedBy' => 'required|',
+            // 'RelatedNews' => 'required|',
+            // 'ViewOrder' => 'required|',
+            // 'IsTypical' => 'required|',
+            // 'IsHotNews' => 'required|',
+            // 'IsApproved' => 'required|',
+            // 'ApprovedBy' => 'required|',
         ]);
         if ($request->hasFile('NewsImage')) {
             $uploadedFile = $request->file('NewsImage');
@@ -65,19 +65,19 @@ class NewsController extends Controller
         $new->NewsContent = $request->input('NewsContent');
         $new->NewsSource = $request->input('NewsSource');
         $new->ViewTime = $request->input('ViewTime');
-        $new->RelatedNews = $request->input('RelatedNews');
-        $new->ViewOrder = $request->input('ViewOrder');
-        $new->IsTypical = $request->input('IsTypical');
-        $new->IsHotNews = $request->input('IsHotNews');
-        $new->IsApproved = $request->input('IsApproved');
-        $new->ApprovedBy = $request->input('ApprovedBy');
+        // $new->RelatedNews = $request->input('RelatedNews');
+        // $new->ViewOrder = $request->input('ViewOrder');
+        // $new->IsTypical = $request->input('IsTypical');
+        // $new->IsHotNews = $request->input('IsHotNews');
+        // $new->IsApproved = $request->input('IsApproved');
+        // $new->ApprovedBy = $request->input('ApprovedBy');
         // Create a new new instance
         
         $new->save();
         // Redirect to a specific route after successful creation
         return redirect()->route('new.index')->with('success', 'Thêm sản phẩm thành công!');
     }
-    public function upload(Request $request)
+    public function newupload(Request $request)
     {
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
@@ -85,9 +85,9 @@ class NewsController extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
 
-            $request->file('upload')->move(public_path('media'), $fileName);
+            $request->file('upload')->move(public_path('media/NewsImage/'), $fileName);
 
-            $url = asset('media/' . $fileName);
+            $url = asset('media/NewsImage/' . $fileName);
 
             return response()->json([
                 'uploaded' => true,
@@ -128,19 +128,19 @@ class NewsController extends Controller
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
             'ViewTime' => 'required|',
-            'RelatedNews' => 'required|',
-            'ViewOrder' => 'required|',
-            'IsTypical' => 'required|',
-            'IsHotNews' => 'required|',
-            'IsApproved' => 'required|',
-            'ApprovedBy' => 'required|',
+            // 'RelatedNews' => 'required|',
+            // 'ViewOrder' => 'required|',
+            // 'IsTypical' => 'required|',
+            // 'IsHotNews' => 'required|',
+            // 'IsApproved' => 'required|',
+            // 'ApprovedBy' => 'required|',
         ]);
         if ($request->hasFile('NewsImage')) {
 
             $uploadedFile = $request->file('NewsImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
-            if ($new->ProductImage) {
-                $oldImagePath = public_path('NewsImage' . $new->ProductImage);
+            if ($new->NewsImage) {
+                $oldImagePath = public_path('NewsImage' . $new->NewsImage);
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
@@ -156,18 +156,45 @@ class NewsController extends Controller
         $new->NewsContent = $request->input('NewsContent');
         $new->NewsSource = $request->input('NewsSource');
         $new->ViewTime = $request->input('ViewTime');
-        $new->RelatedNews = $request->input('RelatedNews');
-        $new->ViewOrder = $request->input('ViewOrder');
-        $new->IsTypical = $request->input('IsTypical');
-        $new->IsHotNews = $request->input('IsHotNews');
-        $new->IsApproved = $request->input('IsApproved');
-        $new->ApprovedBy = $request->input('ApprovedBy');
+        // $new->RelatedNews = $request->input('RelatedNews');
+        // $new->ViewOrder = $request->input('ViewOrder');
+        // $new->IsTypical = $request->input('IsTypical');
+        // $new->IsHotNews = $request->input('IsHotNews');
+        // $new->IsApproved = $request->input('IsApproved');
+        // $new->ApprovedBy = $request->input('ApprovedBy');
         // Create a new new instance
         
         $new->update();
 
         return redirect()->route('new.index')->with('success', 'Product updated successfully!');
     }
+    public function neweditupload(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            // Kiểm tra và xóa tệp cũ nếu tồn tại
+            $oldFilePath = public_path('media/NewsImage/' . $fileName);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
+            }
+
+            // Di chuyển tệp mới vào thư mục đã chỉ định
+            $request->file('upload')->move(public_path('media/NewsImage/'), $fileName);
+
+            $url = asset('media/NewsImage/' . $fileName);
+
+            return response()->json([
+                'uploaded' => true,
+                'url' => $url
+            ]);
+        }
+    }
+
+
 
     /**
      * Remove the specified resource from storage.

@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Project
+                <h1 class="page-header">Supplier
                     <small>Add</small>
                 </h1>
             </div>
@@ -42,8 +42,9 @@
                         <label>ID Danh mục</label>
                         <select class="form-control" name="CategoryID" >
                             @foreach($cats as $cat)
-                                <option 
-                                value="{{$cat->CategoryID}}">{{$cat->CategoryName}}</option>
+                                @if ($cat->FieldParentID == 2)
+                                    <option value="{{$cat->CategoryID}}">{{$cat->CategoryName}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div> 

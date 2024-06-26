@@ -46,7 +46,7 @@
                         @foreach ($products as $prod)
                         <div class="card" style="width: 240px;height:auto;margin: 0px 15px 15px 0px;">
                           <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">
-                            <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px">
+                            <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px" alt="{!!$prod->ProductContent!!}">
                           </a>
                           <div class="card-body p-2">
                             <a href="{{ route('product_info',$prod->ProductID)}}">

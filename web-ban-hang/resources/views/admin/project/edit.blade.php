@@ -28,39 +28,39 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                     <div class="form-group">
-                        <label>ProjectTitle</label>
+                        <label>Tiêu đề dự án</label>
                         <input class="form-control" type="text" value="{{ $project->ProjectTitle}}" name="ProjectTitle" placeholder="Please Enter Introduce Page Title"/>
                     </div>                   
                     <div class="form-group">
-                        <label>BiddingPackage</label>
+                        <label>Gói thầu</label>
                         <input class="form-control" type="text" value="{{ $project->BiddingPackage}}" name="BiddingPackage" placeholder="Please Enter Introduce Alias"/>
                     </div>
                     <div class="form-group">
-                        <label>ConstructionName</label>
+                        <label>Tên Công trình</label>
                         <input class="form-control" type="text" value="{{ $project->ConstructionName}}" name="ConstructionName" placeholder="Please Enter Introduce Keyword"/>
                     </div>
                     <div class="form-group">
-                        <label>Abstract</label>
+                        <label>Tóm tắt</label>
                         <input class="form-control" type="text" value="{{ $project->Abstract}}" name="Abstract" placeholder="Please Enter Introduce Keyword"/>
                     </div>
                     <div class="form-group">
-                        <label>ProjectContent</label>
+                        <label>Nội dung dự án</label>
                         <input class="form-control" type="text" value="{{ $project->ProjectContent}}" name="ProjectContent" placeholder="Please Enter Introduce Description"/>
                     </div>
                     <div class="form-group">
-                        <label>ProjectImage</label>
+                        <label>Hình ảnh dự án</label>
                         <input class="form-control" type="file" value="{{ $project->ProjectImage}}" name="ProjectImage" placeholder="Please Enter Introduce Image"/>
                     </div>
                     <div class="form-group">
-                        <label>Investors</label>
+                        <label>Chủ đầu tư</label>
                         <input class="form-control" type="text" value="{{ $project->Investors}}" name="Investors" placeholder="Please Enter Title"/>
                     </div>
                     <div class="form-group">
-                        <label>PricePackage</label>
+                        <label>Giá gói thầu</label>
                         <textarea class="form-control" type="text"name="PricePackage" placeholder="Please Enter Introduce Abtract">{{ $project->PricePackage}}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Project Edit</button>
+                    <button type="submit" class="btn btn-default">Chỉnh sửa dự án</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 <form>
             </div>

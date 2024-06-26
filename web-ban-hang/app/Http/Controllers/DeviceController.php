@@ -55,7 +55,7 @@ class DeviceController extends Controller
             $uploadedFile = $request->file('DeviceImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            $uploadedFile->move("media/DeviceImage/",$imageName);
+            $uploadedFile->move("DeviceImage/",$imageName);
         }
         $device = new Device();
         $device->CategoryID = $request->input('CategoryID');
@@ -63,7 +63,7 @@ class DeviceController extends Controller
         $device->DeviceContent = $request->input('DeviceContent');
         $device->Technicaldata = $request->input('Technicaldata');
         $device->RelatedProduct = $request->input('RelatedProduct');
-        $device->DeviceImage = 'media/DeviceImage/' . $imageName;
+        $device->DeviceImage = 'DeviceImage/' . $imageName;
         $device->hienThiTuDongHoa = $request->input('hienThiTuDongHoa');
         $device->HienThiVienThongXayLap = $request->input('HienThiVienThongXayLap');
         $device->HienThiThiNghiemDoLuong = $request->input('HienThiThiNghiemDoLuong');
@@ -71,7 +71,7 @@ class DeviceController extends Controller
         $device->save();
         return redirect()->route('device.index')->with('success','Thêm dự án thành công!');
     }
-    public function upload(Request $request)
+    public function deviceupload(Request $request)
     {
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
@@ -158,6 +158,32 @@ class DeviceController extends Controller
         $device->update();
         return redirect()->route('device.index')->with('success','Thêm dự án thành công!');
     }
+    public function deviceeditupload(Request $request)
+{
+    if ($request->hasFile('upload')) {
+        $originName = $request->file('upload')->getClientOriginalName();
+        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+        $extension = $request->file('upload')->getClientOriginalExtension();
+        $fileName = $fileName . '_' . time() . '.' . $extension;
+
+        // Kiểm tra và xóa tệp cũ nếu tồn tại
+        $oldFilePath = public_path('media/DeviceImage/' . $fileName);
+        if (file_exists($oldFilePath)) {
+            unlink($oldFilePath);
+        }
+
+        // Di chuyển tệp mới vào thư mục đã chỉ định
+        $request->file('upload')->move(public_path('media/DeviceImage'), $fileName);
+
+        $url = asset('media/DeviceImage/' . $fileName);
+
+        return response()->json([
+            'uploaded' => true,
+            'url' => $url
+        ]);
+    }
+}
+
 
     /**
      * Remove the specified resource from storage.

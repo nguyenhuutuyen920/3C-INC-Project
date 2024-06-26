@@ -23,11 +23,10 @@
                             </div>
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
-                                <li class="list-unstyled">
+                                <li class="list-unstyled mb-2" style="border: 1px solid #b1b1b1">
                                     <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
-                                        <p class="text-secondary m-0">{{ $f->FieldName }}</p>
+                                        <p class="text-dark font-weight-bold p-2 m-0">{{ $f->FieldName }}</p>
                                     </a>
-                                    <div class="dropdown-divider"></div>
                                 @endforeach
                             </ul>
                         </div>
@@ -43,22 +42,22 @@
                 </div>
                 <div class="supplier-content col-lg-9 col-md-12 col-sm-12 p-0">
                     <div class="product-content p-0">
-                        <ul class="content_menu-field m-0 w-100 h-100">
+                        <ul class="content_menu-field  m-0  w-100 h-100  pl-3" >  
                             @foreach ($products as $prod)
-                            <div class="card" style="width: 200px; margin: 0px 15px 15px 0px; float: left;">
-                                <a class="div-img" href="{{ route('product_info', $prod->ProductID) }}" style="width: 100%">
-                                    <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px">
+                            <div class="card" style="width: 240px;height:auto;margin: 0px 15px 15px 0px;">
+                              <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">
+                                <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px" title="{{ $prod->Abstract }}">
+                              </a>
+                              <div class="card-body p-2">
+                                <a href="{{ route('product_info',$prod->ProductID)}}">
+                                  <h5 class="card-title mb-1">{{$prod->ProductName}}</h5>
                                 </a>
-                                <div class="card-body p-2">
-                                    <a href="{{ route('product_info', $prod->ProductID) }}">
-                                        <h5 class="card-title mb-1">{{ $prod->ProductName }}</h5>
-                                    </a>
-                                    <p class="card-text mb-1" style="font-size: 12px">{{ $prod->Abstract }}</p>
-                                    <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
-                                </div>
+                                <p class="card-text mb-1" style="font-size: 12px">{{$prod->Abstract}}</p>
+                                <a href="{{ route('contact') }}" class="card-btn btn btn-primary d-flex justify-content-center">Liên Hệ</a>
+                              </div>
                             </div>
                             @endforeach
-                        </ul>
+                          </ul>
                     </div>
                 </div>
             </div>
@@ -97,20 +96,19 @@
                     let hasSupplier = cat.supplier && cat.supplier.length > 0;
                     if (hasSupplier) {
                         supplierMenuHtml += `
-                            <li class="nav-item has-submenu list-unstyled">
-                                <a class="nav-link text-secondary p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
+                            <li class="nav-item has-submenu list-unstyled font-weight-bold p-2 mb-2" style="border: 1px solid #b1b1b1">
+                                <a class="nav-link text-dark font-weight-bold p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
                                     ${cat.CategoryName}
                                 </a>
                                 <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
                                     ${cat.supplier.map(prod => `
-                                        <li class="list-unstyled">
-                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-secondary" href="{{ route('supplier', '') }}/${prod.id}">
+                                        <li class="list-unstyled" >
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark font-weight-bold" href="{{ route('supplier', '') }}/${prod.id}">
                                                 ${prod.SupplierName}
                                             </a>
                                         </li>
                                     `).join('')}
                                 </ul>
-                                <div class="dropdown-divider"></div>
                             </li>
                         `;
                     } else {
@@ -119,7 +117,6 @@
                                 <a class="nav-link text-secondary p-0" href="${route}">
                                     ${cat.CategoryName}
                                 </a>
-                                <div class="dropdown-divider"></div>
                             </li>
                         `;
                     }

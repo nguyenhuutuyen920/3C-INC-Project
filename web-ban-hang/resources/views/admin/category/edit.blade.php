@@ -27,7 +27,7 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label>FieldParentID</label>
+                        <label>Trường lĩnh vực</label>
                         <select class="form-control" name="FieldParentID" id="subcate_id">
                             @foreach($fields as $field)
                                 <option 
@@ -39,37 +39,37 @@
                         </select>
                     </div>
                     
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         
                         <label>Category Parent ID</label>
                         <input class="form-control" name="CategoryParentID"  value="{{ $category->CategoryParentID}}" />
-                    </div>
+                    </div> --}}
                     <div class="form-group">
-                        <label>Category Name</label>
+                        <label>Tên danh mục</label>
                         <input class="form-control" name="CategoryName" value="{{ $category->CategoryName}}" />
                     </div>
                     <div class="form-group">
-                        <label>Category Alias</label>
+                        <label>Bí danh danh mục</label>
                         <input class="form-control" type="text" name="CategoryAlias" value="{{ $category->CategoryAlias}}" />
                     </div>                   
                     <div class="form-group">
-                        <label>Category MetaKeyword</label>
+                        <label>Từ khóa danh mục</label>
                         <input class="form-control" type="text" name="CategoryMetaKeyword" value="{{ $category->CategoryMetaKeyword}}" />
                     </div>
                     <div class="form-group">
-                        <label>Category MetaDescription</label>
+                        <label>Mô tả danh mục</label>
                         <input class="form-control" type="text" name="CategoryMetaDescription" value="{{ $category->CategoryMetaDescription}}" />
                     </div>
-                    <div class="form-group">
-                        <label>IsVisible</label>
+                    {{-- <div class="form-group">
+                        <label>Có thể thấy</label>
                         <input class="form-control" type="number" min="0" max="1" name="IsVisible" value="{{ $category->IsVisible}}" />
                     </div>
                     <div class="form-group">
-                        <label>IsVisible</label>
+                        <label>không điển hình</label>
                         <input class="form-control" type="number" min="0" max="1" name="IsTypical" value="{{ $category->IsVisible}}" />
-                    </div>
+                    </div> --}}
                     <div class="form-group">
-                        <label>Typical Image</label>
+                        <label>Hình ảnh điển hình</label>
                         <input class="form-control" type="file" name="TypicalImage" value="{{ $category->TypicalImage}}" />
                     </div>
 

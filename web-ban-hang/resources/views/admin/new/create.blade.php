@@ -11,8 +11,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">New
-                    <small>Add</small>
+                <h1 class="page-header">Tin Tức
+                    <small>Thêm</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -33,47 +33,47 @@
                 <form action="{{ route('new.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>News Alias</label>
+                        <label>Bí danh tin tức</label>
                         <input class="form-control" type="text" name="NewsAlias" placeholder="Vui lòng nhập tin tức bí danh"/>
                     </div>                   
                     <div class="form-group">
-                        <label>News MetaKeyword</label>
+                        <label>Từ khóa tin tức</label>
                         <input class="form-control" type="text" name="NewsMetaKeyword" placeholder="Vui lòng nhập từ khóa tin tức "/>
                     </div>
                     <div class="form-group">
-                        <label>News MetaDescription</label>
+                        <label>Mô tả tin tức</label>
                         <input class="form-control" type="text" name="NewsMetaDescription" placeholder="Vui lòng nhập miêu tả tin tức "/>
                     </div>
                     <div class="form-group">
-                        <label>News Title</label>
+                        <label>Tiêu đề tin tức</label>
                         <input class="form-control" type="text" name="NewsTitle" placeholder="Vui lòng nhập tiêu đề tin tức "/>
                     </div>
                     <div class="form-group">
-                        <label>News Image</label>
+                        <label>Hình ảnh tiêu đề tin tức</label>
                         <input class="form-control" type="file" name="NewsImage" placeholder="Vui lòng nhập hình ảnh tin tức "/>
                     </div>
                     <div class="form-group">
-                        <label>Abstract</label>
+                        <label>Tóm tắt</label>
                         <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng nhập tóm tắt tin tức "/>
                     </div>
                     <div class="form-group">
-                        <label>News Content</label>
+                        <label>Nội dung tin tức</label>
                         {{-- <div id="toolbar-container"></div>
                         <div id="editor">
                             <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng nhập tin tức Content"></textarea>
                         </div> --}}
-                        <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="NewsContent" placeholder="Vui lòng nhập nội dung tin tức (Lưu ý kích thước của ảnh khi cho vào)"></textarea>
+                        <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="NewsContent" placeholder="Vui lòng nhập nội dung tin tức (Lưu ý chỉ truyền ảnh có kích thước từ 750x750 trở xuống)"></textarea>
 
                     </div>
                     <div class="form-group">
-                        <label>News Source</label>
+                        <label>Nguồn tin tức</label>
                         <input class="form-control" type="text" name="NewsSource" placeholder="Vui lòng nhập nguồn tin tức"/>
                     </div>
                     <div class="form-group">
-                        <label>View Time</label>
-                        <input class="form-control" type="text" name="ViewTime" placeholder="Vui lòng nhập thời gian xem tin tức "/>
+                        <label>Thời gian đăng tin tức</label>
+                        <input class="form-control" type="date" name="ViewTime" placeholder="Vui lòng nhập thời gian xem tin tức "/>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Related News</label>
                         <input class="form-control" type="text" name="RelatedNews" placeholder="Vui lòng nhập tin tức khác"/>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="form-group">
                         <label>ApprovedBy</label>
                         <input class="form-control" type="text" name="ApprovedBy" placeholder="Vui lòng nhập tin tức "/>
-                    </div>
+                    </div> --}}
                     
                     <button type="submit" class="btn btn-default">Thêm tin tức</button>
                     <button type="reset" class="btn btn-default">đặt lại</button>
@@ -113,7 +113,7 @@
     ClassicEditor
         .create( document.querySelector( '#editor' ), {
                 ckfinder: {
-                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                    uploadUrl: "{{ route('ckeditor.newupload', ['_token' => csrf_token()]) }}"
                 }
         })
         .catch( error => {

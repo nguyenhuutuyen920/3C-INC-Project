@@ -30,8 +30,10 @@
                     <label>ID Danh Mục</label>
                     <select class="form-control" name="CategoryParentID" id="subcate_id">
                         @foreach($cats as $cat)
-                            <option 
-                            value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                        @if ($cat->FieldParentID == 2)
+                            <option value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                        @endif
+                            
                         @endforeach
                     </select>
                 </div>
@@ -90,7 +92,12 @@
                 </div>
                 <div class="form-group">
                     <label>Nội Dung Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductContent" placeholder="Vui lòng nhập Nội Dung Sản Phẩm " />
+                    {{-- <div id="toolbar-container"></div>
+                    <div id="editor">
+                        <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng nhập tin tức Content"></textarea>
+                    </div> --}}
+                    <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="ProductContent" placeholder="Vui lòng nhập Nội Dung Sản Phẩm"></textarea>
+
                 </div>
                 <div class="form-group">
                     <label>Nội Dung Khác</label>
@@ -115,16 +122,16 @@
     <!-- /.container-fluid -->
 </div>
 @endsection
-@section('script')
-    <script>
-        $(document).ready(function(){
-            $("#cate_id").change(function(){
-                var cate_id = $(this).val();
-                $.get("admin/ajax/subcate/"+cate_id,function(data){
-                    $("#subcate_id").html(data);
-                });
-            });
-            $('.summernote').summernote();
-        });
-    </script>
+@section('scripts')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.productupload', ['_token' => csrf_token()]) }}"
+                }
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

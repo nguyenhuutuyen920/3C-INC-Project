@@ -4,8 +4,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>Add</small>
+                <h1 class="page-header">Danh mục
+                    <small>thêm</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -27,48 +27,48 @@
                     @csrf
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                        <div class="form-group">
-                            <label>FieldParentID</label>
-                            <select class="form-control" name="FieldParentID" id="subcate_id">
+                        <label>Trường lĩnh vực</label>
+                        <select class="form-control" name="FieldParentID" id="subcate_id">
                             @foreach($fields as $field)
                                 <option 
-                                 value="{{$field->FieldParentID}}">{{$field->FieldName}}</option>
+                                value="{{$field->FieldParentID}}">{{$field->FieldName}}</option>
                             @endforeach
-                            </select>
-                        </div>
+                        </select>
+                    </div>
+                    {{-- <div class="form-group">
                         <label>Category Parent ID</label>
-                        <input class="form-control" name="CategoryParentID" placeholder="Please Enter Category Parent ID" />
+                        <input class="form-control" name="CategoryParentID" placeholder="Vui lòng nhập Parent ID" />
+                    </div> --}}
+                    <div class="form-group">
+                        <label>Tên danh mục</label>
+                        <input class="form-control" name="CategoryName" placeholder="Vui lòng nhập Tên danh mục" />
                     </div>
                     <div class="form-group">
-                        <label>Category Name</label>
-                        <input class="form-control" name="CategoryName" placeholder="Please Enter Category Name" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category Alias</label>
-                        <input class="form-control" type="text" name="CategoryAlias" placeholder="Please Enter Category ALias"/>
+                        <label>Bí danh danh mục</label>
+                        <input class="form-control" type="text" name="CategoryAlias" placeholder="Vui lòng nhập Bí danh danh mục"/>
                     </div>                   
                     <div class="form-group">
-                        <label>Category MetaKeyword</label>
-                        <input class="form-control" type="text" name="CategoryMetaKeyword" placeholder="Please Enter Category Keyword"/>
+                        <label>Từ khóa danh mục</label>
+                        <input class="form-control" type="text" name="CategoryMetaKeyword" placeholder="Vui lòng nhập Từ khóa danh mục"/>
                     </div>
                     <div class="form-group">
-                        <label>Category MetaDescription</label>
-                        <input class="form-control" type="text" name="CategoryMetaDescription" placeholder="Please Enter Category Description"/>
+                        <label>Mô tả danh mục</label>
+                        <input class="form-control" type="text" name="CategoryMetaDescription" placeholder="Vui lòng nhập Mô tả danh mục"/>
+                    </div>
+                    {{-- <div class="form-group">
+                        <label>Có thể thấy</label>
+                        <input class="form-control" type="number" min="0" max="1" name="IsVisible" placeholder="Vui lòng nhập Có thể thấy"/>
                     </div>
                     <div class="form-group">
-                        <label>IsVisible</label>
-                        <input class="form-control" type="number" min="0" max="1" name="IsVisible" placeholder="Please Enter Category IsVisible"/>
-                    </div>
+                        <label>không điển hình</label>
+                        <input class="form-control" type="number" min="0" max="1" name="IsTypical" placeholder="Vui lòng nhập không điển hình"/>
+                    </div> --}}
                     <div class="form-group">
-                        <label>Istypical</label>
-                        <input class="form-control" type="number" min="0" max="1" name="IsTypical" placeholder="Please Enter Category IsTypical"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Typical Image</label>
-                        <input class="form-control" type="file" name="TypicalImage" placeholder="Please Enter Category Typical Image"/>
+                        <label>Hình ảnh điển hình</label>
+                        <input class="form-control" type="file" name="TypicalImage" placeholder="Vui lòng nhập Hình ảnh điển hình"/>
                     </div>
                     
-                    <button type="submit" class="btn btn-default">Category Add</button>
+                    <button type="submit" class="btn btn-default">Thêm danh mục</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 </form>
             </div>

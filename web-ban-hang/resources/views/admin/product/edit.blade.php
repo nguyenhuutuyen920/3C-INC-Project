@@ -123,16 +123,16 @@
     <!-- /.container-fluid -->
 </div>
 @endsection
-@section('script')
-    <script>
-        $(document).ready(function(){
-            $("#cate_id").change(function(){
-                var cate_id = $(this).val();
-                $.get("admin/ajax/subcate/"+cate_id,function(data){
-                    $("#subcate_id").html(data);
-                });
-            });
-            $('.summernote').summernote();
-        });
-    </script>
+@section('scripts')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.producteditupload', ['_token' => csrf_token()]) }}"
+                }
+        })
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

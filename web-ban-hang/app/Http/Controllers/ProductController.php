@@ -63,7 +63,7 @@ class ProductController extends Controller
             $uploadedFile = $request->file('ProductImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
         
-            $uploadedFile->move("media/ProductImage/",$imageName);
+            $uploadedFile->move("ProductImage/",$imageName);
         }
 
         $product = new Product();
@@ -73,7 +73,7 @@ class ProductController extends Controller
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
         $product->ProductKeyword = $request->input('ProductKeyword');
-        $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $product->ProductImage = 'ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
         $product->IsShowprice = $request->input('IsShowprice');
@@ -89,6 +89,24 @@ class ProductController extends Controller
 
         // Redirect to a specific route after successful creation
         return redirect()->route('product.index')->with('success', 'Thêm sản phẩm thành công!');
+    }
+    public function productupload(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('media/ProductImage'), $fileName);
+
+            $url = asset('media/ProductImage/' . $fileName);
+
+            return response()->json([
+                'uploaded' => true,
+                'url' => $url
+            ]);
+        }
     }
         
 
@@ -140,12 +158,12 @@ class ProductController extends Controller
             $uploadedFile = $request->file('ProductImage');
             $imageName = $uploadedFile->getClientOriginalName(); // Lấy tên gốc của tệp ảnh
             if ($product->ProductImage) {
-                $oldImagePath = public_path('media/ProductImage/' . $product->ProductImage);
+                $oldImagePath = public_path('ProductImage/' . $product->ProductImage);
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
             }
-            $uploadedFile->move("media/ProductImage/",$imageName);
+            $uploadedFile->move("ProductImage/",$imageName);
         }
 
         $product->CategoryParentID = $request->input('CategoryParentID');
@@ -154,7 +172,7 @@ class ProductController extends Controller
         $product->ProductName = $request->input('ProductName');
         $product->ProductAlias = $request->input('ProductAlias');
         $product->ProductKeyword = $request->input('ProductKeyword');
-        $product->ProductImage = 'media/ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
+        $product->ProductImage = 'ProductImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $product->CurentPrice = $request->input('CurentPrice');
         $product->OldPrice = $request->input('OldPrice');
         $product->IsShowprice = $request->input('IsShowprice');
@@ -170,6 +188,31 @@ class ProductController extends Controller
 
         return redirect()->route('product.index')->with('success', 'Product updated successfully!');
     }
+    public function producteditupload(Request $request)
+{
+    if ($request->hasFile('upload')) {
+        $originName = $request->file('upload')->getClientOriginalName();
+        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+        $extension = $request->file('upload')->getClientOriginalExtension();
+        $fileName = $fileName . '_' . time() . '.' . $extension;
+
+        // Kiểm tra và xóa tệp cũ nếu tồn tại
+        $oldFilePath = public_path('media/ProductImage/' . $fileName);
+        if (file_exists($oldFilePath)) {
+            unlink($oldFilePath);
+        }
+
+        // Di chuyển tệp mới vào thư mục đã chỉ định
+        $request->file('upload')->move(public_path('media/ProductImage'), $fileName);
+
+        $url = asset('media/ProductImage/' . $fileName);
+
+        return response()->json([
+            'uploaded' => true,
+            'url' => $url
+        ]);
+    }
+}
 
 
     /**
