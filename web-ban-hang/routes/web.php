@@ -44,7 +44,7 @@ Route::post('/contact/store', [ContactController::class, 'store'])->name('contac
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_content');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
-Route::get('/product_info/{product}', [HomeController::class, 'product_info'])->name('product_info');
+Route::get('/product_info{product}', [HomeController::class, 'product_info'])->name('product_info');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
 Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
 Route::get('/device/{device}', [HomeController::class, 'device'])->name('device');

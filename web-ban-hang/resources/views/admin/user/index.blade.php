@@ -12,7 +12,7 @@ function kiemtra () {
     <div class="container-fluid"  style="width:100%; overflow:auto;">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">User   
+                <h1 class="page-header">Tài khoản người dùng   
                     <small>List</small>
                 </h1>
             </div>
@@ -25,13 +25,13 @@ function kiemtra () {
             <table class="table ">
             <thead>
                 <tr>
-                    <th>UserID</th>
+                    <th>ID</th>
                     <th>Email</th>
-                    <th>FullName</th>
-                    <th>Sex</th>
-                    <th>Mobile</th>
-                    <th>Address</th>
-                    <th>Password</th>
+                    <th>Tên Tài Khoản</th>
+                    <th>Giới Tính</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Địa Chỉ</th>
+                    <th>Mật Khẩu</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>

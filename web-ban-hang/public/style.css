@@ -1612,6 +1612,9 @@
 	.device_card{
     width: 200px;
   }
+  .single_footer_widget{
+    margin-left: 10px;
+  }
 }
 /*--------------------*/
 

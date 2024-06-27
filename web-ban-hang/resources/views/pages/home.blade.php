@@ -59,9 +59,9 @@
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="newsfeed_area wow fadeInRight">
           <ul class="nav nav-tabs feed_tabs" id="myTab2">
-            <li class=" mr-2"><a class="new" href="#news" data-toggle="tab">Tin tức</a></li>
+            <li class=" mr-2"><a class="new p-1" href="#news" data-toggle="tab">Tin tức</a></li>
             <li style="width:2px; height:25px;margin-right:8px; background: #417dff"></li>
-            <li><a class="video" href="#video" data-toggle="tab">Video</a></li>         
+            <li><a class="video p-1" href="#video" data-toggle="tab">Video</a></li>         
           </ul>
 
           <!-- Tab panes -->
@@ -186,8 +186,9 @@
                     <a href="{{ route('product_info', $prod->ProductID) }}">
                       <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $prod->ProductName}}</h5>
                     </a>
-                    <a href="{{ route('product_info', $prod->ProductID) }}">
-                      <p class="text-dark mb-0 " style="font-size: 18px;">Xem Thêm</p>
+                    {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
+                    <a style="border-top: dotted #000 1px" href="{{ route('product_info', $prod->ProductID) }}">
+                      <p class="text-dark mb-1 mt-2" style="font-size: 18px;">Xem Thêm</p>
                     </a>
                   </div>
                 </div>

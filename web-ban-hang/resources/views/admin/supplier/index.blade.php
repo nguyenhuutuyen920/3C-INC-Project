@@ -26,12 +26,12 @@ function kiemtra () {
                 <thead>
                     <tr align="center">
                         <th>id</th>
-                        <th>CategoryID</th>
-                        <th>SupplierAlias</th>
-                        <th>SupplierMetaKeyword</th>
-                        <th>SupplierMetaDescription</th>
-                        <th>SupplierName</th>
-                        <th>SupplierImage</th>
+                        <th>ID Danh Mục</th>
+                        <th>Bí Danh Hãng</th>
+                        <th>Từ Khóa Hãng</th>
+                        <th>Mô Tả Hãng</th>
+                        <th>Tên Hãng</th>
+                        <th>Hình Ảnh Hãng</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>

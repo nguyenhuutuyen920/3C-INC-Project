@@ -12,7 +12,7 @@
             padding-right: 1rem;
         }
     </style>
-    <section id="field" style="background: #f1f1f1" class="pb-5">
+    <section id="field" style="background: #fff" class="pb-5">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-5">
             <div class="container-fluid menu-field d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
@@ -46,7 +46,7 @@
                         @foreach ($products as $prod)
                         <div class="card" style="width: 240px;height:auto;margin: 0px 15px 15px 0px;">
                           <a class="div-img" href="{{ route('product_info',$prod->ProductID)}}" style="width: 100%">
-                            <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px" alt="{!!$prod->ProductContent!!}">
+                            <img src="{{ asset($prod->ProductImage) }}" width="100%" height="140px" >
                           </a>
                           <div class="card-body p-2">
                             <a href="{{ route('product_info',$prod->ProductID)}}">

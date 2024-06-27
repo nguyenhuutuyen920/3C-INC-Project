@@ -41,8 +41,8 @@ class CategoryController extends Controller
             'CategoryAlias' => 'required',
             'CategoryMetaKeyword' => 'required',
             'CategoryMetaDescription' => 'required',
-            // 'IsVisible' => 'required',
-            // 'IsTypical' => 'required',
+            'IsVisible' => 'required',
+            'IsTypical' => 'required',
             'TypicalImage' => 'required'
         ]);
 
@@ -63,8 +63,8 @@ class CategoryController extends Controller
         $category->CategoryMetaKeyword = $request->input('CategoryMetaKeyword');
         $category->TypicalImage = 'media/CategoryImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $category->CategoryMetaDescription = $request->input('CategoryMetaDescription');
-        // $category->IsVisible = $request->input('IsVisible');
-        // $category->IsTypical = $request->input('IsTypical');
+        $category->IsVisible = $request->input('IsVisible');
+        $category->IsTypical = $request->input('IsTypical');
 
         $category->save();
 
@@ -102,8 +102,8 @@ class CategoryController extends Controller
             'CategoryAlias' => 'required',
             'CategoryMetaKeyword' => 'required',
             'CategoryMetaDescription' => 'required',
-            // 'IsVisible' => 'required',
-            // 'IsTypical' => 'required',
+            'IsVisible' => 'required',
+            'IsTypical' => 'required',
             'TypicalImage' => 'required'
         ]);
         if ($request->hasFile('TypicalImage')) {
@@ -126,8 +126,8 @@ class CategoryController extends Controller
         $category->CategoryMetaKeyword = $request->input('CategoryMetaKeyword');
         $category->TypicalImage = 'media/CategoryImage/' . $imageName; // Lưu đường dẫn đầy đủ của tệp ảnh
         $category->CategoryMetaDescription = $request->input('CategoryMetaDescription');
-        // $category->IsVisible = $request->input('IsVisible');
-        // $category->IsTypical = $request->input('IsTypical');
+        $category->IsVisible = $request->input('IsVisible');
+        $category->IsTypical = $request->input('IsTypical');
 
         $category->update();
 

@@ -25,15 +25,15 @@ function kiemtra () {
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>ProjectID</th>
-                        <th>ProjectTitle</th>
-                        <th>BiddingPackage</th>
-                        <th>ConstructionName</th>
-                        <th>Abstract</th>
-                        <th>ProjectContent</th>
-                        <th>ProjectImage</th>
-                        <th>Investors</th>
-                        <th>PricePackage</th>
+                        <th>ID Dự Án</th>
+                        <th>Tiêu Đề Dự Án</th>
+                        <th>Gói Thầu</th>
+                        <th>Tên Công Trình</th>
+                        <th>Tóm Tắt</th>
+                        <th>Nội Dung Dự Án</th>
+                        <th>Hình Ảnh Tiêu Đề</th>
+                        <th>Chủ Đầu Tư</th>
+                        <th>Giá Gói</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>

@@ -113,8 +113,8 @@
                         `;
                     } else {
                         supplierMenuHtml += `
-                            <li class="nav-item list-unstyled">
-                                <a class="nav-link text-secondary p-0" href="${route}">
+                            <li class="nav-item list-unstyled p-2 mb-2" style="border: 1px solid #b1b1b1">
+                                <a class="nav-link text-dark font-weight-bold p-0" href="${route}">
                                     ${cat.CategoryName}
                                 </a>
                             </li>

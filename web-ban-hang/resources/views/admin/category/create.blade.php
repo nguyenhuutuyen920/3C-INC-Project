@@ -35,10 +35,10 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label>Category Parent ID</label>
                         <input class="form-control" name="CategoryParentID" placeholder="Vui lòng nhập Parent ID" />
-                    </div> --}}
+                    </div>
                     <div class="form-group">
                         <label>Tên danh mục</label>
                         <input class="form-control" name="CategoryName" placeholder="Vui lòng nhập Tên danh mục" />
@@ -55,14 +55,14 @@
                         <label>Mô tả danh mục</label>
                         <input class="form-control" type="text" name="CategoryMetaDescription" placeholder="Vui lòng nhập Mô tả danh mục"/>
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label>Có thể thấy</label>
                         <input class="form-control" type="number" min="0" max="1" name="IsVisible" placeholder="Vui lòng nhập Có thể thấy"/>
                     </div>
                     <div class="form-group">
                         <label>không điển hình</label>
                         <input class="form-control" type="number" min="0" max="1" name="IsTypical" placeholder="Vui lòng nhập không điển hình"/>
-                    </div> --}}
+                    </div>
                     <div class="form-group">
                         <label>Hình ảnh điển hình</label>
                         <input class="form-control" type="file" name="TypicalImage" placeholder="Vui lòng nhập Hình ảnh điển hình"/>

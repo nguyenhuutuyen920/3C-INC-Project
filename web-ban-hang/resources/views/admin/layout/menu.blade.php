@@ -13,89 +13,89 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="{{ route('admin.index') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            <a href="{{ route('admin.index') }}"><i class="fa fa-dashboard fa-fw"></i> Trang Chủ</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-th-large fa-fw"></i> Category<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-th-large fa-fw"></i> Danh Mục<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('category.index') }}">List Category</a>
+                    <a href="{{ route('category.index') }}">Danh sách danh mục</a>
                 </li>
                 <li>
-                    <a href="{{ route('category.create') }}">Create Category</a>
+                    <a href="{{ route('category.create') }}">Tạo danh mục</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         
         <li>
-            <a href="#"><i class="fa fa-edit fa-fw"></i> Product<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-edit fa-fw"></i> Sản Phẩm<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('product.index') }}">List Product</a>
+                    <a href="{{ route('product.index') }}">Danh sách sản phẩm</a>
                 </li>
                 <li>
-                    <a href="{{ route('product.create') }}">Create Product</a>
+                    <a href="{{ route('product.create') }}">Tạo sản phẩm</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-envelope fa-fw"></i> New<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-envelope fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('new.index') }}">List New</a>
+                    <a href="{{ route('new.index') }}">Danh sách tin tức</a>
                 </li>
                 <li>
-                    <a href="{{ route('new.create') }}">Create New</a>
+                    <a href="{{ route('new.create') }}">Tạo tin tức</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-th-list fa-fw"></i> Project<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-th-list fa-fw"></i> Dự Án<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('project.index') }}">List Project</a>
+                    <a href="{{ route('project.index') }}">Danh sách dự án</a>
                 </li>
                 <li>
-                    <a href="{{ route('project.create') }}">Create Project</a>
+                    <a href="{{ route('project.create') }}">Tạo dự án</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-thumb-tack fa-fw"></i> Device<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-thumb-tack fa-fw"></i> Thiết Bị<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('device.index') }}">List Device</a>
+                    <a href="{{ route('device.index') }}">Danh sách thiết bị</a>
                 </li>
                 <li>
-                    <a href="{{ route('device.create') }}">Create Device</a>
+                    <a href="{{ route('device.create') }}">Tạo thiết bị</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="#"><i class="fa fa-th-list fa-fw"></i> Supplier<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-th-list fa-fw"></i> Hãng<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('supplier.index') }}">List Supplier</a>
+                    <a href="{{ route('supplier.index') }}">Danh sách Hãng</a>
                 </li>
                 <li>
-                    <a href="{{ route('supplier.create') }}">Create Supplier</a>
+                    <a href="{{ route('supplier.create') }}">Tạo hãng</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="admin/user/list"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+            <a href="admin/user/list"><i class="fa fa-users fa-fw"></i> Tài Khoản Người Dùng<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{ route('user.index') }}">List User</a>
+                    <a href="{{ route('user.index') }}">Danh sách tài khoản người dùng</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.create') }}">Create User</a>
+                    <a href="{{ route('user.create') }}">Tạo tài khoản người dùng</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

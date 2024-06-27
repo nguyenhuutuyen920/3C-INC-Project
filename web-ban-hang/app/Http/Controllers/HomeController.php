@@ -83,6 +83,7 @@ class HomeController extends Controller
         $fields = Field::with('categories.supplier')->get();
         $field->load('categories.supplier');
         $products = Product::all();
+        // $products = Product::where('',$field->id)->orderBy('ProductID','DESC')->paginate(4);
         return view("pages.category", compact("products","field", "defaultField", "fields"));
     }
     public function getProductBySupplier(Supplier $supplier,Field $field,Category $category) {
