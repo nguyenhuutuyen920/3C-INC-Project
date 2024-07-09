@@ -24,12 +24,12 @@ class CreateNewTable extends Migration
             $table->longText('NewsContent');
             $table->string('NewsSource',250);
             $table->date('ViewTime');
-            $table->string('RelatedNews',250);
-            $table->decimal('ViewOrder',18,0);
+            $table->string('RelatedNews',250)->nullable();
+            $table->decimal('ViewOrder',18,0)->nullable();
             $table->boolean('IsHotNews')->default(false);
             $table->boolean('IsTypical')->default(false);
             $table->boolean('IsApproved')->default(false);
-            $table->string('ApprovedBy',250);
+            $table->string('ApprovedBy',250)->nullable();
             $table->timestamps();
         });
     }

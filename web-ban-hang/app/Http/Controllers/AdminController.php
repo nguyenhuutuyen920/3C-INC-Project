@@ -26,20 +26,20 @@ class AdminController extends Controller
     {
 
         request()->validate([ 
-            'FullName'=>'required|',
-            'Password'=>'required|',
+            'name'=>'required|',
+            'password'=>'required|',
         ]);
 
 
         // Lấy dữ liệu từ yêu cầu
-        $FullName = $request->input('FullName'); // Lấy giá trị từ trường 'txtFullName'
-        $Password = $request->input('Password'); // Lấy giá trị từ trường 'txtPassword'
+        $name = $request->input('name'); // Lấy giá trị từ trường 'txtname'
+        $password = $request->input('password'); // Lấy giá trị từ trường 'txtpassword'
 
-        $user = User::where('FullName', $FullName)->first();
-        // dd(Hash::check($Password, $user->Password));
+        $user = Admin::where('name', $name)->first();
+        // dd(Hash::check($password, $user->password));
 
         // Kiểm tra nếu người dùng tồn tại và mật khẩu khớp
-        if ($user && Hash::check($Password, $user->Password)) {
+        if ($user && Hash::check($password, $user->password)) {
             // Đăng nhập người dùng
             Auth::login($user);
 
@@ -47,7 +47,7 @@ class AdminController extends Controller
             return redirect()->route('admin.index');
         } else {
             // Trả về phản hồi lỗi nếu đăng nhập không thành công
-            return back()->withErrors(['FullName' => 'Thông tin đăng nhập không đúng.']);
+            return back()->withErrors(['name' => 'Thông tin đăng nhập không đúng.']);
         }
     }
 

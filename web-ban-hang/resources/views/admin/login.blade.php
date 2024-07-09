@@ -48,10 +48,10 @@
                             
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <div class="form-group">
-                            <input class="form-control" placeholder="FullName" name="FullName" autofocus>
+                            <input class="form-control" placeholder="FullName" name="name" autofocus>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Password" name="Password" type="password">
+                            <input class="form-control" placeholder="Password" name="password" type="password">
                         </div>
                         <button type="submit" class="btn btn-lg btn-success btn-block">Đăng nhập</button>
                         </form>
