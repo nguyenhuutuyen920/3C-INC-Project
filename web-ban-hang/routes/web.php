@@ -46,8 +46,8 @@ Route::get('/new/{new}', [HomeController::class, 'new_content'])->name('new_cont
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/product_info{product}', [HomeController::class, 'product_info'])->name('product_info');
 Route::get('/project', [HomeController::class, 'project'])->name('project');
-Route::get('/project/{project}', [HomeController::class, 'project_info'])->name('project_info');
-Route::get('/device/{device}', [HomeController::class, 'device'])->name('device');
+Route::get('/project{project}', [HomeController::class, 'project_info'])->name('project_info');
+Route::get('/device{device}', [HomeController::class, 'device'])->name('device');
 
 Route::post('/newupload', [NewsController::class, 'newupload'])->name('ckeditor.newupload');
 Route::post('/productupload', [ProductController::class, 'productupload'])->name('ckeditor.productupload');
@@ -65,5 +65,5 @@ Route::get('/automation', [HomeController::class, 'automation'])->name('automati
 Route::get('/vienthongxaylap', [HomeController::class, 'vienthongxaylap'])->name('vienthongxaylap');
 Route::get('/doluong', [HomeController::class, 'doluong'])->name('doluong');
 
-Route::get('/supplier/{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
+Route::get('/supplier{supplier}', [HomeController::class, 'getProductBySupplier'])->name('supplier');
 

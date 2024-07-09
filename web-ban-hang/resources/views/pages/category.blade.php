@@ -19,7 +19,7 @@
                     <div class="field">
                         <div class="menu-field" >
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">LĨNH VỰC</h6>
+                                <h5 class="text-light font-weight-bold">LĨNH VỰC</h5>
                             </div>
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
@@ -33,7 +33,7 @@
                         
                         <div class="supplier_menu-field mt-2" >
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
+                                <h5 class="text-light font-weight-bold">DANH MỤC SẢN PHẨM</h5>
                             </div>
                             <ul class="field-menu p-2 m-0 supplier-list">
                                 <!-- Danh mục sản phẩm sẽ được cập nhật động -->
@@ -102,7 +102,7 @@
                                 <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
                                     ${cat.supplier.map(prod => `
                                         <li class="list-unstyled" >
-                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark" href="{{ route('supplier', '') }}/${prod.id}">
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark" href="{{ route('supplier', '') }}${prod.id}">
                                                 ${prod.SupplierName}
                                             </a>
                                         </li>

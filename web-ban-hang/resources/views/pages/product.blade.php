@@ -19,7 +19,7 @@
                     <div class="field">
                         <div class="menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">LĨNH VỰC</h6>
+                                <h5 class="text-light font-weight-bold">LĨNH VỰC</h5>
                             </div>
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
@@ -32,7 +32,7 @@
                         </div>
                         <div class="supplier_menu-field">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
-                                <h6 class="text-light">DANH MỤC SẢN PHẨM</h6>
+                                <h5 class="text-light font-weight-bold">DANH MỤC SẢN PHẨM</h5>
                             </div>
                             <ul class="field-menu p-2 m-0 supplier-list">
                                 <!-- Danh mục sản phẩm sẽ được cập nhật động -->

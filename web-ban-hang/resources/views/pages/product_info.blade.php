@@ -35,7 +35,7 @@
                 <div class="product-content col-lg-12 col-md-12 col-sm-12 p-0">
                     <div class="product-title-contact d-flex p-3" >
                         <div class="product-img"> 
-                            <img style="width:350px;height: 350px;" src="{{asset($product->ProductImage)}}"> 
+                            <img style="width:450px;height: 450px;" src="{{asset($product->ProductImage)}}"> 
                         </div>
                         <div class="product-body pl-5 mt-2 d-flex flex-column justify-content-between">
                             <div class="product-body-content">

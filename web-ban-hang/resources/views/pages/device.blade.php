@@ -9,7 +9,7 @@
                 <div class="supplier-content " style="background-color: #ffffff">
                     <div class="product-title-contact d-lg-flex d-md-flex pt-3" >
                         <div class="product-img"> 
-                            <img style="width:350px;height: 350px;" src="{{asset($device->DeviceImage)}}"> 
+                            <img style="width:450px;height: 450px;" src="{{asset($device->DeviceImage)}}"> 
                         </div>
                         <div class="product-body pl-5 mt-2 d-flex flex-column justify-content-between">
                             <div class="product-body-content">
