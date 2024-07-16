@@ -9,7 +9,6 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="numbertext">1 / 3</div>
       <img src="../img/banner1.jpg" class="d-block w-100" alt="...">
       <div class="slider_caption" style="position: absolute;" id="slider_caption-1">
         <h2>TẦM NHÌN</h2>
@@ -17,7 +16,6 @@
       </div>
     </div>
     <div class="carousel-item">
-      <div class="numbertext">2 / 3</div>
       <img src="../img/banner1.jpg" class="d-block w-100" alt="...">
       <div class="slider_caption" style="position: absolute;" id="slider_caption-2">
         <h2>SỨ MỆNH</h2>
@@ -25,7 +23,6 @@
       </div>
     </div>
     <div class="carousel-item">
-      <div class="numbertext">3 / 3</div>
       <img src="../img/banner1.jpg" class="d-block w-100" alt="...">
       <div class="slider_caption" style="position: absolute;" id="slider_caption-3">
         <h2>MỤC TIÊU</h2>
@@ -60,7 +57,7 @@
         <div class="newsfeed_area wow fadeInRight">
           <ul class="nav nav-tabs feed_tabs" id="myTab2">
             <li class=" mr-2"><a class="new p-1" href="#news" data-toggle="tab">Tin tức</a></li>
-            <li style="width:2px; height:25px;margin-right:8px; background: #417dff"></li>
+            <li style="width:2px; height:25px;margin-right:8px; background: #1E73BE"></li>
             <li><a class="video p-1" href="#video" data-toggle="tab">Video</a></li>         
           </ul>
 
@@ -108,22 +105,24 @@
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12 p-0">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-4 font-weight-bold">SẢN PHẨM THIẾT BỊ ĐIỆN</h2>
+          <h2 class="title_two mb-4 font-weight-bold">THIẾT BỊ TỰ ĐỘNG HÓA</h2>
           <div class="device_menu p-0 d-flex">
             <div class="device_list d-flex">
               @foreach ($devices as $dev)
-              <div class="col-lg-3">
-                <div class="device_card">
-                  <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
-                    <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
-                  </a>
-                  <div class="Device_card-body">
-                    <a href="{{ route('device',$dev->DeviceID)}}">
-                      <h5 class="mt-2 text-dark">{{ $dev->DeviceTitle }}</h5>
+                @if ($dev->hienThiTuDongHoa == 1)
+                <div class="col-lg-3">
+                  <div class="device_card">
+                    <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
+                      <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
                     </a>
+                    <div class="Device_card-body">
+                      <a href="{{ route('device',$dev->DeviceID)}}">
+                        <h5 class="mt-2 text-dark">{{ $dev->DeviceTitle }}</h5>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+                @endif
               @endforeach
             </div>
           </div>
@@ -193,6 +192,40 @@
                   </div>
                 </div>
               </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ourTechnology">
+  <div class="container pt-3 mb-3" >
+    <!-- Our courses title -->
+    <div class="row h-100">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="title_area m-0 h-100">
+          <h2 class="title_two mb-3 font-weight-bold">THIẾT BỊ THÍ NGHIỆM ĐO LƯỜNG</h2>
+          <div class="row mt-5 mb-5">
+            @foreach ($devices as $dev)
+            @if ($dev->HienThiThiNghiemDoLuong == 1)
+            <div class="col-lg-3 col-md-6 col-sm-6 ">
+              <div class="Technology_card shadow " style="height: 330px;">
+                <a class="Technology_card-img" href="{{ route('device',$dev->DeviceID)}}">
+                  <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
+                </a>
+                <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between">
+                  <a href="{{ route('device',$dev->DeviceID)}}">
+                    <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $dev->DeviceTitle }}</h5>
+                  </a>
+                  {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
+                  <a style="border-top: dotted #000 1px" href="{{ route('device',$dev->DeviceID)}}">
+                    <p class="text-dark mb-1 mt-2" style="font-size: 18px;">Xem Thêm</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            @endif
             @endforeach
           </div>
         </div>

@@ -41,7 +41,7 @@ class NewsController extends Controller
             'Abstract' => 'required|max:150',
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
-            'ViewTime' => 'required|',
+            // 'ViewTime' => 'required|',
             // 'RelatedNews' => 'required|',
             // 'ViewOrder' => 'required|',
             // 'IsTypical' => 'required|',
@@ -64,7 +64,7 @@ class NewsController extends Controller
         $new->Abstract = $request->input('Abstract');
         $new->NewsContent = $request->input('NewsContent');
         $new->NewsSource = $request->input('NewsSource');
-        $new->ViewTime = $request->input('ViewTime');
+        // $new->ViewTime = $request->input('ViewTime');
         // $new->RelatedNews = $request->input('RelatedNews');
         // $new->ViewOrder = $request->input('ViewOrder');
         // $new->IsTypical = $request->input('IsTypical');
@@ -127,7 +127,7 @@ class NewsController extends Controller
             'Abstract' => 'required|max:150',
             'NewsContent' => 'required|',
             'NewsSource' => 'required|',
-            'ViewTime' => 'required|',
+            // 'ViewTime' => 'required|',
             // 'RelatedNews' => 'required|',
             // 'ViewOrder' => 'required|',
             // 'IsTypical' => 'required|',
@@ -155,7 +155,7 @@ class NewsController extends Controller
         $new->Abstract = $request->input('Abstract');
         $new->NewsContent = $request->input('NewsContent');
         $new->NewsSource = $request->input('NewsSource');
-        $new->ViewTime = $request->input('ViewTime');
+        // $new->ViewTime = $request->input('ViewTime');
         // $new->RelatedNews = $request->input('RelatedNews');
         // $new->ViewOrder = $request->input('ViewOrder');
         // $new->IsTypical = $request->input('IsTypical');

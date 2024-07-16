@@ -55,16 +55,16 @@
         <div class="container p-0">
             <div class="row">
                 <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-                    <a class="navbar-brand m-0 p-1" href="{{ route('home') }}"><img width="50px" height="50px" src="../img/logo_3c.png" alt=""></a>
+                    <a class="navbar-brand m-0 p-1" href="{{ route('home') }}"><img width="70px" height="50px" src="../img/logo_3c.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class=""><a class="text-dark font-weight-bold mr-4" href="{{ route('home') }}">Trang Chủ </a></li>
-                            <li><a class="text-dark font-weight-bold mr-4" href="{{ route('introduce') }}">Giới Thiệu</a></li>
+                            <li class=""><a class="text-dark font-weight-bold mr-4" href="{{ route('home') }}">TRANG CHỦ </a></li>
+                            <li><a class="text-dark font-weight-bold mr-4" href="{{ route('introduce') }}">GIỚI THIỆU</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
+                                <a class="dropdown-toggle text-dark font-weight-bold mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SẢN PHẨM</a>
                                 <ul class="dropdown-menu pt-0 pb-2" aria-labelledby="navbarDropdown">
                                     <li class="dropdown">
                                         <li class="badge-primary" style="padding: 2px"></li>
@@ -76,9 +76,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('project') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Dự Án</a></li>
-                            <li><a href="{{ route('news') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Tin Tức</a></li>
-                            <li><a href="{{ route('contact') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">Liên Hệ</a></li>
+                            <li><a href="{{ route('project') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">DỰ ÁN</a></li>
+                            <li><a href="{{ route('news') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">TIN TỨC</a></li>
+                            <li><a href="{{ route('contact') }}" class="nav-link pl-0 text-dark font-weight-bold mr-4">LIÊN HỆ</a></li>
                         </ul>
                     </div>
                 </nav>

@@ -69,10 +69,10 @@
                         <label>Nguồn tin tức</label>
                         <input class="form-control" type="text" name="NewsSource" placeholder="Vui lòng nhập nguồn tin tức"/>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Thời gian đăng tin tức</label>
                         <input class="form-control" type="date" name="ViewTime" placeholder="Vui lòng nhập thời gian xem tin tức "/>
-                    </div>
+                    </div> --}}
                     {{-- <div class="form-group">
                         <label>Related News</label>
                         <input class="form-control" type="text" name="RelatedNews" placeholder="Vui lòng nhập tin tức khác"/>

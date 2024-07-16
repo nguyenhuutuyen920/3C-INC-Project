@@ -23,7 +23,6 @@ class CreateNewTable extends Migration
             $table->longText('Abstract');
             $table->longText('NewsContent');
             $table->string('NewsSource',250);
-            $table->date('ViewTime');
             $table->string('RelatedNews',250)->nullable();
             $table->decimal('ViewOrder',18,0)->nullable();
             $table->boolean('IsHotNews')->default(false);

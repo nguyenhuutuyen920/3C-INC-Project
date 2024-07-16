@@ -64,10 +64,10 @@
                     <label>Nguồn tin tức</label>
                     <input class="form-control" type="text" value="{{ $new->NewsSource}}" name="NewsSource" placeholder="Please Enter New Source"/>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label>Thời gian đăng tin tức</label>
                     <input class="form-control" type="date" value="{{ $new->ViewTime}}" name="ViewTime" placeholder="Please Enter View Time "/>
-                </div>
+                </div> --}}
                 {{-- <div class="form-group">
                     <label>Related News</label>
                     <input class="form-control" type="text" value="{{ $new->RelatedNews}}" name="RelatedNews" placeholder="Please Related News "/>

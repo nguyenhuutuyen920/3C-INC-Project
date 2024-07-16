@@ -219,7 +219,7 @@
     left: 5%;
     position: absolute;
     top: 10%;
-    width: 70%;
+    width: 50%;
   }
   .slider_caption {
     color: #fff;
@@ -231,10 +231,9 @@
   }
   .slider_caption h2 {
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 65px;
     margin-left: 20px;
-    margin-top: 20px;
     /* background-color: rgba(49, 59, 61, 0.6); */
     padding: 8px;
     margin-bottom: 5px;
@@ -246,9 +245,8 @@
     color: #fff;
     margin-left: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
     font-family: "Varela", sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     padding: 10px;
   }
@@ -648,7 +646,6 @@
   /* HOME COURSE SECTION */
   /*--------------------*/
   #ourCourses{
-    background-color: #f6f6f6;
     float: left;
     display: inline;
     width: 100%;
