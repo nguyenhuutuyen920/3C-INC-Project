@@ -59,7 +59,8 @@
 
       <!-- Start footer bottom area -->
       <div class="footer_bottom " style="background-color: #303941">
-        <div class="container-fluid">
+        <div class="footer_bottom-ht" style="width: 100%;height: 2px; background-color: #fff"></div>
+        <div class="container-fluid pt-3">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="footer_bootomLeft text-center">

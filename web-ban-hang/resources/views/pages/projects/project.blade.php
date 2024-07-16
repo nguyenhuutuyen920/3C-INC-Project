@@ -3,7 +3,7 @@
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section class="project">
-      <div class="col-lg-12 col-md-12 col-sm-12 pt-5 mb-5"  style="background: #ffffff">
+      <div class="col-lg-12 col-md-12 col-sm-12 pt-5 pb-5"  style="background: #ffffff">
       <a class="text-dark" style="margin-left: 145px" href="{{ route('home')}}">Trang Chủ</a><span class="feed_date"> / </span><a class="text-dark font-weight-bold" href="{{route('automation')}}"> Dự Án</a><span class="feed_date"> / </span>
 
         <div class="container menu-project  d-lg-flex p-0 mt-3" >
