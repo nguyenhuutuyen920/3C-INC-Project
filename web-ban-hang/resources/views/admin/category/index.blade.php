@@ -22,19 +22,19 @@ function kiemtra () {
                     {{session('thongbao')}}
                 </div>
             @endif
-            <table class="table ">
+            <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Category_ID</th>
-                    <th>FieldParentID</th>
+                    <th>ID Danh Mục </th>
+                    <th>Trường lĩnh vực</th>
                     <th>Category_ParentID</th>
-                    <th>Category_Name</th>
-                    <th>Category_Alias</th>
-                    <th>Category_metaKeyword</th>
-                    <th>Category_MetaDescription</th>
-                    <th>TypeicalImage</th>
-                    <th>IsVisible</th>
-                    <th>IsTypical</th>
+                    <th>Tên Danh Mục</th>
+                    <th>Bí Danh Danh Mục</th>
+                    <th>Từ Khóa Danh Mục</th>
+                    <th>Mô Tả Danh Mục</th>
+                    <th>Hình Ảnh Điển Hình</th>
+                    <th>Có thể thấy</th>
+                    <th>Có thể Điển Hình</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>

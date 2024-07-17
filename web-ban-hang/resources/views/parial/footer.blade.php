@@ -14,7 +14,7 @@
         <div class="container-fluid col-lg-12  col-md-12 col-sm-12" >
           <div class="row w-100">
             <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="single_footer_widget">
+              <div class="single_footer_widget" style="padding-left: 70px">
                 <h3 class="text-primary font-weight-bold text-light" style="font-family: segoeuib;">Giới thiệu</h3>
                 <p class="text-light">CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
                 <p class="text-light">Địa chỉ trụ sở chính: Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>

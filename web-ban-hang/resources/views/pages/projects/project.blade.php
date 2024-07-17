@@ -10,7 +10,7 @@
           <div class="d-flex flex-column col-lg-12 col-md-12 col-sm-12">
             <ul class="content_menu-project  m-0 p-2" style="width: 100%">
               @foreach($projects as $n)
-                <li class="project-menu float-left p-0 pl-4 list-unstyled mb-4 col-lg-4 col-md-5 col-sm-12"  >
+                <li class="card project-menu float-left p-2 list-unstyled mb-4 col-lg-4 col-md-5 col-sm-12" style="border: 2px solid #e0e0e0">
                   <div class="media media-project d-flex flex-column" style="margin-bottom: 10px;">
                     <div class="project w-100" style="height: 230px;">
                       <a class="project_img " href="{{ route('project_info',$n->ProjectID)}}">
@@ -18,7 +18,7 @@
                       </a>
                     </div>
                     <div class="project-body pl-1 pt-3 w-100">
-                      <a class="project_title" href="{{ route('project_info',$n->ProjectID)}}"><h5 class="text-dark font-weight-bold">{{$n->ProjectTitle}}</h5></a>
+                      <a class="project_title" href="{{ route('project_info',$n->ProjectID)}}"><h4 class="text-dark font-weight-bold">{{$n->ProjectTitle}}</h4></a>
                       <span class="project_abstract text-dark ">{{$n->Abstract}}</span>
                       <p class="project_date text-dark text-right">{{$n->create_at}}</p>
                     </div>

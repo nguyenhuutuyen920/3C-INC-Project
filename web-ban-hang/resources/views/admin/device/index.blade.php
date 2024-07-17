@@ -22,7 +22,7 @@ function kiemtra () {
                     {{session('thongbao')}}
                 </div>
             @endif
-            <table class="table ">
+            <table class="table table-striped table-bordered table-hover ">
             <thead>
                 <tr>
                     <th>ID Thiết Bị</th>
@@ -30,7 +30,7 @@ function kiemtra () {
                     <th>Tên Thiết Bị</th>
                     <th>Hình Ảnh Thiết Bị</th>
                     <th>Nội Dung Thiết Bị</th>
-                    <th style="max-width: 600px">Thông Số Kĩ Thuật</th>
+                    <th>Thông Số Kĩ Thuật</th>
                     <th>Thiết Bị Liên Quan</th>
                     <th>Hiển Thị Tự Động Hóa</th>
                     <th>Hiển Thị Thiết Bị Xây Lắp</th>

@@ -34,11 +34,12 @@
                 @csrf
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-group">
-                    <label>CategoryID</label>
+                    <label>ID Danh Mục</label>
                     <select class="form-control" name="CategoryID" id="subcate_id">
                         @foreach($cats as $cat)
-                            <option 
-                            value="{{$cat->CategoryID}}">{{$cat->CategoryName}}</option>
+                            @if ($cat->FieldParentID == 1 || $cat->FieldParentID == 4)
+                                <option value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -56,7 +57,7 @@
                 </div>                   
                 <div class="form-group">
                     <label>Thông Số Kĩ Thuật</label>
-                    <textarea class="form-contro" type="text" id="editor" style="height: 500px;"  name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật(Lưu ý kích thước của ảnh khi cho vào)"></textarea>
+                    <textarea class="form-contro" type="text" id="editor" style="height: 500px;"  name="Technicaldata" placeholder="Vui Lòng Nhập Thông Số Kĩ Thuật(Lưu ý kích thước của ảnh khi cho vào chỉ nên từ 750x750 trở xuống)"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>

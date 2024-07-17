@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <section id="field" style="background: #f1f1f1;" class="pb-5">
+    <section id="field" style="background: #ffffff;" class="pb-5">
         <div class="container pt-5" >
             <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
                 {{-- <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0 ">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="dropdown-divider"></div>
                     <div class="product-content mt-3 pl-3">
-                        <h3>THÔNG TIN SẢN PHẨM</h3>
+                        <h3 class="font-weight-bold">THÔNG TIN SẢN PHẨM</h3>
                         <p style="font-size: 15px">{!!$product->ProductContent!!}</p>
                     </div>
                 </div>

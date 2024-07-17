@@ -43,7 +43,7 @@
 
 <!--=========== BEGIN ABOUT US SECTION ================-->
 <section id="aboutUs" class="pt-5 pb-5">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <!-- Start about us area -->
       <div class="col-lg-6 col-md-6 col-sm-12">

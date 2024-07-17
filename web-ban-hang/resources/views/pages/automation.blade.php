@@ -17,21 +17,21 @@
             <div class="container-fluid menu-field d-lg-flex p-0">
                 <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0" style="height:max-content">
                     <div class="field">
-                        <div class="menu-field" >
+                        <div class="menu-field" style="border: 1px solid #372bec">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h5 class="text-light font-weight-bold">LĨNH VỰC</h5>
                             </div>
                             <ul class="field-menu p-2 m-0">
                                 @foreach ($fields as $f)
-                                <li class="list-unstyled p-2 mb-2" style="border: 1px solid #b1b1b1">
+                                <li class="list-unstyled p-2 mb-2" >
                                     <a href="#" class="field-link" data-field-id="{{ $f->FieldID }}">
-                                        <p class="text-dark font-weight-bold m-0">{{ $f->FieldName }}</p>
+                                        <p class="text-dark font-weight-bold m-0" style="font-size: 15px;text-transform: uppercase;">{{ $f->FieldName }}</p>
                                     </a>
                                 @endforeach
                             </ul>
                         </div>
                         
-                        <div class="supplier_menu-field mt-2" >
+                        <div class="supplier_menu-field mt-2" style="border: 1px solid #372bec">
                             <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                                 <h5 class="text-light font-weight-bold">DANH MỤC SẢN PHẨM</h5>
                             </div>
@@ -44,8 +44,8 @@
                 <div class="supplier-content col-lg-9 col-md-12 col-sm-12 p-0">
                     @foreach ($devices as $dev)
                         @if ($dev->hienThiTuDongHoa == 1)
-                            <div class="automation_content-card float-left" style="width: 240px; height: 240px;">
-                                <div class="card-automation d-lg-flex flex-column pl-3 pt-3 h-100 w-100">
+                            <div class="card float-left" style="width: 240px; height: 240px; border: 2px solid #dfdfdf">
+                                <div class="card-automation d-lg-flex flex-column p-2 h-100 w-100">
                                     <a href="{{ route('device',$dev->DeviceID)}}" class="card-automation-img" style="width: 100%; height: 150px;">
                                         <img class="w-100 h-100" src="{{asset($dev->DeviceImage)}}" alt="">
                                     </a>
@@ -97,14 +97,14 @@
                     let hasSupplier = cat.device && cat.device.length > 0;
                     if (hasSupplier) {
                         supplierMenuHtml += `
-                            <li class="nav-item has-submenu list-unstyled" style="border: 1px solid #b1b1b1">
+                            <li class="nav-item has-submenu list-unstyled" >
                                 <a class="nav-link text-dark font-weight-bold p-0 category-link" data-category-id="${cat.CategoryID}" href="#">
                                     ${cat.CategoryName}
                                 </a>
                                 <ul class="submenu collapse pl-1" id="category-${cat.CategoryID}">
                                     ${cat.supplier.map(prod => `
                                         <li class="list-unstyled">
-                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark font-weight-bold" href="{{ route('supplier', '') }}/${prod.id}">
+                                            <a class="nav-link pl-2 pt-2 pb-0 pr-0 text-dark font-weight-bold" style="font-size: 15px;text-transform: uppercase;" href="{{ route('supplier', '') }}/${prod.id}">
                                                 ${prod.SupplierName}
                                             </a>
                                         </li>
@@ -114,8 +114,8 @@
                         `;
                     } else {
                         supplierMenuHtml += `
-                            <li class="nav-item list-unstyled p-2 mb-2" style="border: 1px solid #b1b1b1">
-                                <a class="nav-link text-dark font-weight-bold p-0 category-link" href="${route}">
+                            <li class="nav-item list-unstyled p-2 mb-2" >
+                                <a class="nav-link text-dark font-weight-bold p-0 category-link" style="font-size: 15px;text-transform: uppercase;" href="${route}">
                                     ${cat.CategoryName}
                                 </a>
                             </li>

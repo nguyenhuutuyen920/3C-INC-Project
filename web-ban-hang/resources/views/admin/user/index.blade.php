@@ -22,7 +22,7 @@ function kiemtra () {
                     {{session('thongbao')}}
                 </div>
             @endif
-            <table class="table ">
+            <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th>ID</th>

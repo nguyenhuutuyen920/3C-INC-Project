@@ -48,68 +48,68 @@
                 </div>            
                 <div class="form-group">
                     <label>Mã Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductCode" placeholder="Vui lòng nhập Mã Sản Phẩm " />
+                    <input class="form-control" type="text" name="ProductCode" placeholder="Vui lòng Nhập Mã Sản Phẩm " />
                 </div>
                 <div class="form-group">
                     <label>Tên Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductName" placeholder="Vui lòng nhập Tên Sản Phẩm " />
+                    <input class="form-control" type="text" name="ProductName" placeholder="Vui lòng Nhập Tên Sản Phẩm " />
                 </div>
                 <div class="form-group">
                     <label>Bí Danh Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductAlias" placeholder="Vui lòng nhập Bí Danh Sản Phẩm " />
+                    <input class="form-control" type="text" name="ProductAlias" placeholder="Vui lòng Nhập Bí Danh Sản Phẩm " />
                 </div>
                 <div class="form-group">
                     <label>Từ Khóa Sản Phẩm</label>
-                    <input class="form-control" type="text" name="ProductKeyword" placeholder="Vui lòng nhập Từ Khóa Sản Phẩm " />
+                    <input class="form-control" type="text" name="ProductKeyword" placeholder="Vui lòng Nhập Từ Khóa Sản Phẩm " />
                 </div>
                 <div class="form-group">
                     <label>Hình Ảnh Sản Phẩm</label>
-                    <input class="form-control" type="file" name="ProductImage" placeholder="Vui lòng nhập Hình Ảnh Sản Phẩm " />
+                    <input class="form-control" type="file" name="ProductImage" placeholder="Vui lòng Nhập Hình Ảnh Sản Phẩm " />
                 </div>
                 <div class="form-group">
-                    <label>Giá Tiền Hiện Tại Gốc</label>
-                    <input class="form-control" type="text" name="CurentPrice" placeholder="Vui lòng nhập Giá Tiền Hiện Tại " />
+                    <label>Giá Tiền Hiện Tại</label>
+                    <input class="form-control" type="number" name="CurentPrice" placeholder="Vui lòng Nhập Giá Tiền Hiện Tại " />
                 </div>
                 <div class="form-group">
                     <label>Giá Gốc</label>
-                    <input class="form-control" type="text" name="OldPrice" placeholder="Vui lòng nhập Giá Tiền Cũ" />
+                    <input class="form-control" type="number" name="OldPrice" placeholder="Vui lòng Nhập Giá Tiền Cũ" />
                 </div>
                 <div class="form-group">
                     <label>Hiển Thị Giá Tiền</label>
-                    <input class="form-control" type="number" max="1" min="0" name="IsShowprice" placeholder="Chỉ nhập 1 hoặc 0 (1 là có, 0 là không ) " />
+                    <input class="form-control" type="number" max="1" min="0" name="IsShowprice" placeholder="Chỉ Nhập 1 hoặc 0 (1 là có, 0 là không ) " />
                 </div>
                 <div class="form-group">
                     <label>Giảm Giá</label>
-                    <input class="form-control" type="text" name="Discount" placeholder="Vui lòng nhập Giảm Giá " />
+                    <input class="form-control" type="number" name="Discount" placeholder="Vui lòng Nhập Số Tiền Giảm Giá " />
                 </div>
                 <div class="form-group">
                     <label>Trạng Thái</label>
-                    <input class="form-control" type="text" name="StoreStatus" placeholder="Vui lòng nhập Trạng Thái " />
+                    <input class="form-control" type="text" name="StoreStatus" placeholder="Vui lòng Nhập Trạng Thái " />
                 </div>
                 <div class="form-group">
                     <label>Tóm Tắt</label>
-                    <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng nhập Tóm Tắt " />
+                    <input class="form-control" type="text" name="Abstract" placeholder="Vui lòng Nhập Tóm Tắt " />
                 </div>
                 <div class="form-group">
                     <label>Nội Dung Sản Phẩm</label>
                     {{-- <div id="toolbar-container"></div>
                     <div id="editor">
-                        <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng nhập tin tức Content"></textarea>
+                        <textarea class="form-control" type="text" id="editor"  name="NewsContent" placeholder="Vui lòng Nhập tin tức Content"></textarea>
                     </div> --}}
-                    <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="ProductContent" placeholder="Vui lòng nhập Nội Dung Sản Phẩm"></textarea>
+                    <textarea class="form-control" type="text" id="editor" style="height: 500px"  name="ProductContent" placeholder="Vui lòng Nhập Nội Dung Sản Phẩm"></textarea>
 
                 </div>
                 <div class="form-group">
                     <label>Nội Dung Khác</label>
-                    <input class="form-control" type="text" name="OtherContent" placeholder="Vui lòng nhập Nội Dung Khác " />
+                    <input class="form-control" type="text" name="OtherContent" placeholder="Vui lòng Nhập Nội Dung Khác " />
                 </div>
                 <div class="form-group">
                     <label>Khuyến Mãi</label>
-                    <input class="form-control" type="text" name="Promotion" placeholder="Vui lòng nhập Khuyến Mãi " />
+                    <input class="form-control" type="text" name="Promotion" placeholder="Vui lòng Nhập Khuyến Mãi " />
                 </div>
                 <div class="form-group">
                     <label>Sản Phẩm Liên Quan</label>
-                    <input class="form-control" type="text" name="RelatedProduct" placeholder="Vui lòng nhập Sản Phẩm Liên Quan " />
+                    <input class="form-control" type="text" name="RelatedProduct" placeholder="Vui lòng Nhập Sản Phẩm Liên Quan " />
                 </div>
                 
                 <button type="submit" class="btn btn-success">Thêm sản phẩm</button>

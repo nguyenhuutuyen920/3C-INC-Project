@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
 
-<section id="field" style="background: #f1f1f1;">
+<section id="field" >
     <div class="container-fluid pt-5 pb-5">
         <div class="col-lg-12 col-md-12 col-sm-12 d-lg-flex p-0">
             <div class="sidebar_menu-new col-lg-3 col-md-12 col-sm-12 p-0">
@@ -10,11 +10,11 @@
                         <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                             <h5 class="text-light font-weight-bold">LĨNH VỰC</h5>
                         </div>
-                        <ul class="field-menu p-2 m-0">
+                        <ul class="field-menu p-2 m-0" style="border: 1px solid #372bec">
                             @foreach ($fields as $f)
-                            <li class="list-unstyled mb-2" style="heiht:30px;border: 1px solid #b1b1b1">
+                            <li class="list-unstyled mb-2" >
                                 <a href="#" class="field-link btn-group" data-field-id="{{ $f->FieldID }}">
-                                    <p class="text-dark font-weight-bold p-2 m-0">{{ $f->FieldName }}</p>
+                                    <p class="text-dark font-weight-bold p-2 m-0" style="font-size: 15px; text-transform: uppercase;">{{ $f->FieldName }}</p>
                                 </a>
                             </li>
                             @endforeach
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="category-content col-lg-9 col-md-12 col-sm-12 p-0">
-                <ul class="field-menu p-2 m-0 category-list">
+                <ul class="field-menu m-0 category-list">
                     <!-- Danh mục sản phẩm sẽ được cập nhật động -->
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     }
 
                     categoryMenuHtml += `
-                        <div class="automation_content-card float-left ml-2" style="width: 220px; height: 240px;border: 1px solid #aeaeae">
+                        <div class="automation_content-card float-left ml-4 mb-4" style="width: 250px; height: 220px;border: 1px solid #aeaeae">
                             <div class="card-automation d-lg-flex flex-column h-100 w-100">
                                 <a href="${route}" class="card-automation-img" style="width: 100%; height: 150px;">
                                     <img class="w-100 h-100" src="{{asset('${cat.TypicalImage}')}}" alt="">

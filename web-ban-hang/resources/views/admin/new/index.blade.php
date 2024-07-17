@@ -22,25 +22,18 @@ function kiemtra () {
                     {{session('thongbao')}}
                 </div>
             @endif
-            <table class="table ">
+            <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>NewsID</th>
-                    <th>NewsAlias</th>
-                    <th>NewsMetaKeyword</th>
-                    <th>NewsMetaDescription</th>
-                    <th>NewsTitle</th>
-                    <th>NewsImage</th>
-                    <th>Abstract</th>
-                    <th>NewsContent</th>
-                    <th>NewsSource</th>
-                    <th>ViewTime</th>
-                    <th>RelatedNews</th>
-                    <th>ViewOrder</th>
-                    <th>IsHotNews</th>
-                    <th>IsTypical</th>
-                    <th>IsApproved</th>
-                    <th>ApprovedBy</th>
+                    <th>ID Tin Tức</th>
+                    <th>Bí Danh Tin Tức</th>
+                    <th>Từ Khóa Tin Tức</th>
+                    <th>Mô Tả Tin Tức</th>
+                    <th>Tiêu Đề Tin Tức</th>
+                    <th>Hình Ảnh Tin Tức</th>
+                    <th>Tóm Tắt</th>
+                    <th>Nội Dung Tin Tức</th>
+                    <th>Nguồn Tin Tức</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
@@ -59,13 +52,6 @@ function kiemtra () {
                         <td>{{ $new->Abstract}}</td>
                         <td>{!! $new->NewsContent!!}</td>
                         <td>{{ $new->NewsSource}}</td>
-                        <td>{{ $new->ViewTime}}</td>
-                        <td>{{ $new->RelatedNews}}</td>
-                        <td>{{ $new->ViewOrder}}</td>
-                        <td>{{ $new->IsHotNews}}</td>
-                        <td>{{ $new->IsTypical}}</td>
-                        <td>{{ $new->IsApproved}}</td>
-                        <td>{{ $new->ApprovedBy}}</td>
                         <td class="center">
                             <form action="{{ route('new.destroy',$new->NewsID)}}" method="post">
                                 @csrf @method('DELETE')
