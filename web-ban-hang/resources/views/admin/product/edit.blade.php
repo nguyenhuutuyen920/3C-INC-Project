@@ -32,11 +32,13 @@
                         <label>ID Danh Mục</label>
                         <select class="form-control" name="CategoryParentID" id="subcate_id">
                             @foreach($cats as $cat)
-                                <option 
-                                @if($product->CategoryParentID == $cat->CategoryParentID)
-                                    {{"selected"}}
+                                @if ($cat->FieldParentID == 2)
+                                    <option 
+                                    @if($product->CategoryParentID == $cat->CategoryParentID)
+                                        {{"selected"}}
+                                    @endif
+                                    value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
                                 @endif
-                                value="{{$cat->CategoryParentID}}">{{$cat->CategoryName}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -98,7 +100,7 @@
                     </div>
                     <div class="form-group">
                         <label>Nội Dung Sản Phẩm</label>
-                        <input class="form-control" type="text" value="{{ $product->ProductContent }}" name="ProductContent" placeholder="Please Enter Product Content " />
+                        <textarea class="form-control" type="text" id="editor" value="" name="ProductContent" placeholder="Please Enter Product Content " >{{ $product->ProductContent }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Nội Dung Khác</label>

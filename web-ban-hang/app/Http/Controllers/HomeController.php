@@ -29,9 +29,10 @@ class HomeController extends Controller
         $fields = Field::with(['categories'])->get();
         $cats = Category::all()->groupBy('FieldParentID');
         $products = Product::orderBy("ProductID","DESC")->paginate(4);
-        $devices = Device::orderBy("DeviceID","DESC")->paginate(8);
-        $news = News::orderBy('NewsID','ASC')->paginate(8);
-        return view("pages.home",compact("news","products","cats","fields","devices"));
+        $data1 = Device::where('HienThiThiNghiemDoLuong', 1)->orderBy("DeviceID","DESC")->paginate(4);
+        $data2 = Device::where('hienThiTuDongHoa', 1)->orderBy("DeviceID","ASC")->paginate(4);
+        $news = News::orderBy('NewsID','DESC')->paginate(3);
+        return view("pages.home",compact("news","products","cats","fields","data1","data2"));
     }
 
     /**

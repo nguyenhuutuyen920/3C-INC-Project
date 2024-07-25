@@ -19,7 +19,7 @@ class CreateProjectTable extends Migration
             $table->string('BiddingPackage',250);
             $table->string('ConstructionName',250);
             $table->string('Abstract',250);
-            $table->string('ProjectContent',250);
+            $table->longText('ProjectContent');
             $table->string('ProjectImage',250);
             $table->string('Investors',250);
             $table->string('PricePackage',250);

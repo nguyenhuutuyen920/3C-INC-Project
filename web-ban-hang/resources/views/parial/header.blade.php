@@ -41,9 +41,9 @@
                 <div class="col-12">
                     <a href="#" class=""><span class="text-light mr-2 icon-envelope-open-o"></span> <span class="text-light d-none d-md-inline-block">sale@3c.com.vn</span></a>
                     <span class="text-light mx-md-2 d-inline-block"></span>
-                    <a href="#" class=""><span class="text-light mr-2 icon-phone"></span> <span class="text-light d-none d-md-inline-block">84+ 243 843 3316</span></a>
+                    <a href="#" class=""><span class="text-light mr-2 icon-phone"></span> <span class="text-light d-none d-md-inline-block">84 243733 1699</span></a>
                     <div class="float-right">
-                        <a href="https://zalo.me/0565799835" class=""><span class="text-light mr-2"></span> <span class="text-light d-none d-md-inline-block">Zalo</span></a>
+                        <a href="#" class=""><span class="text-light mr-2"></span> <span class="text-light d-none d-md-inline-block">Zalo</span></a>
                         <span class="text-light mx-md-2 d-inline-block"></span>
                         <a href="https://www.facebook.com/3c.com.vn" class=""><span class="text-light mr-2 icon-facebook"></span> <span class="text-light d-none d-md-inline-block">Facebook</span></a>
                     </div>

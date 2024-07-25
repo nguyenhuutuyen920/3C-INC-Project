@@ -16,9 +16,10 @@
                 <div class="col-lg-12 col-12 col-sm-12">
                   <div class="single_blog">
                     <div class="blogimg_container w-100">
-                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->create_at}}</i></p>
+                      <p><i class="fa fa-calendar float-right" style="font-size: 10px;">{{$new->create_at ? $new->create_at->format('d/m/Y') : ''}}</i></p>
                       <h2 class="blog_title font-weight-bold"> {{$new->NewsTitle}}</h2>
-                      <p class="blog_img"> {!!$new->NewsContent !!} </p>
+                      <p class="blog_img">
+                         {!!$new->NewsContent !!} </p>
                     </div>
                     <div class="blog_commentbox">
                     </div>
@@ -47,15 +48,18 @@
                 <h2>Tin tức <span class="fa fa-angle-double-right"></span></h2>
                 <ul class="news_tab pl-2">
                 @foreach($news as $n)
+                  @if ($n->NewsID == $new->NewsID)
+                    @continue
+                  @endif
                   <li class="list-unstyled">
                     <div class="media mt-2">
                       <div class="media-left">
-                        <a href="{{$n->NewsID}}" class="news_img" >
+                        <a href="{{route('new_content',$n->NewsID)}}" class="news_img" >
                           <img style="width: 100px;height:80px;" alt="img" src="{{ asset($n->NewsImage) }}" class="media-object">
                         </a>
                       </div>
                       <div class="media-body pl-2">
-                       <a style="" href="{{$n->NewsID}}"><span class="font-weight-bold">{{$n->NewsTitle}}</span></a>
+                       <a style="" href="{{route('new_content',$n->NewsID)}}"><span class="font-weight-bold">{{$n->NewsTitle}}</span></a>
                       </div>
                     </div>
                   </li>
@@ -63,14 +67,14 @@
                 </ul>
               </div>
             </div>
-            <div class="field col-lg-12 col-md-12 col-sm-12 p-0">
+            <div class="field col-lg-12 col-md-12 col-sm-12 p-0"  style="border: 2px solid #d1d1d1">
               <div class="field-title bg-primary" style="padding: 8px 10px 1px 10px">
                 <h5 class="text-light">LĨNH VỰC</h5>
               </div>
               <ul class="field-menu m-0 p-0 h-100">
                 @foreach ($fields as $field)
-                  <li class="mt-2 p-2 list-unstyled" style="border: 1px solid #d1d1d1">
-                    <a href="{{route('field', $field->FieldID)}}"><span class="text-dark">{{$field->FieldName}}</span></a>
+                  <li class="mt-2 p-2 list-unstyled">
+                    <a href="{{route('field', $field->FieldID)}}"><span class="text-dark font-weight-bold" style="font-size: 18px">{{$field->FieldName}}</span></a>
                   </li>
                 @endforeach
               </ul>

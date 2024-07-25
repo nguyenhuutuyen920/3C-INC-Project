@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('ProductAlias', 250);
             $table->string('ProductKeyword', 250);
             $table->string('ProductImage', 250);
-            $table->float('CurentPrice');
-            $table->float('OldPrice');
+            $table->integer('CurentPrice');
+            $table->integer('OldPrice');
             $table->boolean('IsShowprice');
-            $table->float('Discount');
+            $table->integer('Discount');
             $table->string('StoreStatus', 250);
             $table->longText('Abstract');
             $table->longText('ProductContent');

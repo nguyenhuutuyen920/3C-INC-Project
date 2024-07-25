@@ -51,12 +51,12 @@
                     <li class="list-unstyled">
                       <div class="media mt-2">
                         <div class="media-left">
-                          <a href="{{$proj->ProjectID}}" class="project_img" >
+                          <a href="{{route('project_info',$proj->ProjectID)}}" class="project_img" >
                             <img style="width: 100px;height:70px;" alt="img" src="{{ asset($proj->ProjectImage) }}" class="media-object">
                           </a>
                         </div>
                         <div class="media-body pl-2">
-                        <a class="font-weight-bold" style="font-size: 15px" href="{{$proj->ProjectID}}">{{$proj->ProjectTitle}}</a>
+                        <a class="font-weight-bold" style="font-size: 15px" href="{{route('project_info',$proj->ProjectID)}}">{{$proj->ProjectTitle}}</a>
                         </div>
                       </div>
                     </li>

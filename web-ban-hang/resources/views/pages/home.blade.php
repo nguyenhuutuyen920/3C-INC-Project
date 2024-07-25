@@ -42,7 +42,7 @@
 <!--=========== END SLIDER SECTION ================-->
 
 <!--=========== BEGIN ABOUT US SECTION ================-->
-<section id="aboutUs" class="pt-5 pb-5">
+<section id="aboutUs" class="pt-5 pb-5" style="background: #fff" >
   <div class="container">
     <div class="row">
       <!-- Start about us area -->
@@ -51,6 +51,10 @@
           <h2 class="titile text-center font-weight-bold">Giới Thiệu</h2>
           <p class="text-dark font-weight-bold">Công ty 3C được thành lập vào ngày 09/10/1989, 3C hoạt động trong lĩnh vực CNTT và Viễn thông đầu tiên tại Việt Nam, đã có đóng góp rất nhiều cho nền tin học non trẻ của Việt Nam vào những năm 90 của thế kỷ trước.</p>
           <p class="text-dark font-weight-bold">Với 35 năm xây dựng và phát triển, 3C đã khẳng định được vị thế của mình trên thị trường cung cấp các sản phẩm, dịch vụ đã tham gia. Hiện nay, 3C đã trở thành một trong những nhà cung cấp hàng đầu các sản phẩm, dịch vụ công nghệ cao cho ngành Điện cao thế và Công nghệ thông tin.</p>
+          <p class="text-dark font-weight-bold">Chúng tôi chung cấp 3 lĩnh vực chính: </p>
+          <p class="text-dark font-weight-bold">> Điện tự động hóa</p>
+          <p class="text-dark font-weight-bold">> Thí nghiệm - đo lường điện</p>
+          <p class="text-dark font-weight-bold">> Công nghệ thông tin</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
@@ -62,25 +66,25 @@
           </ul>
 
           <!-- Tab panes -->
-          <div class="tab-content">
+          <div class="tab-content"  >
             <!-- Start news tab content -->
-            <div class="tab-pane  active" id="news">                
-              <ul class="news_tab">
-              @foreach($news as $n)
-                <li class="p-0">
-                  <div class="media ">
-                    <div class="media-left">
-                      <a class="news_img pb-3" href="{{route('new_content',$n->NewsID)}}">
-                        <img class="media-object" src="{{asset($n->NewsImage)}}" alt="img">
-                      </a>
-                    </div>
-                    <div class="media-body pl-3">
-                     <a class="text-dark" style="font-size: 15px" href="{{route('new_content',$n->NewsID)}}">{{$n->NewsTitle}}</a>
-                     <span class="text-dark font-weight-bold" style="font-size: 11px">{{$n->Abstract}}</span>
-                    </div>
-                  </div>                    
-                </li>
-              @endforeach
+            <div class="tab-pane  active"  id="news">                
+              <ul class="news_tab ">
+                @foreach($news as $n)
+                  <li class="p-0">
+                    <div class="media ">
+                      <div class="media-left"> 
+                        <a class="news_img pb-3" style="height: 120px" href="{{route('new_content',$n->NewsID)}}">
+                          <img class="media-object " src="{{asset($n->NewsImage)}}" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body pl-3">
+                      <a class="text-dark" style="font-size: 15px" href="{{route('new_content',$n->NewsID)}}">{{$n->NewsTitle}}</a>
+                      <span class="text-dark font-weight-bold abstract" style="font-size: 11px">{{$n->Abstract}}</span>
+                      </div>
+                    </div>                    
+                  </li>
+                @endforeach
               </ul>                
               <a class="see_all" href="{{route('news')}}">Xem tất cả</a>
             </div>
@@ -98,92 +102,78 @@
       </div>
     </div>
   </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const abstracts = document.querySelectorAll('.abstract');
+
+    abstracts.forEach(abstract => {
+      const maxLength = 100; // Độ dài tối đa của abstract
+      const text = abstract.textContent;
+
+      if (text.length > maxLength) {
+        abstract.textContent = text.substring(0, maxLength) + '...';
+      }
+    });
+  });
+</script>
+
 </section>
-<section id="ourCourses" class="pt-5 pb-5 ">
-  <div class="container" style=" overflow: hidden;">
+@foreach ($fields as $field)
+@if ($field->FieldID == 1)
+<section id="ourTechnology" class="mt-4" style="background-color: #e4e4e4">
+  <div class="container pt-3" >
     <!-- Our courses title -->
     <div class="row h-100">
-      <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-4 font-weight-bold">THIẾT BỊ TỰ ĐỘNG HÓA</h2>
-          <div class="device_menu p-0 d-flex">
-            <div class="device_list d-flex">
-              @foreach ($devices as $dev)
-                @if ($dev->hienThiTuDongHoa == 1)
-                <div class="col-lg-3">
-                  <div class="device_card">
-                    <a class="device_card-img" href="{{ route('device',$dev->DeviceID)}}">
-                      <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
+          <h2 class="title_two mb-3 font-weight-bold"><a class="text-uppercase text-dark" href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
+          </h2>
+          <div class="row mt-5 mb-5">
+            @foreach ($data2 as $dev)
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-3" style="margin-top: 20px">
+                <div class="Technology_card shadow " style="height: 330px;">
+                  <a class="Technology_card-img" href="{{ route('device',$dev->DeviceID)}}">
+                    <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
+                  </a>
+                  <div class="Technology_card-body p-2 h-50 d-flex flex-column justify-content-between badge-light mb-5">
+                    <a href="{{ route('device',$dev->DeviceID)}}">
+                      <h6 class="mt-2 text-dark text-left font-weight-bold text-center">{{ $dev->DeviceTitle }}</h6>
                     </a>
-                    <div class="Device_card-body">
-                      <a href="{{ route('device',$dev->DeviceID)}}">
-                        <h5 class="mt-2 text-dark">{{ $dev->DeviceTitle }}</h5>
-                      </a>
-                    </div>
+                    {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
+                    <a style="border-top: dotted #000 1px" href="{{ route('device',$dev->DeviceID)}}">
+                      <p class="text-dark mb-1 mt-2" style="font-size: 18px;">Xem Thêm</p>
+                    </a>
                   </div>
                 </div>
-                @endif
-              @endforeach
-            </div>
+              </div>
+            @endforeach
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const projectMenu = document.querySelector('.device_list');
-      let scrollAmount = 0;
-      let isPaused = false;
-  
-      function scrollProjects() {
-        if (!isPaused) {
-          scrollAmount -= 1; // Adjust scroll speed here
-          if (scrollAmount <= -projectMenu.scrollWidth / 2) {
-            scrollAmount = 0;
-          }
-          projectMenu.style.transform = `translateX(${scrollAmount}px)`;
-        }
-        requestAnimationFrame(scrollProjects);
-      }
-  
-      // Clone the project cards to create an infinite scroll effect
-      projectMenu.innerHTML += projectMenu.innerHTML;
-  
-      // Event listeners to pause/resume scrolling
-      projectMenu.addEventListener('mouseover', function() {
-        isPaused = true;
-      });
-  
-      projectMenu.addEventListener('mouseout', function() {
-        isPaused = false;
-      });
-  
-      scrollProjects();
-    });
-  </script>
 </section>
+@endif
 
-
-
-
-<section id="ourTechnology">
-  <div class="container pt-3 mb-3" >
+@if ($field->FieldID == 2)              
+<section id="ourTechnology" style="background-color: #e4e4e4">
+  <div class="container pt-3 ">
     <!-- Our courses title -->
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-3 font-weight-bold">SẢN PHẨM CÔNG NGHỆ THÔNG TIN</h2>
+            <h2 class="title_two mb-3 font-weight-bold"><a class="text-uppercase text-dark" href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a>
+            </h2>
           <div class="row mt-5 mb-5">
             @foreach ($products as $prod)
-              <div class="col-lg-3 col-md-6 col-sm-6 ">
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                 <div class="Technology_card shadow " style="height: 330px;">
                   <a class="Technology_card-img" href="{{ route('product_info', $prod->ProductID) }}">
                     <img class="w-100" style="height: 180px" src="{{ $prod->ProductImage }}" alt="">
                   </a>
-                  <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between">
+                  <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between badge-light">
                     <a href="{{ route('product_info', $prod->ProductID) }}">
-                      <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $prod->ProductName}}</h5>
+                      <h6 class="mt-2 text-dark text-left font-weight-bold text-center">{{ $prod->ProductName}}</h6>
                     </a>
                     {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
                     <a style="border-top: dotted #000 1px" href="{{ route('product_info', $prod->ProductID) }}">
@@ -199,33 +189,36 @@
     </div>
   </div>
 </section>
-<section id="ourTechnology">
-  <div class="container pt-3 mb-3" >
+@endif
+
+@if ($field->FieldID > 2)
+<section id="ourMeasurementExperiments" style="background-color: #e4e4e4">
+  <div class="container pt-3 " >
     <!-- Our courses title -->
     <div class="row h-100">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="title_area m-0 h-100">
-          <h2 class="title_two mb-3 font-weight-bold">THIẾT BỊ THÍ NGHIỆM ĐO LƯỜNG</h2>
+          <h2 class="title_two mb-3 font-weight-bold"><a class="text-uppercase text-dark" href="{{ route('field', $field->FieldID) }}">{{ $field->FieldName }}</a></h2>
           <div class="row mt-5 mb-5">
-            @foreach ($devices as $dev)
-            @if ($dev->HienThiThiNghiemDoLuong == 1)
-            <div class="col-lg-3 col-md-6 col-sm-6 ">
-              <div class="Technology_card shadow " style="height: 330px;">
-                <a class="Technology_card-img" href="{{ route('device',$dev->DeviceID)}}">
-                  <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
-                </a>
-                <div class="Technology_card-body p-3 h-50 d-flex flex-column justify-content-between">
-                  <a href="{{ route('device',$dev->DeviceID)}}">
-                    <h5 class="mt-2 text-dark text-left font-weight-bold">{{ $dev->DeviceTitle }}</h5>
+            @foreach ($data1 as $dev)
+            {{-- @for ($dev->FieldID.Lenght <= 4)
+            @endfor --}}
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+                <div class="Technology_card shadow " style="height: 330px;">
+                  <a class="Technology_card-img" href="{{ route('device',$dev->DeviceID)}}">
+                    <img class="w-100" style="height: 180px" src="{{$dev->DeviceImage}}" alt="">
                   </a>
-                  {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
-                  <a style="border-top: dotted #000 1px" href="{{ route('device',$dev->DeviceID)}}">
-                    <p class="text-dark mb-1 mt-2" style="font-size: 18px;">Xem Thêm</p>
-                  </a>
+                  <div class="Technology_card-body p-2 h-50 d-flex flex-column justify-content-between badge-light">
+                    <a href="{{ route('device',$dev->DeviceID)}}">
+                      <h6 class="mt-2 text-dark text-left font-weight-bold text-center">{{ $dev->DeviceTitle }}</h6>
+                    </a>
+                    {{-- <span style="width:100%; height:2px;margin-right:8px; background: #dbdbdb"></span> --}}
+                    <a style="border-top: dotted #000 1px" href="{{ route('device',$dev->DeviceID)}}">
+                      <p class="text-dark mb-1 mt-2" style="font-size: 18px;">Xem Thêm</p>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            @endif
             @endforeach
           </div>
         </div>
@@ -233,6 +226,10 @@
     </div>
   </div>
 </section>
+@endif
+
+
+@endforeach
 {{-- <section id="ourNews">
   <div class="container pt-5 mb-5" >
     <!-- Our courses title -->
@@ -264,9 +261,5 @@
     </div>
   </div>
 </section> --}}
-
-
-
-
 
 @endsection

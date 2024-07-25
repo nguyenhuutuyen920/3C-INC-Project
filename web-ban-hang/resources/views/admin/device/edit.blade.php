@@ -30,11 +30,13 @@
                     <label>CategoryID</label>
                     <select class="form-control" name="CategoryID" id="subcate_id">
                         @foreach($cats as $cat)
-                            <option 
-                            @if($device->CategoryID == $cat->CategoryID)
-                                {{"selected"}}
+                            @if ($cat->FieldParentID == 1 || $cat->FieldParentID == 4)
+                                <option 
+                                @if($device->CategoryID == $cat->CategoryID)
+                                    {{"selected"}}
+                                @endif
+                                value="{{$cat->CategoryID}}">{{$cat->CategoryName}}</option>
                             @endif
-                            value="{{$cat->CategoryID}}">{{$cat->CategoryName}}</option>
                         @endforeach
                     </select>
                 </div>

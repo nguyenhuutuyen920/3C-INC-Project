@@ -75,7 +75,7 @@
                     <input class="form-control" type="number" name="OldPrice" placeholder="Vui lòng Nhập Giá Tiền Cũ" />
                 </div>
                 <div class="form-group">
-                    <label>Hiển Thị Giá Tiền</label>
+                    <label>Hiển Thị Giá Tiền Gốc</label>
                     <input class="form-control" type="number" max="1" min="0" name="IsShowprice" placeholder="Chỉ Nhập 1 hoặc 0 (1 là có, 0 là không ) " />
                 </div>
                 <div class="form-group">

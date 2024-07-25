@@ -15,11 +15,9 @@
           <div class="row w-100">
             <div class="col-lg-4 col-md-4 col-sm-12">
               <div class="single_footer_widget" style="padding-left: 70px">
-                <h3 class="text-primary font-weight-bold text-light" style="font-family: segoeuib;">Giới thiệu</h3>
-                <p class="text-light">CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</p>
+                <h3 class="text-light font-weight-bold"style="font-family: segoeuib;">CÔNG TY CỔ PHẦN MÁY TÍNH - TRUYỀN THÔNG - ĐIỀU KHIỂN 3C</h3>
                 <p class="text-light">Địa chỉ trụ sở chính: Số 149D phố Yên Phụ, Phường Yên Phụ, Quận Tây Hồ, TP Hà Nội, Việt nam. Tel: 024 37334499 - Fax : 024 37334499</p>
                 <p class="text-light">Giao dịch khách hàng: Số 181 Nghi Tàm, Tây Hồ, Hà Nội - Tel: 024 37331699 - Fax: 024 38433316</p>
-                <img width="40%" height="40%" src="../img/logo_3c.png" alt="">
               </div>
             </div>
             <div class="col-lg-2  col-md-2 col-sm-12 p-0">
